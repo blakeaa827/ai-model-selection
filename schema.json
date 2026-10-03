@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Daily model selection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "report_date",
+    "checked_at",
+    "freshness",
+    "scope",
+    "benchmark",
+    "recommendations",
+    "models",
+    "frontier",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "report_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "freshness": {
+      "type": "object",
+      "required": [
+        "recommended_max_age_hours",
+        "on_stale"
+      ],
+      "properties": {
+        "recommended_max_age_hours": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "on_stale": {
+          "const": "reject_and_request_refresh"
+        }
+      }
+    },
+    "benchmark": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "cost_metric",
+        "score_is_percentage"
+      ],
+      "properties": {
+        "cost_metric": {
+          "const": "weighted_USD_per_Intelligence_Index_task"
+        },
+        "score_is_percentage": {
+          "const": false
+        }
+      }
+    },
+    "recommendations": {
+      "type": "object",
+      "required": [
+        "floor",
+        "ceiling"
+      ],
+      "properties": {
+        "floor": {
+          "$ref": "#/$defs/recommendation"
+        },
+        "ceiling": {
+          "$ref": "#/$defs/recommendation"
+        }
+      }
+    },
+    "models": {
+      "type": "array",
+      "minItems": 1
+    },
+    "frontier": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/configuration"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  },
+  "$defs": {
+    "request": {
+      "type": "object",
+      "required": [
+        "model",
+        "reasoning",
+        "provider"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+$"
+        },
+        "reasoning": {
+          "type": "object",
+          "required": [
+            "effort"
+          ],
+          "properties": {
+            "effort": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          }
+        },
+        "provider": {
+          "type": "object",
+          "required": [
+            "only",
+            "require_parameters",
+            "allow_fallbacks"
+          ],
+          "properties": {
+            "only": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "require_parameters": {
+              "const": true
+            },
+            "allow_fallbacks": {
+              "const": false
+            }
+          }
+        }
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "required": [
+        "configuration_id",
+        "openrouter_model_id",
+        "effort",
+        "intelligence_score",
+        "benchmark_task_cost_usd",
+        "request"
+      ],
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/request"
+        },
+        "effort": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        "intelligence_score": {
+          "type": "number",
+          "minimum": 0
+        },
+        "benchmark_task_cost_usd": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "configuration": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/recommendation"
+        },
+        {
+          "type": "object",
+          "required": [
+            "minimum_score_exclusive",
+            "maximum_score_inclusive",
+            "openrouter_canonical_slug",
+            "openrouter_verified_at",
+            "benchmark_source_url",
+            "api_call_tested",
+            "marginal"
+          ],
+          "properties": {
+            "minimum_score_exclusive": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "maximum_score_inclusive": {
+              "type": "number"
+            },
+            "openrouter_canonical_slug": {
+              "type": "string"
+            },
+            "openrouter_verified_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "benchmark_source_url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "api_call_tested": {
+              "type": "boolean"
+            },
+            "marginal": {
+              "type": [
+                "object",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
