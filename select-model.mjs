@@ -28,6 +28,13 @@ export function validateSnapshot(data, now = Date.now()) {
     ids.add(row.configuration_id);
     if (row.configuration_id !== `${row.openrouter_model_id}@${row.effort}` ||
         row.request?.model !== row.openrouter_model_id || row.request?.reasoning?.effort !== row.effort) throw new Error("Request does not match benchmark configuration");
+    if (row.request.provider?.require_parameters !== true || row.request.provider?.allow_fallbacks !== false ||
+        !Array.isArray(row.request.provider?.only) || row.request.provider.only.length !== 1) throw new Error("Strict provider routing is required");
+    for (const value of [row.openrouter_verified_at, row.benchmark_verified_at ?? data.checked_at,
+      row.endpoint_verification?.verified_at ?? row.openrouter_verified_at]) {
+      const verified = Date.parse(value);
+      if (!Number.isFinite(verified) || verified > now + 300000 || now - verified > maxAge * 3600000) throw new Error("Configuration verification is stale or invalid");
+    }
     if (row.maximum_score_inclusive !== row.intelligence_score ||
         row.minimum_score_exclusive !== (previous?.intelligence_score ?? null)) throw new Error("Non-contiguous capability ranges");
     if (previous && (row.intelligence_score <= previous.intelligence_score || row.benchmark_task_cost_usd <= previous.benchmark_task_cost_usd)) throw new Error("Frontier is not ordered by increasing capability and cost");
@@ -69,17 +76,32 @@ export function verifyCatalog(row, catalog, requiredParameters = []) {
   return model;
 }
 
+export function verifyEndpoint(row, metadata, requiredParameters = []) {
+  const tag = row.request.provider.only[0];
+  const endpoint = metadata?.data?.endpoints?.find(e => e.tag === tag);
+  if (!endpoint || endpoint.status !== 0 || endpoint.model_id !== row.openrouter_model_id) throw new Error("Standard provider endpoint is unavailable");
+  if (!endpoint.name?.includes(row.openrouter_canonical_slug)) throw new Error("Provider endpoint revision does not match the benchmark configuration");
+  for (const parameter of ["reasoning", ...requiredParameters]) {
+    if (!endpoint.supported_parameters?.includes(parameter)) throw new Error(`Required endpoint parameter unsupported: ${parameter}`);
+  }
+  if (requiredParameters.includes("tools") && row.openrouter_model_id.startsWith("openai/") &&
+      row.api_endpoint !== "https://openrouter.ai/api/v1/responses") throw new Error("OpenAI tool calling requires the verified Responses endpoint");
+  return endpoint;
+}
+
 export async function buildSelection(source, target = "floor", requiredParameters = []) {
   const data = validateSnapshot(await loadSnapshot(source));
   const row = selectConfiguration(data, target);
   verifyCatalog(row, await getJson("https://openrouter.ai/api/v1/models"), requiredParameters);
+  verifyEndpoint(row, await getJson(`https://openrouter.ai/api/v1/models/${row.openrouter_model_id}/endpoints`), requiredParameters);
   return {
     checked_at: data.checked_at,
     configuration_id: row.configuration_id,
     intelligence_score: row.intelligence_score,
     benchmark_task_cost_usd: row.benchmark_task_cost_usd,
+    api_endpoint: row.api_endpoint,
     request: row.request,
-    note: "Add messages and task-specific output limits; this is not an invoice estimate."
+    note: "Add input for Responses or messages for Chat Completions, plus task-specific output limits; this is not an invoice estimate."
   };
 }
 

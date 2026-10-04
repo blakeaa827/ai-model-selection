@@ -179,6 +179,12 @@
         "benchmark_task_cost_usd": {
           "type": "number",
           "minimum": 0
+        },
+        "api_endpoint": {
+          "enum": [
+            "https://openrouter.ai/api/v1/responses",
+            "https://openrouter.ai/api/v1/chat/completions"
+          ]
         }
       }
     },
@@ -227,6 +233,10 @@
                 "object",
                 "null"
               ]
+            },
+            "benchmark_verified_at": {
+              "type": "string",
+              "format": "date-time"
             }
           }
         }
@@ -234,4 +244,3 @@
     }
   }
 }
-

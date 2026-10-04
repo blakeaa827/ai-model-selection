@@ -10,7 +10,7 @@ Daily capability-versus-cost guidance for tools calling OpenRouter. The report c
 - `schema.json`: JSON Schema contract (version 1.0.0).
 - `select-model.mjs`: dependency-free Node.js 22+ selector and live catalog check; it returns a request skeleton and never makes a paid inference call.
 
-## Recommendation checked October 3, 2026
+## Recommendation checked October 4, 2026
 
 Default floor: `openai/gpt-6.1-sol`, `reasoning.effort: medium`, score 48, benchmark cost $0.21.
 
@@ -31,7 +31,7 @@ The Contents API endpoint is `https://api.github.com/repos/blakeaa827/ai-model-s
 
 An optional third argument is a comma-separated list of required OpenRouter parameters, for example `tools,response_format`. The helper verifies the current catalog ID, unchanged canonical revision, exact supported effort and required parameters before returning the configuration. Network errors, stale data, unverified model revisions, unsupported effort and impossible thresholds stop selection; it never silently substitutes a different model.
 
-The request fragment includes `provider.only` for the first-party provider, `require_parameters: true` and `allow_fallbacks: false`. This reduces variation from the benchmark environment. Add your messages and task-specific output budget. Higher effort may need a large output budget; a small limit can truncate reasoning and change capability. Tool calling and vision need their own task checks.
+The request fragment includes `provider.only` for the first-party provider, `require_parameters: true` and `allow_fallbacks: false`. This reduces variation from the benchmark environment. Use the returned `api_endpoint`: add `input` for Responses or `messages` for Chat Completions, plus a task-specific output budget. The selector checks the standard provider endpoint's current availability, revision and parameter support. Higher effort may need a large output budget; a small limit can truncate reasoning and change capability. Tool calling and vision need their own task checks.
 
 ## Cost and identity contract
 
@@ -53,3 +53,8 @@ The existing AI Model Selection Chart task publishes to this repository. Credent
 ## Sources
 
 [Artificial Analysis model releases](https://artificialanalysis.ai/models/releases), [OpenRouter live model catalog](https://openrouter.ai/api/v1/models), [reasoning settings](https://openrouter.ai/docs/guides/best-practices/reasoning-tokens), [provider routing](https://openrouter.ai/docs/guides/routing/provider-selection).
+
+
+## October 4 verification notes
+
+The frontier and recommendations are unchanged. `latest.json` now includes the complete candidate audit and first-party endpoint verification. The selector returns `api_endpoint` and validates live endpoint parameter support. For OpenAI reasoning/tool workflows use the Responses API and add `input`; for Claude Chat Completions add `messages`. Respect the exact effort and standard provider route. Gemini Flash pricing is promotional through December 31; Opus provider default effort differs from the gateway default, so explicit effort is required.
