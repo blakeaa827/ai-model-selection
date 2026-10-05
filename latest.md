@@ -1,6 +1,6 @@
-# AI model selection — October 4, 2026
+# AI model selection — October 5, 2026
 
-Verified 2026-10-04T15:02:05Z. Artificial Analysis Intelligence Index **v4.3.2**. No changes to scores, task costs, the frontier, floor or ceiling since October 3. October 4 is the verification date, not a claimed evaluation completion date.
+Verified 2026-10-05T14:43:55Z. Artificial Analysis Intelligence Index **v4.3.2**. No changes to scoped releases, scores, task costs, routing, the frontier, floor or ceiling since October 4. October 5 is the verification date, not a claimed evaluation completion date.
 
 **Recommended floor:** `openai/gpt-6.1-sol`, `reasoning.effort: "medium"`, score **48**, **$0.21** per weighted benchmark task. The next step raises marginal cost from $0.013333 to $0.055 per index point (**4.125×**).
 
@@ -70,24 +70,6 @@ The connected points are measured configurations, not claims about intermediate 
 - No actionable model retirement found. Google restricts Gemini 2.5 to existing users; OpenRouter lists October 20 expiration metadata for older 2.5 entries. Those policies are not interchangeable, and older 2.5 entries are excluded from this chart.
 
 The index measures broad capability, **not percentage knowledge**. Benchmark task costs use observed token consumption and published provider prices. Individual prompts, tool calls, context length, retries and OpenRouter fees can produce different bills. Reject reports older than 48 hours, changed canonical revisions, unsupported efforts or missing required endpoint parameters; never silently substitute a model.
-
-## Verified identity, effort support and separate token pricing
-
-These are provider/catalog USD per million tokens, not the task-cost metric used for selection. Release dates below are official launch dates; canonical catalog dates may differ. Historical entries with unverified exact launch dates/effort mappings are not actionable.
-
-| Callable model ID | Official release | Supported reasoning.effort | Input / output USD per million |
-|---|---|---|---:|
-| `openai/gpt-6-luna` | 2026-09-22 | `max`, `xhigh`, `high`, `medium`, `low`, `none` | $0.09999999999999999 / $0.5 |
-| `openai/gpt-6.1-sol` | 2026-09-29 | `max`, `xhigh`, `high`, `medium`, `low` | $2.0 / $10.0 |
-| `openai/gpt-6-sol` | 2026-09-22 | `max`, `xhigh`, `high`, `medium`, `low`, `none` | $2.0 / $10.0 |
-| `openai/gpt-6-astra` | 2026-09-03 | `max`, `xhigh`, `high`, `medium`, `low` | $10.0 / $50.0 |
-| `anthropic/claude-opus-5.5` | 2026-09-22 | `max`, `xhigh`, `high`, `medium`, `low` | $4.0 / $20.0 |
-| `anthropic/claude-sonnet-5.5` | 2026-09-28 | `max`, `xhigh`, `high`, `medium`, `low` | $2.0 / $10.0 |
-| `x-ai/grok-4.7` | 2026-09-21 | `xhigh`, `high`, `medium`, `low` | $2.0 / $6.0 |
-| `x-ai/grok-4.6` | 2026-08-12 | `xhigh`, `high`, `medium`, `low` | $2.0 / $6.0 |
-| `google/gemini-3.8-flash` | 2026-09-02 | `high`, `medium`, `low` | $0.75 / $3.75 |
-| `google/gemini-3.5-flash-lite` | Exact date unverified | `high`, `medium`, `low`, `minimal` | $0.3 / $2.5 |
-| `google/gemini-3.1-pro-preview` | Exact date unverified | `high`, `medium`, `low` | $2.0 / $12.0 |
 
 ## Sources
 
