@@ -1,6 +1,6 @@
-# AI model selection — October 5, 2026
+# AI model selection — October 6, 2026
 
-Verified 2026-10-05T14:43:55Z. Artificial Analysis Intelligence Index **v4.3.2**. No changes to scoped releases, scores, task costs, routing, the frontier, floor or ceiling since October 4. October 5 is the verification date, not a claimed evaluation completion date.
+Verified 2026-10-06T14:14:16Z. Artificial Analysis Intelligence Index **v4.3.2**. AA revised six non-frontier task costs and now marks Grok 4.6 deprecated; the actionable frontier, floor and ceiling are unchanged since October 5. October 6 is the verification date, not a claimed evaluation completion date.
 
 **Recommended floor:** `openai/gpt-6.1-sol`, `reasoning.effort: "medium"`, score **48**, **$0.21** per weighted benchmark task. The next step raises marginal cost from $0.013333 to $0.055 per index point (**4.125×**).
 
@@ -62,12 +62,13 @@ The connected points are measured configurations, not claims about intermediate 
 ## Coverage, exclusions and uncertainty
 
 - Fresh AA model pages were retrieved for all published configurations of GPT-6 Astra/Sol/Luna, GPT-6.1 Sol, Claude Opus/Sonnet 5.5, Grok 4.7/4.6 and Gemini 3.8 Flash, plus historical Gemini Pro/Flash-Lite results. All retrieved pairs use v4.3.2. The full audit is in `evaluated_configurations`. Astra, original Sol and Grok are dominated on this cost-capability objective.
+- October 6 source changes outside the frontier: Gemini 3.1 Pro Preview task cost rose from $0.67 to $1.30; Gemini 3.5 Flash-Lite rose from $0.12 to $0.19; Grok 4.6 low/medium/xhigh/high-default fell from $0.48/$1.50/$2.32/$1.86 to $0.38/$1.14/$1.75/$1.48. Scores did not change. AA now marks Grok 4.6 deprecated and recommends Grok 4.7, so all Grok 4.6 configurations are non-actionable.
 - Haiku 5.5 remains forthcoming. Grok 4.7 medium lacks a comparable pair; Gemini 3.8 Flash low has score 33 but no published task cost. Pro, Batch and speed-tier results are not substituted for standard-mode benchmarks.
 - Gemini 4 Argon (announced September 30) remains restricted to Fairwind users. Its $1.99 task cost is promotional; AA reports $3.98 without that discount. The public Gemini 3.8 Flash token promotion expires December 31. Flash Cyber also has restricted access and no eligible pair.
 - Sonnet measurements came from a prerelease deployment affected by a structured-output bug; AA has not confirmed reruns in the opened article. Excluded as unverified deployment equivalence; existing results are also dominated.
 - AA marks SciCode and CritPt under review. Sol/Luna image encoding was fixed September 25; post-fix evaluation completion dates are not exposed. Current model tables take precedence over dated articles and stale search snippets.
 - OpenRouter reports Opus default effort as high; Anthropic documents medium. Explicit efforts preserve each benchmarked setting. Anthropic model safety fallback (enabled in AA) is separate from gateway provider fallback.
-- No actionable model retirement found. Google restricts Gemini 2.5 to existing users; OpenRouter lists October 20 expiration metadata for older 2.5 entries. Those policies are not interchangeable, and older 2.5 entries are excluded from this chart.
+- No actionable frontier-model retirement found; Grok 4.6 is newly marked deprecated and excluded. Google restricts Gemini 2.5 to existing users; OpenRouter lists October 20 expiration metadata for older 2.5 entries. Those policies are not interchangeable, and older 2.5 entries are excluded from this chart.
 
 The index measures broad capability, **not percentage knowledge**. Benchmark task costs use observed token consumption and published provider prices. Individual prompts, tool calls, context length, retries and OpenRouter fees can produce different bills. Reject reports older than 48 hours, changed canonical revisions, unsupported efforts or missing required endpoint parameters; never silently substitute a model.
 

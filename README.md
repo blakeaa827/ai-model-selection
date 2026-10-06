@@ -10,7 +10,7 @@ Daily capability-versus-cost guidance for tools calling OpenRouter. The report c
 - `schema.json`: JSON Schema contract (version 1.0.0).
 - `select-model.mjs`: dependency-free Node.js 22+ selector and live catalog check; it returns a request skeleton and never makes a paid inference call.
 
-## Recommendation checked October 5, 2026
+## Recommendation checked October 6, 2026
 
 Default floor: `openai/gpt-6.1-sol`, `reasoning.effort: medium`, score 48, benchmark cost $0.21.
 
