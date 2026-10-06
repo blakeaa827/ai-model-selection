@@ -1,6 +1,6 @@
 # AI model selection — October 6, 2026
 
-Verified 2026-10-06T14:14:16Z. Artificial Analysis Intelligence Index **v4.3.2**. AA revised six non-frontier task costs and now marks Grok 4.6 deprecated; the actionable frontier, floor and ceiling are unchanged since October 5. October 6 is the verification date, not a claimed evaluation completion date.
+Verified 2026-10-06T14:17:05Z. Artificial Analysis Intelligence Index **v4.3.2**. AA revised six non-frontier task costs and now marks Grok 4.6 deprecated; the actionable frontier, floor and ceiling are unchanged since October 5. October 6 is the verification date, not a claimed evaluation completion date.
 
 **Recommended floor:** `openai/gpt-6.1-sol`, `reasoning.effort: "medium"`, score **48**, **$0.21** per weighted benchmark task. The next step raises marginal cost from $0.013333 to $0.055 per index point (**4.125×**).
 
@@ -71,6 +71,7 @@ The connected points are measured configurations, not claims about intermediate 
 - No actionable frontier-model retirement found; Grok 4.6 is newly marked deprecated and excluded. Google restricts Gemini 2.5 to existing users; OpenRouter lists October 20 expiration metadata for older 2.5 entries. Those policies are not interchangeable, and older 2.5 entries are excluded from this chart.
 
 The index measures broad capability, **not percentage knowledge**. Benchmark task costs use observed token consumption and published provider prices. Individual prompts, tool calls, context length, retries and OpenRouter fees can produce different bills. Reject reports older than 48 hours, changed canonical revisions, unsupported efforts or missing required endpoint parameters; never silently substitute a model.
+- Mistral Large 4 entered public preview October 6 and is callable as `mistralai/mistral-large-4-0` (canonical `mistralai/mistral-large-4-0-20261006`). No comparable AA v4.3.2 score/task-cost pair is published, so it remains pending and excluded. This is a same-day revision; the earlier October 6 report remains in Git history.
 
 ## Sources
 
@@ -157,3 +158,4 @@ The index measures broad capability, **not percentage knowledge**. Benchmark tas
 - [https://developers.openai.com/api/docs/models/gpt-6.1-sol](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
 - [https://developers.openai.com/api/docs/models/gpt-6-sol](https://developers.openai.com/api/docs/models/gpt-6-sol)
 - [https://developers.openai.com/api/docs/models/gpt-6-astra](https://developers.openai.com/api/docs/models/gpt-6-astra)
+- [https://docs.mistral.ai/models/mistral-large-4-0](https://docs.mistral.ai/models/mistral-large-4-0)

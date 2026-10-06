@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "report_date": "2026-10-06",
-  "checked_at": "2026-10-06T14:14:16Z",
+  "checked_at": "2026-10-06T14:17:05Z",
   "freshness": {
     "recommended_max_age_hours": 48,
     "on_stale": "reject_and_request_refresh"
@@ -33,7 +33,7 @@
     "cost_source_updated_at": null,
     "cost_source_updated_at_note": "AA retrieval time is recorded; AA does not publish a per-row update timestamp.",
     "score_is_percentage": false,
-    "verified_at": "2026-10-06T14:14:16Z",
+    "verified_at": "2026-10-06T14:17:05Z",
     "evaluation_run_date": null,
     "evaluation_run_date_note": "October 6 is the source verification date; AA does not expose a per-configuration evaluation completion date.",
     "under_review_components": [
@@ -100,7 +100,7 @@
       "openrouter_model_id": "openai/gpt-6-luna",
       "openrouter_canonical_slug": "openai/gpt-6-luna-20260922",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-22",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -142,7 +142,7 @@
       "openrouter_model_id": "openai/gpt-6.1-sol",
       "openrouter_canonical_slug": "openai/gpt-6.1-sol-20260929",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-29",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -183,7 +183,7 @@
       "openrouter_model_id": "openai/gpt-6-sol",
       "openrouter_canonical_slug": "openai/gpt-6-sol-20260922",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-22",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -225,7 +225,7 @@
       "openrouter_model_id": "openai/gpt-6-astra",
       "openrouter_canonical_slug": "openai/gpt-6-astra-20260903",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-03",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -266,7 +266,7 @@
       "openrouter_model_id": "anthropic/claude-opus-5.5",
       "openrouter_canonical_slug": "anthropic/claude-opus-5.5-20260921",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-22",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -300,7 +300,7 @@
       "openrouter_model_id": "anthropic/claude-sonnet-5.5",
       "openrouter_canonical_slug": "anthropic/claude-sonnet-5.5-20260928",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-28",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -333,7 +333,7 @@
       "openrouter_model_id": "x-ai/grok-4.7",
       "openrouter_canonical_slug": "x-ai/grok-4.7-20260916",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-21",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -370,7 +370,7 @@
       "openrouter_model_id": "x-ai/grok-4.6",
       "openrouter_canonical_slug": "x-ai/grok-4.6-20260810",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-08-12",
       "release_date_note": null,
       "availability": "OpenRouter-listed, but Artificial Analysis marks this release deprecated; excluded from actionable routing.",
@@ -407,7 +407,7 @@
       "openrouter_model_id": "google/gemini-3.8-flash",
       "openrouter_canonical_slug": "google/gemini-3.8-flash-20260902",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": "2026-09-02",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -446,7 +446,7 @@
       "openrouter_model_id": "google/gemini-3.5-flash-lite",
       "openrouter_canonical_slug": "google/gemini-3.5-flash-lite-20260721",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": null,
       "release_date_note": "Exact official release date not verified in this run; catalog revision is not treated as a launch date.",
       "availability": "listed; no expiration date in live catalog",
@@ -481,7 +481,7 @@
       "openrouter_model_id": "google/gemini-3.1-pro-preview",
       "openrouter_canonical_slug": "google/gemini-3.1-pro-preview-20260219",
       "verified_at": "2026-10-06T14:07:31Z",
-      "provider_documentation_verified_at": "2026-10-06T14:14:16Z",
+      "provider_documentation_verified_at": "2026-10-06T14:17:05Z",
       "official_release_date": null,
       "release_date_note": "Exact official release date not verified in this run; catalog revision is not treated as a launch date.",
       "availability": "listed; no expiration date in live catalog",
@@ -1553,6 +1553,13 @@
       ],
       "reason": "Artificial Analysis marks Grok 4.6 deprecated and recommends Grok 4.7. Measurements are retained for audit but excluded from actionable routing.",
       "source_url": "https://artificialanalysis.ai/models/grok-4-6"
+    },
+    {
+      "model": "Mistral Large 4",
+      "openrouter_model_id": "mistralai/mistral-large-4-0",
+      "openrouter_canonical_slug": "mistralai/mistral-large-4-0-20261006",
+      "reason": "Released in public preview October 6, 2026 and callable through OpenRouter, but no comparable AA Intelligence Index v4.3.2 score and weighted task-cost pair is published. Pending benchmark; excluded from actionable routing.",
+      "source_url": "https://docs.mistral.ai/models/mistral-large-4-0"
     }
   ],
   "caveats": [
@@ -1656,7 +1663,8 @@
     "https://developers.openai.com/api/docs/models/gpt-6-luna",
     "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
     "https://developers.openai.com/api/docs/models/gpt-6-sol",
-    "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "https://docs.mistral.ai/models/mistral-large-4-0"
   ],
   "evaluated_configurations": [
     {
@@ -2335,17 +2343,17 @@
   "source_checks": [
     {
       "url": "https://artificialanalysis.ai/models/releases/gpt-6-luna",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases/gpt-6-1-sol",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases/claude-opus-5-5",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
@@ -2355,142 +2363,142 @@
     },
     {
       "url": "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://openrouter.ai/docs/guides/routing/provider-selection",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases/comparisons/gpt-6-1-sol-vs-gpt-6-astra",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases/claude-sonnet-5-5",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases/grok-4-7",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases/gemini-3-8-flash",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/models/releases",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://developers.openai.com/api/docs/changelog",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://developers.openai.com/api/docs/deprecations",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://www.anthropic.com/claude-opus-5-5",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://www.anthropic.com/claude-sonnet-5-5",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://platform.claude.com/docs/en/build-with-claude/effort",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://docs.x.ai/developers/release-notes",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://ai.google.dev/gemini-api/docs/changelog",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/claude-sonnet-5-5",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/claude-opus-5-5",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://openrouter.ai/docs/api_reference/responses/overview",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
@@ -2730,22 +2738,27 @@
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "verified_at": "2026-10-06T14:14:16Z",
+      "verified_at": "2026-10-06T14:17:05Z",
+      "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
+    },
+    {
+      "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+      "verified_at": "2026-10-06T14:17:05Z",
       "check": "Source opened and current content retrieved; no per-row AA publisher timestamp available."
     }
   ],
@@ -2755,6 +2768,6 @@
     "frontier_changed": false,
     "recommendations_changed": false,
     "new_eligible_releases": [],
-    "summary": "AA revised six non-frontier weighted task costs: Gemini 3.1 Pro Preview $0.67\u2192$1.30; Gemini 3.5 Flash-Lite $0.12\u2192$0.19; Grok 4.6 low $0.48\u2192$0.38, medium $1.50\u2192$1.14, xhigh $2.32\u2192$1.75, and high/default $1.86\u2192$1.48. AA now marks Grok 4.6 deprecated, so its four configurations are excluded from actionable routing. No scoped release, score, frontier, floor, or ceiling change."
+    "summary": "AA revised six non-frontier weighted task costs: Gemini 3.1 Pro Preview $0.67\u2192$1.30; Gemini 3.5 Flash-Lite $0.12\u2192$0.19; Grok 4.6 low $0.48\u2192$0.38, medium $1.50\u2192$1.14, xhigh $2.32\u2192$1.75, and high/default $1.86\u2192$1.48. AA now marks Grok 4.6 deprecated, so its four configurations are excluded from actionable routing. Mistral Large 4 entered public preview with OpenRouter revision mistralai/mistral-large-4-0-20261006 but is pending a comparable AA v4.3.2 score/task-cost pair. This revises the earlier October 6 snapshot while preserving it in Git history. No score, frontier, floor, or ceiling change."
   }
 }
