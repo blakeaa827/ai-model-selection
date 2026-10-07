@@ -1,8 +1,8 @@
-# AI model selection — October 7, 2026 (revision 2)
+# AI model selection — October 7, 2026 (revision 3)
 
 **API default floor:** MiMo-V2.6-Pro / thinking enabled, score 46.324, $0.133223 per AA task. **Optional ceiling:** GPT-6.1 Sol / xhigh, score 51.038, $0.392861.
 
-This revision removes the lab whitelist. It screens all 466 live OpenRouter catalog entries and 501 AA releases, adds MiMo Flash and Pro to the paid frontier, and adds a separately opt-in free Gemma route. Not every listed model has comparable measured results or verified configuration mappings; coverage.json records each entry's status. The API floor changes from Sol medium to MiMo Pro; the ceiling remains Sol xhigh. Earlier October 7 data is preserved in Git history at a7a9b70b3bcdc1e3965165d20ca20b461e814f6f.
+This same-day launch revision adds Claude Haiku 5.5 xhigh to the paid frontier after verifying five independent AA score/cost pairs, official release status, supported efforts and exact OpenRouter routing metadata. The other four Haiku efforts are dominated. Coverage now inventories 467 OpenRouter entries and 502 AA releases. The API floor remains MiMo Pro; the ceiling remains Sol xhigh. Earlier October 7 data is preserved in Git history at bfc6433ee119820ad626689dbfb891924b56428c.
 
 AA Intelligence Index v4.3.2 measures broad capability, not percentage knowledge. The cost is AA's weighted benchmark-task cost calculated from measured token use and published prices, not an OpenRouter invoice forecast or a per-prompt spending cap. Each source's actual verification time is retained in latest.json; AA does not expose exact evaluation completion dates. SciCode and CritPt remain marked under review.
 
@@ -20,7 +20,8 @@ The ranges below use unrounded published scores. Cost display is rounded to six 
 | (32.9282054150837, 34.5587320217785] | `openai/gpt-6-luna` | `effort=xhigh` | 34.559 | $0.042184 |
 | (34.5587320217785, 37.8843590141754] | `xiaomi/mimo-v2.6-flash` | `enabled=true` | 37.884 | $0.062315 |
 | (37.8843590141754, 38.1245186869738] | `openai/gpt-6-luna` | `effort=max` | 38.125 | $0.067823 |
-| (38.1245186869738, 42.0835618555848] | `openai/gpt-6.1-sol` | `effort=low` | 42.084 | $0.130752 |
+| (38.1245186869738, 41.2489304677024] | `anthropic/claude-haiku-5.5` | `effort=xhigh` | 41.249 | $0.123786 |
+| (41.2489304677024, 42.0835618555848] | `openai/gpt-6.1-sol` | `effort=low` | 42.084 | $0.130752 |
 | (42.0835618555848, 46.3242065310383] | `xiaomi/mimo-v2.6-pro` | `enabled=true` | 46.324 | $0.133223 |
 | (46.3242065310383, 47.7833271274065] | `openai/gpt-6.1-sol` | `effort=medium` | 47.783 | $0.213701 |
 | (47.7833271274065, 50.2377777519769] | `openai/gpt-6.1-sol` | `effort=high` | 50.238 | $0.319144 |
@@ -29,6 +30,24 @@ The ranges below use unrounded published scores. Cost display is rounded to six 
 | (51.8332597011541, 53.5831959822067] | `anthropic/claude-opus-5.5` | `effort=high` | 53.583 | $1.822505 |
 | (53.5831959822067, 55.9873505840139] | `anthropic/claude-opus-5.5` | `effort=xhigh` | 55.987 | $3.459110 |
 | (55.9873505840139, 57.6223698102963] | `anthropic/claude-opus-5.5` | `effort=max` | 57.622 | $5.982012 |
+
+## Haiku 5.5 launch verification
+
+Official launch date: October 7, 2026. Callable ID: `anthropic/claude-haiku-5.5`; canonical revision: `anthropic/claude-haiku-5.5-20261007`. Supported efforts: low, medium, high, xhigh, max; default medium. Short-context token rates: $0.10 input/$0.50 output per million; above 100K input tokens, $0.50/$2.50. Token prices are separate from the AA task costs below.
+
+| reasoning.effort | OpenRouter request.model | Delivered AA score | USD / AA task | Frontier status |
+|---|---|---:|---:|---|
+| `low` | `anthropic/claude-haiku-5.5` | 29.449 | $0.024459 | Dominated by openai/gpt-6-luna@medium |
+| `medium` | `anthropic/claude-haiku-5.5` | 34.465 | $0.047031 | Dominated by openai/gpt-6-luna@xhigh |
+| `high` | `anthropic/claude-haiku-5.5` | 37.824 | $0.079427 | Dominated by xiaomi/mimo-v2.6-flash@thinking-enabled |
+| `xhigh` | `anthropic/claude-haiku-5.5` | 41.249 | $0.123786 | Retained |
+| `max` | `anthropic/claude-haiku-5.5` | 43.395 | $0.212770 | Dominated by xiaomi/mimo-v2.6-pro@thinking-enabled |
+
+Only xhigh enters the actionable frontier: targets (38.1245186869738, 41.2489304677024] and AA-task budgets [$0.12378561092096102, $0.13075190869859377). Exact values are from AA publicly embedded model records and are not estimates. The rounded model cards and release summary agree after refresh. No alternate fallback model is inferred: AA labels these Default Fallback, but official Anthropic docs explicitly say Haiku 5.5 has no server-side fallback and default leaves declined requests declined. Adaptive thinking is required at xhigh/max; the standard first-party Anthropic endpoint is pinned and gateway fallback disabled. This mapping is documentation/metadata verified, not a paid generation test.
+
+Upgrading Luna max to Haiku xhigh adds 3.124412 points for $0.055963 (+82.51%): $0.017911 per point. Haiku xhigh to Sol low adds 0.834631 points for $0.006966 (+5.63%): $0.008347 per point. Moving directly from Haiku xhigh to the MiMo Pro floor adds 5.075276 points for $0.009438 (+7.62%); the general-purpose floor/ceiling recommendation stays unchanged.
+
+Launch-day caveats: exact evaluation completion dates and speed measurements are unavailable; SciCode and CritPt remain under review. The batch variant has discounted token prices but no separately verified matching AA task costs, so it is pending and excluded. Anthropic also announced lower Sonnet cache-read prices; OpenRouter still lists the earlier price at the check. Existing AA task costs have not been recomputed from token prices or vendor typical-agentic savings claims.
 
 For every paid row: provider.require_parameters=true, allow_fallbacks=false, and one exact provider tag. Xiaomi uses xiaomi/fp8; OpenAI uses openai; Anthropic uses anthropic. OpenAI tools use the Responses endpoint; other retained rows use Chat Completions. Canonical revision slugs and endpoint timestamps are verified in latest.json. Metadata checks succeeded; no paid generation test was run.
 
@@ -63,7 +82,7 @@ High-capability default candidate: upgrading Sol low to MiMo Pro adds 4.240645 p
 
 Optional higher-capability ceiling before Sol max: xhigh to max adds 0.795492 points for $0.331306 (+84.33%), or $0.416479/point, 4.5197x the preceding marginal rate. Higher-priced Opus can still be worthwhile when failures or human review cost more than model calls.
 
-Early local bends also matter: Luna high to xhigh costs about 2.10x the preceding dollars per point, but the next MiMo Flash step improves that rate. MiMo Flash to Luna max pays $0.005508 for only 0.240160 points (3.79x the preceding marginal rate); Sol low to MiMo Pro then becomes exceptionally inexpensive. These local bends are not persistent reasons to stop below the recommended high-capability floor. For very light tasks, keep the cheapest model that passes task-specific success checks.
+Early local bends also matter: Luna high to xhigh costs about 2.10x the preceding dollars per point, but the next MiMo Flash step improves that rate. MiMo Flash to Luna max pays $0.005508 for only 0.240160 points (3.79x the preceding marginal rate); Haiku xhigh now bridges Luna max and Sol low; Sol low to MiMo Pro remains exceptionally inexpensive. These local bends are not persistent reasons to stop below the recommended high-capability floor. For very light tasks, keep the cheapest model that passes task-specific success checks.
 
 | Upgrade to | Point gain | Added USD/task | Cost increase | Added USD/point | Versus prior USD/point |
 |---|---:|---:|---:|---:|---:|
@@ -72,8 +91,9 @@ Early local bends also matter: Luna high to xhigh costs about 2.10x the precedin
 | GPT-6 Luna / xhigh | 1.630527 | $0.013152 | 45.30% | $0.008066 | 2.10x |
 | MiMo-V2.6-Flash / thinking enabled | 3.325627 | $0.020131 | 47.72% | $0.006053 | 0.75x |
 | GPT-6 Luna / max | 0.240160 | $0.005508 | 8.84% | $0.022936 | 3.79x |
-| GPT-6.1 Sol / low | 3.959043 | $0.062929 | 92.78% | $0.015895 | 0.69x |
-| MiMo-V2.6-Pro / thinking enabled | 4.240645 | $0.002471 | 1.89% | $0.000583 | 0.04x |
+| Claude Haiku 5.5 / xhigh | 3.124412 | $0.055963 | 82.51% | $0.017911 | 0.78x |
+| GPT-6.1 Sol / low | 0.834631 | $0.006966 | 5.63% | $0.008347 | 0.47x |
+| MiMo-V2.6-Pro / thinking enabled | 4.240645 | $0.002471 | 1.89% | $0.000583 | 0.07x |
 | GPT-6.1 Sol / medium | 1.459121 | $0.080478 | 60.41% | $0.055155 | 94.64x |
 | GPT-6.1 Sol / high | 2.454451 | $0.105444 | 49.34% | $0.042960 | 0.78x |
 | GPT-6.1 Sol / xhigh | 0.799990 | $0.073717 | 23.10% | $0.092147 | 2.14x |
@@ -111,7 +131,7 @@ Use GPT-6.1 Sol medium or Sonnet high in the building tool connected to the proj
 
 latest.json schema 1.1.0 contains the paid frontier, separate limited_free_configurations, subscription_recommendations, all marginal steps, source checks and coverage counts. coverage.json records every catalog entry and AA release screening bound. Release maximum score/minimum cost combinations are optimistic bounds used to rule out potential winners; they are never substituted for exact measured configuration pairs.
 
-There are 47 refreshed exact AA records from the original four-lab candidates plus Xiaomi candidates, all on v4.3.2. Other catalog entries are explicitly pending or screened dominated; this does not claim full per-effort measurement for all 466 entries. Both selectors reject stale snapshots/rows, revision mismatches, removed routes and missing reasoning/tool parameters. Reports expire for routing after 48 hours. The live catalog and exact provider endpoint are rechecked by the selector before returning a request skeleton.
+There are 52 exact AA records from the original four-lab candidates, Xiaomi candidates and newly verified Haiku 5.5 efforts, all on v4.3.2. Unrelated source timestamps have not been advanced during this targeted launch update. Other catalog entries are explicitly pending or screened dominated; this does not claim full per-effort measurement for all 467 entries. Both selectors reject stale snapshots/rows, revision mismatches, removed routes and missing reasoning/tool parameters. Reports expire for routing after 48 hours. The live catalog and exact provider endpoint are rechecked by the selector before returning a request skeleton.
 
 ## Sources
 
@@ -220,3 +240,11 @@ There are 47 refreshed exact AA records from the original four-lab candidates pl
 - https://support.google.com/gemini/answer/16275805?gl=US&hl=en
 - https://www.anthropic.com/claude-opus-5-5
 - https://www.anthropic.com/claude-sonnet-5-5
+- https://www.anthropic.com/claude-haiku-5-5
+- https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback
+- https://artificialanalysis.ai/models/releases/claude-haiku-5-5
+- https://artificialanalysis.ai/models/claude-haiku-5-5
+- https://artificialanalysis.ai/models/claude-haiku-5-5-xhigh
+- https://artificialanalysis.ai/models/claude-haiku-5-5-high
+- https://artificialanalysis.ai/models/claude-haiku-5-5-medium
+- https://artificialanalysis.ai/models/claude-haiku-5-5-low

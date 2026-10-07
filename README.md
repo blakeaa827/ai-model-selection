@@ -5,11 +5,13 @@ Daily model guidance for Blake and his tools, with two separate tracks:
 - **Applications:** all-lab OpenRouter discovery, minimum measured task cost meeting a capability target, or highest observed capability within a benchmark-task budget.
 - **Building:** recommendations within Claude, OpenAI Work/Codex, Grok and Gemini subscriptions, conditional on plan/client/account access and included allowances.
 
-## October 7, 2026 recommendation — revision 2
+## October 7, 2026 recommendation — revision 3
 
 API floor: **MiMo-V2.6-Pro, thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per AA weighted task. API ceiling: **GPT-6.1 Sol xhigh**, score **51.0377679093761**, **$0.3928611715885065**. These are workload-dependent defaults, not universally optimal choices.
 
-The lab whitelist has been removed. Discovery screened 466 live OpenRouter entries and 501 AA releases. The paid frontier has 15 configurations, including MiMo Flash/Pro; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
+The lab whitelist has been removed. Discovery screened 467 live OpenRouter entries and 502 AA releases. The paid frontier has 16 configurations, including MiMo Flash/Pro and Haiku 5.5 xhigh; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
+
+Haiku 5.5 launched October 7 and now has five measured effort configurations. Only xhigh enters the paid frontier: score 41.2489304677024 at $0.12378561092096102 per AA task, serving targets (38.1245186869738, 41.2489304677024]. Floor and ceiling remain unchanged. Earlier same-day reports remain in Git history.
 
 For subscription building, start with GPT-6.1 Sol medium or Sonnet 5.5 high in the harness connected to the project. Escalate only when needed; Luna/Haiku/Flash-Lite conserve quota for simpler tasks. Grok Build 4.7 and Gemini 3.8 Flash offer additional building surfaces. Personal subscription tiers are unknown, so the report records conditional access rather than assuming top-tier models or controls. Subscription scores and USD/task are null unless an exact matching app-mode/harness evaluation exists.
 
