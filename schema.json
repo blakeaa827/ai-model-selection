@@ -16,7 +16,10 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "1.0.0"
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
     },
     "report_date": {
       "type": "string",
@@ -92,6 +95,78 @@
         "type": "string",
         "format": "uri"
       }
+    },
+    "subscription_recommendations": {
+      "type": "object",
+      "required": [
+        "account_tiers",
+        "services",
+        "cost_basis",
+        "verified_at"
+      ],
+      "properties": {
+        "account_tiers": {
+          "type": "object"
+        },
+        "cost_basis": {
+          "type": "string"
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "services": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "service",
+              "personal_tier",
+              "recommendations",
+              "sources"
+            ],
+            "properties": {
+              "service": {
+                "type": "string"
+              },
+              "personal_tier": {
+                "type": "null"
+              },
+              "recommendations": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "role",
+                    "model_label",
+                    "surface",
+                    "control",
+                    "eligibility",
+                    "intelligence_score",
+                    "benchmark_task_cost_usd"
+                  ],
+                  "properties": {
+                    "intelligence_score": {
+                      "type": "null"
+                    },
+                    "benchmark_task_cost_usd": {
+                      "type": "null"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "limited_free_configurations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/configuration"
+      }
     }
   },
   "$defs": {
@@ -109,20 +184,46 @@
         },
         "reasoning": {
           "type": "object",
-          "required": [
-            "effort"
-          ],
-          "properties": {
-            "effort": {
-              "enum": [
-                "low",
-                "medium",
-                "high",
-                "xhigh",
-                "max"
-              ]
+          "oneOf": [
+            {
+              "required": [
+                "effort"
+              ],
+              "properties": {
+                "effort": {
+                  "enum": [
+                    "none",
+                    "minimal",
+                    "low",
+                    "medium",
+                    "high",
+                    "xhigh",
+                    "max"
+                  ]
+                }
+              },
+              "not": {
+                "required": [
+                  "enabled"
+                ]
+              }
+            },
+            {
+              "required": [
+                "enabled"
+              ],
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                }
+              },
+              "not": {
+                "required": [
+                  "effort"
+                ]
+              }
             }
-          }
+          ]
         },
         "provider": {
           "type": "object",
@@ -165,11 +266,14 @@
         },
         "effort": {
           "enum": [
+            "none",
+            "minimal",
             "low",
             "medium",
             "high",
             "xhigh",
-            "max"
+            "max",
+            null
           ]
         },
         "intelligence_score": {
@@ -237,10 +341,69 @@
             "benchmark_verified_at": {
               "type": "string",
               "format": "date-time"
+            },
+            "minimum_budget_inclusive": {
+              "type": "number",
+              "minimum": 0
+            },
+            "maximum_budget_exclusive": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "reasoning_control": {
+              "type": "object",
+              "required": [
+                "type",
+                "value"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "effort",
+                    "enabled"
+                  ]
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "boolean"
+                  ]
+                }
+              }
             }
           }
         }
       ]
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "1.1.0"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "subscription_recommendations",
+          "coverage_inventory"
+        ],
+        "properties": {
+          "frontier": {
+            "items": {
+              "required": [
+                "minimum_budget_inclusive",
+                "maximum_budget_exclusive",
+                "reasoning_control"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
 }
