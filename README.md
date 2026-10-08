@@ -5,13 +5,13 @@ Daily model guidance for Blake and his tools, with two separate tracks:
 - **Applications:** all-lab OpenRouter discovery, minimum measured task cost meeting a capability target, or highest observed capability within a benchmark-task budget.
 - **Building:** recommendations within Claude, OpenAI Work/Codex, Grok and Gemini subscriptions, conditional on plan/client/account access and included allowances.
 
-## October 7, 2026 recommendation — revision 3
+## October 8, 2026 recommendation
 
 API floor: **MiMo-V2.6-Pro, thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per AA weighted task. API ceiling: **GPT-6.1 Sol xhigh**, score **51.0377679093761**, **$0.3928611715885065**. These are workload-dependent defaults, not universally optimal choices.
 
-The lab whitelist has been removed. Discovery screened 467 live OpenRouter entries and 502 AA releases. The paid frontier has 16 configurations, including MiMo Flash/Pro and Haiku 5.5 xhigh; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
+The lab whitelist has been removed. Discovery screened 468 live OpenRouter entries and 502 AA releases. The paid frontier has 15 configurations, including MiMo Flash/Pro; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
 
-Haiku 5.5 launched October 7 and now has five measured effort configurations. Only xhigh enters the paid frontier: score 41.2489304677024 at $0.12378561092096102 per AA task, serving targets (38.1245186869738, 41.2489304677024]. Floor and ceiling remain unchanged. Earlier same-day reports remain in Git history.
+October 8 correction: Haiku 5.5’s five scores are measured, but AA says its task costs omit tiered pricing above 100K tokens and are provisional. The earlier xhigh frontier inclusion is removed; all efforts are pending full comparable costs. Earlier snapshots remain in Git history. Sonnet costs have fallen with the cache-price cut, but prerelease reruns remain unconfirmed. One new Step 5 Preview gateway listing remains effort/revision-unverified. Floor and ceiling are unchanged.
 
 For subscription building, start with GPT-6.1 Sol medium or Sonnet 5.5 high in the harness connected to the project. Escalate only when needed; Luna/Haiku/Flash-Lite conserve quota for simpler tasks. Grok Build 4.7 and Gemini 3.8 Flash offer additional building surfaces. Personal subscription tiers are unknown, so the report records conditional access rather than assuming top-tier models or controls. Subscription scores and USD/task are null unless an exact matching app-mode/harness evaluation exists.
 
@@ -69,7 +69,7 @@ const freeOptIn = await buildSelection('latest.json', {max_task_cost_usd: 0}, ['
 
 Every retained row contains exact request.model and the supported reasoning control. Named efforts use request.reasoning.effort. MiMo and Gemma use reasoning.enabled=true; effort=null is descriptive metadata only, never sent in the request. Routing pins the exact standard provider tag, requires parameters, disables fallback, and verifies the canonical revision. Third-party quantization or a faster variant is not silently substituted. Preserve reasoning_details on tool turns where required, and provide enough output capacity for reasoning plus the answer.
 
-The selector rechecks the selected live catalog entry and exact endpoint, including required parameters and recorded quantization. OpenAI tool calling uses the verified Responses endpoint. A removed route, mismatched revision, unsupported control/parameter or stale snapshot/row causes rejection. Reports expire for routing after 48 hours; source checks are not advanced without successful verification. No paid-generation smoke test is claimed.
+The selector rechecks the selected live catalog entry and exact endpoint, including required parameters and recorded quantization. OpenAI tool calling uses the verified Responses endpoint. A removed route, mismatched revision, unsupported control/parameter or stale snapshot/row causes rejection. Explicitly ineligible, provisional-cost and estimated-score records are rejected even if mistakenly placed in the frontier. Reports expire for routing after 48 hours; source checks are not advanced without successful verification. No paid-generation smoke test is claimed.
 
 Queries optimize the comparable broad index; they do not guarantee coding, vision, latency, privacy, context length or reliability for your particular task. Supply required parameters to detect incompatibility; failure does not automatically select a dominated model or a different revision. Add workload evaluations before choosing deployment defaults.
 

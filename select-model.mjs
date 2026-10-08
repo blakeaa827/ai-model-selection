@@ -23,6 +23,13 @@ export function validateSnapshot(data, now = Date.now()) {
   let previous = null;
   const ids = new Set();
   for (const row of data.frontier) {
+    const evidence = data.evaluated_configurations?.find(r => r.configuration_id === row.configuration_id);
+    for (const record of [row, evidence].filter(Boolean)) {
+      if (record.eligible_for_frontier === false || record.benchmark_score_is_estimated === true ||
+          (record.benchmark_cost_status && record.benchmark_cost_status !== "complete_as_published")) {
+        throw new Error("Configuration benchmark eligibility is unverified or provisional");
+      }
+    }
     if (!Number.isFinite(row.intelligence_score) || !Number.isFinite(row.benchmark_task_cost_usd) || row.benchmark_task_cost_usd < 0) throw new Error("Invalid score or cost");
     if (ids.has(row.configuration_id)) throw new Error("Duplicate configuration");
     ids.add(row.configuration_id);

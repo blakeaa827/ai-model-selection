@@ -31,6 +31,13 @@ const staleFree=structuredClone(data);staleFree.limited_free_configurations[0].o
 assert.throws(()=>validateSnapshot(staleFree,asOf),/stale/);
 const invalid=structuredClone(data);invalid.frontier.find(r=>r.effort===null).request.reasoning.effort=null;
 assert.throws(()=>validateSnapshot(invalid,asOf),/configuration/);
+const ineligible=structuredClone(data);ineligible.frontier[0].eligible_for_frontier=false;
+assert.throws(()=>validateSnapshot(ineligible,asOf),/eligibility/);
+const provisional=structuredClone(data);
+provisional.evaluated_configurations.find(r=>r.configuration_id===provisional.frontier[0].configuration_id).benchmark_cost_status='provisional_incomplete_tiered_pricing';
+assert.throws(()=>validateSnapshot(provisional,asOf),/provisional/);
+const estimated=structuredClone(data);estimated.frontier[0].benchmark_score_is_estimated=true;
+assert.throws(()=>validateSnapshot(estimated,asOf),/eligibility/);
 // Mock metadata isolates contract rejection from transient public HTTP failures.
 const row=data.frontier.find(r=>r.openrouter_model_id==='xiaomi/mimo-v2.6-pro');
 const catalog={data:[{id:row.openrouter_model_id,canonical_slug:row.openrouter_canonical_slug,reasoning:{mandatory:false},supported_parameters:['reasoning','tools']}]};
@@ -53,4 +60,4 @@ try {
  assert.equal(result.request.model,row.request.model);assert.deepEqual(result.request.reasoning,{enabled:true});
  assert.equal(result.api_endpoint,'https://openrouter.ai/api/v1/chat/completions');
 } finally {globalThis.fetch=priorFetch;Date.now=priorNow;}
-console.log('Passed: all score/budget boundaries, free opt-in, freshness, native reasoning, revision/quantization/parameter rejection, request construction.');
+console.log('Passed: all score/budget boundaries, free opt-in, freshness, native reasoning, provisional/estimated benchmark rejection, revision/quantization/parameter rejection, request construction.');
