@@ -5,13 +5,13 @@ Daily model guidance for Blake and his tools, with two separate tracks:
 - **Applications:** all-lab OpenRouter discovery, minimum measured task cost meeting a capability target, or highest observed capability within a benchmark-task budget.
 - **Building:** recommendations within Claude, OpenAI Work/Codex, Grok and Gemini subscriptions, conditional on plan/client/account access and included allowances.
 
-## October 8, 2026 recommendation
+## October 9, 2026 recommendation
 
 API floor: **MiMo-V2.6-Pro, thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per AA weighted task. API ceiling: **GPT-6.1 Sol xhigh**, score **51.0377679093761**, **$0.3928611715885065**. These are workload-dependent defaults, not universally optimal choices.
 
-The lab whitelist has been removed. Discovery screened 468 live OpenRouter entries and 502 AA releases. The paid frontier has 15 configurations, including MiMo Flash/Pro; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
+The lab whitelist has been removed. Discovery screened 469 live OpenRouter entries and 503 AA releases. The paid frontier has 15 configurations, including MiMo Flash/Pro; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
 
-October 8 correction: Haiku 5.5’s five scores are measured, but AA says its task costs omit tiered pricing above 100K tokens and are provisional. The earlier xhigh frontier inclusion is removed; all efforts are pending full comparable costs. Earlier snapshots remain in Git history. Sonnet costs have fallen with the cache-price cut, but prerelease reruns remain unconfirmed. One new Step 5 Preview gateway listing remains effort/revision-unverified. Floor and ceiling are unchanged.
+October 9: floor, ceiling and both paid/free selection lanes are unchanged. Haiku low's score has a small revision, but incomplete tiered task costs still prevent actionable selection. Three new gateway listings (Sol 6.1 Batch, Sol 6.1 Pro Batch, Ling Flash Sante) remain pending exact comparable pairs; two prior listings are absent. AA adds restricted Daybreak Blue with separate Cyber Index results. Harvey LAB-AA v1.1 does not change the common Intelligence Index v4.3.2. October 8's Haiku eligibility correction and all earlier snapshots remain in history.
 
 For subscription building, start with GPT-6.1 Sol medium or Sonnet 5.5 high in the harness connected to the project. Escalate only when needed; Luna/Haiku/Flash-Lite conserve quota for simpler tasks. Grok Build 4.7 and Gemini 3.8 Flash offer additional building surfaces. Personal subscription tiers are unknown, so the report records conditional access rather than assuming top-tier models or controls. Subscription scores and USD/task are null unless an exact matching app-mode/harness evaluation exists.
 

@@ -1,16 +1,18 @@
-# AI model selection — October 8, 2026
+# AI model selection — October 9, 2026
 
 **Recommended API floor:** MiMo-V2.6-Pro / thinking enabled, score **46.324**, **$0.133223** per AA task. **Optional ceiling:** GPT-6.1 Sol / xhigh, score **51.038**, **$0.392861**. Both remain unchanged.
 
-## Changes since October 7
+## Changes since October 8
 
-- **Correction:** yesterday’s Haiku xhigh row was admitted too early. AA’s original evaluator article says the five task costs omit the higher price tier above 100K input tokens, and flags a prerelease safety over-refusal issue awaiting rerun. All five measured scores are retained; full comparable task costs are pending and every Haiku effort is excluded from actionable cost selection. Earlier October 7 reports remain in Git history, including commit 078a0ba1df99797d04fdff7319ec2e8569c3a1d0.
-- Sonnet cache-read pricing is now $0.10 per million on official Anthropic and OpenRouter. AA’s five published task costs fell 18–29%; scores did not change. Its prerelease structured-output bug reruns remain unconfirmed, so it stays outside actionable routing.
-- One new OpenRouter entry: stepfun/step-5-preview. AA has an existing September 18 model, but correspondence to the October 8 gateway revision and low/medium/high settings is not verified. Do not attach the existing score to a guessed effort. The existing AA pair is also dominated by MiMo Pro.
-- Catalog coverage: 468 gateway entries and 502 AA releases, across all labs. There are 15 paid frontier configurations and one separately opt-in verified free route. 59 exact AA records were checked, including free candidates and restricted Argon; this does not establish per-effort benchmark coverage for every catalog model. No index-version change: v4.3.2.
-- Newly documented subscription benefit: eligible Claude Max/Team subscribers can claim first-party API credits. They do not pay OpenRouter invoices. Personal plan eligibility and claim status are unknown.
+- The 15 paid configurations, opt-in Gemma free route, recommended floor and ceiling are unchanged. Every actionable score/cost and route was refreshed against current sources.
+- Haiku low's measured score changed from 29.4494981304947 to 29.4523685891139 (+0.0028704586192). Its task cost is still provisional and omits the >100K input tier. No completed pricing correction or refusal-issue rerun was found; all five Haiku efforts remain excluded from actionable cost routing. The small score edit is not evidence of a significant capability change or a completed rerun.
+- Three newly observed gateway listings: openai/gpt-6.1-sol:batch, openai/gpt-6.1-sol-pro:batch, inclusionai/ling-3.0-flash-sante. Batch processing and Pro mode cannot inherit standard task-cost or score pairs. Sante lacks an exact comparable pair. Gateway listing dates are not official model release dates.
+- Two previous gateway listings are no longer present: inclusionai/ling-3.0-flash-sante:free and baidu/ernie-4.5-vl-424b-a47b. They were not on the actionable frontier. The coverage inventory records their absence rather than inferring an official model retirement.
+- AA adds GPT-6 Sol Daybreak Blue to its release registry. Access is restricted; its published Cyber Index result uses a separate harness and cost basis, with no common Intelligence Index pair. It remains outside this chart.
+- Harvey LAB-AA v1.1 adds hallucination checks to a separate legal evaluation. The common Intelligence Index remains v4.3.2; no incompatible Cyber or legal results are mixed into it.
+- Coverage: 469 live gateway entries, 503 AA releases, 59 exact AA records and 15 free catalog entries audited. Screening every listing does not establish measured coverage for every configuration. Subscription recommendations remain conditional and unchanged.
 
-[Haiku evaluator disclosure](https://artificialanalysis.ai/articles/claude-haiku-5-5) · [Sonnet evaluator disclosure](https://artificialanalysis.ai/articles/claude-sonnet-5-5) · [Official price and launch updates](https://www.anthropic.com/claude-haiku-5-5)
+[AA release registry](https://artificialanalysis.ai/models/releases) · [Live gateway catalog](https://openrouter.ai/api/v1/models) · [Daybreak evaluator article](https://artificialanalysis.ai/articles/trusted-access-models-cyber-index) · [Harvey LAB-AA update](https://artificialanalysis.ai/articles/harvey-lab-aa-v1-1) · [Haiku cost disclosure](https://artificialanalysis.ai/articles/claude-haiku-5-5)
 
 The Intelligence Index measures broad capability, not percentage knowledge. Costs are AA’s weighted benchmark-task costs based on observed token use and published prices, not a forecast for an individual prompt or an OpenRouter invoice. Use underlying numerical values for lookup; close score differences are not established statistical advantages. AA does not publish exact per-configuration evaluation completion dates. SciCode and CritPt remain under review.
 
@@ -104,7 +106,7 @@ Callable ID anthropic/claude-haiku-5.5; canonical anthropic/claude-haiku-5.5-202
 
 | Model ID | reasoning.effort | Measured score | Provisional USD/task — NOT actionable |
 |---|---|---:|---:|
-| `anthropic/claude-haiku-5.5` | `low` | 29.449 | $0.024459 |
+| `anthropic/claude-haiku-5.5` | `low` | 29.452 | $0.024459 |
 | `anthropic/claude-haiku-5.5` | `medium` | 34.465 | $0.047031 |
 | `anthropic/claude-haiku-5.5` | `high` | 37.824 | $0.079427 |
 | `anthropic/claude-haiku-5.5` | `xhigh` | 41.249 | $0.123786 |
@@ -112,28 +114,45 @@ Callable ID anthropic/claude-haiku-5.5; canonical anthropic/claude-haiku-5.5-202
 
 AA says its costs omit the long-context price tier; no completed pricing correction or prerelease refusal-issue rerun was found. latest.json sets benchmark_task_cost_usd=null and eligible_for_frontier=false, preserving the published provisional number in a separately named field. Current AA labels omit Default Fallback; official docs confirm Haiku has no server-side fallback. The earlier xhigh frontier inclusion is a corrected eligibility error, not a model capability regression.
 
+## Why Luna remains while Haiku costs are pending
+
+Haiku can be stronger at higher effort without being cheaper at every capability threshold. Short-context standard token rates match Luna ($0.10 input/$0.50 output per million), but observed token use differs. These comparisons use measured scores and separately flagged provisional Haiku costs; they do not authorize Haiku routing.
+
+| Luna choice | Score | USD/task | Haiku choice | Score | Provisional USD/task |
+|---|---:|---:|---|---:|---:|
+| medium | 29.925 | $0.017477 | low | 29.452 | $0.024459 |
+| xhigh | 34.559 | $0.042184 | medium | 34.465 | $0.047031 |
+| max | 38.125 | $0.067823 | high | 37.824 | $0.079427 |
+
+Luna provides slightly higher measured broad-index scores at lower task costs for these particular comparisons, even before completing Haiku's tiered cost correction. Haiku xhigh remains an interesting candidate at score 41.249 and provisional $0.123786, but cannot yet be certified as the cheapest exact route. Workload-specific quality, latency and cost per successful completion can favor a model outside the broad-index frontier. A routing evaluator's success probability is conditional on task, model and effort; it is not a direct conversion to an Intelligence Index threshold. No evaluator or task-specific success mapping has been calibrated in this report.
+
 ## Other excluded or pending results
 
 | Model / configuration | Current finding |
 |---|---|
 | Sonnet 5.5 all five efforts | Updated task costs below; prerelease structured-output bug rerun and deployment equivalence unconfirmed. |
-| Step 5 Preview | New gateway revision 20261008, named efforts low/medium/high; AA September 18 effort and pricing correspondence unverified. |
+| Step 5 Preview | Gateway revision 20261008, named efforts low/medium/high; AA September 18 effort and pricing correspondence remains unverified. |
 | Gemini 4 Argon | Restricted Fairwind rollout, no matching public OpenRouter route; promotional cost not a general entitlement. |
 | Grok 4.7 medium | Supported setting, no complete comparable score/task-cost pair found. |
 | Gemini 3.8 Flash low | Score 33.4548106699132, task cost missing. |
-| Pro, Batch, Fast/Ultraspeed variants | No transfer of standard-mode score/cost pairs. |
+| Sol 6.1 Batch and Sol 6.1 Pro Batch | Newly observed listings; no exact common-version pair measured for the processing tier/Pro mode. Standard costs are not halved and relabeled. |
+| Ling 3.0 Flash Sante | Paid listing newly observed; no exact AA pair. Its previous free listing is absent. Official launch date remains unverified. |
+| GPT-6 Sol Daybreak Blue | Restricted access; Cyber Index results and costs are not the common Intelligence Index. |
+| Other Pro, Batch, Fast/Ultraspeed variants | No transfer of standard-mode score/cost pairs. |
 | Mistral Large 4 Preview | Public preview, weights forthcoming, 50% launch discount for two weeks; AA measured standard pair dominated. Context metadata differs across sources. |
 | Legacy Gemini 2.5 | Restricted access/expiration policies differ by platform; excluded. |
 
 Sonnet’s score/cost entries below are measured on the disclosed prerelease deployment and are not approved routing configurations.
 
-| Effort | Score | Previous USD/task | Current AA USD/task | Change |
-|---|---:|---:|---:|---:|
-| low | 35.868 | $0.416970 | $0.345161 | -17.22% |
-| medium | 40.839 | $0.589408 | $0.483264 | -18.01% |
-| high | 46.753 | $1.122484 | $0.884450 | -21.21% |
-| xhigh | 51.896 | $2.746197 | $2.012035 | -26.73% |
-| max | 56.000 | $7.666776 | $5.460853 | -28.77% |
+| Effort | Score | Current AA USD/task — prerelease deployment |
+|---|---:|---:|
+| low | 35.868 | $0.345161 |
+| medium | 40.839 | $0.483264 |
+| high | 46.753 | $0.884450 |
+| xhigh | 51.896 | $2.012035 |
+| max | 56.000 | $5.460853 |
+
+Sonnet costs are unchanged since October 8; they retain the earlier cache-price reduction. Its disclosed prerelease structured-output reruns remain unconfirmed.
 
 ## Building through subscriptions
 
@@ -164,9 +183,9 @@ Use the project-connected GPT-6.1 Sol medium or Sonnet high harness for routine 
 
 ## Verification and machine-readable contract
 
-Source verification date: October 8, 2026; catalog checked 2026-10-08T14:04:37.095955+00:00; AA release registry checked 2026-10-08T14:04:40.377765+00:00. Per-configuration score/cost and endpoint timestamps are retained in latest.json. Each successfully checked source advances only its associated timestamp. Some raw HTTP sources failed; original-source web retrieval recovered them, and unrecovered checks remain disclosed. AA evaluation completion dates are unavailable.
+Source verification date: October 9, 2026; catalog checked 2026-10-09T14:13:49.431674+00:00; AA release registry checked 2026-10-09T14:13:50.563077+00:00. Per-configuration score/cost and endpoint timestamps are retained in latest.json. Each successfully checked source advances only its associated timestamp. Some raw HTTP sources failed; original-source web retrieval recovered them, and unrecovered checks remain disclosed. AA evaluation completion dates are unavailable.
 
-Schema 1.1.0 is unchanged. latest.json supplies exact paid and opt-in score/budget intervals, request skeletons, recommendations, all marginal steps, subscription guidance, exclusions, source checks and coverage counts. coverage.json inventories every catalog entry and AA release. Release maxima/minima only screen potential winners; they never become configuration score/cost pairs. Model/revision/effort matches remain incomplete outside verified configurations. Reports and rows expire after 48 hours; live catalog/endpoint revision, provider, quantization and parameter checks reject mismatches rather than silently substituting. Selector tests cover both paid and opt-in boundaries, freshness and mismatch rejection. A new eligibility guard also rejects explicitly ineligible configurations, provisional-cost evidence and estimated scores, even if placed in the frontier by mistake.
+Schema 1.1.0 is unchanged. latest.json supplies exact paid and opt-in score/budget intervals, request skeletons, recommendations, all marginal steps, subscription guidance, exclusions, source checks and coverage counts. coverage.json inventories every catalog entry and AA release. Release maxima/minima only screen potential winners; they never become configuration score/cost pairs. Model/revision/effort matches remain incomplete outside verified configurations. Reports and rows expire after 48 hours; live catalog/endpoint revision, provider, quantization and parameter checks reject mismatches rather than silently substituting. Selector tests cover both paid and opt-in boundaries, freshness, provisional/estimated benchmark eligibility and revision/parameter mismatch rejection. Fresh catalog and endpoint data also pass for all 16 actionable configurations; no paid generation smoke test is claimed.
 
 ## Sources
 
@@ -182,6 +201,8 @@ Schema 1.1.0 is unchanged. latest.json supplies exact paid and opt-in score/budg
 - https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs
 - https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence
 - https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier
+- https://artificialanalysis.ai/articles/harvey-lab-aa-v1-1
+- https://artificialanalysis.ai/articles/trusted-access-models-cyber-index
 - https://artificialanalysis.ai/changelog
 - https://artificialanalysis.ai/methodology/intelligence-benchmarking
 - https://artificialanalysis.ai/models
@@ -258,6 +279,7 @@ Schema 1.1.0 is unchanged. latest.json supplies exact paid and opt-in score/budg
 - https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/
 - https://developers.openai.com/api/docs/changelog
 - https://developers.openai.com/api/docs/deprecations
+- https://developers.openai.com/api/docs/guides/batch
 - https://developers.openai.com/api/docs/models/gpt-6-astra
 - https://developers.openai.com/api/docs/models/gpt-6-luna
 - https://developers.openai.com/api/docs/models/gpt-6-sol
