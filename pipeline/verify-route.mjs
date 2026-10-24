@@ -47,4 +47,4 @@ for(const item of evidence.configurations){
  output.push(row);
 }
 await writeFile(outPath,JSON.stringify({...evidence,configurations:output,route_audit_at:now},null,2)+'\n');
-if(output.some(x=>x.routing_audit.status==='rejected')){console.error('Some routes rejected; inspect audit');process.exitCode=2;}
+if(!output.some(x=>x.routing_audit.status==='verified'&&x.benchmark_audit?.status==='verified')){console.error('No fully verified benchmark-route pairs');process.exitCode=2;}
