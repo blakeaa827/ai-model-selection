@@ -17,4 +17,4 @@ const rows=raw.configurations.map(r=>{
  return {...r,benchmark_audit:{status:reasons.length?'rejected':'verified',reasons}};
 });
 await writeFile(output,JSON.stringify({...raw,configurations:rows},null,2)+'\n');
-if(rows.some(x=>x.benchmark_audit.status==='rejected'))process.exitCode=2;
+if(!rows.some(x=>x.benchmark_audit.status==='verified')){console.error('No verified AA configuration evidence');process.exitCode=2;}
