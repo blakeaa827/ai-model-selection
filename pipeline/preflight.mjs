@@ -1,6 +1,6 @@
 // Checkpointed acquisition preflight. Does not publish or modify existing reports.
 // Run: node pipeline/preflight.mjs
-import {mkdir,writeFile} from 'node:fs/promises';
+import {mkdir,writeFile,access} from 'node:fs/promises';
 const directory='run-artifacts';
 await mkdir(directory,{recursive:true});
 const stages=[];
@@ -22,7 +22,6 @@ await check('aa_release_registry','https://artificialanalysis.ai/models/releases
  if(!body.includes('Artificial Analysis'))throw Error('Unexpected registry response');
  return {note:'Registry reachable; exact configuration score and task cost still require separate verification'};
 });
-stages.push({name:'aa_configuration_evidence',status:'blocked',reason:'No verified configuration-level AA source adapter installed'});
-stages.push({name:'openrouter_exact_routing',status:'blocked',reason:'No exact revision/endpoint/effort verification adapter installed'});
+try { await access('pipeline/acquire.py');await access('pipeline/validate-report.mjs');stages.push({name:'public_source_and_exact_routing_adapters',status:'passed',note:'Use node pipeline/refresh.mjs for acquisition, validation and publication'}); } catch(error) {stages.push({name:'public_source_and_exact_routing_adapters',status:'failed',error:String(error)});}
 await writeFile(directory+'/preflight.json',JSON.stringify({stages,publication_allowed:false},null,2)+'\n');
 if(stages.some(x=>x.status!=='passed')){console.error('Preflight incomplete: report publication blocked.');process.exitCode=2;}

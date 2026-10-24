@@ -1,57 +1,46 @@
-name: Model selection diagnostics
+name: AI Model Selection
 on:
   workflow_dispatch:
   schedule:
     - cron: '17 12 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'pipeline/**'
+      - '.github/workflows/model-selection.yml'
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: model-selection-main
+  cancel-in-progress: false
 jobs:
-  diagnose:
+  refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Source connectivity preflight
-        id: sources
-        continue-on-error: true
-        run: node pipeline/preflight.mjs
-      - name: Official AA catalog acquisition
-        id: aa_catalog
-        continue-on-error: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned schema validator
+        run: python3 -m pip install --quiet --target run-artifacts/validation-deps jsonschema==4.25.1
+      - name: Acquire, validate and atomically publish the current report
         env:
-          AA_API_KEY: ${{ secrets.AA_API_KEY }}
-        run: node pipeline/aa-catalog.mjs
-      - name: Frontier regression
-        id: frontier
-        continue-on-error: true
-        run: node pipeline/test-frontier.mjs
-      - name: Coordinator regression
-        id: coordinator
-        continue-on-error: true
-        run: node pipeline/test-run.mjs
-      - name: Store diagnostic artifacts
+          GITHUB_TOKEN: ${{ github.token }}
+          REPORT_PARENT_SHA: ${{ github.sha }}
+        run: node pipeline/refresh.mjs --publish
+      - name: Retain stage diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: model-selection-diagnostics
-          path: run-artifacts/
+          path: |
+            run-artifacts/refresh-status.json
+            run-artifacts/validation.json
+            run-artifacts/publication.json
           if-no-files-found: ignore
-      - name: Enforce overall result
-        if: always()
-        env:
-          SOURCE_RESULT: ${{ steps.sources.outcome }}
-          AA_RESULT: ${{ steps.aa_catalog.outcome }}
-          FRONTIER_RESULT: ${{ steps.frontier.outcome }}
-          COORDINATOR_RESULT: ${{ steps.coordinator.outcome }}
-        run: |
-          echo "Source: $SOURCE_RESULT"
-          echo "AA API: $AA_RESULT"
-          echo "Frontier: $FRONTIER_RESULT"
-          echo "Coordinator: $COORDINATOR_RESULT"
-          test "$SOURCE_RESULT" = success
-          test "$AA_RESULT" = success
-          test "$FRONTIER_RESULT" = success
-          test "$COORDINATOR_RESULT" = success

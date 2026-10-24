@@ -5,15 +5,13 @@ Daily model guidance for Blake and his tools, with two separate tracks:
 - **Applications:** all-lab OpenRouter discovery, minimum measured task cost meeting a capability target, or highest observed capability within a benchmark-task budget.
 - **Building:** recommendations within Claude, OpenAI Work/Codex, Grok and Gemini subscriptions, conditional on plan/client/account access and included allowances.
 
-## October 9, 2026 recommendation
+## October 23, 2026 recommendation
 
-API floor: **MiMo-V2.6-Pro, thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per AA weighted task. API ceiling: **GPT-6.1 Sol xhigh**, score **51.0377679093761**, **$0.3928611715885065**. These are workload-dependent defaults, not universally optimal choices.
+API floor: **MiMo-V2.6-Pro / thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per measured AA task. Optional ceiling: **GPT-6.1 Sol / xhigh**, score **51.0377679093761**, **$0.39286117158850653**. Both are workload-conditional heuristics.
 
-The lab whitelist has been removed. Discovery screened 469 live OpenRouter entries and 503 AA releases. The paid frontier has 15 configurations, including MiMo Flash/Pro; a verified limited-free Gemma route is separate and requires opt-in. Coverage is not complete benchmark measurement: unmatched, unmeasured, restricted and mismatched configurations remain outside actionable selection. See [coverage.json](coverage.json).
+Refreshed 15 paid configurations and 1 opt-in free configurations. 3 numerical source revisions; 23 new and 23 absent gateway listings; 13 new AA releases since 2026-10-09. New candidates require exact effort/revision correspondence before routing.
 
-October 9: floor, ceiling and both paid/free selection lanes are unchanged. Haiku low's score has a small revision, but incomplete tiered task costs still prevent actionable selection. Three new gateway listings (Sol 6.1 Batch, Sol 6.1 Pro Batch, Ling Flash Sante) remain pending exact comparable pairs; two prior listings are absent. AA adds restricted Daybreak Blue with separate Cyber Index results. Harvey LAB-AA v1.1 does not change the common Intelligence Index v4.3.2. October 8's Haiku eligibility correction and all earlier snapshots remain in history.
-
-For subscription building, start with GPT-6.1 Sol medium or Sonnet 5.5 high in the harness connected to the project. Escalate only when needed; Luna/Haiku/Flash-Lite conserve quota for simpler tasks. Grok Build 4.7 and Gemini 3.8 Flash offer additional building surfaces. Personal subscription tiers are unknown, so the report records conditional access rather than assuming top-tier models or controls. Subscription scores and USD/task are null unless an exact matching app-mode/harness evaluation exists.
+Discovery screens 469 live OpenRouter entries and 515 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
 ## Files and cost basis
 
@@ -88,3 +86,10 @@ Run local selector checks:
 ```sh
 node test-selector.mjs
 ```
+## Scheduled pipeline
+
+The existing workflow runs `node pipeline/refresh.mjs`: public AA exact-record and full release acquisition, live OpenRouter catalog and pinned endpoint checks, report assembly, rendering, schema/selector/evidence validation, and one atomic fast-forward publication. It uses the existing daily schedule; only verified evidence advances timestamps. An AA API key is optional for separate catalog diagnostics and is not required by the public-source report path. No generation API is called.
+
+Run `node pipeline/refresh.mjs` locally to stage and validate `run-artifacts/report/`. `--publish` additionally requires the existing GitHub integration or the workflow's scoped `GITHUB_TOKEN`; credentials are never put in reports. `pipeline/publish.mjs` creates individual blobs, then a small tree, commit and non-force ref update, and verifies the remote contents. This avoids the earlier large inline tree request. On a concurrent update it stops safely; a fresh run rebuilds from current main.
+
+The Dot monitor remains responsible for web research and reviewing new candidates, lifecycle changes and subscription UI correspondence. A newly listed model stays pending until its exact AA configuration, revision, reasoning control and route are verified. This is deliberate eligibility enforcement; supported effort names alone cannot supply missing benchmarks. Failed acquisition or validation preserves the last published report and produces diagnostic artifacts.
