@@ -117,7 +117,7 @@ d['changes_since_previous']={'previous_report_date':old['report_date'],'previous
 if old['report_date']==date:d['changes_since_previous']['same_day_revision_note']='Reverified same-day snapshot; previous version is preserved in Git history.'
 # Keep new measured models separately until original-source controls and routing match.
 for a in metrics:
- if a.get('release',{}).get('slug') in newreleases and a['source_url'] not in {r.get('benchmark_source_url') for r in d['evaluated_configurations']}:
+ if (a.get('release',{}).get('slug') in newreleases or a['slug'] in {r.get('AA_model_slug') for r in old['excluded_or_pending']}) and a['source_url'] not in {r.get('benchmark_source_url') for r in d['evaluated_configurations']}:
   cost=(a.get('intelligenceIndexCostPerTask')or{}).get('cost',{}).get('total')
   row={'model':a['name'],'AA_release_slug':a.get('release',{}).get('slug'),'AA_model_slug':a['slug'],'intelligence_score':a['intelligenceIndex'],'benchmark_task_cost_usd':cost,'benchmark_verified_at':a['verified_at'],'benchmark_version':a['version'],'source_url':a['source_url'],'reason':'Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.'}
   if a['slug']=='kimi-k3-1-pro':row['reason']='AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available.'
@@ -179,7 +179,7 @@ if argon_ga and 'google/gemini-4-argon' in cat:
  d['caveats']=[r for r in d['caveats'] if not ('Argon' in r and ('no public' in r or 'restricted' in r))]
  d['changes_since_previous']['availability_updates']=[{'model':'Gemini 4 Argon','official_GA_date':'2026-10-13','catalog_canonical_slug':cat['google/gemini-4-argon']['canonical_slug'],'source_url':'https://ai.google.dev/gemini-api/docs/changelog'}]
  for service in sub['services']:
-  if service['service']=='Gemini':service['limits_note']+=' Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.'
+  if service['service']=='Gemini' and 'Gemini 4 Argon API is GA as of October 13' not in service['limits_note']:service['limits_note']+=' Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.'
 
 d['source_checks']=list(checks.values())
 d['source_checks']+=[{'url':a['source_url'],'verified_at':a['verified_at'],'status':'opened_successfully','retrieval':'public embedded exact numerical record'} for a in metrics]

@@ -72,6 +72,7 @@ def main():
     save('registry',{'verified_at':rt,'releases':list(reg.values())});save('catalog',catalog)
     slugs={r['benchmark_source_url'].split('/')[-1] for r in base['evaluated_configurations'] if r.get('benchmark_source_url')}
     slugs|={r['benchmark_source_url'].split('/')[-1] for r in base.get('limited_free_configurations',[])}
+    slugs|={r['AA_model_slug'] for r in base.get('excluded_or_pending',[]) if r.get('AA_model_slug')}
     slugs|={'step-5','north-mini-code','command-a-plus','k2-horizon-375b-a23b','ling-3-0-tiny','gemini-4-argon'}
     old_releases={r['AA_release_slug'] for r in json.loads(Path('coverage.json').read_text())['AA_release_screening']}
     # New single-configuration releases use their original registry href. No invented effort mapping.
