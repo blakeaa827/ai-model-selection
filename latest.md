@@ -11,7 +11,7 @@ Previous report: 2026-10-23; common Intelligence Index v4.3.2. Frontier membersh
 Reverified same-day snapshot; previous version is preserved in Git history.
 
 
-Screened **469 live gateway listings**, **515 AA releases**, **59 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
+Screened **469 live gateway listings**, **515 AA releases**, **72 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
 New gateway listings: none. Removed listings: none. Absence from a gateway is not proof of provider-wide retirement.
 
@@ -139,11 +139,6 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Gemini 3.8 Flash Cyber  | — | — | Restricted Fairwind access; no verified callable OpenRouter ID or comparable task-cost pair. |
 | Gemini 3.5 Flash-Lite / Gemini 3.1 Pro Preview  | — | — | Historical AA score/cost pairs are retained in evaluated_configurations, but exact effort labels are unverified. No defaults inferred. |
 | Grok 4.6  | — | — | Artificial Analysis marks Grok 4.6 deprecated and recommends Grok 4.7. Measurements are retained for audit but excluded from actionable routing. |
-| K2 Horizon 375B A23B  | 30.5015302696723 | $0 | No exact callable OpenRouter model ID verified; no guessed route emitted. |
-| North Mini Code  | 9.91462776590372 | $0 | AA score 9.9146 at zero cost is dominated by verified free Gemma reasoning score14.669 at zero cost; exact North Mini Code gateway configuration not promoted. |
-| Ling 3.0 Tiny  | 11.0636233769305 | $0 | No exact callable OpenRouter model ID verified; no guessed route emitted. |
-| Command A+  | 13.1335002685349 | $0 | AA first-party Cohere task cost is zero; the gateway candidate is paid. Cannot transfer the zero AA task cost to that route. |
-| Gemma 4 31B (Reasoning)  | 14.6689500745828 | $0 | First-party Google AI Studio revision, free pricing, reasoning toggle and matching AA reasoning result verified. Select only with explicit limited-free opt-in. |
 | Claude Haiku 5.5 max | 43.3950199670746 | — | AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified. |
 | Claude Haiku 5.5 xhigh | 41.2489304677024 | — | AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified. |
 | Claude Haiku 5.5 high | 37.8240211671094 | — | AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified. |
@@ -155,8 +150,12 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Ling 3.0 Flash Sante  | — | — | New paid gateway listing; no exact common-index score/task-cost pair in the current AA registry. Its former free listing is no longer in the live catalog. |
 | GPT-6 Sol Daybreak Blue  | — | — | Restricted Daybreak-program access. Cyber Index evaluation is a different harness and cost basis, not the Intelligence Index; no common-index pair or public gateway route. |
 | Agnes 2.5 Pro Beta  | 35.2413300369053 | — | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
+| Command A+  | 13.1335002685349 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | DeepSeek V4.1 Flash 1017 (Max)  | 45.0965048681912 | $0.2620484273114172 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
+| Gemma 4 31B (Reasoning)  | 14.6689500745828 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
+| K2 Horizon 375B A23B  | 30.5015302696723 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Kimi K3.1 Pro  | 55.0869210959395 | $2.1145052918767275 | AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available. |
+| Ling 3.0 Tiny  | 11.0636233769305 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Ling 3.1 Flash 1019  | 43.8973584978265 | $1.4886425967752979 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | MiniMax-M3.1-Flash  | 42.7057475126235 | $0.2201135746720313 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Muse Spark Open (Xhigh)  | 38.8666662997805 | $0.8441853713458678 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
@@ -165,6 +164,7 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Nemotron 3.5 Bolt 74B-A9B  | 21.4072054842003 | — | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Nemotron 3.5 Bolt E4B 4GB (Reasoning)  | — | — | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Nemotron 3.5 Super VL  | 26.4910658661689 | $0.18823665957318256 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
+| North Mini Code  | 9.91462776590372 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Beam 1.0  | 30.3334426348039 | $0.22624169286047544 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Solar Pro 4  | 26.5600314812231 | $0.7113065897513132 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 
@@ -194,7 +194,7 @@ Eligible Claude Max/Team users can claim first-party API credits; eligibility de
 
 ## Verification and freshness
 
-Checked 2026-10-24T04:15:32.523422+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-24T04:15:19.819924+00:00; registry checked 2026-10-24T04:15:19.954901+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-24T04:17:38.921157+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-24T04:17:27.662897+00:00; registry checked 2026-10-24T04:17:27.987907+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
