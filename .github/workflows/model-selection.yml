@@ -1,4 +1,4 @@
-name: Model-selection pipeline diagnostics
+name: Model selection diagnostics
 on:
   workflow_dispatch:
   schedule:
@@ -14,18 +14,35 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Network and source preflight
+      - name: Source connectivity preflight
+        id: sources
+        continue-on-error: true
         run: node pipeline/preflight.mjs
-      - name: Frontier regression tests
-        if: always()
+      - name: Frontier regression
+        id: frontier
+        continue-on-error: true
         run: node pipeline/test-frontier.mjs
-      - name: Coordinator regression tests
-        if: always()
+      - name: Coordinator regression
+        id: coordinator
+        continue-on-error: true
         run: node pipeline/test-run.mjs
-      - name: Upload diagnostics
+      - name: Store diagnostic artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: model-selection-diagnostics
           path: run-artifacts/
           if-no-files-found: ignore
+      - name: Enforce overall result
+        if: always()
+        env:
+          SOURCE_RESULT: ${{ steps.sources.outcome }}
+          FRONTIER_RESULT: ${{ steps.frontier.outcome }}
+          COORDINATOR_RESULT: ${{ steps.coordinator.outcome }}
+        run: |
+          echo "Source: $SOURCE_RESULT"
+          echo "Frontier: $FRONTIER_RESULT"
+          echo "Coordinator: $COORDINATOR_RESULT"
+          test "$SOURCE_RESULT" = success
+          test "$FRONTIER_RESULT" = success
+          test "$COORDINATOR_RESULT" = success
