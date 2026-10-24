@@ -25,7 +25,8 @@ try{
  if(!eligible.length)throw Error('No eligible benchmark-route pairs');
  await writeFile(dir+'/eligible.json',JSON.stringify({...routed,configurations:eligible},null,2)+'\n');
  await execute('frontier',['pipeline/build-frontier.mjs',dir+'/eligible.json',dir+'/frontier-candidate.json']);
- // Candidate only. Existing schema 1.1.0 report and selectors must pass before atomic publication.
+ await execute('assemble',['pipeline/assemble.mjs',dir+'/frontier-candidate.json','latest.json',dir+'/latest-candidate.json']);
+ // Candidate only. Atomic publication requires separate complete source and schema checks.
  stages.push({name:'schema_selector_and_atomic_publish',passed:false,status:'not_integrated',at:new Date().toISOString()});
  await writeFile(dir+'/run-status.json',JSON.stringify({stages,publish_allowed:false},null,2)+'\n');
  console.error('Candidate generated, but publication intentionally blocked pending schema/selector and atomic GitHub integration.');
