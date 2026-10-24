@@ -18,6 +18,12 @@ jobs:
         id: sources
         continue-on-error: true
         run: node pipeline/preflight.mjs
+      - name: Official AA catalog acquisition
+        id: aa_catalog
+        continue-on-error: true
+        env:
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
+        run: node pipeline/aa-catalog.mjs
       - name: Frontier regression
         id: frontier
         continue-on-error: true
@@ -37,12 +43,15 @@ jobs:
         if: always()
         env:
           SOURCE_RESULT: ${{ steps.sources.outcome }}
+          AA_RESULT: ${{ steps.aa_catalog.outcome }}
           FRONTIER_RESULT: ${{ steps.frontier.outcome }}
           COORDINATOR_RESULT: ${{ steps.coordinator.outcome }}
         run: |
           echo "Source: $SOURCE_RESULT"
+          echo "AA API: $AA_RESULT"
           echo "Frontier: $FRONTIER_RESULT"
           echo "Coordinator: $COORDINATOR_RESULT"
           test "$SOURCE_RESULT" = success
+          test "$AA_RESULT" = success
           test "$FRONTIER_RESULT" = success
           test "$COORDINATOR_RESULT" = success
