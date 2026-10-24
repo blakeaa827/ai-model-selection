@@ -4,19 +4,18 @@
 
 ## Changes since the last published report
 
-Refreshed 15 paid configurations and 1 opt-in free configurations. 3 numerical source revisions; 23 new and 23 absent gateway listings; 13 new AA releases since 2026-10-09. New candidates require exact effort/revision correspondence before routing.
+Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-23. New candidates require exact effort/revision correspondence before routing.
 
-Previous report: 2026-10-09; common Intelligence Index v4.3.2. Frontier membership unchanged; floor and ceiling unchanged.
+Previous report: 2026-10-23; common Intelligence Index v4.3.2. Frontier membership unchanged; floor and ceiling unchanged.
 
-- `openai/gpt-6-luna@none`: score 18.4678465935701 → 18.4678465935701; AA task cost $0.011342690862652438 → $0.011345057120527267. Provisional: False.
-- `mistralai/mistral-large-4-0@unverified-effort`: score 38.3770408917494 → 38.3770408917494; AA task cost $1.1317590533008346 → $1.1344391582388638. Provisional: False.
-- `xiaomi/mimo-v2.6-flash@thinking-enabled`: score 37.8843590141754 → 37.8843590141754; AA task cost $0.06231470136619077 → $0.06237567475410205. Provisional: False.
+Reverified same-day snapshot; previous version is preserved in Git history.
 
-Screened **469 live gateway listings**, **515 AA releases**, **72 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
-New gateway listings: `deepseek/deepseek-v4.1-flash-1017`, `elorian/glimpse`, `google/gemini-4-argon`, `google/gemini-4-argon:batch`, `inception/mercury-3`, `liquid/lfm-2.5-24b-a2b`, `meta/muse-spark-open`, `meta/muse-wonder`, `minimax/minimax-m3.1-flash`, `moondream/moondream3-preview`, `moondream/moondream3.1-9b-a2b`, `moonshotai/kimi-k3.1-pro`, `nvidia/nemotron-3.5-super-vl`, `nvidia/nemotron-3.5-super-vl:free`, `qwen/qwen3.7-plus:batch`, `recursive/flint-v1.0:free`, `reflection/beam-1.0-501b-a23b`, `scaledown/extract`, `scaledown/summarize`, `unbiased/pareto-26.10`, `unbiased/pareto-26.9`, `xingchen-agi/xing4.0-29b-a4b:free`, `~unbiased/pareto-latest`. Removed listings: `anthropic/claude-sonnet-4`, `apodex/apodex-1.1-mini:free`, `deepseek/deepseek-r1`, `google/gemini-2.5-flash-lite:batch`, `google/gemini-2.5-flash:batch`, `google/gemini-2.5-pro:batch`, `inclusionai/ling-3.0-flash-fin`, `inclusionai/ling-3.0-flash-sante`, `microsoft/wizardlm-2-8x22b`, `qwen/qwen-plus-2025-07-28`, `qwen/qwen3-235b-a22b`, `qwen/qwen3-30b-a3b-thinking-2507`, `qwen/qwen3-8b`, `qwen/qwen3-coder-plus`, `qwen/qwen3-max`, `qwen/qwen3-max-thinking`, `qwen/qwen3-vl-235b-a22b-thinking`, `qwen/qwen3-vl-32b-instruct`, `qwen/qwen3-vl-8b-thinking`, `qwen/qwen3.6-max-preview`, `sao10k/l3.3-euryale-70b`, `unbiased/pareto`, `unbiased/pareto-26.10-preview`. Absence from a gateway is not proof of provider-wide retirement.
+Screened **469 live gateway listings**, **515 AA releases**, **59 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
-Newly observed AA release entries: agnes-2-5-pro-beta, deepseek-v4-1-flash-1017, kimi-k3-1-pro, ling-3-1-flash-rc5, minimax-m3-1-flash, muse-spark-open, muse-wonder, muse-wonder-full, nemotron-3-5-bolt-74b-a9b, nemotron-3-5-bolt-e4b-4gb, nemotron-3-5-super-vl, reflection-beam, solar-pro-4-2026-09-18. These can include a newly identified revision of an older release.
+New gateway listings: none. Removed listings: none. Absence from a gateway is not proof of provider-wide retirement.
+
+Newly observed AA release entries: none. These can include a newly identified revision of an older release.
 
 The Intelligence Index measures broad capability, not percentage knowledge or a request's probability of success. These costs are AA's weighted benchmark-task costs from observed token use and published prices, not guaranteed prompt prices, OpenRouter invoices or spending caps. Numerical precision is retained for lookup; close score differences are not proof of statistical significance.
 
@@ -178,23 +177,24 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 | Service | Routine default | Escalation | Quota-saving choice | Source check complete |
 |---|---|---|---|---|
 | OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6 Luna; `{"reasoning_effort":"high","ui_label":"High","speed":"Standard"}` | True |
-| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | True |
+| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
 | Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
 
 **OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate.
 
 **Claude:** Claude and Claude Code share plan limits; higher effort uses more quota. An ANTHROPIC_API_KEY can cause API billing instead of subscription usage. Personal tier not known. Eligible Max/Team can separately claim monthly Claude Platform API credits; first-party only, personal eligibility/claim status unknown.
+Unverified this run: https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings, https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code, https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan, https://www.anthropic.com/claude-haiku-5-5, https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans. Previous verification dates are retained.
 
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
-**Gemini:** Models/thinking consume differing allowance. Generic Help still lists Gemini 3 families while September launch explicitly grants 3.8 Flash to Pro/Ultra; prefer launch for exact revision, Help for controls. Gemini 4 Argon is restricted Fairwind rollout, not assumed consumer subscription access. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.
+**Gemini:** Models/thinking consume differing allowance. Generic Help still lists Gemini 3 families while September launch explicitly grants 3.8 Flash to Pro/Ultra; prefer launch for exact revision, Help for controls. Gemini 4 Argon is restricted Fairwind rollout, not assumed consumer subscription access. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.
 
 Eligible Claude Max/Team users can claim first-party API credits; eligibility depends on exact plan, claim and linked Console organization. These credits do not pay OpenRouter invoices. No personal entitlement is assumed.
 
 ## Verification and freshness
 
-Checked 2026-10-24T04:12:11.109082+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-24T04:04:20.171769+00:00; registry checked 2026-10-24T04:04:21.330641+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-24T04:15:32.523422+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-24T04:15:19.819924+00:00; registry checked 2026-10-24T04:15:19.954901+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 

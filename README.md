@@ -9,7 +9,7 @@ Daily model guidance for Blake and his tools, with two separate tracks:
 
 API floor: **MiMo-V2.6-Pro / thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per measured AA task. Optional ceiling: **GPT-6.1 Sol / xhigh**, score **51.0377679093761**, **$0.39286117158850653**. Both are workload-conditional heuristics.
 
-Refreshed 15 paid configurations and 1 opt-in free configurations. 3 numerical source revisions; 23 new and 23 absent gateway listings; 13 new AA releases since 2026-10-09. New candidates require exact effort/revision correspondence before routing.
+Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-23. New candidates require exact effort/revision correspondence before routing.
 
 Discovery screens 469 live OpenRouter entries and 515 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
