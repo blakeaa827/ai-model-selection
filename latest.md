@@ -1,4 +1,4 @@
-# AI model selection — October 23, 2026
+# AI model selection — October 24, 2026
 
 **Default API floor:** MiMo-V2.6-Pro / thinking enabled — **46.324**, **$0.133223 per AA task**. **Optional ceiling:** GPT-6.1 Sol / xhigh — **51.038**, **$0.392861**.
 
@@ -8,8 +8,6 @@ Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical s
 
 Previous report: 2026-10-23; common Intelligence Index v4.3.2. Frontier membership unchanged; floor and ceiling unchanged.
 
-Reverified same-day snapshot; previous version is preserved in Git history.
-
 
 Screened **469 live gateway listings**, **515 AA releases**, **72 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
@@ -18,6 +16,8 @@ New gateway listings: none. Removed listings: none. Absence from a gateway is no
 Newly observed AA release entries: none. These can include a newly identified revision of an older release.
 
 The Intelligence Index measures broad capability, not percentage knowledge or a request's probability of success. These costs are AA's weighted benchmark-task costs from observed token use and published prices, not guaranteed prompt prices, OpenRouter invoices or spending caps. Numerical precision is retained for lookup; close score differences are not proof of statistical significance.
+
+Gateway token pricing changed for seven listings, separately from AA measured task costs. For `deepseek/deepseek-v4-pro`, the catalog input/output rates fell from $0.591252/$1.182504 to $0.216108/$0.432216 per million tokens (63.45% lower). MiniMax M2.5 input/output rates rose from $0.27/$0.95 to $0.30/$1.20. Other changes affect cache rates and automatic/latest aliases, which remain excluded from actionable routing. These changes do not establish revised benchmark-task costs or alter today's frontier. Source: [live OpenRouter catalog](https://openrouter.ai/api/v1/models).
 
 ## Minimum cost meeting a capability target
 
@@ -177,14 +177,13 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 | Service | Routine default | Escalation | Quota-saving choice | Source check complete |
 |---|---|---|---|---|
 | OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6 Luna; `{"reasoning_effort":"high","ui_label":"High","speed":"Standard"}` | True |
-| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
+| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | True |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
 | Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
 
 **OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate.
 
 **Claude:** Claude and Claude Code share plan limits; higher effort uses more quota. An ANTHROPIC_API_KEY can cause API billing instead of subscription usage. Personal tier not known. Eligible Max/Team can separately claim monthly Claude Platform API credits; first-party only, personal eligibility/claim status unknown.
-Unverified this run: https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings, https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code, https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan, https://www.anthropic.com/claude-haiku-5-5, https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans. Previous verification dates are retained.
 
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
@@ -194,7 +193,7 @@ Eligible Claude Max/Team users can claim first-party API credits; eligibility de
 
 ## Verification and freshness
 
-Checked 2026-10-24T04:17:38.921157+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-24T04:17:27.662897+00:00; registry checked 2026-10-24T04:17:27.987907+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-24T14:23:39.001463+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-24T14:21:57.800305+00:00; registry checked 2026-10-24T14:21:57.062688+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 

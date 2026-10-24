@@ -5,7 +5,7 @@ Daily model guidance for Blake and his tools, with two separate tracks:
 - **Applications:** all-lab OpenRouter discovery, minimum measured task cost meeting a capability target, or highest observed capability within a benchmark-task budget.
 - **Building:** recommendations within Claude, OpenAI Work/Codex, Grok and Gemini subscriptions, conditional on plan/client/account access and included allowances.
 
-## October 23, 2026 recommendation
+## October 24, 2026 recommendation
 
 API floor: **MiMo-V2.6-Pro / thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per measured AA task. Optional ceiling: **GPT-6.1 Sol / xhigh**, score **51.0377679093761**, **$0.39286117158850653**. Both are workload-conditional heuristics.
 
