@@ -21,7 +21,7 @@ for(;;){
   raw:m
  })));
  const p=body.pagination;
- if(!p||!p.has_next_page)break;
+ if(!p||!p.has_more)break;
  if(page>=100)throw Error('Pagination safety limit');
  page++;
 }
