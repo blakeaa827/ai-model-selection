@@ -12,13 +12,15 @@ const checked=Date.parse(calculated.checked_at);
 if(!Number.isFinite(checked)||Date.now()-checked>48*3600000)throw Error('Candidate stale');
 const frontier=calculated.frontier.map(r=>{
  if(!r.routing_audit||r.routing_audit.status!=='verified'||r.benchmark_audit?.status!=='verified')throw Error('Missing verification');
- if(!r.openrouter_canonical_slug||!r.endpoint_verification?.verified_at)throw Error('Missing canonical route metadata');
+ if(!r.openrouter_canonical_slug||r.openrouter_canonical_slug!==r.canonical_revision||!r.endpoint_verification?.verified_at)throw Error('Missing or mismatched canonical route metadata');
  return r;
 });
 const pick=(target)=>frontier.find(r=>r.configuration_id===target);
 const floor=pick(process.env.FLOOR_CONFIGURATION_ID);
 const ceiling=pick(process.env.CEILING_CONFIGURATION_ID);
 if(!floor||!ceiling)throw Error('Explicit verified FLOOR_CONFIGURATION_ID and CEILING_CONFIGURATION_ID required; no invented recommendation');
+if(calculated.methodology_version!==previous.benchmark.version)throw Error('Methodology changed: full dataset refresh required');
+if(frontier.length<previous.frontier.length)throw Error('Candidate coverage regression requires manual review');
 const report={...previous,report_date:calculated.checked_at.slice(0,10),checked_at:calculated.checked_at,
  benchmark:{...previous.benchmark,version:calculated.methodology_version,verified_at:calculated.checked_at},
  recommendations:{floor:{...floor,rationale:'Selected from verified frontier; workload-dependent recommendation'},ceiling:{...ceiling,rationale:'Optional escalation; workload-dependent recommendation'}},
