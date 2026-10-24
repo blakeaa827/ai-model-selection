@@ -18,10 +18,10 @@ for(;;){
   benchmark_task_cost_usd:m.artificial_analysis_intelligence_index_cost?.cost_per_task?.total_cost??null,
   model_creator:m.model_creator??null,
   status:'screening_only_requires_exact_reasoning_revision_and_patch_version_verification',
-  raw:m
+  aa_slug:m.slug??null, aa_id:m.id??null, aa_model_name:m.name??null
  })));
  const p=body.pagination;
- if(!p||!p.has_more)break;
+ if(!p||p.has_more===false||page>=p.total_pages)break;
  if(page>=100)throw Error('Pagination safety limit');
  page++;
 }
