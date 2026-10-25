@@ -75,6 +75,15 @@ def main():
     slugs|={r['AA_model_slug'] for r in base.get('excluded_or_pending',[]) if r.get('AA_model_slug')}
     slugs|={'step-5','north-mini-code','command-a-plus','k2-horizon-375b-a23b','ling-3-0-tiny','gemini-4-argon'}
     old_releases={r['AA_release_slug'] for r in json.loads(Path('coverage.json').read_text())['AA_release_screening']}
+    old_ids={r['model_id'] for r in json.loads(Path('coverage.json').read_text())['catalog_models']}
+    normalize=lambda name: re.sub(r'[^a-z0-9]', '', name.lower())
+    newly_listed_names={normalize(m['name'].split(':',1)[-1]) for m in catalog['data'] if m['id'] not in old_ids}
+    # A newly observed gateway listing can refer to an older AA release.
+    # Name matching discovers evidence only; it never authorizes routing.
+    for r in reg.values():
+        href=r.get('href','')
+        if normalize(r['name']) in newly_listed_names and href.startswith('/models/') and not href.startswith('/models/releases/'):
+            slugs.add(href.split('/')[-1])
     # New single-configuration releases use their original registry href. No invented effort mapping.
     for r in reg.values():
         href=r.get('href','')

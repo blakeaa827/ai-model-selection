@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
-  "report_date": "2026-10-24",
-  "checked_at": "2026-10-24T15:58:55.852781+00:00",
+  "report_date": "2026-10-25",
+  "checked_at": "2026-10-25T14:10:36.753561+00:00",
   "freshness": {
     "recommended_max_age_hours": 48,
     "on_stale": "reject_and_request_refresh"
@@ -11,7 +11,7 @@
     "model_families": "all live OpenRouter models; common-index measured configurations only are actionable",
     "coverage": "Complete catalog/release screening; exact configuration verification for candidate winners. Unmatched models remain pending, not assigned invented scores.",
     "eligibility": "Released and publicly routable with exact comparable AA score/cost, native reasoning control and standard provider revision verified.",
-    "benchmark_frontier_rechecked_date": "2026-10-24"
+    "benchmark_frontier_rechecked_date": "2026-10-25"
   },
   "benchmark": {
     "name": "Artificial Analysis Intelligence Index",
@@ -22,9 +22,9 @@
     "cost_source_updated_at": null,
     "cost_source_updated_at_note": "AA retrieval time is recorded; AA does not publish a per-row update timestamp.",
     "score_is_percentage": false,
-    "verified_at": "2026-10-24T15:58:52.123606+00:00",
+    "verified_at": "2026-10-25T14:09:40.886553+00:00",
     "evaluation_run_date": null,
-    "evaluation_run_date_note": "2026-10-24 is the source verification date; exact AA evaluation completion dates remain unpublished.",
+    "evaluation_run_date_note": "2026-10-25 is the source verification date; exact AA evaluation completion dates remain unpublished.",
     "under_review_components": [
       "SciCode",
       "CritPt"
@@ -55,14 +55,14 @@
           }
         },
         "source": "https://mimo.mi.com/docs/en-US/api/chat/responses",
-        "documentation_verified_at": "2026-10-24T15:58:55.697228+00:00",
+        "documentation_verified_at": "2026-10-25T14:08:27.683138+00:00",
         "note": "Opened official Responses docs state none disables thinking and every other effort enables identical thinking. OpenRouter reasoning.enabled=true enables this native on state; named efforts are not distinct intensities."
       },
       "intelligence_score": 46.3242065310383,
       "benchmark_task_cost_usd": 0.13322318937213493,
       "benchmark_source_url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
-      "benchmark_verified_at": "2026-10-24T15:58:50.773361+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:01.919405+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "xiaomi/mimo-v2.6-pro",
@@ -79,7 +79,7 @@
       },
       "api_endpoint": "https://openrouter.ai/api/v1/chat/completions",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.355849+00:00",
+        "verified_at": "2026-10-25T14:08:14.455322+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-pro/endpoints",
         "provider_tag": "xiaomi/fp8",
         "status": 0,
@@ -135,7 +135,7 @@
       "intelligence_score": 51.0377679093761,
       "benchmark_task_cost_usd": 0.39286117158850653,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-xhigh",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6.1-sol",
@@ -158,9 +158,9 @@
         "additional_usd_per_index_point": 0.09214706849833695,
         "versus_previous_marginal_multiple": 2.1449434220062966
       },
-      "benchmark_verified_at": "2026-10-24T15:58:46.518139+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.232300+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.395639+00:00",
+        "verified_at": "2026-10-25T14:08:14.544695+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -200,8 +200,8 @@
     {
       "openrouter_model_id": "openai/gpt-6-luna",
       "openrouter_canonical_slug": "openai/gpt-6-luna-20260922",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.225090+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:22.576127+00:00",
       "official_release_date": "2026-09-22",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -242,8 +242,8 @@
     {
       "openrouter_model_id": "openai/gpt-6.1-sol",
       "openrouter_canonical_slug": "openai/gpt-6.1-sol-20260929",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.296252+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:22.636185+00:00",
       "official_release_date": "2026-09-29",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -283,8 +283,8 @@
     {
       "openrouter_model_id": "openai/gpt-6-sol",
       "openrouter_canonical_slug": "openai/gpt-6-sol-20260922",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.248267+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:22.661189+00:00",
       "official_release_date": "2026-09-22",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -325,8 +325,8 @@
     {
       "openrouter_model_id": "openai/gpt-6-astra",
       "openrouter_canonical_slug": "openai/gpt-6-astra-20260903",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.144076+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:22.703188+00:00",
       "official_release_date": "2026-09-03",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -366,8 +366,8 @@
     {
       "openrouter_model_id": "anthropic/claude-opus-5.5",
       "openrouter_canonical_slug": "anthropic/claude-opus-5.5-20260921",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T14:23:31.703671+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:14.637Z",
       "official_release_date": "2026-09-22",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -400,8 +400,8 @@
     {
       "openrouter_model_id": "anthropic/claude-sonnet-5.5",
       "openrouter_canonical_slug": "anthropic/claude-sonnet-5.5-20260928",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T14:23:31.703671+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:14.637Z",
       "official_release_date": "2026-09-28",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -433,8 +433,8 @@
     {
       "openrouter_model_id": "x-ai/grok-4.7",
       "openrouter_canonical_slug": "x-ai/grok-4.7-20260916",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.414732+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:26.097318+00:00",
       "official_release_date": "2026-09-21",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -470,8 +470,8 @@
     {
       "openrouter_model_id": "x-ai/grok-4.6",
       "openrouter_canonical_slug": "x-ai/grok-4.6-20260810",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.414732+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:26.097318+00:00",
       "official_release_date": "2026-08-12",
       "release_date_note": null,
       "availability": "OpenRouter-listed, but Artificial Analysis marks this release deprecated; excluded from actionable routing.",
@@ -507,8 +507,8 @@
     {
       "openrouter_model_id": "google/gemini-3.8-flash",
       "openrouter_canonical_slug": "google/gemini-3.8-flash-20260902",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.055090+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:18.688830+00:00",
       "official_release_date": "2026-09-02",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -546,8 +546,8 @@
     {
       "openrouter_model_id": "google/gemini-3.5-flash-lite",
       "openrouter_canonical_slug": "google/gemini-3.5-flash-lite-20260721",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.055090+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:18.688830+00:00",
       "official_release_date": null,
       "release_date_note": "Exact official release date not verified in this run; catalog revision is not treated as a launch date.",
       "availability": "listed; no expiration date in live catalog",
@@ -581,8 +581,8 @@
     {
       "openrouter_model_id": "google/gemini-3.1-pro-preview",
       "openrouter_canonical_slug": "google/gemini-3.1-pro-preview-20260219",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.055090+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:18.688830+00:00",
       "official_release_date": null,
       "release_date_note": "Exact official release date not verified in this run; catalog revision is not treated as a launch date.",
       "availability": "listed; no expiration date in live catalog",
@@ -625,8 +625,8 @@
     {
       "openrouter_model_id": "mistralai/mistral-large-4-0",
       "openrouter_canonical_slug": "mistralai/mistral-large-4-0-20261006",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.518639+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:23.297359+00:00",
       "official_release_date": "2026-10-06",
       "release_date_note": null,
       "availability": "listed; no expiration date in live catalog",
@@ -658,8 +658,8 @@
     {
       "openrouter_model_id": "xiaomi/mimo-v2.6-flash",
       "openrouter_canonical_slug": "xiaomi/mimo-v2.6-flash-20260921",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:55.697228+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:27.683138+00:00",
       "official_release_date": "2026-09-22",
       "release_date_note": "Xiaomi launch/update log says September 22; AA and OpenRouter list September 21. A day/timezone discrepancy is unresolved; canonical revision is 20260921.",
       "availability": "Listed first-party standard endpoint, status 0; no expiration date.",
@@ -684,7 +684,7 @@
       "pricing_note": "Separate token rates, not substituted for AA weighted task costs.",
       "catalog_default_effort": null,
       "provider_pricing_url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
-      "provider_pricing_verified_at": "2026-10-24T15:58:54.714606+00:00",
+      "provider_pricing_verified_at": "2026-10-25T14:08:27.413985+00:00",
       "pricing_conditions": {
         "cache_writes": "limited-time free in official pricing",
         "expiry_date": null,
@@ -694,8 +694,8 @@
     {
       "openrouter_model_id": "xiaomi/mimo-v2.6-pro",
       "openrouter_canonical_slug": "xiaomi/mimo-v2.6-pro-20260921",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:55.697228+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:27.683138+00:00",
       "official_release_date": "2026-09-22",
       "release_date_note": "Xiaomi launch/update log says September 22; AA and OpenRouter list September 21. A day/timezone discrepancy is unresolved; canonical revision is 20260921.",
       "availability": "Listed first-party standard endpoint, status 0; no expiration date.",
@@ -720,7 +720,7 @@
       "pricing_note": "Separate token rates, not substituted for AA weighted task costs.",
       "catalog_default_effort": null,
       "provider_pricing_url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
-      "provider_pricing_verified_at": "2026-10-24T15:58:54.714606+00:00",
+      "provider_pricing_verified_at": "2026-10-25T14:08:27.413985+00:00",
       "pricing_conditions": {
         "cache_writes": "limited-time free in official pricing",
         "expiry_date": null,
@@ -730,8 +730,8 @@
     {
       "openrouter_model_id": "google/gemma-4-31b-it:free",
       "openrouter_canonical_slug": "google/gemma-4-31b-it-20260402",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T15:58:53.318602+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:18.920401+00:00",
       "official_release_date": "2026-04-02",
       "availability": "First-party Google AI Studio free endpoint; rate limited",
       "supported_efforts": null,
@@ -756,8 +756,8 @@
     {
       "openrouter_model_id": "anthropic/claude-haiku-5.5",
       "openrouter_canonical_slug": "anthropic/claude-haiku-5.5-20261007",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
-      "provider_documentation_verified_at": "2026-10-24T14:23:31.703671+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
+      "provider_documentation_verified_at": "2026-10-25T14:08:14.637Z",
       "official_release_date": "2026-10-07",
       "availability": "Released October 7, 2026; listed on OpenRouter and first-party endpoint healthy; no expiration date",
       "supported_efforts": [
@@ -814,7 +814,7 @@
       "intelligence_score": 21.5261980080866,
       "benchmark_task_cost_usd": 0.004516607569410252,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-low",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6-luna",
@@ -830,9 +830,9 @@
         }
       },
       "marginal": null,
-      "benchmark_verified_at": "2026-10-24T15:58:47.071265+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.110363+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.322814+00:00",
+        "verified_at": "2026-10-25T14:08:14.562328+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -876,7 +876,7 @@
       "intelligence_score": 29.9251773515762,
       "benchmark_task_cost_usd": 0.017476906067835942,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-medium",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6-luna",
@@ -899,9 +899,9 @@
         "additional_usd_per_index_point": 0.0015430801730059926,
         "versus_previous_marginal_multiple": null
       },
-      "benchmark_verified_at": "2026-10-24T15:58:47.263952+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.103571+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.322814+00:00",
+        "verified_at": "2026-10-25T14:08:14.562328+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -944,7 +944,7 @@
       "intelligence_score": 32.9282054150837,
       "benchmark_task_cost_usd": 0.02903157640372802,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-high",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6-luna",
@@ -967,9 +967,9 @@
         "additional_usd_per_index_point": 0.0038476731124504875,
         "versus_previous_marginal_multiple": 2.4935017504340293
       },
-      "benchmark_verified_at": "2026-10-24T15:58:47.032282+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.057185+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.322814+00:00",
+        "verified_at": "2026-10-25T14:08:14.562328+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1012,7 +1012,7 @@
       "intelligence_score": 34.5587320217785,
       "benchmark_task_cost_usd": 0.042183547923951084,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-xhigh",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6-luna",
@@ -1035,9 +1035,9 @@
         "additional_usd_per_index_point": 0.008066088260211279,
         "versus_previous_marginal_multiple": 2.0963548681177304
       },
-      "benchmark_verified_at": "2026-10-24T15:58:47.473056+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:54.246346+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.322814+00:00",
+        "verified_at": "2026-10-25T14:08:14.562328+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1085,14 +1085,14 @@
           }
         },
         "source": "https://mimo.mi.com/docs/en-US/api/chat/responses",
-        "documentation_verified_at": "2026-10-24T15:58:55.697228+00:00",
+        "documentation_verified_at": "2026-10-25T14:08:27.683138+00:00",
         "note": "Opened official Responses docs state none disables thinking and every other effort enables identical thinking. OpenRouter reasoning.enabled=true enables this native on state; named efforts are not distinct intensities."
       },
       "intelligence_score": 37.8843590141754,
       "benchmark_task_cost_usd": 0.06237567475410205,
       "benchmark_source_url": "https://artificialanalysis.ai/models/mimo-v2-6-flash",
-      "benchmark_verified_at": "2026-10-24T15:58:49.846132+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.961652+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "xiaomi/mimo-v2.6-flash",
@@ -1109,7 +1109,7 @@
       },
       "api_endpoint": "https://openrouter.ai/api/v1/chat/completions",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.342278+00:00",
+        "verified_at": "2026-10-25T14:08:14.549596+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-flash/endpoints",
         "provider_tag": "xiaomi/fp8",
         "status": 0,
@@ -1162,7 +1162,7 @@
       "intelligence_score": 38.1245186869738,
       "benchmark_task_cost_usd": 0.06782295669812205,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6-luna",
@@ -1185,9 +1185,9 @@
         "additional_usd_per_index_point": 0.022681917744752703,
         "versus_previous_marginal_multiple": 3.735693546587723
       },
-      "benchmark_verified_at": "2026-10-24T15:58:47.189216+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:48.881707+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.322814+00:00",
+        "verified_at": "2026-10-25T14:08:14.562328+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1230,7 +1230,7 @@
       "intelligence_score": 42.0835618555848,
       "benchmark_task_cost_usd": 0.13075190869859377,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-low",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6.1-sol",
@@ -1253,9 +1253,9 @@
         "additional_usd_per_index_point": 0.015894990107559223,
         "versus_previous_marginal_multiple": 0.7007780508875363
       },
-      "benchmark_verified_at": "2026-10-24T15:58:46.384822+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.033627+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.395639+00:00",
+        "verified_at": "2026-10-25T14:08:14.544695+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1303,14 +1303,14 @@
           }
         },
         "source": "https://mimo.mi.com/docs/en-US/api/chat/responses",
-        "documentation_verified_at": "2026-10-24T15:58:55.697228+00:00",
+        "documentation_verified_at": "2026-10-25T14:08:27.683138+00:00",
         "note": "Opened official Responses docs state none disables thinking and every other effort enables identical thinking. OpenRouter reasoning.enabled=true enables this native on state; named efforts are not distinct intensities."
       },
       "intelligence_score": 46.3242065310383,
       "benchmark_task_cost_usd": 0.13322318937213493,
       "benchmark_source_url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
-      "benchmark_verified_at": "2026-10-24T15:58:50.773361+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:01.919405+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "xiaomi/mimo-v2.6-pro",
@@ -1327,7 +1327,7 @@
       },
       "api_endpoint": "https://openrouter.ai/api/v1/chat/completions",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.355849+00:00",
+        "verified_at": "2026-10-25T14:08:14.455322+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-pro/endpoints",
         "provider_tag": "xiaomi/fp8",
         "status": 0,
@@ -1380,7 +1380,7 @@
       "intelligence_score": 47.7833271274065,
       "benchmark_task_cost_usd": 0.21370088267875537,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-medium",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6.1-sol",
@@ -1403,9 +1403,9 @@
         "additional_usd_per_index_point": 0.05515492928201551,
         "versus_previous_marginal_multiple": 94.64423029280732
       },
-      "benchmark_verified_at": "2026-10-24T15:58:46.535623+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.134254+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.395639+00:00",
+        "verified_at": "2026-10-25T14:08:14.544695+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1448,7 +1448,7 @@
       "intelligence_score": 50.2377777519769,
       "benchmark_task_cost_usd": 0.31914442375664703,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-high",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6.1-sol",
@@ -1471,9 +1471,9 @@
         "additional_usd_per_index_point": 0.042960139439084215,
         "versus_previous_marginal_multiple": 0.7788993658104884
       },
-      "benchmark_verified_at": "2026-10-24T15:58:46.364756+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.177856+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.395639+00:00",
+        "verified_at": "2026-10-25T14:08:14.544695+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1516,7 +1516,7 @@
       "intelligence_score": 51.0377679093761,
       "benchmark_task_cost_usd": 0.39286117158850653,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-xhigh",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6.1-sol",
@@ -1539,9 +1539,9 @@
         "additional_usd_per_index_point": 0.09214706849833695,
         "versus_previous_marginal_multiple": 2.1449434220062966
       },
-      "benchmark_verified_at": "2026-10-24T15:58:46.518139+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.232300+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.395639+00:00",
+        "verified_at": "2026-10-25T14:08:14.544695+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1584,7 +1584,7 @@
       "intelligence_score": 51.8332597011541,
       "benchmark_task_cost_usd": 0.7241670655535033,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "openai/gpt-6.1-sol",
@@ -1607,9 +1607,9 @@
         "additional_usd_per_index_point": 0.4164793369199918,
         "versus_previous_marginal_multiple": 4.519724215941913
       },
-      "benchmark_verified_at": "2026-10-24T15:58:46.261123+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.354588+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.395639+00:00",
+        "verified_at": "2026-10-25T14:08:14.544695+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
         "provider_tag": "openai",
         "status": 0,
@@ -1652,7 +1652,7 @@
       "intelligence_score": 53.5831959822067,
       "benchmark_task_cost_usd": 1.822504718771704,
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5-high",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "anthropic/claude-opus-5.5",
@@ -1675,9 +1675,9 @@
         "additional_usd_per_index_point": 0.6276443691752817,
         "versus_previous_marginal_multiple": 1.5070240310526042
       },
-      "benchmark_verified_at": "2026-10-24T15:58:44.925814+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.581022+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.292432+00:00",
+        "verified_at": "2026-10-25T14:08:10.888739+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints",
         "provider_tag": "anthropic",
         "status": 0,
@@ -1720,7 +1720,7 @@
       "intelligence_score": 55.9873505840139,
       "benchmark_task_cost_usd": 3.459110175822289,
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5-xhigh",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "anthropic/claude-opus-5.5",
@@ -1743,9 +1743,9 @@
         "additional_usd_per_index_point": 0.6807405213543052,
         "versus_previous_marginal_multiple": 1.0845959189417909
       },
-      "benchmark_verified_at": "2026-10-24T15:58:45.060065+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.461350+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.292432+00:00",
+        "verified_at": "2026-10-25T14:08:10.888739+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints",
         "provider_tag": "anthropic",
         "status": 0,
@@ -1788,7 +1788,7 @@
       "intelligence_score": 57.6223698102963,
       "benchmark_task_cost_usd": 5.982012019521066,
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "anthropic/claude-opus-5.5",
@@ -1811,9 +1811,9 @@
         "additional_usd_per_index_point": 1.5430410867003648,
         "versus_previous_marginal_multiple": 2.266709617389234
       },
-      "benchmark_verified_at": "2026-10-24T15:58:44.661194+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.668219+00:00",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.292432+00:00",
+        "verified_at": "2026-10-25T14:08:10.888739+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints",
         "provider_tag": "anthropic",
         "status": 0,
@@ -1885,7 +1885,7 @@
       "openrouter_model_id": "x-ai/grok-4.7",
       "effort": "medium",
       "reason": "Supported by OpenRouter but no comparable published score/task-cost pair in current comparison.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "xhigh",
         "high",
@@ -1899,7 +1899,7 @@
       "effort": "low",
       "score": 33.4548106699132,
       "reason": "Published score but missing benchmark task cost.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "high",
         "medium",
@@ -1910,7 +1910,7 @@
       "model": "GPT-6.1 Sol Pro",
       "openrouter_model_id": "openai/gpt-6.1-sol-pro",
       "reason": "Listed by OpenRouter; standard Sol effort benchmarks do not establish Pro-mode score or task cost.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -1931,7 +1931,7 @@
         "low"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Luna Pro",
@@ -1946,7 +1946,7 @@
         "none"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Luna Pro (batch)",
@@ -1961,7 +1961,7 @@
         "none"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Luna (batch)",
@@ -1976,7 +1976,7 @@
         "none"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Sol Pro",
@@ -1991,7 +1991,7 @@
         "none"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Sol Pro (batch)",
@@ -2006,7 +2006,7 @@
         "none"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Sol (batch)",
@@ -2021,7 +2021,7 @@
         "none"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "Anthropic: Claude Opus 5.5 (batch)",
@@ -2035,7 +2035,7 @@
         "low"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Astra (batch)",
@@ -2049,7 +2049,7 @@
         "low"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Astra Pro",
@@ -2063,7 +2063,7 @@
         "low"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "OpenAI: GPT-6 Astra Pro (batch)",
@@ -2077,7 +2077,7 @@
         "low"
       ],
       "reason": "Pro mode or Batch billing configuration lacks a verified comparable AA score/cost pair; standard results are not reused.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "Mistral Large 4 Preview",
@@ -2089,7 +2089,7 @@
       ],
       "reason": "AA now reports score 38 and $1.13/task for a reasoning configuration, but does not identify the exact effort. It is also strictly dominated by GPT-6 Luna max at the same score for $0.07/task. Measured but non-actionable; excluded from routing.",
       "source_url": "https://artificialanalysis.ai/models/mistral-large-4",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "high",
         "none"
@@ -2107,7 +2107,7 @@
       ],
       "reason": "Prerelease structured-output bug is disclosed by AA; no confirmed public-release rerun. All current pairs would also be cost-dominated.",
       "source_url": "https://artificialanalysis.ai/articles/claude-sonnet-5-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -2138,7 +2138,7 @@
       ],
       "reason": "Artificial Analysis marks Grok 4.6 deprecated and recommends Grok 4.7. Measurements are retained for audit but excluded from actionable routing.",
       "source_url": "https://artificialanalysis.ai/models/grok-4-6",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "xhigh",
         "high",
@@ -2156,7 +2156,7 @@
       "provisional_benchmark_task_cost_usd": 0.21276971216992022,
       "reason": "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified.",
       "source_url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -2176,7 +2176,7 @@
       "provisional_benchmark_task_cost_usd": 0.12378561092096102,
       "reason": "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified.",
       "source_url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -2196,7 +2196,7 @@
       "provisional_benchmark_task_cost_usd": 0.07942671568737021,
       "reason": "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified.",
       "source_url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -2216,7 +2216,7 @@
       "provisional_benchmark_task_cost_usd": 0.04703084793955566,
       "reason": "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified.",
       "source_url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -2236,7 +2236,7 @@
       "provisional_benchmark_task_cost_usd": 0.02445936101890973,
       "reason": "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified.",
       "source_url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "supported_efforts": [
         "max",
         "xhigh",
@@ -2257,7 +2257,7 @@
       ],
       "reason": "New gateway listing; exact AA revision/effort correspondence and price basis unverified. Existing AA release result is dominated; no benchmark score assigned to low/medium/high routing.",
       "source_url": "https://artificialanalysis.ai/models/step-5",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00"
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00"
     },
     {
       "model": "GPT-6.1 Sol Batch",
@@ -2273,7 +2273,7 @@
       "intelligence_score": null,
       "benchmark_task_cost_usd": null,
       "reason": "New listing, same canonical revision as standard Sol but different processing tier. No independently measured batch weighted task costs; standard scores/costs not transferred.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "official_release_date": null,
       "release_date_note": "Newly observed catalog entry, not evidence of a new model launch.",
       "source_url": "https://openrouter.ai/api/v1/models"
@@ -2292,7 +2292,7 @@
       "intelligence_score": null,
       "benchmark_task_cost_usd": null,
       "reason": "New batch listing; Pro mode and processing tier lack an exact common-index score/task-cost pair. Standard-mode benchmarks not transferred.",
-      "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "official_release_date": null,
       "release_date_note": "Newly observed catalog entry, not evidence of a new model launch.",
       "source_url": "https://openrouter.ai/api/v1/models"
@@ -2325,10 +2325,11 @@
       "AA_model_slug": "agnes-2-5-pro-beta",
       "intelligence_score": 35.2413300369053,
       "benchmark_task_cost_usd": null,
-      "benchmark_verified_at": "2026-10-24T15:58:44.849931+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.761858+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/agnes-2-5-pro-beta",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping.",
+      "benchmark_score_is_estimated": true
     },
     {
       "model": "Command A+",
@@ -2336,10 +2337,11 @@
       "AA_model_slug": "command-a-plus",
       "intelligence_score": 13.1335002685349,
       "benchmark_task_cost_usd": 0,
-      "benchmark_verified_at": "2026-10-24T15:58:45.739584+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.652546+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/command-a-plus",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "DeepSeek V4.1 Flash 1017 (Max)",
@@ -2347,10 +2349,11 @@
       "AA_model_slug": "deepseek-v4-1-flash-1017",
       "intelligence_score": 45.0965048681912,
       "benchmark_task_cost_usd": 0.2620484273114172,
-      "benchmark_verified_at": "2026-10-24T15:58:45.763993+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.537536+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Gemma 4 31B (Reasoning)",
@@ -2358,10 +2361,11 @@
       "AA_model_slug": "gemma-4-31b",
       "intelligence_score": 14.6689500745828,
       "benchmark_task_cost_usd": 0,
-      "benchmark_verified_at": "2026-10-24T15:58:46.586499+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.267408+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/gemma-4-31b",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "K2 Horizon 375B A23B",
@@ -2369,10 +2373,11 @@
       "AA_model_slug": "k2-horizon-375b-a23b",
       "intelligence_score": 30.5015302696723,
       "benchmark_task_cost_usd": 0,
-      "benchmark_verified_at": "2026-10-24T15:58:49.368896+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:58.451486+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/k2-horizon-375b-a23b",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Kimi K3.1 Pro",
@@ -2380,10 +2385,11 @@
       "AA_model_slug": "kimi-k3-1-pro",
       "intelligence_score": 55.0869210959395,
       "benchmark_task_cost_usd": 2.1145052918767275,
-      "benchmark_verified_at": "2026-10-24T15:58:49.744178+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:58.370566+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
-      "reason": "AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available."
+      "reason": "AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Ling 3.0 Tiny",
@@ -2391,10 +2397,11 @@
       "AA_model_slug": "ling-3-0-tiny",
       "intelligence_score": 11.0636233769305,
       "benchmark_task_cost_usd": 0,
-      "benchmark_verified_at": "2026-10-24T15:58:49.292337+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:03.110448+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/ling-3-0-tiny",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Ling 3.1 Flash 1019",
@@ -2402,10 +2409,11 @@
       "AA_model_slug": "ling-3-1-flash-1019",
       "intelligence_score": 43.8973584978265,
       "benchmark_task_cost_usd": 1.4886425967752979,
-      "benchmark_verified_at": "2026-10-24T15:58:49.865147+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.458407+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/ling-3-1-flash-1019",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "MiniMax-M3.1-Flash",
@@ -2413,10 +2421,11 @@
       "AA_model_slug": "minimax-m3-1-flash",
       "intelligence_score": 42.7057475126235,
       "benchmark_task_cost_usd": 0.2201135746720313,
-      "benchmark_verified_at": "2026-10-24T15:58:50.856825+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.345101+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Muse Spark Open (Xhigh)",
@@ -2424,10 +2433,11 @@
       "AA_model_slug": "muse-spark-open",
       "intelligence_score": 38.8666662997805,
       "benchmark_task_cost_usd": 0.8441853713458678,
-      "benchmark_verified_at": "2026-10-24T15:58:50.318691+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.495470+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/muse-spark-open",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Muse Wonder (Max)",
@@ -2435,10 +2445,11 @@
       "AA_model_slug": "muse-wonder",
       "intelligence_score": 52.393894697293,
       "benchmark_task_cost_usd": 4.540034681803926,
-      "benchmark_verified_at": "2026-10-24T15:58:50.574495+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.135325+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/muse-wonder",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Muse Wonder Full (Max)",
@@ -2446,10 +2457,11 @@
       "AA_model_slug": "muse-wonder-full",
       "intelligence_score": 55.8021199855616,
       "benchmark_task_cost_usd": null,
-      "benchmark_verified_at": "2026-10-24T15:58:50.496257+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:05.986254+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/muse-wonder-full",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Nemotron 3.5 Bolt 74B-A9B",
@@ -2457,10 +2469,11 @@
       "AA_model_slug": "nemotron-3-5-bolt-74b-a9b",
       "intelligence_score": 21.4072054842003,
       "benchmark_task_cost_usd": null,
-      "benchmark_verified_at": "2026-10-24T15:58:51.715497+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:06.452438+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Nemotron 3.5 Bolt E4B 4GB (Reasoning)",
@@ -2468,10 +2481,11 @@
       "AA_model_slug": "nemotron-3-5-bolt-e4b-4gb",
       "intelligence_score": null,
       "benchmark_task_cost_usd": null,
-      "benchmark_verified_at": "2026-10-24T15:58:51.594642+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:06.283074+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/nemotron-3-5-bolt-e4b-4gb",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Nemotron 3.5 Super VL",
@@ -2479,10 +2493,11 @@
       "AA_model_slug": "nemotron-3-5-super-vl",
       "intelligence_score": 26.4910658661689,
       "benchmark_task_cost_usd": 0.18823665957318256,
-      "benchmark_verified_at": "2026-10-24T15:58:51.154146+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:07.219859+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/nemotron-3-5-super-vl",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "North Mini Code",
@@ -2490,10 +2505,11 @@
       "AA_model_slug": "north-mini-code",
       "intelligence_score": 9.91462776590372,
       "benchmark_task_cost_usd": 0,
-      "benchmark_verified_at": "2026-10-24T15:58:52.123606+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:06.866986+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/north-mini-code",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Beam 1.0",
@@ -2501,10 +2517,11 @@
       "AA_model_slug": "reflection-beam",
       "intelligence_score": 30.3334426348039,
       "benchmark_task_cost_usd": 0.22624169286047544,
-      "benchmark_verified_at": "2026-10-24T15:58:51.885585+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:07.060250+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/reflection-beam",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
     },
     {
       "model": "Solar Pro 4",
@@ -2512,10 +2529,27 @@
       "AA_model_slug": "solar-pro4",
       "intelligence_score": 26.5600314812231,
       "benchmark_task_cost_usd": 0.7113065897513132,
-      "benchmark_verified_at": "2026-10-24T15:58:51.498337+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:06.359508+00:00",
       "benchmark_version": "4.3.2",
       "source_url": "https://artificialanalysis.ai/models/solar-pro4",
-      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented."
+      "reason": "Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.",
+      "benchmark_score_is_estimated": false
+    },
+    {
+      "model": "LFM2.5-2.6B",
+      "AA_release_slug": "lfm2-5-2-6b",
+      "AA_model_slug": "lfm2-5-2-6b",
+      "intelligence_score": 8.38708534765242,
+      "benchmark_task_cost_usd": null,
+      "benchmark_verified_at": "2026-10-25T14:09:40.886553+00:00",
+      "benchmark_version": "4.3.2",
+      "source_url": "https://artificialanalysis.ai/models/lfm2-5-2-6b",
+      "reason": "AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping.",
+      "benchmark_score_is_estimated": true,
+      "official_release_date": "2026-08-04",
+      "official_release_source": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "openrouter_model_id": "liquid/lfm-2.5-2.6b",
+      "catalog_canonical_slug": "liquid/lfm-2.5-2.6b-20260811"
     }
   ],
   "caveats": [
@@ -2622,6 +2656,7 @@
     "https://artificialanalysis.ai/models/grok-4-7-low",
     "https://artificialanalysis.ai/models/k2-horizon-375b-a23b",
     "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+    "https://artificialanalysis.ai/models/lfm2-5-2-6b",
     "https://artificialanalysis.ai/models/ling-3-0-tiny",
     "https://artificialanalysis.ai/models/ling-3-1-flash-1019",
     "https://artificialanalysis.ai/models/mimo-v2-6-flash",
@@ -2705,7 +2740,8 @@
     "https://www.anthropic.com/claude-haiku-5-5",
     "https://www.anthropic.com/claude-opus-5-5",
     "https://www.anthropic.com/claude-sonnet-5-5",
-    "https://www.kimi.ai/blog/kimi-k3-1-pro"
+    "https://www.kimi.ai/blog/kimi-k3-1-pro",
+    "https://www.liquid.ai/blog/lfm2-5-2-6b"
   ],
   "evaluated_configurations": [
     {
@@ -2717,8 +2753,8 @@
       "benchmark_task_cost_usd": 5.982012019521066,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-      "benchmark_verified_at": "2026-10-24T15:58:44.661194+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.668219+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -2734,8 +2770,8 @@
       "benchmark_task_cost_usd": 1.822504718771704,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5-high",
-      "benchmark_verified_at": "2026-10-24T15:58:44.925814+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.581022+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -2751,8 +2787,8 @@
       "benchmark_task_cost_usd": 0.551180473909146,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5-low",
-      "benchmark_verified_at": "2026-10-24T15:58:45.049091+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.407781+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -2768,8 +2804,8 @@
       "benchmark_task_cost_usd": 1.3360093438976588,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:45.029800+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.546382+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -2785,8 +2821,8 @@
       "benchmark_task_cost_usd": 3.459110175822289,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-opus-5-5-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:45.060065+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.461350+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -2802,8 +2838,8 @@
       "benchmark_task_cost_usd": 5.4608525948098325,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
-      "benchmark_verified_at": "2026-10-24T15:58:45.234384+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.357296+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA article identifies prerelease structured-output bug; public revision rerun not yet confirmed."
@@ -2821,8 +2857,8 @@
       "benchmark_task_cost_usd": 0.8844498581005511,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-high",
-      "benchmark_verified_at": "2026-10-24T15:58:45.254992+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.141178+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA article identifies prerelease structured-output bug; public revision rerun not yet confirmed."
@@ -2840,8 +2876,8 @@
       "benchmark_task_cost_usd": 0.3451610270666562,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-low",
-      "benchmark_verified_at": "2026-10-24T15:58:45.215738+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.430709+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA article identifies prerelease structured-output bug; public revision rerun not yet confirmed."
@@ -2859,8 +2895,8 @@
       "benchmark_task_cost_usd": 0.48326378260543096,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:45.600385+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.557687+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA article identifies prerelease structured-output bug; public revision rerun not yet confirmed."
@@ -2878,8 +2914,8 @@
       "benchmark_task_cost_usd": 2.0120345801545785,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:45.377004+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:37.104466+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA article identifies prerelease structured-output bug; public revision rerun not yet confirmed."
@@ -2897,8 +2933,8 @@
       "benchmark_task_cost_usd": 1.2985855086120641,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
-      "benchmark_verified_at": "2026-10-24T15:58:45.646833+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.429950+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA public model label does not identify an exact effort; no default inferred."
@@ -2916,8 +2952,8 @@
       "benchmark_task_cost_usd": 0.1927430131409478,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
-      "benchmark_verified_at": "2026-10-24T15:58:45.993674+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.594101+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA public model label does not identify an exact effort; no default inferred."
@@ -2935,8 +2971,8 @@
       "benchmark_task_cost_usd": 1.2427947606950427,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
-      "benchmark_verified_at": "2026-10-24T15:58:45.897920+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.344777+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -2952,8 +2988,8 @@
       "benchmark_task_cost_usd": null,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-low",
-      "benchmark_verified_at": "2026-10-24T15:58:45.717132+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.295598+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -2970,8 +3006,8 @@
       "benchmark_task_cost_usd": 0.9310379374376306,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:46.322603+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:41.287250+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -2987,8 +3023,8 @@
       "benchmark_task_cost_usd": 0.7241670655535033,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
-      "benchmark_verified_at": "2026-10-24T15:58:46.261123+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.354588+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3004,8 +3040,8 @@
       "benchmark_task_cost_usd": 0.31914442375664703,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-high",
-      "benchmark_verified_at": "2026-10-24T15:58:46.364756+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.177856+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3021,8 +3057,8 @@
       "benchmark_task_cost_usd": 0.13075190869859377,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-low",
-      "benchmark_verified_at": "2026-10-24T15:58:46.384822+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.033627+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3038,8 +3074,8 @@
       "benchmark_task_cost_usd": 0.21370088267875537,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:46.535623+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.134254+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3055,8 +3091,8 @@
       "benchmark_task_cost_usd": 0.39286117158850653,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-sol-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:46.518139+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.232300+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3072,8 +3108,8 @@
       "benchmark_task_cost_usd": 3.2575003134834164,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
-      "benchmark_verified_at": "2026-10-24T15:58:46.842669+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.216045+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3089,8 +3125,8 @@
       "benchmark_task_cost_usd": 1.7252530861048456,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra-high",
-      "benchmark_verified_at": "2026-10-24T15:58:47.172278+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.320843+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3106,8 +3142,8 @@
       "benchmark_task_cost_usd": 0.8175139285656057,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra-low",
-      "benchmark_verified_at": "2026-10-24T15:58:46.934267+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.025783+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3123,8 +3159,8 @@
       "benchmark_task_cost_usd": 1.5406493220021167,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:47.016803+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:48.957586+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3140,8 +3176,8 @@
       "benchmark_task_cost_usd": 2.308795912269076,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:47.051062+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.085406+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3157,8 +3193,8 @@
       "benchmark_task_cost_usd": 0.06782295669812205,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna",
-      "benchmark_verified_at": "2026-10-24T15:58:47.189216+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:48.881707+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3174,8 +3210,8 @@
       "benchmark_task_cost_usd": 0.02903157640372802,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-high",
-      "benchmark_verified_at": "2026-10-24T15:58:47.032282+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.057185+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3191,8 +3227,8 @@
       "benchmark_task_cost_usd": 0.004516607569410252,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-low",
-      "benchmark_verified_at": "2026-10-24T15:58:47.071265+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.110363+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3208,8 +3244,8 @@
       "benchmark_task_cost_usd": 0.017476906067835942,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:47.263952+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.103571+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3225,8 +3261,8 @@
       "benchmark_task_cost_usd": 0.011345057120527267,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning",
-      "benchmark_verified_at": "2026-10-24T15:58:47.608888+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:49.273801+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3242,8 +3278,8 @@
       "benchmark_task_cost_usd": 0.042183547923951084,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-luna-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:47.473056+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:54.246346+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": false,
@@ -3259,8 +3295,8 @@
       "benchmark_task_cost_usd": 1.0446616686054255,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-sol",
-      "benchmark_verified_at": "2026-10-24T15:58:47.752528+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:55.444495+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3278,8 +3314,8 @@
       "benchmark_task_cost_usd": 0.3728406839161857,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-sol-high",
-      "benchmark_verified_at": "2026-10-24T15:58:47.991741+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:54.810513+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3297,8 +3333,8 @@
       "benchmark_task_cost_usd": 0.1327768361714764,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-sol-low",
-      "benchmark_verified_at": "2026-10-24T15:58:47.858488+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:55.288181+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3316,8 +3352,8 @@
       "benchmark_task_cost_usd": 0.24728577052042386,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-sol-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:48.157263+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:55.105650+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3335,8 +3371,8 @@
       "benchmark_task_cost_usd": 0.33365590023828273,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-sol-non-reasoning",
-      "benchmark_verified_at": "2026-10-24T15:58:48.254622+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:54.458236+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3354,8 +3390,8 @@
       "benchmark_task_cost_usd": 0.5208098524368193,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-sol-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:49.549244+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:55.035695+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3373,8 +3409,8 @@
       "benchmark_task_cost_usd": 1.4848449196688633,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-6",
-      "benchmark_verified_at": "2026-10-24T15:58:48.568397+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:54.741387+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3392,8 +3428,8 @@
       "benchmark_task_cost_usd": 0.37578773607022314,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-6-low",
-      "benchmark_verified_at": "2026-10-24T15:58:49.666357+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:59.113195+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3411,8 +3447,8 @@
       "benchmark_task_cost_usd": 1.14381661681713,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-6-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:48.673893+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:59.228906+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3430,8 +3466,8 @@
       "benchmark_task_cost_usd": 1.7523145158282367,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-6-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:48.990488+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:58.621465+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA result deprecated, estimated or missing comparable task cost"
@@ -3449,8 +3485,8 @@
       "benchmark_task_cost_usd": 3.738325952106939,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-7",
-      "benchmark_verified_at": "2026-10-24T15:58:48.536187+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:58.273691+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3466,8 +3502,8 @@
       "benchmark_task_cost_usd": 2.726106691786027,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-7-high",
-      "benchmark_verified_at": "2026-10-24T15:58:49.069673+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:58.144953+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3483,8 +3519,8 @@
       "benchmark_task_cost_usd": 1.2479664056943975,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/grok-4-7-low",
-      "benchmark_verified_at": "2026-10-24T15:58:48.924127+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:58.801901+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
       "pareto_dominated": true,
@@ -3500,8 +3536,8 @@
       "benchmark_task_cost_usd": 1.1344391582388638,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/mistral-large-4",
-      "benchmark_verified_at": "2026-10-24T15:58:51.246894+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.828373+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA public model label does not identify an exact effort; no default inferred."
@@ -3531,8 +3567,8 @@
       "intelligence_score": 37.8843590141754,
       "benchmark_task_cost_usd": 0.06237567475410205,
       "benchmark_source_url": "https://artificialanalysis.ai/models/mimo-v2-6-flash",
-      "benchmark_verified_at": "2026-10-24T15:58:49.846132+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:02.961652+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "benchmark_version": "4.3.2",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
@@ -3561,8 +3597,8 @@
       "intelligence_score": 46.3242065310383,
       "benchmark_task_cost_usd": 0.13322318937213493,
       "benchmark_source_url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
-      "benchmark_verified_at": "2026-10-24T15:58:50.773361+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:01.919405+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "benchmark_version": "4.3.2",
       "eligible_for_frontier": true,
       "exclusion_reasons": [],
@@ -3580,8 +3616,8 @@
       "benchmark_task_cost_usd": null,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
-      "benchmark_verified_at": "2026-10-24T15:58:44.636941+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.412141+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified."
@@ -3648,8 +3684,8 @@
       "benchmark_task_cost_usd": null,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-haiku-5-5-xhigh",
-      "benchmark_verified_at": "2026-10-24T15:58:44.616772+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.720785+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified."
@@ -3729,8 +3765,8 @@
       "benchmark_task_cost_usd": null,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-haiku-5-5-high",
-      "benchmark_verified_at": "2026-10-24T15:58:44.507154+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.531915+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified."
@@ -3797,8 +3833,8 @@
       "benchmark_task_cost_usd": null,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-haiku-5-5-medium",
-      "benchmark_verified_at": "2026-10-24T15:58:44.594376+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.488495+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified."
@@ -3865,8 +3901,8 @@
       "benchmark_task_cost_usd": null,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/claude-haiku-5-5-low",
-      "benchmark_verified_at": "2026-10-24T15:58:44.555304+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:33.638157+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA October 7 evaluator article explicitly says task costs are provisional and omit the 5x price tier above 100K input tokens. AutomationBench-AA prerelease safety over-refusal issue awaits rerun. Excluded until comparable complete task costs and deployment status are verified."
@@ -3932,8 +3968,8 @@
       "benchmark_task_cost_usd": 1.0264068637684054,
       "benchmark_version": "4.3.2",
       "benchmark_source_url": "https://artificialanalysis.ai/models/step-5",
-      "benchmark_verified_at": "2026-10-24T15:58:51.810154+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:08:06.715476+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "eligible_for_frontier": false,
       "exclusion_reasons": [
         "AA September 18 evaluation does not identify which of the newly listed October 8 gateway revision/low/medium/high controls it matches; AA/provider token pricing differs from gateway pricing. Existing measured pair is also dominated by MiMo Pro. No score transferred to an unverified gateway effort."
@@ -3953,698 +3989,843 @@
   "source_checks": [
     {
       "url": "https://ai.google.dev/gemini-api/docs/changelog",
-      "verified_at": "2026-10-24T15:58:52.817048+00:00",
+      "verified_at": "2026-10-25T14:08:18.608431+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://ai.google.dev/gemini-api/docs/latest-model",
-      "verified_at": "2026-10-24T15:58:52.856255+00:00",
+      "verified_at": "2026-10-25T14:08:18.554152+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://ai.google.dev/gemini-api/docs/pricing",
-      "verified_at": "2026-10-24T15:58:53.055090+00:00",
+      "verified_at": "2026-10-25T14:08:18.688830+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://ai.google.dev/gemma/docs/capabilities/thinking",
-      "verified_at": "2026-10-24T15:58:53.318602+00:00",
+      "verified_at": "2026-10-25T14:08:18.920401+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://artificialanalysis.ai/articles/claude-haiku-5-5",
-      "verified_at": "2026-10-24T15:58:52.953477+00:00",
+      "verified_at": "2026-10-25T14:08:18.585130+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://artificialanalysis.ai/articles/claude-sonnet-5-5",
-      "verified_at": "2026-10-24T15:58:52.648803+00:00",
+      "verified_at": "2026-10-25T14:08:20.260610+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks",
-      "verified_at": "2026-10-24T15:58:52.592350+00:00",
+      "verified_at": "2026-10-25T14:08:18.644493+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://artificialanalysis.ai/changelog",
-      "verified_at": "2026-10-24T15:58:53.182399+00:00",
+      "verified_at": "2026-10-25T14:08:19.061169+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
-      "verified_at": "2026-10-24T15:58:52.932910+00:00",
+      "verified_at": "2026-10-25T14:08:22.233028+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-      "verified_at": "2026-10-24T15:58:52.983247+00:00",
+      "verified_at": "2026-10-25T14:08:22.360740+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
-      "verified_at": "2026-10-24T15:58:53.370158+00:00",
+      "verified_at": "2026-10-25T14:08:22.341249+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
-      "verified_at": "2026-10-24T15:58:53.144076+00:00",
+      "verified_at": "2026-10-25T14:08:22.703188+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
-      "verified_at": "2026-10-24T15:58:53.225090+00:00",
+      "verified_at": "2026-10-25T14:08:22.576127+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
-      "verified_at": "2026-10-24T15:58:53.248267+00:00",
+      "verified_at": "2026-10-25T14:08:22.661189+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
-      "verified_at": "2026-10-24T15:58:53.296252+00:00",
+      "verified_at": "2026-10-25T14:08:22.636185+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://docs.mistral.ai/models/mistral-large-4-0",
-      "verified_at": "2026-10-24T15:58:53.518639+00:00",
+      "verified_at": "2026-10-25T14:08:23.297359+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://docs.x.ai/developers/grok-4-7",
-      "verified_at": "2026-10-24T15:58:53.355535+00:00",
+      "verified_at": "2026-10-25T14:08:26.061480+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://docs.x.ai/developers/release-notes",
-      "verified_at": "2026-10-24T15:58:53.414732+00:00",
+      "verified_at": "2026-10-25T14:08:26.097318+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://docs.x.ai/grok/faq",
-      "verified_at": "2026-10-24T15:58:53.428347+00:00",
+      "verified_at": "2026-10-25T14:08:26.085655+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://learn.chatgpt.com/docs/models",
-      "verified_at": "2026-10-24T15:58:53.494791+00:00",
+      "verified_at": "2026-10-25T14:08:26.177258+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://learn.chatgpt.com/docs/pricing",
-      "verified_at": "2026-10-24T15:58:53.560130+00:00",
+      "verified_at": "2026-10-25T14:08:26.210854+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://mimo.mi.com/docs/en-US/api/chat/responses",
-      "verified_at": "2026-10-24T15:58:55.697228+00:00",
+      "verified_at": "2026-10-25T14:08:27.683138+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go",
-      "verified_at": "2026-10-24T15:58:54.714606+00:00",
+      "verified_at": "2026-10-25T14:08:27.413985+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://mimo.mi.com/docs/en-US/updates/model",
-      "verified_at": "2026-10-24T15:58:54.725126+00:00",
+      "verified_at": "2026-10-25T14:08:27.165912+00:00",
       "status": "opened_successfully"
+    },
+    {
+      "url": "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
+      "verified_at": "2026-10-25T14:08:14.637Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://openrouter.ai/docs/guides/routing/provider-selection",
+      "verified_at": "2026-10-25T14:08:14.637Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "verified_at": "2026-10-25T14:08:14.637Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "verified_at": "2026-10-25T14:08:14.637Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
+      "verified_at": "2026-10-25T14:08:14.637Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "verified_at": "2026-10-25T14:08:14.637Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
+      "verified_at": "2026-10-25T14:08:27.509Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
+      "verified_at": "2026-10-25T14:08:27.509Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
+      "verified_at": "2026-10-25T14:08:27.509Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+      "verified_at": "2026-10-25T14:08:27.509Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://platform.kimi.ai/docs/pricing/chat",
+      "verified_at": "2026-10-25T14:08:57.751Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
+    },
+    {
+      "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+      "verified_at": "2026-10-25T14:08:57.751Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
     },
     {
       "url": "https://support.google.com/gemini/answer/16275805",
-      "verified_at": "2026-10-24T15:58:54.135625+00:00",
-      "status": "opened_successfully"
+      "retrieved_url": "https://support.google.com/gemini/answer/16275805?gl=US&hl=en",
+      "verified_at": "2026-10-25T14:08:57.751Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
     },
     {
       "url": "https://artificialanalysis.ai/models/agnes-2-5-pro-beta",
-      "verified_at": "2026-10-24T15:58:44.849931+00:00",
+      "verified_at": "2026-10-25T14:07:33.761858+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-haiku-5-5",
-      "verified_at": "2026-10-24T15:58:44.636941+00:00",
+      "verified_at": "2026-10-25T14:07:33.412141+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-haiku-5-5-high",
-      "verified_at": "2026-10-24T15:58:44.507154+00:00",
+      "verified_at": "2026-10-25T14:07:33.531915+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-haiku-5-5-low",
-      "verified_at": "2026-10-24T15:58:44.555304+00:00",
+      "verified_at": "2026-10-25T14:07:33.638157+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-haiku-5-5-medium",
-      "verified_at": "2026-10-24T15:58:44.594376+00:00",
+      "verified_at": "2026-10-25T14:07:33.488495+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-haiku-5-5-xhigh",
-      "verified_at": "2026-10-24T15:58:44.616772+00:00",
+      "verified_at": "2026-10-25T14:07:33.720785+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-opus-5-5",
-      "verified_at": "2026-10-24T15:58:44.661194+00:00",
+      "verified_at": "2026-10-25T14:07:33.668219+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-opus-5-5-high",
-      "verified_at": "2026-10-24T15:58:44.925814+00:00",
+      "verified_at": "2026-10-25T14:07:33.581022+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-opus-5-5-low",
-      "verified_at": "2026-10-24T15:58:45.049091+00:00",
+      "verified_at": "2026-10-25T14:07:37.407781+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-opus-5-5-medium",
-      "verified_at": "2026-10-24T15:58:45.029800+00:00",
+      "verified_at": "2026-10-25T14:07:37.546382+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-opus-5-5-xhigh",
-      "verified_at": "2026-10-24T15:58:45.060065+00:00",
+      "verified_at": "2026-10-25T14:07:37.461350+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5",
-      "verified_at": "2026-10-24T15:58:45.234384+00:00",
+      "verified_at": "2026-10-25T14:07:37.357296+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-high",
-      "verified_at": "2026-10-24T15:58:45.254992+00:00",
+      "verified_at": "2026-10-25T14:07:37.141178+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-low",
-      "verified_at": "2026-10-24T15:58:45.215738+00:00",
+      "verified_at": "2026-10-25T14:07:37.430709+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-medium",
-      "verified_at": "2026-10-24T15:58:45.600385+00:00",
+      "verified_at": "2026-10-25T14:07:37.557687+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/claude-sonnet-5-5-xhigh",
-      "verified_at": "2026-10-24T15:58:45.377004+00:00",
+      "verified_at": "2026-10-25T14:07:37.104466+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/command-a-plus",
-      "verified_at": "2026-10-24T15:58:45.739584+00:00",
+      "verified_at": "2026-10-25T14:07:41.652546+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017",
-      "verified_at": "2026-10-24T15:58:45.763993+00:00",
+      "verified_at": "2026-10-25T14:07:41.537536+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemini-3-1-pro-preview",
-      "verified_at": "2026-10-24T15:58:45.646833+00:00",
+      "verified_at": "2026-10-25T14:07:41.429950+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemini-3-5-flash-lite",
-      "verified_at": "2026-10-24T15:58:45.993674+00:00",
+      "verified_at": "2026-10-25T14:07:41.594101+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemini-3-8-flash",
-      "verified_at": "2026-10-24T15:58:45.897920+00:00",
+      "verified_at": "2026-10-25T14:07:41.344777+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemini-3-8-flash-low",
-      "verified_at": "2026-10-24T15:58:45.717132+00:00",
+      "verified_at": "2026-10-25T14:07:41.295598+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemini-3-8-flash-medium",
-      "verified_at": "2026-10-24T15:58:46.322603+00:00",
+      "verified_at": "2026-10-25T14:07:41.287250+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemini-4-argon",
-      "verified_at": "2026-10-24T15:58:46.556321+00:00",
+      "verified_at": "2026-10-25T14:07:41.130954+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gemma-4-31b",
-      "verified_at": "2026-10-24T15:58:46.586499+00:00",
+      "verified_at": "2026-10-25T14:07:45.267408+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
-      "verified_at": "2026-10-24T15:58:46.261123+00:00",
+      "verified_at": "2026-10-25T14:07:45.354588+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-1-sol-high",
-      "verified_at": "2026-10-24T15:58:46.364756+00:00",
+      "verified_at": "2026-10-25T14:07:45.177856+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-1-sol-low",
-      "verified_at": "2026-10-24T15:58:46.384822+00:00",
+      "verified_at": "2026-10-25T14:07:45.033627+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-1-sol-medium",
-      "verified_at": "2026-10-24T15:58:46.535623+00:00",
+      "verified_at": "2026-10-25T14:07:45.134254+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-1-sol-xhigh",
-      "verified_at": "2026-10-24T15:58:46.518139+00:00",
+      "verified_at": "2026-10-25T14:07:45.232300+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-astra",
-      "verified_at": "2026-10-24T15:58:46.842669+00:00",
+      "verified_at": "2026-10-25T14:07:45.216045+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-astra-high",
-      "verified_at": "2026-10-24T15:58:47.172278+00:00",
+      "verified_at": "2026-10-25T14:07:45.320843+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-astra-low",
-      "verified_at": "2026-10-24T15:58:46.934267+00:00",
+      "verified_at": "2026-10-25T14:07:49.025783+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-astra-medium",
-      "verified_at": "2026-10-24T15:58:47.016803+00:00",
+      "verified_at": "2026-10-25T14:07:48.957586+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
-      "verified_at": "2026-10-24T15:58:47.051062+00:00",
+      "verified_at": "2026-10-25T14:07:49.085406+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-luna",
-      "verified_at": "2026-10-24T15:58:47.189216+00:00",
+      "verified_at": "2026-10-25T14:07:48.881707+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-luna-high",
-      "verified_at": "2026-10-24T15:58:47.032282+00:00",
+      "verified_at": "2026-10-25T14:07:49.057185+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-luna-low",
-      "verified_at": "2026-10-24T15:58:47.071265+00:00",
+      "verified_at": "2026-10-25T14:07:49.110363+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-luna-medium",
-      "verified_at": "2026-10-24T15:58:47.263952+00:00",
+      "verified_at": "2026-10-25T14:07:49.103571+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning",
-      "verified_at": "2026-10-24T15:58:47.608888+00:00",
+      "verified_at": "2026-10-25T14:07:49.273801+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-luna-xhigh",
-      "verified_at": "2026-10-24T15:58:47.473056+00:00",
+      "verified_at": "2026-10-25T14:07:54.246346+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-sol",
-      "verified_at": "2026-10-24T15:58:47.752528+00:00",
+      "verified_at": "2026-10-25T14:07:55.444495+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-sol-high",
-      "verified_at": "2026-10-24T15:58:47.991741+00:00",
+      "verified_at": "2026-10-25T14:07:54.810513+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-sol-low",
-      "verified_at": "2026-10-24T15:58:47.858488+00:00",
+      "verified_at": "2026-10-25T14:07:55.288181+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-sol-medium",
-      "verified_at": "2026-10-24T15:58:48.157263+00:00",
+      "verified_at": "2026-10-25T14:07:55.105650+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-sol-non-reasoning",
-      "verified_at": "2026-10-24T15:58:48.254622+00:00",
+      "verified_at": "2026-10-25T14:07:54.458236+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/gpt-6-sol-xhigh",
-      "verified_at": "2026-10-24T15:58:49.549244+00:00",
+      "verified_at": "2026-10-25T14:07:55.035695+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-6",
-      "verified_at": "2026-10-24T15:58:48.568397+00:00",
+      "verified_at": "2026-10-25T14:07:54.741387+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-6-low",
-      "verified_at": "2026-10-24T15:58:49.666357+00:00",
+      "verified_at": "2026-10-25T14:07:59.113195+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-6-medium",
-      "verified_at": "2026-10-24T15:58:48.673893+00:00",
+      "verified_at": "2026-10-25T14:07:59.228906+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-6-xhigh",
-      "verified_at": "2026-10-24T15:58:48.990488+00:00",
+      "verified_at": "2026-10-25T14:07:58.621465+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-7",
-      "verified_at": "2026-10-24T15:58:48.536187+00:00",
+      "verified_at": "2026-10-25T14:07:58.273691+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-7-high",
-      "verified_at": "2026-10-24T15:58:49.069673+00:00",
+      "verified_at": "2026-10-25T14:07:58.144953+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/grok-4-7-low",
-      "verified_at": "2026-10-24T15:58:48.924127+00:00",
+      "verified_at": "2026-10-25T14:07:58.801901+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/k2-horizon-375b-a23b",
-      "verified_at": "2026-10-24T15:58:49.368896+00:00",
+      "verified_at": "2026-10-25T14:07:58.451486+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
-      "verified_at": "2026-10-24T15:58:49.744178+00:00",
+      "verified_at": "2026-10-25T14:07:58.370566+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/ling-3-0-tiny",
-      "verified_at": "2026-10-24T15:58:49.292337+00:00",
+      "verified_at": "2026-10-25T14:08:03.110448+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/ling-3-1-flash-1019",
-      "verified_at": "2026-10-24T15:58:49.865147+00:00",
+      "verified_at": "2026-10-25T14:08:02.458407+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/mimo-v2-6-flash",
-      "verified_at": "2026-10-24T15:58:49.846132+00:00",
+      "verified_at": "2026-10-25T14:08:02.961652+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/mimo-v2-6-pro",
-      "verified_at": "2026-10-24T15:58:50.773361+00:00",
+      "verified_at": "2026-10-25T14:08:01.919405+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/minimax-m3-1-flash",
-      "verified_at": "2026-10-24T15:58:50.856825+00:00",
+      "verified_at": "2026-10-25T14:08:02.345101+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/mistral-large-4",
-      "verified_at": "2026-10-24T15:58:51.246894+00:00",
+      "verified_at": "2026-10-25T14:08:02.828373+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/muse-spark-open",
-      "verified_at": "2026-10-24T15:58:50.318691+00:00",
+      "verified_at": "2026-10-25T14:08:02.495470+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/muse-wonder",
-      "verified_at": "2026-10-24T15:58:50.574495+00:00",
+      "verified_at": "2026-10-25T14:08:02.135325+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/muse-wonder-full",
-      "verified_at": "2026-10-24T15:58:50.496257+00:00",
+      "verified_at": "2026-10-25T14:08:05.986254+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b",
-      "verified_at": "2026-10-24T15:58:51.715497+00:00",
+      "verified_at": "2026-10-25T14:08:06.452438+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/nemotron-3-5-bolt-e4b-4gb",
-      "verified_at": "2026-10-24T15:58:51.594642+00:00",
+      "verified_at": "2026-10-25T14:08:06.283074+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/nemotron-3-5-super-vl",
-      "verified_at": "2026-10-24T15:58:51.154146+00:00",
+      "verified_at": "2026-10-25T14:08:07.219859+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/north-mini-code",
-      "verified_at": "2026-10-24T15:58:52.123606+00:00",
+      "verified_at": "2026-10-25T14:08:06.866986+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/reflection-beam",
-      "verified_at": "2026-10-24T15:58:51.885585+00:00",
+      "verified_at": "2026-10-25T14:08:07.060250+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/solar-pro4",
-      "verified_at": "2026-10-24T15:58:51.498337+00:00",
+      "verified_at": "2026-10-25T14:08:06.359508+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://artificialanalysis.ai/models/step-5",
-      "verified_at": "2026-10-24T15:58:51.810154+00:00",
+      "verified_at": "2026-10-25T14:08:06.715476+00:00",
+      "status": "opened_successfully",
+      "retrieval": "public embedded exact numerical record"
+    },
+    {
+      "url": "https://artificialanalysis.ai/models/lfm2-5-2-6b",
+      "verified_at": "2026-10-25T14:09:40.886553+00:00",
       "status": "opened_successfully",
       "retrieval": "public embedded exact numerical record"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/anthropic/claude-haiku-5.5/endpoints",
-      "verified_at": "2026-10-24T15:58:52.285319+00:00",
+      "verified_at": "2026-10-25T14:08:10.941309+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints",
-      "verified_at": "2026-10-24T15:58:52.292432+00:00",
+      "verified_at": "2026-10-25T14:08:10.888739+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/anthropic/claude-sonnet-5.5/endpoints",
-      "verified_at": "2026-10-24T15:58:52.267578+00:00",
+      "verified_at": "2026-10-25T14:08:10.940440+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/google/gemini-3.1-pro-preview/endpoints",
-      "verified_at": "2026-10-24T15:58:52.274443+00:00",
+      "verified_at": "2026-10-25T14:08:10.933405+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/google/gemini-3.5-flash-lite/endpoints",
-      "verified_at": "2026-10-24T15:58:52.272850+00:00",
+      "verified_at": "2026-10-25T14:08:10.920663+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/google/gemini-3.8-flash/endpoints",
-      "verified_at": "2026-10-24T15:58:52.285742+00:00",
+      "verified_at": "2026-10-25T14:08:10.932469+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/google/gemma-4-31b-it:free/endpoints",
-      "verified_at": "2026-10-24T15:58:52.263699+00:00",
+      "verified_at": "2026-10-25T14:08:10.891204+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/mistralai/mistral-large-4-0/endpoints",
-      "verified_at": "2026-10-24T15:58:52.280884+00:00",
+      "verified_at": "2026-10-25T14:08:10.889406+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints",
-      "verified_at": "2026-10-24T15:58:52.332473+00:00",
+      "verified_at": "2026-10-25T14:08:14.550333+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints",
-      "verified_at": "2026-10-24T15:58:52.322814+00:00",
+      "verified_at": "2026-10-25T14:08:14.562328+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/openai/gpt-6-sol/endpoints",
-      "verified_at": "2026-10-24T15:58:52.352370+00:00",
+      "verified_at": "2026-10-25T14:08:14.548412+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-sol/endpoints",
-      "verified_at": "2026-10-24T15:58:52.395639+00:00",
+      "verified_at": "2026-10-25T14:08:14.544695+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/x-ai/grok-4.6/endpoints",
-      "verified_at": "2026-10-24T15:58:52.346925+00:00",
+      "verified_at": "2026-10-25T14:08:14.552475+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/x-ai/grok-4.7/endpoints",
-      "verified_at": "2026-10-24T15:58:52.346747+00:00",
+      "verified_at": "2026-10-25T14:08:14.505971+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-flash/endpoints",
-      "verified_at": "2026-10-24T15:58:52.342278+00:00",
+      "verified_at": "2026-10-25T14:08:14.549596+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models/xiaomi/mimo-v2.6-pro/endpoints",
-      "verified_at": "2026-10-24T15:58:52.355849+00:00",
+      "verified_at": "2026-10-25T14:08:14.455322+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://openrouter.ai/api/v1/models",
-      "verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "verified_at": "2026-10-25T14:07:29.089818+00:00",
       "status": "opened_successfully"
     },
     {
       "url": "https://artificialanalysis.ai/models/releases",
-      "verified_at": "2026-10-24T15:58:44.075410+00:00",
+      "verified_at": "2026-10-25T14:07:27.954798+00:00",
       "status": "opened_successfully"
+    },
+    {
+      "url": "https://www.liquid.ai/blog/lfm2-5-2-6b",
+      "verified_at": "2026-10-25T14:11:22.963Z",
+      "status": "opened_successfully",
+      "retrieval": "web original-source retrieval"
     }
   ],
   "changes_since_previous": {
     "previous_report_date": "2026-10-24",
-    "previous_commit": "dcc989e8af07e46e0c28f6402862fed6f1b65a40",
-    "revision": 2,
+    "previous_commit": "fc7bfee81e7530f02cbbdbe9e8b721d4ac701b6f",
+    "revision": 1,
     "benchmark_version_changed": false,
     "frontier_changed": false,
     "frontier_membership_changed": false,
     "recommendations_changed": false,
     "new_eligible_releases": [],
     "removed_actionable_configurations": [],
-    "new_catalog_entries": [],
-    "removed_catalog_entries": [],
+    "new_catalog_entries": [
+      "liquid/lfm-2.5-2.6b"
+    ],
+    "removed_catalog_entries": [
+      "openai/gpt-3.5-turbo",
+      "openai/gpt-3.5-turbo-instruct",
+      "openai/gpt-3.5-turbo:batch"
+    ],
     "new_AA_releases": [],
     "revised_metrics": [],
     "gateway_token_pricing_changes": [
       {
-        "model_id": "deepseek/deepseek-v4-pro",
+        "model_id": "meta-llama/llama-3.2-3b-instruct",
         "previous_per_token": {
-          "prompt": "0.000000216108",
-          "completion": "0.000000432216",
-          "input_cache_read": "0.000000018009"
+          "prompt": "0.0000000509",
+          "completion": "0.000000335"
         },
         "current_per_token": {
-          "prompt": "0.0000002088",
-          "completion": "0.0000004176",
-          "input_cache_read": "0.0000000174"
+          "prompt": "0.00000005",
+          "completion": "0.00000033"
+        },
+        "basis": "gateway token prices, not measured AA task cost"
+      },
+      {
+        "model_id": "z-ai/glm-4.6v",
+        "previous_per_token": {
+          "prompt": "0.0000003",
+          "completion": "0.0000009",
+          "input_cache_read": "0.000000055"
+        },
+        "current_per_token": {
+          "prompt": "0.0000003",
+          "completion": "0.0000009",
+          "input_cache_read": "0.00000005"
+        },
+        "basis": "gateway token prices, not measured AA task cost"
+      },
+      {
+        "model_id": "~deepseek/deepseek-v4-flash-latest",
+        "previous_per_token": {
+          "prompt": "0.0000000422",
+          "completion": "0.0000001763",
+          "input_cache_read": "0.000000027"
+        },
+        "current_per_token": {
+          "prompt": "0.0000000422",
+          "completion": "0.0000001694",
+          "input_cache_read": "0.000000028"
+        },
+        "basis": "gateway token prices, not measured AA task cost"
+      },
+      {
+        "model_id": "~moonshotai/kimi-latest",
+        "previous_per_token": {
+          "prompt": "0.00000019",
+          "completion": "0.00000894",
+          "input_cache_read": "0.00000019"
+        },
+        "current_per_token": {
+          "prompt": "0.0000001615",
+          "completion": "0.0000101551",
+          "input_cache_read": "0.00000016"
         },
         "basis": "gateway token prices, not measured AA task cost"
       },
       {
         "model_id": "~z-ai/glm-flash-latest",
         "previous_per_token": {
-          "prompt": "0.0000000502",
-          "completion": "0.0000000709",
-          "input_cache_read": "0.00000003"
-        },
-        "current_per_token": {
           "prompt": "0.0000000511",
           "completion": "0.0000000702",
           "input_cache_read": "0.00000003"
         },
+        "current_per_token": {
+          "prompt": "0.0000000513",
+          "completion": "0.0000000701",
+          "input_cache_read": "0.00000003"
+        },
+        "basis": "gateway token prices, not measured AA task cost"
+      },
+      {
+        "model_id": "~z-ai/glm-latest",
+        "previous_per_token": {
+          "prompt": "0.000000075",
+          "completion": "0.000004295",
+          "input_cache_read": "0.000000075"
+        },
+        "current_per_token": {
+          "prompt": "0.0000000703",
+          "completion": "0.0000043843",
+          "input_cache_read": "0.0000000703"
+        },
         "basis": "gateway token prices, not measured AA task cost"
       }
     ],
-    "summary": "Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-24. New candidates require exact effort/revision correspondence before routing.",
-    "same_day_revision_note": "Reverified same-day snapshot; previous version is preserved in Git history.",
+    "summary": "Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 1 new and 3 absent gateway listings; 0 new AA releases since 2026-10-24. New candidates require exact effort/revision correspondence before routing.",
     "availability_updates": [
       {
         "model": "Gemini 4 Argon",
@@ -4746,19 +4927,19 @@
         "source_checks": [
           {
             "url": "https://learn.chatgpt.com/docs/models",
-            "verified_at": "2026-10-24T15:58:53.494791+00:00",
+            "verified_at": "2026-10-25T14:08:26.177258+00:00",
             "status": "opened_successfully"
           },
           {
             "url": "https://learn.chatgpt.com/docs/pricing",
-            "verified_at": "2026-10-24T15:58:53.560130+00:00",
+            "verified_at": "2026-10-25T14:08:26.210854+00:00",
             "status": "opened_successfully"
           }
         ],
-        "verified_at": "2026-10-24T15:58:53.560130+00:00",
+        "verified_at": "2026-10-25T14:08:26.210854+00:00",
         "source_verification_complete": true,
         "unverified_source_urls": [],
-        "last_successful_source_check_at": "2026-10-24T15:58:53.560130+00:00"
+        "last_successful_source_check_at": "2026-10-25T14:08:26.210854+00:00"
       },
       {
         "service": "Claude",
@@ -4826,8 +5007,39 @@
           "https://www.anthropic.com/claude-haiku-5-5",
           "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
         ],
-        "source_checks": [],
-        "verified_at": "2026-10-24T14:23:31.703671+00:00",
+        "source_checks": [
+          {
+            "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
+            "verified_at": "2026-10-25T14:08:27.509Z",
+            "status": "opened_successfully",
+            "retrieval": "web original-source retrieval"
+          },
+          {
+            "url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
+            "verified_at": "2026-10-25T14:08:27.509Z",
+            "status": "opened_successfully",
+            "retrieval": "web original-source retrieval"
+          },
+          {
+            "url": "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
+            "verified_at": "2026-10-25T14:08:27.509Z",
+            "status": "opened_successfully",
+            "retrieval": "web original-source retrieval"
+          },
+          {
+            "url": "https://www.anthropic.com/claude-haiku-5-5",
+            "verified_at": "2026-10-25T14:08:14.637Z",
+            "status": "opened_successfully",
+            "retrieval": "web original-source retrieval"
+          },
+          {
+            "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+            "verified_at": "2026-10-25T14:08:27.509Z",
+            "status": "opened_successfully",
+            "retrieval": "web original-source retrieval"
+          }
+        ],
+        "verified_at": "2026-10-25T14:08:27.509Z",
         "first_party_API_credit": {
           "max_5x_usd_per_month": 100,
           "max_20x_usd_per_month": 200,
@@ -4838,17 +5050,11 @@
           "claimed_by_user": null,
           "applies_to": "Claude Platform first-party API only; not OpenRouter",
           "source": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
-          "verified_at": "2026-10-24T14:23:31.703671+00:00"
+          "verified_at": "2026-10-25T14:08:27.509Z"
         },
-        "source_verification_complete": false,
-        "unverified_source_urls": [
-          "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
-          "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
-          "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
-          "https://www.anthropic.com/claude-haiku-5-5",
-          "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans"
-        ],
-        "last_successful_source_check_at": "2026-10-24T14:23:31.703671+00:00"
+        "source_verification_complete": true,
+        "unverified_source_urls": [],
+        "last_successful_source_check_at": "2026-10-25T14:08:27.509Z"
       },
       {
         "service": "Grok",
@@ -4915,19 +5121,19 @@
         "source_checks": [
           {
             "url": "https://docs.x.ai/developers/grok-4-7",
-            "verified_at": "2026-10-24T15:58:53.355535+00:00",
+            "verified_at": "2026-10-25T14:08:26.061480+00:00",
             "status": "opened_successfully"
           },
           {
             "url": "https://docs.x.ai/grok/faq",
-            "verified_at": "2026-10-24T15:58:53.428347+00:00",
+            "verified_at": "2026-10-25T14:08:26.085655+00:00",
             "status": "opened_successfully"
           }
         ],
-        "verified_at": "2026-10-24T15:58:53.428347+00:00",
+        "verified_at": "2026-10-25T14:08:26.085655+00:00",
         "source_verification_complete": true,
         "unverified_source_urls": [],
-        "last_successful_source_check_at": "2026-10-24T15:58:53.428347+00:00"
+        "last_successful_source_check_at": "2026-10-25T14:08:26.085655+00:00"
       },
       {
         "service": "Gemini",
@@ -5007,24 +5213,26 @@
         "source_checks": [
           {
             "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
-            "verified_at": "2026-10-24T15:58:52.983247+00:00",
+            "verified_at": "2026-10-25T14:08:22.360740+00:00",
             "status": "opened_successfully"
           },
           {
             "url": "https://support.google.com/gemini/answer/16275805",
-            "verified_at": "2026-10-24T15:58:54.135625+00:00",
-            "status": "opened_successfully"
+            "retrieved_url": "https://support.google.com/gemini/answer/16275805?gl=US&hl=en",
+            "verified_at": "2026-10-25T14:08:57.751Z",
+            "status": "opened_successfully",
+            "retrieval": "web original-source retrieval"
           },
           {
             "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
-            "verified_at": "2026-10-24T15:58:53.370158+00:00",
+            "verified_at": "2026-10-25T14:08:22.341249+00:00",
             "status": "opened_successfully"
           }
         ],
-        "verified_at": "2026-10-24T15:58:54.135625+00:00",
+        "verified_at": "2026-10-25T14:08:57.751Z",
         "source_verification_complete": true,
         "unverified_source_urls": [],
-        "last_successful_source_check_at": "2026-10-24T15:58:54.135625+00:00"
+        "last_successful_source_check_at": "2026-10-25T14:08:57.751Z"
       }
     ],
     "cross_service_guidance": {
@@ -5032,20 +5240,20 @@
       "hard_work": "Escalate in the same service first; Opus 5.5 xhigh or Astra for hard end-to-end work where available. No measured subscription-wide optimum is claimed.",
       "application_deployment": "Use API frontier queries and exact request skeletons; subscription recommendations are never callable OpenRouter configurations."
     },
-    "last_verification_attempt_at": "2026-10-24T15:58:55.852781+00:00"
+    "last_verification_attempt_at": "2026-10-25T14:10:36.753561+00:00"
   },
   "coverage_inventory": {
     "file": "coverage.json",
-    "openrouter_model_count": 469,
+    "openrouter_model_count": 467,
     "AA_release_count": 515,
     "paid_frontier_configuration_count": 15,
-    "catalog_verified_at": "2026-10-24T15:58:43.758598+00:00",
-    "AA_registry_verified_at": "2026-10-24T15:58:44.075410+00:00",
+    "catalog_verified_at": "2026-10-25T14:07:29.089818+00:00",
+    "AA_registry_verified_at": "2026-10-25T14:07:27.954798+00:00",
     "coverage_limit": "All entries screened; only comparable exact configurations are actionable. Every unmatched catalog row explicitly remains pending.",
     "status_counts": {
       "candidate_name_match_unverified": 162,
-      "pending_comparable_results_or_exact_identity_match": 215,
-      "pending_comparable_processing_tier_results": 74,
+      "pending_comparable_results_or_exact_identity_match": 214,
+      "pending_comparable_processing_tier_results": 73,
       "routing_revision_effort_match_unverified": 1,
       "pending_comparable_complete_task_cost": 2,
       "model_verified_other_configurations": 8,
@@ -5054,7 +5262,7 @@
       "verified_limited_free_configuration": 1
     },
     "limited_free_configuration_count": 1,
-    "exact_AA_records_checked": 72,
+    "exact_AA_records_checked": 73,
     "free_catalog_entries_audited": 17
   },
   "limited_free_configurations": [
@@ -5072,14 +5280,14 @@
           "enable_thinking": true
         },
         "source": "https://ai.google.dev/gemma/docs/capabilities/thinking",
-        "documentation_verified_at": "2026-10-24T15:58:53.318602+00:00",
+        "documentation_verified_at": "2026-10-25T14:08:18.920401+00:00",
         "note": "Boolean thinking mode; OpenRouter maps enabled. First-party Google AI Studio endpoint; managed quantization is undisclosed."
       },
       "intelligence_score": 14.6689500745828,
       "benchmark_task_cost_usd": 0,
       "benchmark_source_url": "https://artificialanalysis.ai/models/gemma-4-31b",
-      "benchmark_verified_at": "2026-10-24T15:58:46.586499+00:00",
-      "openrouter_verified_at": "2026-10-24T15:58:43.758598+00:00",
+      "benchmark_verified_at": "2026-10-25T14:07:45.267408+00:00",
+      "openrouter_verified_at": "2026-10-25T14:07:29.089818+00:00",
       "api_call_tested": false,
       "request": {
         "model": "google/gemma-4-31b-it:free",
@@ -5096,7 +5304,7 @@
       },
       "api_endpoint": "https://openrouter.ai/api/v1/chat/completions",
       "endpoint_verification": {
-        "verified_at": "2026-10-24T15:58:52.263699+00:00",
+        "verified_at": "2026-10-25T14:08:10.891204+00:00",
         "metadata_url": "https://openrouter.ai/api/v1/models/google/gemma-4-31b-it:free/endpoints",
         "provider_tag": "google-ai-studio",
         "status": 0,
@@ -5131,56 +5339,22 @@
     }
   ],
   "verification_limitations": {
-    "raw_HTTP_failures_recovered_with_web": [],
+    "raw_HTTP_failures_recovered_with_web": [
+      "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
+      "https://openrouter.ai/docs/guides/routing/provider-selection",
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://platform.claude.com/docs/en/build-with-claude/effort",
+      "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
+      "https://www.anthropic.com/claude-haiku-5-5",
+      "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
+      "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
+      "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
+      "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
+      "https://platform.kimi.ai/docs/pricing/chat",
+      "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+      "https://support.google.com/gemini/answer/16275805"
+    ],
     "unsuccessful_sources_not_advanced": [
-      {
-        "url": "https://openrouter.ai/docs/guides/best-practices/reasoning-tokens",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://openrouter.ai/docs/guides/routing/provider-selection",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://platform.claude.com/docs/en/build-with-claude/effort",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://platform.kimi.ai/docs/pricing/chat",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
-        "error": "HTTP Error 403: Forbidden"
-      },
-      {
-        "url": "https://www.anthropic.com/claude-haiku-5-5",
-        "error": "HTTP Error 403: Forbidden"
-      },
       {
         "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
         "error": "HTTP Error 403: Forbidden"
