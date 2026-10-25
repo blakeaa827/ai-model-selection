@@ -4,20 +4,20 @@
 
 ## Changes since the last published report
 
-Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 1 new and 3 absent gateway listings; 0 new AA releases since 2026-10-24. New candidates require exact effort/revision correspondence before routing.
+Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-25. New candidates require exact effort/revision correspondence before routing.
 
-Previous report: 2026-10-24; common Intelligence Index v4.3.2. Frontier membership unchanged; floor and ceiling unchanged.
+Previous report: 2026-10-25; common Intelligence Index v4.3.2. Frontier membership unchanged; floor and ceiling unchanged.
+
+Reverified same-day snapshot; previous version is preserved in Git history.
 
 
 Screened **467 live gateway listings**, **515 AA releases**, **73 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
-New gateway listings: `liquid/lfm-2.5-2.6b`. Removed listings: `openai/gpt-3.5-turbo`, `openai/gpt-3.5-turbo-instruct`, `openai/gpt-3.5-turbo:batch`. Absence from a gateway is not proof of provider-wide retirement.
+New gateway listings: none. Removed listings: none. Absence from a gateway is not proof of provider-wide retirement.
 
 Newly observed AA release entries: none. These can include a newly identified revision of an older release.
 
 The Intelligence Index measures broad capability, not percentage knowledge or a request's probability of success. These costs are AA's weighted benchmark-task costs from observed token use and published prices, not guaranteed prompt prices, OpenRouter invoices or spending caps. Numerical precision is retained for lookup; close score differences are not proof of statistical significance.
-
-Newly observed listing `liquid/lfm-2.5-2.6b` is an older model, released August 4 according to [Liquid AI](https://www.liquid.ai/blog/lfm2-5-2-6b); OpenRouter records canonical slug `liquid/lfm-2.5-2.6b-20260811`. AA marks its score **8.38708534765242 as estimated** and publishes no measured task cost, so it remains pending. Discovery now checks newly observed gateway listings against older AA releases as well. Three GPT-3.5 listings are absent from today's catalog; this is not evidence of provider-wide retirement. Six gateway token-price changes are recorded separately in latest.json; no measured task costs changed.
 
 ## Minimum cost meeting a capability target
 
@@ -155,6 +155,7 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Gemma 4 31B (Reasoning)  | 14.6689500745828 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | K2 Horizon 375B A23B  | 30.5015302696723 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Kimi K3.1 Pro  | 55.0869210959395 | $2.1145052918767275 | AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available. |
+| LFM2.5-2.6B  | 8.38708534765242 | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Ling 3.0 Tiny  | 11.0636233769305 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Ling 3.1 Flash 1019  | 43.8973584978265 | $1.4886425967752979 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | MiniMax-M3.1-Flash  | 42.7057475126235 | $0.2201135746720313 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
@@ -167,7 +168,6 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | North Mini Code  | 9.91462776590372 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Beam 1.0  | 30.3334426348039 | $0.22624169286047544 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Solar Pro 4  | 26.5600314812231 | $0.7113065897513132 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
-| LFM2.5-2.6B  | 8.38708534765242 | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 
 Gemini 4 Argon API became generally available October 13; the live gateway revision is now 20261013. The September 30 restricted-release benchmark is not silently attached to that GA revision. Its earlier high-effort pair is also dominated by Opus high. Introductory token prices expire November 30 according to Google's current guide; token rates are not substituted for measured task costs. The old Fairwind announcement is historical rollout context.
 
@@ -178,13 +178,14 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 | Service | Routine default | Escalation | Quota-saving choice | Source check complete |
 |---|---|---|---|---|
 | OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6 Luna; `{"reasoning_effort":"high","ui_label":"High","speed":"Standard"}` | True |
-| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | True |
+| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
 | Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
 
 **OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate.
 
 **Claude:** Claude and Claude Code share plan limits; higher effort uses more quota. An ANTHROPIC_API_KEY can cause API billing instead of subscription usage. Personal tier not known. Eligible Max/Team can separately claim monthly Claude Platform API credits; first-party only, personal eligibility/claim status unknown.
+Unverified this run: https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings, https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code, https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan, https://www.anthropic.com/claude-haiku-5-5, https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans. Previous verification dates are retained.
 
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
@@ -194,7 +195,7 @@ Eligible Claude Max/Team users can claim first-party API credits; eligibility de
 
 ## Verification and freshness
 
-Checked 2026-10-25T14:10:36.753561+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-25T14:07:29.089818+00:00; registry checked 2026-10-25T14:07:27.954798+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-25T14:13:31.854666+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-25T14:13:22.205939+00:00; registry checked 2026-10-25T14:13:22.239759+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
@@ -360,3 +361,4 @@ Source sites, original configuration data and endpoint metadata are required inp
 - https://www.anthropic.com/claude-opus-5-5
 - https://www.anthropic.com/claude-sonnet-5-5
 - https://www.kimi.ai/blog/kimi-k3-1-pro
+- https://www.liquid.ai/blog/lfm2-5-2-6b
