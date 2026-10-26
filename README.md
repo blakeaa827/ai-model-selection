@@ -21,11 +21,13 @@ The Intelligence Index measures broad benchmark capability, not a request's prob
 
 API floor: **MiMo-V2.6-Pro / thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per measured AA task. Optional ceiling: **GPT-6.1 Sol / xhigh**, score **51.0377679093761**, **$0.39286117158850653**. Both are workload-conditional heuristics.
 
-Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-25. New candidates require exact effort/revision correspondence before routing.
+Refreshed 14 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-25. New candidates require exact effort/revision correspondence before routing.
 
 Discovery screens 467 live OpenRouter entries and 515 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
 ## Files and cost basis
+
+**License:** Original project code and original documentation are licensed under [MIT](LICENSE). Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). MIT does not assert rights over third-party material; the source-data rights review remains deferred by the maintainer. See [DATA-SOURCES.md](DATA-SOURCES.md). The [workload-specific selector](docs/WORKLOADS.md) is included in the daily refresh.
 
 - [latest.json](latest.json): stable machine-readable schema 1.1.0 contract, paid frontier, limited free lane, subscription guidance and source checks.
 - [latest.md](latest.md): full dated report, exact score thresholds, budget examples, marginal costs and recommendations.
@@ -53,6 +55,21 @@ The Contents API is also available for clients that need GitHub metadata:
 `https://api.github.com/repos/blakeaa827/ai-model-selection/contents/latest.json?ref=main`
 
 Public read access does not grant permission to publish changes. Daily commits continue to use the connected integration or the workflow's scoped `GITHUB_TOKEN`. OpenRouter generation calls still need your own API key; the report includes no credentials. Validate against schema.json and run the selector before routing.
+
+## Workload-specific selection
+
+Use [workloads.md](workloads.md) for independent cost-capability frontiers for terminal coding, business automation, professional work, long-context reasoning, PDF reasoning and academic reasoning. [workloads.json](workloads.json) is the stable machine-readable contract; [workloads.schema.json](workloads.schema.json) validates it. Each profile uses its own benchmark score, evaluation task cost, harness and candidate value knees. It never borrows the general index's task cost. All configurations are reconsidered per workload, including general-chart losers. Exact routing coverage remains incomplete.
+
+```sh
+node select-workload.mjs workloads.json business_automation score:60 tools
+node select-workload.mjs workloads.json coding_terminal budget:1 tools
+node select-workload.mjs workloads.json long_context score:80 "" --min-context=128000
+node select-workload.mjs workloads.json long_context budget:0 "" --allow-limited-free
+```
+
+The workload selector filters all verified candidates for required parameters, context and input modalities before computing dominance. It rejects unknown workloads, stale evidence, changed revisions and unsupported constraints. Budget values are benchmark-task budgets, not production prompt caps. Candidate floors and ceilings describe cost knees; a workload quality target is needed before treating one as a deployment default. The existing general selector and subscription guidance remain available.
+
+The same daily `pipeline/refresh.mjs` acquires active public AA configuration records, rebuilds each profile, refreshes complete coding-agent system comparisons, renders curves, validates schema/evidence and selector boundaries, then publishes all artifacts and dated workload snapshots atomically. Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/); original project code and documentation use [MIT](LICENSE). The maintainer has deferred the source-data rights review; see [DATA-SOURCES.md](DATA-SOURCES.md). Pending research, extraction and other profiles are explicit. Jev integration and calibrated request-success probabilities are not yet implemented; see the [router guidance](workloads.md#router-and-jev-integration).
 
 ## Select an API configuration
 

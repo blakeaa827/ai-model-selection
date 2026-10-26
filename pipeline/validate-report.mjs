@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {readFile,writeFile} from 'node:fs/promises';
 import {validateSnapshot,selectConfiguration,verifyCatalog,verifyEndpoint} from '../select-model.mjs';
+import {reportFiles} from './report-files.mjs';
 const root=process.argv[2]||'run-artifacts/report';
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
 const d=await read(root+'/latest.json');
@@ -33,6 +34,6 @@ for(const free of d.limited_free_configurations)assert.equal(selectConfiguration
 const bad=structuredClone(d);bad.frontier[0].request.reasoning={effort:null};assert.throws(()=>validateSnapshot(bad));
 const unchecked=structuredClone(d);unchecked.frontier[0].eligible_for_frontier=false;assert.throws(()=>validateSnapshot(unchecked),/eligibility/);
 const fileHashes={};
-for(const path of ['latest.json','latest.md','coverage.json','README.md','cost-curve.svg','snapshots/'+d.report_date+'.json'])fileHashes[path]=createHash('sha256').update(await readFile(root+'/'+path)).digest('hex');
+for(const path of reportFiles(d))fileHashes[path]=createHash('sha256').update(await readFile(root+'/'+path)).digest('hex');
 await writeFile('run-artifacts/validation.json',JSON.stringify({file_hashes_sha256:fileHashes,status:'passed',checked_at:new Date().toISOString(),actionable_configurations:d.frontier.length+d.limited_free_configurations.length,catalog_entries:catalog.data.length,AA_releases:coverage.AA_release_screening.length,no_generation_calls:true},null,2)+'\n');
 console.log('PASS: exact current-source pairs, live catalog/endpoints, Pareto dominance, score/budget boundaries, free opt-in, stale/ineligible rejection, full inventory and matching snapshot');

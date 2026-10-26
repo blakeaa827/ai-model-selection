@@ -1,6 +1,7 @@
 // Atomic Git data publication. Never log credentials; no force pushes or partial report commits.
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {reportFiles} from './report-files.mjs';
 const repo='blakeaa827/ai-model-selection';
 export async function api(path,method='GET',body){
  const token=process.env.GITHUB_TOKEN;
@@ -11,7 +12,11 @@ export async function api(path,method='GET',body){
 }
 export async function head(){return (await api('branches/main')).commit;}
 export async function baseline(sha){
- for(const path of ['latest.json','coverage.json','README.md']){
+ for(const path of ['latest.json','coverage.json','README.md','workloads.json']){
+  if(path==='workloads.json'){
+   try{const file=await api('contents/'+path+'?ref='+encodeURIComponent(sha));await writeFile(path,Buffer.from(file.content.replace(/\s/g,''),'base64'));}catch(error){if(!String(error).includes('HTTP 404'))throw error;}
+   continue;
+  }
   const file=await api('contents/'+path+'?ref='+encodeURIComponent(sha));
   if(file.encoding!=='base64')throw Error('Unexpected repository content encoding');
   await writeFile(path,Buffer.from(file.content.replace(/\s/g,''),'base64'));
@@ -23,7 +28,7 @@ export async function publish(root,parent){
  if(initial.sha!==parent)throw Error('CONCURRENT_MAIN_CHANGED');
  const validation=JSON.parse(await readFile('run-artifacts/validation.json','utf8'));
  if(validation.status!=='passed')throw Error('Validation has not passed');
- const paths=['latest.json','latest.md','coverage.json','README.md','cost-curve.svg','snapshots/'+d.report_date+'.json'];
+ const paths=reportFiles(d);
  const entries=[];
  for(const path of paths){
   const content=await readFile(root+'/'+path,'utf8');

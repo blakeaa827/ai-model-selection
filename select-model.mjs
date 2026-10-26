@@ -26,6 +26,7 @@ export function validateSnapshot(data, now = Date.now()) {
     const evidence = data.evaluated_configurations?.find(r => r.configuration_id === row.configuration_id);
     for (const record of [row, evidence].filter(Boolean)) {
       if (record.eligible_for_frontier === false || record.benchmark_score_is_estimated === true ||
+          record.benchmark_mode === "multi_model_fallback" || /fallback/i.test(record.AA_model_label ?? "") ||
           (record.benchmark_cost_status && record.benchmark_cost_status !== "complete_as_published")) {
         throw new Error("Configuration benchmark eligibility is unverified or provisional");
       }
