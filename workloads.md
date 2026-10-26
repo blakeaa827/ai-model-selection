@@ -1,14 +1,14 @@
-# Workload-specific model selection — 2026-10-25
+# Workload-specific model selection — 2026-10-26
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred data-rights review.
 
 Each profile has its own benchmark score, measured evaluation task cost, harness and Pareto frontier. Scores and budgets are meaningful only within that profile. The general Intelligence Index remains in [latest.md](latest.md).
 
-Screened **709 public AA configurations** and **467 OpenRouter entries**; acquired **272 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
+Screened **709 public AA configurations** and **466 OpenRouter entries**; acquired **272 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-10-26T04:40:54.709322+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-10-26T14:51:20.595411+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 
