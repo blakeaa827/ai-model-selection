@@ -26,19 +26,21 @@ The common comparison is **Artificial Analysis Intelligence Index v4.3.2** and *
 
 Subscription allowance consumption is a separate cost basis. A monthly plan does not establish cost per successful task. UI Extended, Expert, Heavy, Deep Think and Ultra are not assumed to map to API efforts; app tools, parallel agents, limits and model rollouts can change outcomes.
 
-## Retrieve privately
+## Retrieve publicly
 
-Other tools need GitHub read access. Stable authenticated Contents endpoint:
+The repository is public. Other tools can read the stable raw JSON URL without GitHub credentials:
+
+https://raw.githubusercontent.com/blakeaa827/ai-model-selection/main/latest.json
+
+```sh
+curl --fail --location https://raw.githubusercontent.com/blakeaa827/ai-model-selection/main/latest.json --output latest.json
+```
+
+The Contents API is also available for clients that need GitHub metadata:
 
 `https://api.github.com/repos/blakeaa827/ai-model-selection/contents/latest.json?ref=main`
 
-Using an already authenticated GitHub CLI:
-
-```sh
-gh api repos/blakeaa827/ai-model-selection/contents/latest.json?ref=main --jq '.content' | base64 --decode > latest.json
-```
-
-A checkout or authenticated raw retrieval can also supply latest.json. Never put credentials in report files. Validate against schema.json and run the selector before routing.
+Public read access does not grant permission to publish changes. Daily commits continue to use the connected integration or the workflow's scoped `GITHUB_TOKEN`. OpenRouter generation calls still need your own API key; the report includes no credentials. Validate against schema.json and run the selector before routing.
 
 ## Select an API configuration
 
