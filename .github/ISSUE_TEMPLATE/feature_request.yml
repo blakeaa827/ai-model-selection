@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest an improvement to model selection, reports or integrations.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe your workflow and the limitation you encounter.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Explain the desired behavior and what would make it useful.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples
+      description: Include public examples or links if available. Do not include credentials or private data.

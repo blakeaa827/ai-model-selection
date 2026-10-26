@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Current model chart and source notes
+    url: https://github.com/blakeaa827/ai-model-selection/blob/main/latest.md
+    about: Check the current results, pending configurations and methodology.
+  - name: Selector and integration examples
+    url: https://github.com/blakeaa827/ai-model-selection/blob/main/README.md#select-an-api-configuration
+    about: Examples for score targets, budgets and OpenRouter request construction.

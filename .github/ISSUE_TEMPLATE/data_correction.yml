@@ -1,0 +1,31 @@
+name: Benchmark or routing correction
+description: Flag missing evidence, revised metrics, model IDs or reasoning settings.
+title: "[Data]: "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Report date or commit
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Exact model and configuration
+      description: Include revision, reasoning control and provider where known. Mark anything unknown.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should change?
+      description: Distinguish measured results from estimates, vendor claims, token prices and provisional task costs.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Original source URLs and evidence
+      description: Include methodology version and exact score/cost pair when available. Missing evidence can be reported as pending.
+    validations:
+      required: true

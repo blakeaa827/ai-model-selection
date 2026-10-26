@@ -1,9 +1,21 @@
-# AI model selection
+# AI Model Selection — Cost vs Capability
 
-Daily model guidance for Blake and his tools, with two separate tracks:
+[![Daily refresh](https://github.com/blakeaa827/ai-model-selection/actions/workflows/model-selection.yml/badge.svg)](https://github.com/blakeaa827/ai-model-selection/actions/workflows/model-selection.yml)
+[![GitHub stars](https://img.shields.io/github/stars/blakeaa827/ai-model-selection?style=flat)](https://github.com/blakeaa827/ai-model-selection/stargazers)
 
-- **Applications:** all-lab OpenRouter discovery, minimum measured task cost meeting a capability target, or highest observed capability within a benchmark-task budget.
-- **Building:** recommendations within Claude, OpenAI Work/Codex, Grok and Gemini subscriptions, conditional on plan/client/account access and included allowances.
+**Find the cheapest verified AI model for a capability target—or the most capable model within a benchmark-task budget.**
+
+A daily cost vs capability chart and machine-readable model selector across all labs listed on OpenRouter. Actionable configurations require matching Artificial Analysis measurements, exact model revisions, reasoning controls and verified provider routes. Unmeasured, estimated or mismatched candidates stay visible as pending.
+
+- **For applications and agents:** exact OpenRouter model IDs, reasoning settings, provider pins and freshness checks.
+- **For builders:** separate subscription guidance for Claude, ChatGPT/Codex, Grok and Gemini, conditional on plan and account access.
+- **For evaluation:** the complete cost-capability frontier, minimum-score and budget intervals, marginal cost cliffs, source links and dated snapshots.
+
+**Start here:** [Current chart](latest.md) · [Raw JSON](https://raw.githubusercontent.com/blakeaa827/ai-model-selection/main/latest.json) · [Selector examples](#select-an-api-configuration) · [Report a bug or request a feature](https://github.com/blakeaa827/ai-model-selection/issues/new/choose)
+
+![AI model capability versus measured benchmark-task cost](cost-curve.svg)
+
+The Intelligence Index measures broad benchmark capability, not a request's probability of success. AA weighted task costs are not OpenRouter invoice estimates. Every listed model is inventoried; not every model has comparable measurements. See the [methodology and limits](latest.md) before using the recommendations.
 
 ## October 25, 2026 recommendation
 
@@ -88,6 +100,12 @@ Run local selector checks:
 ```sh
 node test-selector.mjs
 ```
+## Feedback and contributions
+
+Found a broken route, stale result, selector bug or missing feature? Use the [issue forms](https://github.com/blakeaa827/ai-model-selection/issues/new/choose). General questions are welcome through a blank issue. Include the report date or commit and reproducible evidence so changes can be verified.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for evidence requirements and local checks. Please exclude API keys, authorization headers and private prompts. Stars help you save this repository and signal interest; they are not a count of active users.
+
 ## Scheduled pipeline
 
 The existing workflow runs `node pipeline/refresh.mjs`: public AA exact-record and full release acquisition, live OpenRouter catalog and pinned endpoint checks, report assembly, rendering, schema/selector/evidence validation, and one atomic fast-forward publication. It uses the existing daily schedule; only verified evidence advances timestamps. An AA API key is optional for separate catalog diagnostics and is not required by the public-source report path. No generation API is called.

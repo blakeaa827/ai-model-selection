@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a broken selector, request, chart or update pipeline.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Please remove API keys, tokens, authorization headers and private prompts from examples and logs."
+  - type: input
+    id: version
+    attributes:
+      label: Report date or commit
+      description: Which latest.json snapshot or repository commit did you use?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the command, model slug, exact reasoning control and provider settings where relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted output
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, operating system or calling client, if relevant.
