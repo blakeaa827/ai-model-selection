@@ -4,11 +4,11 @@ Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Origina
 
 Each profile has its own benchmark score, measured evaluation task cost, harness and Pareto frontier. Scores and budgets are meaningful only within that profile. The general Intelligence Index remains in [latest.md](latest.md).
 
-Screened **709 public AA configurations** and **466 OpenRouter entries**; acquired **272 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
+Screened **715 public AA configurations** and **468 OpenRouter entries**; acquired **278 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-10-26T14:51:20.595411+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-10-26T18:42:53.779448+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 
@@ -98,7 +98,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 0.000 `pass_at_1_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 74, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 2, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 75, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## business-automation
 
@@ -160,7 +160,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 4.933 `guardrail_adjusted_objective_completion_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 74, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 2, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 75, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## professional-work
 
@@ -185,8 +185,8 @@ Verified candidates: 22; paid frontier: 9. Incomplete routing matches are retain
 | (1342.92, 1363.44] | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 1363.440 | $0.045715 |
 | (1363.44, 1608.7] | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 1608.700 | $0.073176 |
 | (1608.7, 1683.02] | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1683.020 | $0.161217 |
-| (1683.02, 1707.02] | `x-ai/grok-4.7` | `{"effort":"high"}` | 1707.020 | $5.219071 |
-| (1707.02, 1713.96] | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1713.960 | $6.432608 |
+| (1683.02, 1707.02] | `x-ai/grok-4.7` | `{"effort":"high"}` | 1707.020 | $4.517006 |
+| (1707.02, 1713.96] | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1713.960 | $5.572227 |
 
 The first lower bound is unbounded for lookup only; it does not give score zero a practical meaning. No verified configuration satisfies a score above the last row.
 
@@ -200,9 +200,9 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | [0.03190170403500649, 0.04571538846185774) | `openai/gpt-6-luna` | `{"effort":"high"}` | 1342.920 |
 | [0.04571538846185774, 0.07317641347585718) | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 1363.440 |
 | [0.07317641347585718, 0.16121702931689816) | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 1608.700 |
-| [0.16121702931689816, 5.219071079466576) | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1683.020 |
-| [5.219071079466576, 6.432607874441748) | `x-ai/grok-4.7` | `{"effort":"high"}` | 1707.020 |
-| [6.432607874441748, ∞) | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1713.960 |
+| [0.16121702931689816, 4.517006141396162) | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1683.020 |
+| [4.517006141396162, 5.572226716663576) | `x-ai/grok-4.7` | `{"effort":"high"}` | 1707.020 |
+| [5.572226716663576, ∞) | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1713.960 |
 
 ### Marginal upgrades
 
@@ -214,8 +214,8 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | `openai/gpt-6-luna / {"effort":"xhigh"}` | 20.520000 | $0.013814 | 43.30% | $0.000673 | 3.61× |
 | `xiaomi/mimo-v2.6-flash / {"enabled":true}` | 245.260000 | $0.027461 | 60.07% | $0.000112 | 0.17× |
 | `xiaomi/mimo-v2.6-pro / {"enabled":true}` | 74.320000 | $0.088041 | 120.31% | $0.001185 | 10.58× |
-| `x-ai/grok-4.7 / {"effort":"high"}` | 24.000000 | $5.057854 | 3137.30% | $0.210744 | 177.90× |
-| `x-ai/grok-4.7 / {"effort":"xhigh"}` | 6.940000 | $1.213537 | 23.25% | $0.174861 | 0.83× |
+| `x-ai/grok-4.7 / {"effort":"high"}` | 24.000000 | $4.355789 | 2701.82% | $0.181491 | 153.21× |
+| `x-ai/grok-4.7 / {"effort":"xhigh"}` | 6.940000 | $1.055221 | 23.36% | $0.152049 | 0.84× |
 
 **Candidate floor:** The next step adds 80.31000000000017 score points for $0.014965585041998918 (88.36490253863813%); marginal cost rises 4.487103113187824x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
@@ -225,7 +225,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 618.720 `elo`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 74, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 2, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 75, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## long-context
 
@@ -284,7 +284,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 69.667 `pass_at_1_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 2, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## document-reasoning
 
@@ -358,7 +358,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 6.000 `all_criteria_pass_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 2, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## academic-reasoning
 
@@ -435,7 +435,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 23.633 `pass_at_1_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 2, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## Exact API routing
 
@@ -458,8 +458,10 @@ These are separate model-plus-agent evaluations from the AA Coding Agent Index. 
 | Tested agent/system | Coding Agent Index score | API USD / agent task | Fallback attempts |
 |---|---:|---:|---:|
 | Codex - GPT-6 Luna (max) ({'reasoning_effort': 'max'}) | 31.126 | $0.159156 | 0 |
+| Codex - GPT-6.1 Terra (low) | 34.857 | $0.198820 | 0 |
 | DeepSeek Harness - DeepSeek V4.1 Flash 1017 ({'reasoning_effort': 'max'}) | 46.305 | $0.296275 | 0 |
 | Codex - DeepSeek V4.1 Flash ({'reasoning_effort': 'max'}) | 47.300 | $0.386194 | 0 |
+| Codex - GPT-6.1 Terra (xhigh) | 48.224 | $0.690844 | 0 |
 | Codex - GPT-6.1 Sol (max) | 54.128 | $1.504639 | 0 |
 | Codex - GPT-6 Astra (max) | 54.664 | $7.036158 | 0 |
 | Devin Fusion CLI - Claude Opus 5.5 Max + GPT-6 Luna High | 61.512 | $7.997688 | 0 |
