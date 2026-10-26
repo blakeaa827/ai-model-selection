@@ -27,6 +27,8 @@ Discovery screens 467 live OpenRouter entries and 515 AA releases across all lab
 
 ## Files and cost basis
 
+**Licensing review:** No software license has been selected yet. MIT is recommended for the project's original code; third-party benchmark data requires separate rights. See [DATA-SOURCES.md](DATA-SOURCES.md). The proposed [workload-specific selector](docs/WORKLOADS.md) is a draft and is disabled for publication pending source permission or a replacement source. No new workload dataset is included in that draft.
+
 - [latest.json](latest.json): stable machine-readable schema 1.1.0 contract, paid frontier, limited free lane, subscription guidance and source checks.
 - [latest.md](latest.md): full dated report, exact score thresholds, budget examples, marginal costs and recommendations.
 - [coverage.json](coverage.json): catalog inventory and AA release screening bounds with explicit pending statuses.

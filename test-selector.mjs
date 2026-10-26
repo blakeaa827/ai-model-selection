@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {validateSnapshot, selectConfiguration, verifyCatalog, verifyEndpoint, buildSelection} from './select-model.mjs';
-const data = JSON.parse(await readFile(new URL('./latest.json',import.meta.url),'utf8'));
+const reportPath=process.argv[2]||new URL('./latest.json',import.meta.url).pathname;
+const data = JSON.parse(await readFile(reportPath,'utf8'));
 const asOf = Date.parse(data.checked_at);
 validateSnapshot(data, asOf);
 for (const row of data.frontier) {
@@ -56,7 +57,7 @@ const priorFetch=globalThis.fetch;const priorNow=Date.now;
 Date.now=()=>asOf;
 globalThis.fetch=async url=>({ok:true,json:async()=>String(url).endsWith('/models')?catalog:endpoint});
 try {
- const result=await buildSelection(new URL('./latest.json',import.meta.url).pathname,'budget:0.14',['tools']);
+ const result=await buildSelection(reportPath,'budget:0.14',['tools']);
  assert.equal(result.request.model,row.request.model);assert.deepEqual(result.request.reasoning,{enabled:true});
  assert.equal(result.api_endpoint,'https://openrouter.ai/api/v1/chat/completions');
 } finally {globalThis.fetch=priorFetch;Date.now=priorNow;}

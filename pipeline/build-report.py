@@ -35,6 +35,8 @@ for r in d['evaluated_configurations']:
  if m and m['canonical_slug']==r['openrouter_canonical_slug']:r['openrouter_verified_at']=ct
  else:r.update(eligible_for_frontier=False,exclusion_reasons=['Live catalog missing or revision mismatch'])
  if a['deprecated'] or a['intelligenceIndexIsEstimated'] or cost is None:r.update(eligible_for_frontier=False,exclusion_reasons=['AA result deprecated, estimated or missing comparable task cost'])
+ if 'fallback' in a['name'].lower():
+  r.update(eligible_for_frontier=False,benchmark_mode='multi_model_fallback',exclusion_reasons=['AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system.'])
  if r['openrouter_model_id']=='anthropic/claude-haiku-5.5':
   r.update(provisional_benchmark_task_cost_usd=cost,benchmark_task_cost_usd=None,eligible_for_frontier=False,benchmark_cost_status='provisional_incomplete_tiered_pricing',pareto_dominated=None)
 def dominates(a,b):
@@ -42,6 +44,9 @@ def dominates(a,b):
 eligible=[r for r in d['evaluated_configurations'] if r.get('eligible_for_frontier') and r['benchmark_task_cost_usd'] is not None]
 winning=[r for r in eligible if not any(dominates(x,r) for x in eligible if x is not r)]
 templates={r['configuration_id']:r for r in old['frontier']}
+extra_templates=Path('pipeline/additional-request-templates.json')
+if extra_templates.exists():
+ for r in json.loads(extra_templates.read_text()):templates.setdefault(r['configuration_id'],r)
 assert all(r['configuration_id'] in templates for r in winning),'New winner requires complete request template verification'
 def refresh_route(row):
  a=aa[row['benchmark_source_url']];m=cat[row['openrouter_model_id']];er=eps[row['openrouter_model_id']]
@@ -55,7 +60,9 @@ def refresh_route(row):
  if prior is not None:assert ep.get('quantization')==prior
  assert float(m['pricing']['prompt'])==float(ep['pricing']['prompt']) and float(m['pricing']['completion'])==float(ep['pricing']['completion'])
  row.update(intelligence_score=a['intelligenceIndex'],benchmark_task_cost_usd=a['intelligenceIndexCostPerTask']['cost']['total'],benchmark_verified_at=a['verified_at'],openrouter_verified_at=ct)
- row['endpoint_verification'].update(verified_at=er['verified_at'],status=ep['status'],supported_parameters=ep['supported_parameters'],standard_pricing_matches_catalog=True)
+ assert 'fallback' not in a['name'].lower(),'Single-model template cannot describe a fallback benchmark'
+ if row['effort'] is not None:assert (a.get('effort') or {}).get('slug')==row['effort'],'Exact benchmark effort mismatch'
+ row['endpoint_verification'].update(verified_at=er['verified_at'],status=ep['status'],supported_parameters=ep['supported_parameters'],quantization=ep.get('quantization'),standard_pricing_matches_catalog=True)
  u=row.get('reasoning_control',{}).get('source')
  if u in checks:row['reasoning_control']['documentation_verified_at']=checks[u]['verified_at']
  return row
@@ -70,6 +77,10 @@ for i,r in enumerate(front):
   r.pop('minimum_score_inclusive',None)
  else:r['marginal']=None;r['minimum_score_inclusive']=0
 d['frontier']=front;d['limited_free_configurations']=[refresh_route(r) for r in d['limited_free_configurations']]
+for r in d['evaluated_configurations']:
+ if r.get('benchmark_mode')=='multi_model_fallback':
+  pending={'configuration_id':r['configuration_id'],'model':r['AA_model_label'],'openrouter_model_id':r['openrouter_model_id'],'effort':r['effort'],'intelligence_score':r['intelligence_score'],'benchmark_task_cost_usd':r['benchmark_task_cost_usd'],'benchmark_mode':'multi_model_fallback','reason':r['exclusion_reasons'][0]}
+  d['excluded_or_pending']=[x for x in d['excluded_or_pending'] if not(x.get('configuration_id')==r['configuration_id'])];d['excluded_or_pending'].append(pending)
 for r in d['limited_free_configurations']:assert r['benchmark_task_cost_usd']==0 and float(cat[r['openrouter_model_id']]['pricing']['prompt'])==0
 # Descriptive knees: a >=3x marginal-rate jump with >=50% added task cost.
 # This is a visible workload-conditional heuristic, never an intelligence utility scale.
