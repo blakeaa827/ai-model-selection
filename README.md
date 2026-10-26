@@ -73,18 +73,20 @@ The same daily `pipeline/refresh.mjs` acquires active public AA configuration re
 
 ## Company routing skill with Jev
 
-Install or adapt [route-workloads-with-jev](skills/route-workloads-with-jev/SKILL.md) in your AI platform's skill/instruction system. Keep its helpers and references together and point it at a trusted checkout of this repository. It classifies unknown workloads with a pinned Jev decision model, then uses the existing selector to prepare the cheapest verified worker meeting an explicit benchmark target, or the highest-scoring worker within a benchmark-task budget.
+Install or adapt [route-workloads-with-jev](skills/route-workloads-with-jev/SKILL.md) in your AI platform's skill/instruction system. Keep its helpers and references together and point it at a trusted checkout of this repository. It infers the workload and required capability from the task and acceptance criteria using two dependent Jev decisions. The second decision assesses exact measured configurations as capability anchors; the deterministic selector then prepares the cheapest verified worker meeting the inferred target. End users do not need to supply benchmark scores. Explicit score/budget targets remain advanced overrides.
 
-The helper verifies the decision-output catalog, binds decisions to a report hash, requires an explicit classification probability/margin policy and rejects stale reports, changed revisions/providers, uncertain classifications and unsupported constraints. Known workloads can skip Jev. No command submits a paid model request; your platform supplies authorized runtime credentials and executes the request plan. A repository skill does not automatically install itself companywide.
+The orchestrator derives acceptance criteria and hard constraints from the request and application context. The helper verifies the decision-output catalog, binds both decisions and capability anchors to a report hash, requires an application-level probability/margin policy and rejects stale reports, changed revisions/providers, uncertain classifications, unsupported constraints and insufficient capability evidence. An inferred target is labeled `uncalibrated_task_estimate`, with `quality_target_verified: false` and worker success probability null. It is an estimated requirement, not a measured task-success threshold. Known workloads can skip Jev. No command submits a paid model request; your platform supplies authorized runtime credentials and executes the request plan. A repository skill does not automatically install itself companywide.
 
 ```sh
 node skills/route-workloads-with-jev/scripts/route.mjs prepare . /private/task.json workloads.json > /private/jev-bundle.json
 # Submit only bundle.request to bundle.api_endpoint through your authorized runtime.
-node skills/route-workloads-with-jev/scripts/route.mjs resolve . /private/jev-bundle.json /private/jev-response.json /private/classification-policy.json workloads.json
+node skills/route-workloads-with-jev/scripts/route.mjs resolve . /private/jev-bundle.json /private/jev-response.json /private/classification-policy.json workloads.json > /private/requirements-bundle.json
+# With no task target (or target: infer), submit the second bundle.request separately.
+node skills/route-workloads-with-jev/scripts/route.mjs resolve-requirements . /private/requirements-bundle.json /private/requirements-response.json /private/classification-policy.json workloads.json
 node test-jev-routing.mjs
 ```
 
-See the [input/API contract](skills/route-workloads-with-jev/references/jev-api.md) and [routing policy](skills/route-workloads-with-jev/references/routing-policy.md). Keep task bundles, responses, credentials and telemetry outside this public repository. Choice probabilities classify workloads; optional Noul estimates need held-out calibration before success-based routing. Neither is converted into an Intelligence Index score. Calibrated production success prediction remains unimplemented.
+See the [input/API contract](skills/route-workloads-with-jev/references/jev-api.md) and [routing policy](skills/route-workloads-with-jev/references/routing-policy.md). Keep task bundles, responses, credentials and telemetry outside this public repository. Choice probabilities classify workloads and assess a required-capability anchor; neither is a worker success probability. The target copies the selected anchor's observed workload score without converting probabilities into Intelligence Index points or inventing an easy/medium/hard score ladder. Require output acceptance checks and bounded escalation. Optional Noul estimates need held-out calibration before success-based routing. Calibrated production success prediction remains unimplemented.
 
 ## Select an API configuration
 
@@ -145,3 +147,4 @@ The existing workflow runs `node pipeline/refresh.mjs`: public AA exact-record a
 Run `node pipeline/refresh.mjs` locally to stage and validate `run-artifacts/report/`. `--publish` additionally requires the existing GitHub integration or the workflow's scoped `GITHUB_TOKEN`; credentials are never put in reports. `pipeline/publish.mjs` creates individual blobs, then a small tree, commit and non-force ref update, and verifies the remote contents. This avoids the earlier large inline tree request. On a concurrent update it stops safely; a fresh run rebuilds from current main.
 
 The Dot monitor remains responsible for web research and reviewing new candidates, lifecycle changes and subscription UI correspondence. A newly listed model stays pending until its exact AA configuration, revision, reasoning control and route are verified. This is deliberate eligibility enforcement; supported effort names alone cannot supply missing benchmarks. Failed acquisition or validation preserves the last published report and produces diagnostic artifacts.
+

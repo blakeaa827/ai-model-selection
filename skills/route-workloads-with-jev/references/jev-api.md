@@ -22,19 +22,18 @@ The helper records token pricing as metadata only. It does not turn token rates 
 
 ## Private task file
 
-The target must come from the caller or documented application policy. This illustrates the format, not a universal quality target:
+The orchestrator constructs this envelope from the user request and application context. The user does not need to choose a benchmark or numerical target. Omit `target` (or use `"infer"`) for workload classification followed by task-capability inference:
 
 ```json
 {
   "task": "Reconcile incoming CRM records and update the approved workflow.",
   "acceptance_criteria": ["Preserve existing IDs", "Validate updates before applying them"],
   "context": {"tools_available": ["CRM read", "CRM validated update"]},
-  "target": "score:60",
   "constraints": {"required_parameters": ["tools"]}
 }
 ```
 
-Supported targets: `score:<number>`, `budget:<USD per benchmark task>`, or explicitly chosen `floor`/`ceiling` value knees. Supported constraints: `allow_limited_free`, `required_parameters`, `min_context_tokens`, `input_modalities`, `harness_id`, `benchmark_version`. Separately enforce unsupported privacy, region, latency or other requirements.
+Default target: `infer`. Advanced overrides: `score:<number>`, `budget:<USD per benchmark task>`, or explicitly chosen `floor`/`ceiling` value knees. Supported constraints: `allow_limited_free`, `required_parameters`, `min_context_tokens`, `input_modalities`, `harness_id`, `benchmark_version`. Separately enforce unsupported privacy, region, latency or other requirements.
 
 `prepare` returns a bundle with task data, report hash, verified control metadata and an API request:
 
@@ -65,7 +64,13 @@ Provide an explicit private classification policy:
 {"minimum_choice_probability": 0.8, "minimum_probability_margin": 0.2}
 ```
 
-The values illustrate syntax only; evaluate them on labeled examples. No defaults are embedded. A tie, low margin, uncertain option, changed report or stale evidence blocks resolution. Reprepare after a report change. `resolve` invokes the existing selector and verifies current metadata; its output remains an unexecuted request plan.
+The values illustrate syntax only; evaluate them on labeled examples. No defaults are embedded. A tie, low margin, uncertain option, changed report or stale evidence blocks resolution. Reprepare after a report change. With an explicit target, `resolve` invokes the existing selector and verifies current metadata. With `infer` or no target, it returns a bound `capability_inference_required` bundle. Submit that bundle's request separately: questions in a single Jev call are independent, so capability inference must follow workload classification.
+
+The second request uses a `minimum_capability` Choice over exact constrained measured anchors, plus `insufficient_evidence` and `no_adequate_candidate`. It includes the task, acceptance criteria, context, hard constraints, named benchmark/version/harness, limitations, exact worker settings and observed scores. It supplies no made-up difficulty-to-score mapping.
+
+Resolve the full second response using `route.mjs resolve-requirements REPO REQUIREMENTS_BUNDLE_JSON REQUIREMENTS_RESPONSE_JSON POLICY_JSON [WORKLOADS_JSON]`. This rechecks report binding, anchors, control identity, probability/margin policy, freshness and the selected live worker route. It derives the minimum score from the chosen anchor and emits an unexecuted worker request plan.
+
+`requirements_inference` records `inferred_minimum_score`, `anchor_configuration_id`, `status: "uncalibrated_task_estimate"`, `quality_target_verified: false` and worker success probability null. The plan sets `acceptance_verification_required: true`. This is a task-dependent model judgment, not a calibrated success prediction. The runtime must supply acceptance checks, spend limits and bounded escalation. Both Jev responses retain synthetic/provided-response provenance; neither is attested by this helper.
 
 Noul returns `.noul` in `[0,1]`, with no separate confidence. Define one clear yes/no acceptance event per exact candidate. Score returns an expected ordinal position over supplied levels; it is not AA capability or inherently a probability.
 

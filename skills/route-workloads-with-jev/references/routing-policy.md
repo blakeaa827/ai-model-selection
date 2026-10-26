@@ -8,16 +8,20 @@
 
 No general transformation connects these values. Intelligence Index, Elo and benchmark pass percentages are distinct scales. A benchmark score of 60 does not establish 60% success on a new request; a 0.9 estimate does not require Intelligence Index 90. Tools, context, specialization and harness matter.
 
-## Initial policy
+## Infer requirements without an end-user score
 
-1. Choose a ready workload; decompose mixed work.
-2. Set an explicit benchmark target or benchmark-task budget, ideally informed by representative task tests. Do not turn the cheapest row or a low-scoring value knee into an assumed quality floor.
-3. Filter all eligible evaluated configurations for supported constraints before dominance.
-4. Use `buildWorkloadSelection` to choose and live-verify the worker.
-5. Run acceptance checks; bound retries/escalation with actual spend policy.
-6. Keep optional candidate probabilities advisory with `calibration_status: not_calibrated`.
+The orchestrator derives acceptance checks and hard constraints from the request and available application context. Users supply the work they want done; they do not have to select a benchmark or capability threshold.
 
-Skip classification when workload is supplied. Keep uncovered tasks pending; using the broad index requires an explicit caller decision with the changed evidence basis stated. Subscription modes and whole-agent systems are not single-worker API results.
+1. Use Jev to choose a ready workload; decompose mixed work. A pending or poorly matched benchmark is an explicit coverage gap.
+2. Build capability anchors from the constrained measured frontier, including exact revision, reasoning, provider and harness. Do not impose an easy/medium/hard-to-score lookup.
+3. Ask a dependent Jev Choice which observed anchor represents the minimum capability it assesses as sufficient for all acceptance criteria. Consider domain, reasoning depth, ambiguity, context, tools and failure consequences. Permit abstention; do not force an available model to fit every request.
+4. Derive the selector target from that anchor's published score, preserving source precision. Choose and live-verify the cheapest eligible configuration meeting the inferred target.
+5. Record the result as `uncalibrated_task_estimate`, with `quality_target_verified: false` and worker success probability null. The published anchor score is measured; its suitability for this request is inferred. Choice probability gates the decision under application policy and is never converted into a benchmark score.
+6. Execute only under runtime authorization and spend limits; verify actual output, then retry/escalate within application policy. Include routing, verification and retry overhead in observed economics.
+
+This is a reproducible inference contract, not evidence that a numeric threshold guarantees success. The initial policy uses Jev judgment against measured anchors because task-level calibration does not yet exist. Prefer empirical mappings learned from held-out outcomes when available. Do not claim this removes uncertainty or demonstrates cost savings.
+
+Explicit `score:...`, `budget:...`, `floor` and `ceiling` targets remain advanced overrides. Value knees do not establish task adequacy. Skip workload classification when workload is supplied through a trusted runtime. Keep uncovered tasks pending; a broad-index substitution requires an intentional change in evidence basis. Subscription modes and whole-agent systems are not single-worker API results.
 
 ## Validate success-based routing
 
