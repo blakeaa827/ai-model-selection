@@ -69,7 +69,22 @@ node select-workload.mjs workloads.json long_context budget:0 "" --allow-limited
 
 The workload selector filters all verified candidates for required parameters, context and input modalities before computing dominance. It rejects unknown workloads, stale evidence, changed revisions and unsupported constraints. Budget values are benchmark-task budgets, not production prompt caps. Candidate floors and ceilings describe cost knees; a workload quality target is needed before treating one as a deployment default. The existing general selector and subscription guidance remain available.
 
-The same daily `pipeline/refresh.mjs` acquires active public AA configuration records, rebuilds each profile, refreshes complete coding-agent system comparisons, renders curves, validates schema/evidence and selector boundaries, then publishes all artifacts and dated workload snapshots atomically. Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/); original project code and documentation use [MIT](LICENSE). The maintainer has deferred the source-data rights review; see [DATA-SOURCES.md](DATA-SOURCES.md). Pending research, extraction and other profiles are explicit. Jev integration and calibrated request-success probabilities are not yet implemented; see the [router guidance](workloads.md#router-and-jev-integration).
+The same daily `pipeline/refresh.mjs` acquires active public AA configuration records, rebuilds each profile, refreshes complete coding-agent system comparisons, renders curves, validates schema/evidence and selector boundaries, then publishes all artifacts and dated workload snapshots atomically. Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/); original project code and documentation use [MIT](LICENSE). The maintainer has deferred the source-data rights review; see [DATA-SOURCES.md](DATA-SOURCES.md). Pending research, extraction and other profiles are explicit. A [companion Jev routing skill](skills/route-workloads-with-jev/SKILL.md) prepares classification requests and verified worker selection. Calibrated request-success routing remains unimplemented; see the [router guidance](workloads.md#router-and-jev-integration).
+
+## Company routing skill with Jev
+
+Install or adapt [route-workloads-with-jev](skills/route-workloads-with-jev/SKILL.md) in your AI platform's skill/instruction system. Keep its helpers and references together and point it at a trusted checkout of this repository. It classifies unknown workloads with a pinned Jev decision model, then uses the existing selector to prepare the cheapest verified worker meeting an explicit benchmark target, or the highest-scoring worker within a benchmark-task budget.
+
+The helper verifies the decision-output catalog, binds decisions to a report hash, requires an explicit classification probability/margin policy and rejects stale reports, changed revisions/providers, uncertain classifications and unsupported constraints. Known workloads can skip Jev. No command submits a paid model request; your platform supplies authorized runtime credentials and executes the request plan. A repository skill does not automatically install itself companywide.
+
+```sh
+node skills/route-workloads-with-jev/scripts/route.mjs prepare . /private/task.json workloads.json > /private/jev-bundle.json
+# Submit only bundle.request to bundle.api_endpoint through your authorized runtime.
+node skills/route-workloads-with-jev/scripts/route.mjs resolve . /private/jev-bundle.json /private/jev-response.json /private/classification-policy.json workloads.json
+node test-jev-routing.mjs
+```
+
+See the [input/API contract](skills/route-workloads-with-jev/references/jev-api.md) and [routing policy](skills/route-workloads-with-jev/references/routing-policy.md). Keep task bundles, responses, credentials and telemetry outside this public repository. Choice probabilities classify workloads; optional Noul estimates need held-out calibration before success-based routing. Neither is converted into an Intelligence Index score. Calibrated production success prediction remains unimplemented.
 
 ## Select an API configuration
 

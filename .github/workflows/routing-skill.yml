@@ -1,0 +1,21 @@
+name: Routing skill checks
+on:
+  push:
+    branches: [main]
+    paths: ['skills/**', 'test-jev-routing.mjs', 'select-model.mjs', 'select-workload.mjs', '.github/workflows/routing-skill.yml']
+  pull_request:
+    paths: ['skills/**', 'test-jev-routing.mjs', 'select-model.mjs', 'select-workload.mjs', '.github/workflows/routing-skill.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check routing preparation and rejection behavior without paid calls
+        run: node test-jev-routing.mjs

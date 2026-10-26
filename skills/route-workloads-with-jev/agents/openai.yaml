@@ -1,0 +1,4 @@
+interface:
+  display_name: "Route Workloads with Jev"
+  short_description: "Route tasks with Jev and verified model selection charts"
+  default_prompt: "Use $route-workloads-with-jev to choose an efficient verified model for this task."

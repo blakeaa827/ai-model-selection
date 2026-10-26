@@ -31,6 +31,7 @@ try{
   await run('schema_validation','python3',['pipeline/validate-schema.py']);
   await run('selector_regression',process.execPath,['test-selector.mjs','run-artifacts/report/latest.json']);
   await run('workload_selector_regression',process.execPath,['test-workload-selector.mjs',...(workloadsEnabled?['run-artifacts/report/workloads.json']:[])]);
+  if(workloadsEnabled)await run('jev_routing_skill_regression',process.execPath,['test-jev-routing.mjs','run-artifacts/report/workloads.json']);
   if(!shouldPublish){console.log('Fresh staged report validated; publication not requested');break;}
   try{await publish('run-artifacts/report',parent);break;}
   catch(error){if(String(error).includes('CONCURRENT_MAIN_CHANGED')&&attempt<2){console.log('Main changed; rebuilding against fresh main and preserving unrelated history');continue;}throw error;}
