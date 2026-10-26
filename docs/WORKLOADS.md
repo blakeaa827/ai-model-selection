@@ -1,4 +1,4 @@
-# Workload-specific daily selection — draft
+# Workload-specific daily selection
 
 The implementation adds independently computed cost-capability frontiers for:
 
@@ -13,15 +13,15 @@ Every profile uses its own observed evaluation `costPerTask`, not the Intelligen
 
 ## Rollout status
 
-The feature is **implemented for review and disabled for daily publication**. See [DATA-SOURCES.md](../DATA-SOURCES.md) for the source-data permission issue. No software license has been applied by this change. The existing main-branch chart and its schedule are preserved until the draft is reviewed.
+The feature is **enabled for daily publication** by the maintainer's October 25, 2026 instruction. Original project code and documentation use the [MIT license](../LICENSE). Benchmark measurements are credited to [Artificial Analysis](https://artificialanalysis.ai/). The source-data rights review is deferred, and source redistribution permission has not been independently verified; see [DATA-SOURCES.md](../DATA-SOURCES.md). The existing daily schedule is preserved.
 
-The proposed generated files are `workloads.json`, `workloads.md`, `workloads/cost-curves.svg` and `workloads/snapshots/YYYY-MM-DD.json`. The general report links to them when enabled. They are validated and published atomically with the existing report, coverage inventory, README and snapshot. Generated benchmark data is not included in this draft.
+Generated files are `workloads.json`, `workloads.md`, `workloads/cost-curves.svg` and `workloads/snapshots/YYYY-MM-DD.json`. The general report links to them. They are validated and published atomically with the general report, coverage inventory, README and snapshot. Each benchmark uses its own measured score and task cost.
 
 ## Selector contract
 
 `select-workload.mjs` supports minimum-score and benchmark-task-budget queries. Scores are benchmark-specific: percentage metrics and Elo remain distinct, with no conversion into general intelligence or probability of a new request succeeding.
 
-After an authorized dataset is generated:
+After retrieving the current dataset:
 
 ```sh
 node select-workload.mjs workloads.json business_automation score:60 tools
@@ -61,4 +61,4 @@ Synthetic tests cover score/budget boundaries, free opt-in, constraint-dependent
 node pipeline/refresh.mjs --reuse-acquisition --include-workloads
 ```
 
-The review flag cannot publish and cannot initiate workload acquisition. Public rollout requires the appropriate verified source permission reference in `pipeline/workload-rollout.json`, plus schema, exact-source, endpoint and selector validation. A denied or failed check preserves the last published report.
+The review flag cannot publish and cannot initiate workload acquisition. Normal daily execution runs `node pipeline/refresh.mjs --publish`; rollout state is recorded in `pipeline/workload-rollout.json`. Source acquisition, schema, exact-configuration, endpoint and selector validation must pass before publication. A failed check preserves the last published report. MIT licensing and attribution do not assert third-party redistribution permission.

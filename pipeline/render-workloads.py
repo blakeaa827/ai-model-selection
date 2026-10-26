@@ -6,6 +6,7 @@ control=lambda r:json.dumps(r['request']['reasoning'],separators=(',',':'))
 name=lambda r:r['request']['model']+' / '+control(r)
 money=lambda value:f'${value:.6f}'
 lines=[f"# Workload-specific model selection — {d['report_date']}",'',
+ 'Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred data-rights review.','',
  'Each profile has its own benchmark score, measured evaluation task cost, harness and Pareto frontier. Scores and budgets are meaningful only within that profile. The general Intelligence Index remains in [latest.md](latest.md).',
  '',f"Screened **{d['coverage']['AA_configuration_count']} public AA configurations** and **{d['coverage']['openrouter_model_count']} OpenRouter entries**; acquired **{d['coverage']['active_exact_records_checked']} active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.",'',
  '**Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.',
@@ -52,7 +53,7 @@ lines+=['','## Router and Jev integration','','The selector accepts a workload p
 for u in sorted({p['source_url'] for p in d['profiles']}|{p['methodology_url'] for p in d['profiles']}|{d['coding_agent_systems']['source_url'],d['coding_agent_systems']['methodology_url']}):lines.append('- '+u)
 (P/'workloads.md').write_text('\n'.join(lines)+'\n')
 # Separate log-cost panels; score scales are deliberately not shared.
-W,H=1320,1160;svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}"><rect width="100%" height="100%" fill="#ffffff"/><g font-family="sans-serif" fill="#19283d"><text x="45" y="36" font-size="25">Cost and capability by workload</text><text x="45" y="62" font-size="14">{d["report_date"]} · Evaluation-specific USD/task (log scale) · Verified paid configurations only</text>']
+W,H=1320,1185;svg=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}"><rect width="100%" height="100%" fill="#ffffff"/><g font-family="sans-serif" fill="#19283d"><text x="45" y="36" font-size="25">Cost and capability by workload</text><text x="45" y="62" font-size="14">{d["report_date"]} · Evaluation-specific USD/task (log scale) · Verified paid configurations only</text>']
 for index,p in enumerate(d['profiles']):
  col=index%2;row=index//2;left=45+col*650;top=90+row*350;f=p['frontier']
  svg.append(f'<text x="{left}" y="{top+15}" font-size="18">{html.escape(p["name"])}</text>')
@@ -60,6 +61,7 @@ for index,p in enumerate(d['profiles']):
   svg.append(f'<text x="{left}" y="{top+60}" font-size="15">Pending comparable evidence</text>');continue
  x0=left+65;x1=left+590;y0=top+45;y1=top+250
  xmin=min(r['score'] for r in f);xmax=max(r['score'] for r in f);pad=max((xmax-xmin)*.04,.1);xmin-=pad;xmax+=pad
+ if p['score_unit']!='elo':xmin=max(0,xmin);xmax=min(100,xmax)
  ymin=min(r['benchmark_task_cost_usd'] for r in f)*.75;ymax=max(r['benchmark_task_cost_usd'] for r in f)*1.35
  if ymax<=ymin:ymax=ymin*2
  xs=lambda s:x0+(s-xmin)/(xmax-xmin)*(x1-x0)
@@ -76,10 +78,11 @@ for index,p in enumerate(d['profiles']):
   role=next((role for role in ['floor','ceiling'] if (p['recommendations'].get(role) or {}).get('configuration_id')==r['configuration_id']),None)
   color={'floor':'#14815d','ceiling':'#ba7415'}.get(role,'#4562d8')
   svg.append(f'<circle cx="{xs(r["score"])}" cy="{ys(r["benchmark_task_cost_usd"])}" r="4.5" fill="{color}"><title>{html.escape(name(r))}: {r["score"]}, ${r["benchmark_task_cost_usd"]}</title></circle>')
- svg.append(f'<text x="{(x0+x1)/2}" y="{y1+41}" text-anchor="middle" font-size="12">{html.escape(p["score_unit"])}</text>')
+ axis_label={'elo':'Benchmark Elo','pass_at_1_percent':'Pass@1 (%)','guardrail_adjusted_objective_completion_percent':'Objectives completed, guardrail-adjusted (%)','all_criteria_pass_percent':'All criteria passed (%)'}.get(p['score_unit'],p['score_unit'])
+ svg.append(f'<text x="{(x0+x1)/2}" y="{y1+41}" text-anchor="middle" font-size="12">{html.escape(axis_label)}</text>')
  rec=p['recommendations'].get('floor');note='No clear value knee' if not rec else 'Value knee: '+rec['configuration_id']
  svg.append(f'<text x="{left}" y="{y1+66}" font-size="12">{html.escape(note)}</text>')
-svg.append('<text x="45" y="1140" font-size="13">Green: candidate floor · Amber: optional ceiling · Each panel has its own score scale · Benchmarks are not request success probabilities</text></g></svg>')
+svg.append('<text x="45" y="1140" font-size="13">Green: candidate floor · Amber: optional ceiling · Each panel has its own score scale · Benchmarks are not request success probabilities</text><text x="45" y="1166" font-size="12">Benchmark source: Artificial Analysis (artificialanalysis.ai). Independently maintained selection charts.</text></g></svg>')
 (P/'workloads').mkdir(exist_ok=True);(P/'workloads/cost-curves.svg').write_text(''.join(svg))
 section='''## Workload-specific selection
 
@@ -94,7 +97,7 @@ node select-workload.mjs workloads.json long_context budget:0 "" --allow-limited
 
 The workload selector filters all verified candidates for required parameters, context and input modalities before computing dominance. It rejects unknown workloads, stale evidence, changed revisions and unsupported constraints. Budget values are benchmark-task budgets, not production prompt caps. Candidate floors and ceilings describe cost knees; a workload quality target is needed before treating one as a deployment default. The existing general selector and subscription guidance remain available.
 
-The same daily `pipeline/refresh.mjs` acquires active public AA configuration records, rebuilds each profile, refreshes complete coding-agent system comparisons, renders curves, validates schema/evidence and selector boundaries, then publishes all artifacts and dated workload snapshots atomically. Pending research, extraction and other profiles are explicit. Jev integration and calibrated request-success probabilities are not yet implemented; see the [router guidance](workloads.md#router-and-jev-integration).
+The same daily `pipeline/refresh.mjs` acquires active public AA configuration records, rebuilds each profile, refreshes complete coding-agent system comparisons, renders curves, validates schema/evidence and selector boundaries, then publishes all artifacts and dated workload snapshots atomically. Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/); original project code and documentation use [MIT](LICENSE). The maintainer has deferred the source-data rights review; see [DATA-SOURCES.md](DATA-SOURCES.md). Pending research, extraction and other profiles are explicit. Jev integration and calibrated request-success probabilities are not yet implemented; see the [router guidance](workloads.md#router-and-jev-integration).
 
 '''
 readme=(P/'README.md').read_text()

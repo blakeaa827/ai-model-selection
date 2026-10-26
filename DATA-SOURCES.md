@@ -1,28 +1,30 @@
-# Source data and licensing status
+# Source data, attribution and license scope
 
-Reviewed October 25, 2026.
+Updated October 25, 2026.
 
-This repository currently has no selected software license. MIT is the proposed license for the original selector, pipeline and project documentation. A software license from this project's maintainer cannot grant rights in third-party benchmark measurements, datasets, trademarks or provider documentation.
+## Original project software
 
-## Artificial Analysis
+The original selector, pipeline and original project documentation are licensed under the [MIT License](LICENSE), copyright 2026 Blake Anderson. Third-party measurements, datasets, graphics, documentation, model weights and trademarks are not represented as belonging to this project's maintainer or as newly licensed by this project.
 
-Benchmark results are sourced from [Artificial Analysis](https://artificialanalysis.ai/). Attribution identifies the source; it is not evidence of redistribution permission or endorsement.
+## Benchmark attribution
 
-The [website terms](https://artificialanalysis.ai/terms-of-use), revised September 15, 2026, restrict automated collection and use for similar or competitive services. The [Data Platform Terms v1.1](https://artificialanalysiscdn.com/legal/ProDataPlatformTerms.pdf), revised August 19, 2026, distinguish sharing charts and brief citations from structured redistribution. Sections 2.3–2.5 place restrictions on machine-readable exports and third-party model-selection products. The [API licensing guide](https://artificialanalysis.ai/data-api/docs#attribution-and-licensing) directs users to contact Artificial Analysis about redistribution rights.
+**Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/).** The report links to the exact source model configurations, benchmark methodology and evaluation versions. Scores and evaluation task costs come from independently measured source records; provider prices and OpenRouter metadata are kept separately. The project is independently maintained and does not claim AA endorsement.
 
-**An applicable written permission or redistribution agreement has not been verified for this project.** An ordinary API key, attribution, free access or a Pro subscription should not be treated as that permission. No claim is made here that the existing public data feed has been licensed for redistribution. That existing exposure needs a separate decision; this draft does not remove history, alter visibility or change the existing schedule.
+On October 25, 2026, the maintainer expressly instructed the project to proceed with expanded public charts and daily updates, apply MIT to the original code, credit AA, and defer the data-rights review. That decision is recorded in `pipeline/workload-rollout.json`.
 
-The workload expansion is disabled in `pipeline/workload-rollout.json` pending an appropriate permission reference or replacement data source. Do not publish newly generated workload JSON, detailed benchmark inventories or dated workload snapshots until that issue is resolved. Code review uses synthetic tests and, where already available, local review evidence; generated evidence is not included in the draft pull request.
+**The data-rights review remains unresolved.** An applicable written redistribution agreement has not been independently verified. The maintainer's instruction and AA attribution are not recorded as source permission or as a legal determination that third-party terms do or do not apply. MIT governs the original project software and does not settle the rights associated with third-party data. Downstream users should assess their own intended use and applicable terms.
+
+Reference documents for the deferred review:
+
+- [AA Website Terms of Use](https://artificialanalysis.ai/terms-of-use), revised September 15, 2026.
+- [AA Data Platform Terms v1.1](https://artificialanalysiscdn.com/legal/ProDataPlatformTerms.pdf), revised August 19, 2026.
+- [AA attribution and licensing guide](https://artificialanalysis.ai/data-api/docs#attribution-and-licensing).
+- [U.S. Copyright Office explanation of copyright and facts](https://www.copyright.gov/help/faq/faq-protect.html).
 
 ## OpenRouter and model providers
 
-Model IDs, reasoning controls and endpoint metadata are verified against official catalogs and provider documentation. Provider and service names remain their owners' trademarks. Provider API/service terms and model-weight licenses are separate from a license for this project's code. This project does not distribute model weights or grant rights to call a paid API.
+Callable model IDs, native reasoning controls and endpoint metadata are verified against [OpenRouter](https://openrouter.ai/) and official provider documentation. Provider and service names remain their owners' trademarks. Service terms and model-weight licenses are separate from this project's software license. No model weights, API credentials or paid service access are distributed here.
 
-## Proposed next steps
+## Scope of the reports
 
-1. Select a software license for the project's original code; MIT is recommended for easy commercial and noncommercial adoption.
-2. Confirm Artificial Analysis permission for the intended public JSON feed and routing use, or substitute measurements with compatible redistribution rights.
-3. Record the source permission reference and scope without storing private agreements, tokens or credentials in the public repository.
-4. Enable and publish the workload charts only after that source decision; retain exact attribution, methodology and revision checks.
-
-This notice records the review status and grants no additional rights in third-party material.
+The repository contains measured benchmark comparisons and our computed selection frontiers. Benchmark scores are not calibrated probabilities of success on new requests. AA benchmark-task costs are not OpenRouter invoice estimates or guaranteed prices for individual prompts. Workload profiles do not borrow costs or scores from a different benchmark, model revision, reasoning mode or agent harness.

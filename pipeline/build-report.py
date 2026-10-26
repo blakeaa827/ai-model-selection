@@ -111,6 +111,8 @@ for row in d['excluded_or_pending']:
   row['catalog_verified_at']=ct
   row['supported_efforts']=cm.get('reasoning',{}).get('supported_efforts')
 d.update(report_date=date,checked_at=now)
+d['software_license']={'spdx_id':'MIT','file':'LICENSE','scope':'Original project code and original documentation; no third-party rights granted.'}
+d['benchmark_attribution']={'name':'Artificial Analysis','url':'https://artificialanalysis.ai/','independent_project_not_endorsed':True,'data_rights_review':'deferred_by_maintainer','source_redistribution_permission_verified':False}
 d['benchmark']['verified_at']=max(a['verified_at'] for a in metrics)
 d['benchmark']['version']=version
 d['benchmark']['evaluation_run_date_note']=date+' is the source verification date; exact AA evaluation completion dates remain unpublished.'

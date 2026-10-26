@@ -4,11 +4,13 @@
 
 ## Changes since the last published report
 
-Refreshed 15 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-25. New candidates require exact effort/revision correspondence before routing.
+Refreshed 14 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-25. New candidates require exact effort/revision correspondence before routing.
 
-Previous report: 2026-10-25; common Intelligence Index v4.3.2. Frontier membership unchanged; floor and ceiling unchanged.
+Previous report: 2026-10-25; common Intelligence Index v4.3.2. Frontier membership changed; floor and ceiling unchanged.
 
 Reverified same-day snapshot; previous version is preserved in Git history.
+
+Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
 
 Screened **467 live gateway listings**, **515 AA releases**, **73 exact model records**, and **17 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
@@ -37,11 +39,10 @@ Intervals are continuous: the first lower bound is inclusive, later lower bounds
 | (47.7833271274065, 50.2377777519769] | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 50.238 | $0.319144 |
 | (50.2377777519769, 51.0377679093761] | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 51.038 | $0.392861 |
 | (51.0377679093761, 51.8332597011541] | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 51.833 | $0.724167 |
-| (51.8332597011541, 53.5831959822067] | `anthropic/claude-opus-5.5` | `{"effort":"high"}` | 53.583 | $1.822505 |
-| (53.5831959822067, 55.9873505840139] | `anthropic/claude-opus-5.5` | `{"effort":"xhigh"}` | 55.987 | $3.459110 |
-| (55.9873505840139, 57.6223698102963] | `anthropic/claude-opus-5.5` | `{"effort":"max"}` | 57.622 | $5.982012 |
+| (51.8332597011541, 52.3863277108782] | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 52.386 | $2.308796 |
+| (52.3863277108782, 52.673669395513] | `openai/gpt-6-astra` | `{"effort":"max"}` | 52.674 | $3.257500 |
 
-No eligible verified configuration meets a score above 57.6223698102963.
+No eligible verified configuration meets a score above 52.673669395513.
 
 ## Most capability within a benchmark-task budget
 
@@ -58,10 +59,9 @@ No eligible verified configuration meets a score above 57.6223698102963.
 | [0.21370088267875537, 0.31914442375664703) | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 47.783 |
 | [0.31914442375664703, 0.39286117158850653) | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 50.238 |
 | [0.39286117158850653, 0.7241670655535033) | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 51.038 |
-| [0.7241670655535033, 1.822504718771704) | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 51.833 |
-| [1.822504718771704, 3.459110175822289) | `anthropic/claude-opus-5.5` | `{"effort":"high"}` | 53.583 |
-| [3.459110175822289, 5.982012019521066) | `anthropic/claude-opus-5.5` | `{"effort":"xhigh"}` | 55.987 |
-| [5.982012019521066, ∞) | `anthropic/claude-opus-5.5` | `{"effort":"max"}` | 57.622 |
+| [0.7241670655535033, 2.308795912269076) | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 51.833 |
+| [2.308795912269076, 3.2575003134834164) | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 52.386 |
+| [3.2575003134834164, ∞) | `openai/gpt-6-astra` | `{"effort":"max"}` | 52.674 |
 
 ## Exact revision and route contract
 
@@ -73,7 +73,7 @@ Every request uses `provider.require_parameters=true`, `provider.allow_fallbacks
 | `xiaomi/mimo-v2.6-flash` | `xiaomi/mimo-v2.6-flash-20260921` | `xiaomi/fp8` | `completions` |
 | `openai/gpt-6.1-sol` | `openai/gpt-6.1-sol-20260929` | `openai` | `responses` |
 | `xiaomi/mimo-v2.6-pro` | `xiaomi/mimo-v2.6-pro-20260921` | `xiaomi/fp8` | `completions` |
-| `anthropic/claude-opus-5.5` | `anthropic/claude-opus-5.5-20260921` | `anthropic` | `completions` |
+| `openai/gpt-6-astra` | `openai/gpt-6-astra-20260903` | `openai` | `responses` |
 | `google/gemma-4-31b-it:free` | `google/gemma-4-31b-it-20260402` | `google-ai-studio` | `completions` |
 
 MiMo uses `reasoning.enabled=true`, corresponding to native `thinking.type=enabled`; its metadata effort is null and is omitted from the actual request. Named non-none MiMo efforts do not define different thinking intensities. Preserve reasoning details across tool turns, omit unsupported sampling controls and allow sufficient output tokens. Provider token prices are recorded separately from AA measured task costs.
@@ -105,9 +105,8 @@ The recommendation heuristic uses the first ≥3× rise in adjacent marginal dol
 | GPT-6.1 Sol / high | 2.454451 | $0.105444 | 49.34% | $0.042960 | 0.78× |
 | GPT-6.1 Sol / xhigh | 0.799990 | $0.073717 | 23.10% | $0.092147 | 2.14× |
 | GPT-6.1 Sol / max | 0.795492 | $0.331306 | 84.33% | $0.416479 | 4.52× |
-| Claude Opus 5.5 / high | 1.749936 | $1.098338 | 151.67% | $0.627644 | 1.51× |
-| Claude Opus 5.5 / xhigh | 2.404155 | $1.636605 | 89.80% | $0.680741 | 1.08× |
-| Claude Opus 5.5 / max | 1.635019 | $2.522902 | 72.93% | $1.543041 | 2.27× |
+| GPT-6 Astra / xhigh | 0.553068 | $1.584629 | 218.82% | $2.865161 | 6.88× |
+| GPT-6 Astra / max | 0.287342 | $0.948704 | 41.09% | $3.301659 | 1.15× |
 
 Pay above the ceiling when difficult debugging, architecture, research, avoidable failures or human review are worth the additional cost. For simple, repeatable work, select the cheapest model meeting a measured workload success target. Do not convert an evaluator's 0–1 success probability directly into this index.
 
@@ -149,6 +148,16 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | GPT-6.1 Sol Pro Batch  | — | — | New batch listing; Pro mode and processing tier lack an exact common-index score/task-cost pair. Standard-mode benchmarks not transferred. |
 | Ling 3.0 Flash Sante  | — | — | New paid gateway listing; no exact common-index score/task-cost pair in the current AA registry. Its former free listing is no longer in the live catalog. |
 | GPT-6 Sol Daybreak Blue  | — | — | Restricted Daybreak-program access. Cyber Index evaluation is a different harness and cost basis, not the Intelligence Index; no common-index pair or public gateway route. |
+| Claude Opus 5.5 (Max, Default Fallback) max | 57.6223698102963 | $5.982012019521066 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Opus 5.5 (High, Default Fallback) high | 53.5831959822067 | $1.822504718771704 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Opus 5.5 (Low, Default Fallback) low | 42.3077781466168 | $0.551180473909146 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Opus 5.5 (Medium, Default Fallback) medium | 51.2434931792768 | $1.3360093438976588 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Opus 5.5 (Xhigh, Default Fallback) xhigh | 55.9873505840139 | $3.459110175822289 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Sonnet 5.5 (Max, Default Fallback) max | 56.0001286580794 | $5.4608525948098325 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Sonnet 5.5 (High, Default Fallback) high | 46.7533528066958 | $0.8844498581005511 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Sonnet 5.5 (Low, Default Fallback) low | 35.8681594577587 | $0.3451610270666562 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Sonnet 5.5 (Medium, Default Fallback) medium | 40.838652287929 | $0.48326378260543096 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
+| Claude Sonnet 5.5 (Xhigh, Default Fallback) xhigh | 51.8955544183089 | $2.0120345801545785 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
 | Agnes 2.5 Pro Beta  | 35.2413300369053 | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Command A+  | 13.1335002685349 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | DeepSeek V4.1 Flash 1017 (Max)  | 45.0965048681912 | $0.2620484273114172 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
@@ -180,7 +189,7 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 | OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6 Luna; `{"reasoning_effort":"high","ui_label":"High","speed":"Standard"}` | True |
 | Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
-| Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
+| Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | False |
 
 **OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate.
 
@@ -190,14 +199,21 @@ Unverified this run: https://support.claude.com/en/articles/8664678-change-the-m
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
 **Gemini:** Models/thinking consume differing allowance. Generic Help still lists Gemini 3 families while September launch explicitly grants 3.8 Flash to Pro/Ultra; prefer launch for exact revision, Help for controls. Gemini 4 Argon is restricted Fairwind rollout, not assumed consumer subscription access. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.
+Unverified this run: https://support.google.com/gemini/answer/16275805. Previous verification dates are retained.
 
 Eligible Claude Max/Team users can claim first-party API credits; eligibility depends on exact plan, claim and linked Console organization. These credits do not pay OpenRouter invoices. No personal entitlement is assumed.
 
 ## Verification and freshness
 
-Checked 2026-10-25T16:23:00.927345+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-25T16:22:46.190630+00:00; registry checked 2026-10-25T16:22:46.519046+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-26T03:59:24.134312+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-26T03:56:55.990194+00:00; registry checked 2026-10-26T03:56:55.302154+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
+
+## Workload-specific routing
+
+The new [workload charts](workloads.md) and [workload JSON](workloads.json) provide six independently measured score/cost frontiers, exact routing and separate candidate floors/ceilings. Use `select-workload.mjs` with an explicit workload. Complete coding-agent systems and pending profiles are separate; no benchmark score is converted directly into a Jev success probability.
+
+AA now labels Opus 5.5 measurements as **Default Fallback**. Those multi-model measurements are excluded from the pinned single-model frontier. Astra configurations that become undominated are checked on the standard first-party route. The general floor and ceiling are recomputed from the retained configurations.
 
 ## Sources
 

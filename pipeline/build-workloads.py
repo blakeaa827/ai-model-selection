@@ -5,7 +5,10 @@ from pathlib import Path
 
 R=Path('run-artifacts/acquisition'); O=Path('run-artifacts/report')
 load=lambda p:json.loads(Path(p).read_text())
-save=lambda p,x:Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
+def save(p,x):
+    # Keep the machine-readable inventories compact without rounding any values.
+    compact='profiles' in x or 'catalog_models' in x
+    Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=None if compact else 2,separators=(',',':') if compact else None)+'\n')
 
 def frontier(rows):
     unique={}
@@ -156,6 +159,8 @@ def main():
     signature=lambda p:[(r['configuration_id'],r['score'],r['benchmark_task_cost_usd']) for r in p.get('frontier',[])]
     changed_profiles=[p['id'] for p in profiles if signature(p)!=signature(previous_profiles.get(p['id'],{}))]
     result={'schema_version':'1.0.0','report_date':general['report_date'],'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'software_license':general.get('software_license'),
+            'benchmark_attribution':general.get('benchmark_attribution'),
             'freshness':copy.deepcopy(general['freshness']),'general_report':'latest.json','general_intelligence_index_version':general['benchmark']['version'],
             'selection_policy':{'scope':'Best observed among exact verified configurations, not proof of global optimality. All catalog entries and AA configurations are inventoried; routing correspondence is incomplete.',
                                 'unknown_workload':'reject; explicit general-lane selection remains available','unverified_or_stale':'reject_without_substitution',

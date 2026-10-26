@@ -1,6 +1,9 @@
 {
-  "enabled": false,
+  "enabled": true,
   "source_redistribution_permission_verified": false,
   "permission_reference": null,
-  "reason": "Draft workload expansion. Artificial Analysis terms reviewed October 25, 2026 restrict structured redistribution and third-party model-selection products. Confirm the appropriate written permission or replace the source before enabling public workload publication. An MIT software license does not supply these data rights."
+  "data_rights_review": "deferred_by_maintainer",
+  "maintainer_authorized_publication_date": "2026-10-25",
+  "software_license": "MIT",
+  "reason": "The maintainer expressly authorized the expanded public charts and daily updates while deferring the data-rights review. Attribute benchmark measurements to Artificial Analysis. MIT covers original project code and documentation; it does not assert a license for third-party material. Source permission has not been independently verified."
 }
