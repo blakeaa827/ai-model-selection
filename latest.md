@@ -10,7 +10,7 @@ Previous report: 2026-10-27; common Intelligence Index v4.3.2. Frontier membersh
 
 Reverified same-day snapshot; previous version is preserved in Git history.
 
-1 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
+10 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
@@ -214,7 +214,7 @@ Eligible Claude Max/Team users can claim first-party API credits; eligibility de
 
 ## Verification and freshness
 
-Checked 2026-10-27T14:14:38.146480+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-27T14:14:05.749514+00:00; registry checked 2026-10-27T14:14:05.800920+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-27T18:02:59.098270+00:00 (report date in America/Chicago). AA v4.3.2; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-27T18:02:24.824054+00:00; registry checked 2026-10-27T18:02:24.699083+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
