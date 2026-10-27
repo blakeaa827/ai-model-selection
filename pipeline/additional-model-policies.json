@@ -1,0 +1,20 @@
+[
+  {
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "official_release_date": "2026-10-26",
+    "release_date_note": null,
+    "availability": "listed; no expiration date in live catalog",
+    "supported_efforts": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "catalog_default_effort": "medium",
+    "provider_documentation_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+    "pricing_note": "Token prices are separate from AA weighted task costs. Excludes gateway fees, tools, context surcharges and nonstandard tiers."
+  }
+]

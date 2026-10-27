@@ -17,13 +17,13 @@ A daily cost vs capability chart and machine-readable model selector across all 
 
 The Intelligence Index measures broad benchmark capability, not a request's probability of success. AA weighted task costs are not OpenRouter invoice estimates. Every listed model is inventoried; not every model has comparable measurements. See the [methodology and limits](latest.md) before using the recommendations.
 
-## October 26, 2026 recommendation
+## October 27, 2026 recommendation
 
 API floor: **MiMo-V2.6-Pro / thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per measured AA task. Optional ceiling: **GPT-6.1 Sol / xhigh**, score **51.0377679093761**, **$0.39286117158850653**. Both are workload-conditional heuristics.
 
-Refreshed 14 paid configurations and 1 opt-in free configurations. 8 numerical source revisions; 2 new and 0 absent gateway listings; 0 new AA releases since 2026-10-26. New candidates require exact effort/revision correspondence before routing.
+Refreshed 16 paid configurations and 1 opt-in free configurations. 1 numerical source revisions; 2 new and 7 absent gateway listings; 1 new AA releases since 2026-10-26. New candidates require exact effort/revision correspondence before routing.
 
-Discovery screens 468 live OpenRouter entries and 515 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
+Discovery screens 463 live OpenRouter entries and 516 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
 ## Files and cost basis
 
@@ -147,4 +147,3 @@ The existing workflow runs `node pipeline/refresh.mjs`: public AA exact-record a
 Run `node pipeline/refresh.mjs` locally to stage and validate `run-artifacts/report/`. `--publish` additionally requires the existing GitHub integration or the workflow's scoped `GITHUB_TOKEN`; credentials are never put in reports. `pipeline/publish.mjs` creates individual blobs, then a small tree, commit and non-force ref update, and verifies the remote contents. This avoids the earlier large inline tree request. On a concurrent update it stops safely; a fresh run rebuilds from current main.
 
 The Dot monitor remains responsible for web research and reviewing new candidates, lifecycle changes and subscription UI correspondence. A newly listed model stays pending until its exact AA configuration, revision, reasoning control and route are verified. This is deliberate eligibility enforcement; supported effort names alone cannot supply missing benchmarks. Failed acquisition or validation preserves the last published report and produces diagnostic artifacts.
-

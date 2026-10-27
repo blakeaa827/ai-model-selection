@@ -1,30 +1,314 @@
 [
   {
-    "configuration_id":"openai/gpt-6-astra@xhigh",
-    "model_name":"GPT-6 Astra",
-    "openrouter_model_id":"openai/gpt-6-astra",
-    "openrouter_canonical_slug":"openai/gpt-6-astra-20260903",
-    "effort":"xhigh",
-    "reasoning_control":{"type":"effort","value":"xhigh"},
-    "benchmark_source_url":"https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
-    "request":{"model":"openai/gpt-6-astra","reasoning":{"effort":"xhigh"},"provider":{"only":["openai"],"require_parameters":true,"allow_fallbacks":false}},
-    "api_endpoint":"https://openrouter.ai/api/v1/responses",
-    "endpoint_verification":{"metadata_url":"https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints","provider_tag":"openai","quantization":"unknown"},
-    "configuration_settings":{"sampling":"Provider defaults; omit temperature/top_p","tool_turns":"Preserve reasoning details across tool turns","output_budget":"Allow sufficient reasoning plus answer tokens; standard maximum completion 128000","service_tier":"standard; no flex, fast or ultrafast substitution","paid_generation_tested":false},
-    "api_call_tested":false
+    "configuration_id": "openai/gpt-6-astra@xhigh",
+    "model_name": "GPT-6 Astra",
+    "openrouter_model_id": "openai/gpt-6-astra",
+    "openrouter_canonical_slug": "openai/gpt-6-astra-20260903",
+    "effort": "xhigh",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "xhigh"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra-xhigh",
+    "request": {
+      "model": "openai/gpt-6-astra",
+      "reasoning": {
+        "effort": "xhigh"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
   },
   {
-    "configuration_id":"openai/gpt-6-astra@max",
-    "model_name":"GPT-6 Astra",
-    "openrouter_model_id":"openai/gpt-6-astra",
-    "openrouter_canonical_slug":"openai/gpt-6-astra-20260903",
-    "effort":"max",
-    "reasoning_control":{"type":"effort","value":"max"},
-    "benchmark_source_url":"https://artificialanalysis.ai/models/gpt-6-astra",
-    "request":{"model":"openai/gpt-6-astra","reasoning":{"effort":"max"},"provider":{"only":["openai"],"require_parameters":true,"allow_fallbacks":false}},
-    "api_endpoint":"https://openrouter.ai/api/v1/responses",
-    "endpoint_verification":{"metadata_url":"https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints","provider_tag":"openai","quantization":"unknown"},
-    "configuration_settings":{"sampling":"Provider defaults; omit temperature/top_p","tool_turns":"Preserve reasoning details across tool turns","output_budget":"Allow sufficient reasoning plus answer tokens; standard maximum completion 128000","service_tier":"standard; no flex, fast or ultrafast substitution","paid_generation_tested":false},
-    "api_call_tested":false
+    "configuration_id": "openai/gpt-6-astra@max",
+    "model_name": "GPT-6 Astra",
+    "openrouter_model_id": "openai/gpt-6-astra",
+    "openrouter_canonical_slug": "openai/gpt-6-astra-20260903",
+    "effort": "max",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "max"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra",
+    "request": {
+      "model": "openai/gpt-6-astra",
+      "reasoning": {
+        "effort": "max"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6.1-terra@max",
+    "model_name": "GPT-6.1 Terra",
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "effort": "max",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "max"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-terra",
+    "request": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": {
+        "effort": "max"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-terra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6.1-terra@xhigh",
+    "model_name": "GPT-6.1 Terra",
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "effort": "xhigh",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "xhigh"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-terra-xhigh",
+    "request": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": {
+        "effort": "xhigh"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-terra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6.1-terra@high",
+    "model_name": "GPT-6.1 Terra",
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "effort": "high",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "high"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-terra-high",
+    "request": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": {
+        "effort": "high"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-terra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6.1-terra@medium",
+    "model_name": "GPT-6.1 Terra",
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "effort": "medium",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "medium"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-terra-medium",
+    "request": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": {
+        "effort": "medium"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-terra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6.1-terra@low",
+    "model_name": "GPT-6.1 Terra",
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "effort": "low",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "low"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-terra-low",
+    "request": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": {
+        "effort": "low"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-terra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6.1-terra@none",
+    "model_name": "GPT-6.1 Terra",
+    "openrouter_model_id": "openai/gpt-6.1-terra",
+    "openrouter_canonical_slug": "openai/gpt-6.1-terra-20261026",
+    "effort": "none",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "none"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-1-terra-non-reasoning",
+    "request": {
+      "model": "openai/gpt-6.1-terra",
+      "reasoning": {
+        "effort": "none"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6.1-terra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
   }
 ]

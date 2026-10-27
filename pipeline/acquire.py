@@ -74,6 +74,9 @@ def main():
     slugs|={r['benchmark_source_url'].split('/')[-1] for r in base.get('limited_free_configurations',[])}
     slugs|={r['AA_model_slug'] for r in base.get('excluded_or_pending',[]) if r.get('AA_model_slug')}
     slugs|={'step-5','north-mini-code','command-a-plus','k2-horizon-375b-a23b','ling-3-0-tiny','gemini-4-argon'}
+    templates_path=Path('pipeline/additional-request-templates.json')
+    templates=json.loads(templates_path.read_text()) if templates_path.exists() else []
+    slugs|={r['benchmark_source_url'].split('/')[-1] for r in templates}
     old_releases={r['AA_release_slug'] for r in json.loads(Path('coverage.json').read_text())['AA_release_screening']}
     old_ids={r['model_id'] for r in json.loads(Path('coverage.json').read_text())['catalog_models']}
     normalize=lambda name: re.sub(r'[^a-z0-9]', '', name.lower())
@@ -90,11 +93,16 @@ def main():
         if r['slug'] not in old_releases and href.startswith('/models/') and not href.startswith('/models/releases/'):
             slugs.add(href.split('/')[-1])
     ids={m['openrouter_model_id'] for m in base['models']}|{r['openrouter_model_id'] for r in base.get('limited_free_configurations',[])}
+    ids|={r['openrouter_model_id'] for r in templates}
     urls={m['provider_documentation_url'] for m in base['models'] if m.get('provider_documentation_url')}
     urls|={m['provider_pricing_url'] for m in base['models'] if m.get('provider_pricing_url')}
+    policies_path=Path('pipeline/additional-model-policies.json')
+    policies=json.loads(policies_path.read_text()) if policies_path.exists() else []
+    urls|={r['provider_documentation_url'] for r in policies}
     urls|={u for s in base['subscription_recommendations']['services'] for u in s['sources']}
     urls|={'https://openrouter.ai/docs/guides/best-practices/reasoning-tokens','https://openrouter.ai/docs/guides/routing/provider-selection','https://artificialanalysis.ai/articles/claude-haiku-5-5','https://artificialanalysis.ai/articles/claude-sonnet-5-5','https://artificialanalysis.ai/changelog','https://artificialanalysis.ai/methodology/intelligence-benchmarking','https://mimo.mi.com/docs/en-US/updates/model','https://platform.claude.com/docs/en/about-claude/pricing','https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback'}
     urls|={'https://ai.google.dev/gemini-api/docs/changelog','https://ai.google.dev/gemini-api/docs/latest-model','https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart','https://www.kimi.ai/blog/kimi-k3-1-pro','https://platform.kimi.ai/docs/pricing/chat','https://artificialanalysis.ai/articles/kimi-k3-1-pro-launch-benchmarks'}
+    urls|={'https://openai.com/index/introducing-gpt-6-1-terra/','https://artificialanalysis.ai/articles/gpt-6-1-terra-pushes-the-cost-efficiency-frontier'}
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         metrics=list(pool.map(exact,sorted(slugs)))
         endpoints=dict(pool.map(endpoint,sorted(ids)))

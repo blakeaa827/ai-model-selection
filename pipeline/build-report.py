@@ -21,6 +21,27 @@ if override.exists():
   assert 0<=age<=172800 and r['status']=='opened_successfully'
   checks[r['url']]=r
 recovered=[u for u in checks if checks[u].get('retrieval')=='web original-source retrieval']
+policies_path=Path('pipeline/additional-model-policies.json')
+if policies_path.exists():
+ for policy in json.loads(policies_path.read_text()):
+  if policy['openrouter_model_id'] not in {m['openrouter_model_id'] for m in d['models']}:d['models'].append(copy.deepcopy(policy))
+templates_path=Path('pipeline/additional-request-templates.json')
+if templates_path.exists():
+ for template in json.loads(templates_path.read_text()):
+  if template['configuration_id'] in {r['configuration_id'] for r in d['evaluated_configurations']}:continue
+  a=aa.get(template['benchmark_source_url']);m=cat.get(template['openrouter_model_id'])
+  policy=next((p for p in d['models'] if p['openrouter_model_id']==template['openrouter_model_id']),None)
+  if not a or not m or not policy or policy['provider_documentation_url'] not in checks:continue
+  if template['openrouter_canonical_slug']!=m['canonical_slug'] or a.get('deprecated') or a.get('intelligenceIndexIsEstimated'):continue
+  effort=template['effort'];exact_effort=(a.get('effort') or {}).get('slug')==effort or (effort=='none' and a.get('isReasoning') is False)
+  if not exact_effort or effort not in m.get('reasoning',{}).get('supported_efforts',[]):continue
+  ep=next((e for e in eps.get(m['id'],{}).get('data',{}).get('endpoints',[]) if e['tag']==template['request']['provider']['only'][0]),None)
+  if not ep or ep['status']!=0 or m['canonical_slug'] not in ep['name'] or not {'reasoning','reasoning_effort','tools'}<=set(ep['supported_parameters']):continue
+  if ep.get('quantization')!=template['endpoint_verification'].get('quantization'):continue
+  if any(float(m['pricing'][k])!=float(ep['pricing'][k]) for k in ('prompt','completion')):continue
+  cost=(a.get('intelligenceIndexCostPerTask') or {}).get('cost',{}).get('total')
+  if cost is None:continue
+  d['evaluated_configurations'].append({'configuration_id':template['configuration_id'],'openrouter_model_id':m['id'],'openrouter_canonical_slug':m['canonical_slug'],'effort':effort,'intelligence_score':a['intelligenceIndex'],'benchmark_task_cost_usd':cost,'benchmark_version':a['version'],'benchmark_source_url':a['source_url'],'benchmark_verified_at':a['verified_at'],'openrouter_verified_at':ct,'eligible_for_frontier':True,'exclusion_reasons':[],'pareto_dominated':None,'benchmark_score_is_estimated':False,'AA_model_label':a['name']})
 changed=[]
 provisional_reason=next(r['exclusion_reasons'][0] for r in d['evaluated_configurations'] if r['openrouter_model_id']=='anthropic/claude-haiku-5.5')
 for r in d['evaluated_configurations']:
@@ -61,7 +82,7 @@ def refresh_route(row):
  assert float(m['pricing']['prompt'])==float(ep['pricing']['prompt']) and float(m['pricing']['completion'])==float(ep['pricing']['completion'])
  row.update(intelligence_score=a['intelligenceIndex'],benchmark_task_cost_usd=a['intelligenceIndexCostPerTask']['cost']['total'],benchmark_verified_at=a['verified_at'],openrouter_verified_at=ct)
  assert 'fallback' not in a['name'].lower(),'Single-model template cannot describe a fallback benchmark'
- if row['effort'] is not None:assert (a.get('effort') or {}).get('slug')==row['effort'],'Exact benchmark effort mismatch'
+ if row['effort'] is not None:assert (a.get('effort') or {}).get('slug')==row['effort'] or (row['effort']=='none' and a.get('isReasoning') is False),'Exact benchmark effort mismatch'
  row['endpoint_verification'].update(verified_at=er['verified_at'],status=ep['status'],supported_parameters=ep['supported_parameters'],quantization=ep.get('quantization'),standard_pricing_matches_catalog=True)
  u=row.get('reasoning_control',{}).get('source')
  if u in checks:row['reasoning_control']['documentation_verified_at']=checks[u]['verified_at']
@@ -127,6 +148,7 @@ frontier_changed=[(r['configuration_id'],r['intelligence_score'],r['benchmark_ta
 revision=old['changes_since_previous'].get('revision',0)+1 if old['report_date']==date else 1
 summary=f"Refreshed {len(front)} paid configurations and {len(d['limited_free_configurations'])} opt-in free configurations. {len(changed)} numerical source revisions; {len(newids)} new and {len(removed)} absent gateway listings; {len(newreleases)} new AA releases since {old['report_date']}. New candidates require exact effort/revision correspondence before routing."
 d['changes_since_previous']={'previous_report_date':old['report_date'],'previous_commit':os.environ.get('REPORT_PARENT_SHA') or None,'revision':revision,'benchmark_version_changed':version!=old['benchmark']['version'],'frontier_changed':frontier_changed,'frontier_membership_changed':{r['configuration_id'] for r in front}!={r['configuration_id'] for r in old['frontier']},'recommendations_changed':any(old['recommendations'][k]['configuration_id']!=d['recommendations'][k]['configuration_id'] for k in ('floor','ceiling')),'new_eligible_releases':[],'removed_actionable_configurations':[],'new_catalog_entries':newids,'removed_catalog_entries':removed,'new_AA_releases':newreleases,'revised_metrics':changed,'gateway_token_pricing_changes':pricing_changes,'summary':summary}
+d['changes_since_previous']['new_eligible_releases']=sorted({r['openrouter_model_id'] for r in d['evaluated_configurations'] if r.get('eligible_for_frontier') and r['configuration_id'] not in {x['configuration_id'] for x in old['evaluated_configurations']}})
 if old['report_date']==date:d['changes_since_previous']['same_day_revision_note']='Reverified same-day snapshot; previous version is preserved in Git history.'
 # Keep new measured models separately until original-source controls and routing match.
 new_listing_names={re.sub('[^a-z0-9]','',cat[mid]['name'].split(':',1)[-1].lower()) for mid in newids}
@@ -175,6 +197,12 @@ cov['removed_since_previous']=[{**oldcov[mid],'status':'unavailable_not_in_live_
 d['coverage_inventory']['status_counts']=dict(Counter(r['status'] for r in inventory))
 d['coverage_inventory']['free_catalog_entries_audited']=sum(m['id'].endswith(':free') for m in catalog['data'])
 sub=d['subscription_recommendations'];sub['last_verification_attempt_at']=now
+terra_release='https://openai.com/index/introducing-gpt-6-1-terra/'
+if terra_release in checks:
+ service=next(s for s in sub['services'] if s['service']=='OpenAI')
+ if terra_release not in service['sources']:service['sources'].append(terra_release)
+ if not any(r.get('native_model_id')=='gpt-6.1-terra' for r in service['recommendations']):
+  service['recommendations'].append({'role':'quota_saving','model_label':'GPT-6.1 Terra','native_model_id':'gpt-6.1-terra','surface':'ChatGPT Work / Codex','control':{'ui_or_cli_effort':None,'note':'Exact subscription effort labels not verified; no API effort or benchmark correspondence assumed.'},'eligibility':'Announced for Plus, Pro, Enterprise and Edu; conditional on account/client model access. Personal tier and allowance unknown.','account_access_verified':False,'rationale':'New balanced option for visual understanding, computer use and everyday work; provider says included allowance goes further than GPT-5.6 Terra or GPT-6.1 Sol/Astra. Retain Luna for lightweight tasks and Sol/Astra for difficult coding.','intelligence_score':None,'benchmark_task_cost_usd':None,'benchmark_match':'Unmeasured subscription harness; API scores and task costs are not assigned to subscription prompts.'})
 for s in sub['services']:
  s['sources']=list(dict.fromkeys(s['sources']))
  s['source_checks']=[checks[u] for u in s['sources'] if u in checks]

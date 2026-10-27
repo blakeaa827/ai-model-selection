@@ -1,14 +1,14 @@
-# Workload-specific model selection — 2026-10-26
+# Workload-specific model selection — 2026-10-27
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred data-rights review.
 
 Each profile has its own benchmark score, measured evaluation task cost, harness and Pareto frontier. Scores and budgets are meaningful only within that profile. The general Intelligence Index remains in [latest.md](latest.md).
 
-Screened **715 public AA configurations** and **468 OpenRouter entries**; acquired **278 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
+Screened **715 public AA configurations** and **463 OpenRouter entries**; acquired **272 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-10-26T18:42:53.779448+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-10-27T14:11:23.565718+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 
@@ -16,12 +16,12 @@ Source checks completed at 2026-10-26T18:42:53.779448+00:00. Routing evidence ex
 
 | Workload | Benchmark and score unit | Candidate floor | Optional ceiling |
 |---|---|---|---|
-| [Coding and terminal execution](#coding-terminal) | Terminal-Bench 4.0; pass_at_1_percent | `xiaomi/mimo-v2.6-flash / {"enabled":true}`; 22.727; $0.230158/task | `openai/gpt-6.1-sol / {"effort":"xhigh"}`; 54.040; $1.025949/task |
+| [Coding and terminal execution](#coding-terminal) | Terminal-Bench 4.0; pass_at_1_percent | `openai/gpt-6.1-terra / {"effort":"low"}`; 15.152; $0.106601/task | `openai/gpt-6.1-terra / {"effort":"medium"}`; 32.323; $0.275657/task |
 | [Business workflow automation](#business-automation) | AutomationBench-AA AA-II-4.3.2; guardrail_adjusted_objective_completion_percent | `xiaomi/mimo-v2.6-flash / {"enabled":true}`; 64.052; $0.016656/task | `openai/gpt-6.1-sol / {"effort":"xhigh"}`; 66.574; $0.250558/task |
-| [Documents, spreadsheets and professional work](#professional-work) | GDPval-AA 2.1; elo | `openai/gpt-6-luna / {"effort":"medium"}`; 1262.610; $0.016936/task | `xiaomi/mimo-v2.6-flash / {"enabled":true}`; 1608.700; $0.073176/task |
+| [Documents, spreadsheets and professional work](#professional-work) | GDPval-AA 2.1; elo | `openai/gpt-6-luna / {"effort":"medium"}`; 1270.950; $0.016936/task | `xiaomi/mimo-v2.6-flash / {"enabled":true}`; 1615.210; $0.073176/task |
 | [Long-document reasoning](#long-context) | AA-LCR 1.1; pass_at_1_percent | `openai/gpt-6-luna / {"effort":"max"}`; 83.333; $0.010188/task | `openai/gpt-6-luna / {"effort":"max"}`; 83.333; $0.010188/task |
 | [Reasoning over professional PDFs](#document-reasoning) | GDP.pdf (AA implementation) AA-II-4.3.2; all_criteria_pass_percent | `openai/gpt-6-luna / {"effort":"max"}`; 22.800; $0.028547/task | `openai/gpt-6.1-sol / {"effort":"high"}`; 32.000; $0.349401/task |
-| [Advanced academic reasoning](#academic-reasoning) | Humanity's Last Exam (AA text subset) May-2025-text-2158/AA-II-4.3.2; pass_at_1_percent | `openai/gpt-6-luna / {"effort":"low"}`; 20.250; $0.000522/task | `openai/gpt-6-luna / {"effort":"high"}`; 32.947; $0.003039/task |
+| [Advanced academic reasoning](#academic-reasoning) | Humanity's Last Exam (AA text subset) May-2025-text-2158/AA-II-4.3.2; pass_at_1_percent | `openai/gpt-6-luna / {"effort":"low"}`; 20.250; $0.000522/task | `openai/gpt-6.1-terra / {"effort":"low"}`; 35.820; $0.002952/task |
 
 ## coding-terminal
 
@@ -33,7 +33,7 @@ Terminal execution is not the same as repository implementation, code review or 
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 22; paid frontier: 13. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 28; paid frontier: 13. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -42,15 +42,15 @@ Verified candidates: 22; paid frontier: 13. Incomplete routing matches are retai
 | (−∞, 0] | `openai/gpt-6-luna` | `{"effort":"low"}` | 0.000 | $0.005448 |
 | (0, 1.51515151515152] | `openai/gpt-6-luna` | `{"effort":"none"}` | 1.515 | $0.044621 |
 | (1.51515151515152, 2.52525252525253] | `openai/gpt-6-luna` | `{"effort":"medium"}` | 2.525 | $0.071565 |
-| (2.52525252525253, 4.545454545454549] | `openai/gpt-6-luna` | `{"effort":"high"}` | 4.545 | $0.120401 |
-| (4.545454545454549, 8.08080808080808] | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 8.081 | $0.198178 |
-| (8.08080808080808, 22.727272727272698] | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 22.727 | $0.230158 |
-| (22.727272727272698, 30.808080808080803] | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 30.808 | $0.382942 |
-| (30.808080808080803, 34.8484848484849] | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 34.848 | $0.438050 |
-| (34.8484848484849, 47.979797979798] | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 47.980 | $0.613755 |
+| (2.52525252525253, 15.151515151515198] | `openai/gpt-6.1-terra` | `{"effort":"low"}` | 15.152 | $0.106601 |
+| (15.151515151515198, 22.727272727272698] | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 22.727 | $0.230158 |
+| (22.727272727272698, 32.3232323232323] | `openai/gpt-6.1-terra` | `{"effort":"medium"}` | 32.323 | $0.275657 |
+| (32.3232323232323, 41.9191919191919] | `openai/gpt-6.1-terra` | `{"effort":"high"}` | 41.919 | $0.437542 |
+| (41.9191919191919, 47.979797979798] | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 47.980 | $0.613755 |
 | (47.979797979798, 51.5151515151515] | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 51.515 | $0.828177 |
 | (51.5151515151515, 54.040404040404] | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 54.040 | $1.025949 |
-| (54.040404040404, 56.0606060606061] | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 56.061 | $1.822763 |
+| (54.040404040404, 55.5555555555556] | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 55.556 | $1.485313 |
+| (55.5555555555556, 56.0606060606061] | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 56.061 | $1.822763 |
 | (56.0606060606061, 59.5959595959596] | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 59.596 | $5.855483 |
 
 The first lower bound is unbounded for lookup only; it does not give score zero a practical meaning. No verified configuration satisfies a score above the last row.
@@ -61,15 +61,15 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 |---|---|---|---:|
 | [0.005448337009257049, 0.0446207812657598) | `openai/gpt-6-luna` | `{"effort":"low"}` | 0.000 |
 | [0.0446207812657598, 0.07156543103673528) | `openai/gpt-6-luna` | `{"effort":"none"}` | 1.515 |
-| [0.07156543103673528, 0.12040055149702272) | `openai/gpt-6-luna` | `{"effort":"medium"}` | 2.525 |
-| [0.12040055149702272, 0.1981783100252545) | `openai/gpt-6-luna` | `{"effort":"high"}` | 4.545 |
-| [0.1981783100252545, 0.23015839490323023) | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 8.081 |
-| [0.23015839490323023, 0.3829418451399688) | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 22.727 |
-| [0.3829418451399688, 0.43805022384832654) | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 30.808 |
-| [0.43805022384832654, 0.6137554705459501) | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 34.848 |
+| [0.07156543103673528, 0.1066009786508095) | `openai/gpt-6-luna` | `{"effort":"medium"}` | 2.525 |
+| [0.1066009786508095, 0.23015839490323023) | `openai/gpt-6.1-terra` | `{"effort":"low"}` | 15.152 |
+| [0.23015839490323023, 0.275657091680196) | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 22.727 |
+| [0.275657091680196, 0.4375420474275898) | `openai/gpt-6.1-terra` | `{"effort":"medium"}` | 32.323 |
+| [0.4375420474275898, 0.6137554705459501) | `openai/gpt-6.1-terra` | `{"effort":"high"}` | 41.919 |
 | [0.6137554705459501, 0.8281767981765117) | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 47.980 |
 | [0.8281767981765117, 1.0259491542428139) | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 51.515 |
-| [1.0259491542428139, 1.8227634618325743) | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 54.040 |
+| [1.0259491542428139, 1.4853125323157166) | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 54.040 |
+| [1.4853125323157166, 1.8227634618325743) | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 55.556 |
 | [1.8227634618325743, 5.855482520522051) | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 56.061 |
 | [5.855482520522051, ∞) | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 59.596 |
 
@@ -79,26 +79,26 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 |---|---:|---:|---:|---:|---:|
 | `openai/gpt-6-luna / {"effort":"none"}` | 1.515152 | $0.039172 | 718.98% | $0.025854 | — |
 | `openai/gpt-6-luna / {"effort":"medium"}` | 1.010101 | $0.026945 | 60.39% | $0.026675 | 1.03× |
-| `openai/gpt-6-luna / {"effort":"high"}` | 2.020202 | $0.048835 | 68.24% | $0.024173 | 0.91× |
-| `openai/gpt-6-luna / {"effort":"xhigh"}` | 3.535354 | $0.077778 | 64.60% | $0.022000 | 0.91× |
-| `xiaomi/mimo-v2.6-flash / {"enabled":true}` | 14.646465 | $0.031980 | 16.14% | $0.002183 | 0.10× |
-| `openai/gpt-6.1-sol / {"effort":"low"}` | 8.080808 | $0.152783 | 66.38% | $0.018907 | 8.66× |
-| `xiaomi/mimo-v2.6-pro / {"enabled":true}` | 4.040404 | $0.055108 | 14.39% | $0.013639 | 0.72× |
-| `openai/gpt-6.1-sol / {"effort":"medium"}` | 13.131313 | $0.175705 | 40.11% | $0.013381 | 0.98× |
-| `openai/gpt-6.1-sol / {"effort":"high"}` | 3.535354 | $0.214421 | 34.94% | $0.060651 | 4.53× |
+| `openai/gpt-6.1-terra / {"effort":"low"}` | 12.626263 | $0.035036 | 48.96% | $0.002775 | 0.10× |
+| `xiaomi/mimo-v2.6-flash / {"enabled":true}` | 7.575758 | $0.123557 | 115.91% | $0.016310 | 5.88× |
+| `openai/gpt-6.1-terra / {"effort":"medium"}` | 9.595960 | $0.045499 | 19.77% | $0.004741 | 0.29× |
+| `openai/gpt-6.1-terra / {"effort":"high"}` | 9.595960 | $0.161885 | 58.73% | $0.016870 | 3.56× |
+| `openai/gpt-6.1-sol / {"effort":"medium"}` | 6.060606 | $0.176213 | 40.27% | $0.029075 | 1.72× |
+| `openai/gpt-6.1-sol / {"effort":"high"}` | 3.535354 | $0.214421 | 34.94% | $0.060651 | 2.09× |
 | `openai/gpt-6.1-sol / {"effort":"xhigh"}` | 2.525253 | $0.197772 | 23.88% | $0.078318 | 1.29× |
-| `openai/gpt-6.1-sol / {"effort":"max"}` | 2.020202 | $0.796814 | 77.67% | $0.394423 | 5.04× |
-| `openai/gpt-6-astra / {"effort":"xhigh"}` | 3.535354 | $4.032719 | 221.24% | $1.140683 | 2.89× |
+| `openai/gpt-6.1-terra / {"effort":"max"}` | 1.515152 | $0.459363 | 44.77% | $0.303180 | 3.87× |
+| `openai/gpt-6.1-sol / {"effort":"max"}` | 0.505051 | $0.337451 | 22.72% | $0.668153 | 2.20× |
+| `openai/gpt-6-astra / {"effort":"xhigh"}` | 3.535354 | $4.032719 | 221.24% | $1.140683 | 1.71× |
 
-**Candidate floor:** The next step adds 8.080808080808104 score points for $0.1527834502367386 (66.38187162409443%); marginal cost rises 8.659139105187256x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate floor:** The next step adds 7.5757575757575 score points for $0.12355741625242073 (115.9064558470472%); marginal cost rises 5.877716807961248x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-**Candidate ceiling:** The next step adds 2.020202020202099 score points for $0.7968143075897605 (77.66606213324842%); marginal cost rises 5.036183541006312x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate ceiling:** The next step adds 9.595959595959606 score points for $0.1618849557473938 (58.72693307495419%); marginal cost rises 3.558013024877448x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
 ### Explicit-opt-in free lane
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 0.000 `pass_at_1_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 75, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 69, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 154, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## business-automation
 
@@ -110,7 +110,7 @@ The headline score measures objective completion, not the percentage of fully co
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 22; paid frontier: 8. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 28; paid frontier: 8. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -160,7 +160,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 4.933 `guardrail_adjusted_objective_completion_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 75, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 69, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 154, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## professional-work
 
@@ -172,21 +172,21 @@ Elo is a relative quality rating, not a percentage or an absolute success target
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 22; paid frontier: 9. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 28; paid frontier: 9. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
 | Minimum-score interval | request.model | request.reasoning | Score | USD / this benchmark task |
 |---|---|---|---:|---:|
-| (−∞, 1031.95] | `openai/gpt-6-luna` | `{"effort":"low"}` | 1031.950 | $0.003793 |
-| (1031.95, 1044.56] | `openai/gpt-6-luna` | `{"effort":"none"}` | 1044.560 | $0.007881 |
-| (1044.56, 1262.61] | `openai/gpt-6-luna` | `{"effort":"medium"}` | 1262.610 | $0.016936 |
-| (1262.61, 1342.92] | `openai/gpt-6-luna` | `{"effort":"high"}` | 1342.920 | $0.031902 |
-| (1342.92, 1363.44] | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 1363.440 | $0.045715 |
-| (1363.44, 1608.7] | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 1608.700 | $0.073176 |
-| (1608.7, 1683.02] | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1683.020 | $0.161217 |
-| (1683.02, 1707.02] | `x-ai/grok-4.7` | `{"effort":"high"}` | 1707.020 | $4.517006 |
-| (1707.02, 1713.96] | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1713.960 | $5.572227 |
+| (−∞, 1040.9] | `openai/gpt-6-luna` | `{"effort":"low"}` | 1040.900 | $0.003793 |
+| (1040.9, 1052.09] | `openai/gpt-6-luna` | `{"effort":"none"}` | 1052.090 | $0.007881 |
+| (1052.09, 1270.95] | `openai/gpt-6-luna` | `{"effort":"medium"}` | 1270.950 | $0.016936 |
+| (1270.95, 1352.33] | `openai/gpt-6-luna` | `{"effort":"high"}` | 1352.330 | $0.031902 |
+| (1352.33, 1373.25] | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 1373.250 | $0.045715 |
+| (1373.25, 1615.21] | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 1615.210 | $0.073176 |
+| (1615.21, 1691.26] | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1691.260 | $0.161217 |
+| (1691.26, 1716.55] | `x-ai/grok-4.7` | `{"effort":"high"}` | 1716.550 | $4.517006 |
+| (1716.55, 1721.59] | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1721.590 | $5.572227 |
 
 The first lower bound is unbounded for lookup only; it does not give score zero a practical meaning. No verified configuration satisfies a score above the last row.
 
@@ -194,38 +194,38 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 | Budget interval, USD | request.model | request.reasoning | Score |
 |---|---|---|---:|
-| [0.0037933271240714194, 0.007880583970193037) | `openai/gpt-6-luna` | `{"effort":"low"}` | 1031.950 |
-| [0.007880583970193037, 0.01693611899300757) | `openai/gpt-6-luna` | `{"effort":"none"}` | 1044.560 |
-| [0.01693611899300757, 0.03190170403500649) | `openai/gpt-6-luna` | `{"effort":"medium"}` | 1262.610 |
-| [0.03190170403500649, 0.04571538846185774) | `openai/gpt-6-luna` | `{"effort":"high"}` | 1342.920 |
-| [0.04571538846185774, 0.07317641347585718) | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 1363.440 |
-| [0.07317641347585718, 0.16121702931689816) | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 1608.700 |
-| [0.16121702931689816, 4.517006141396162) | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1683.020 |
-| [4.517006141396162, 5.572226716663576) | `x-ai/grok-4.7` | `{"effort":"high"}` | 1707.020 |
-| [5.572226716663576, ∞) | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1713.960 |
+| [0.0037933271240714194, 0.007880583970193037) | `openai/gpt-6-luna` | `{"effort":"low"}` | 1040.900 |
+| [0.007880583970193037, 0.01693611899300757) | `openai/gpt-6-luna` | `{"effort":"none"}` | 1052.090 |
+| [0.01693611899300757, 0.03190170403500649) | `openai/gpt-6-luna` | `{"effort":"medium"}` | 1270.950 |
+| [0.03190170403500649, 0.04571538846185774) | `openai/gpt-6-luna` | `{"effort":"high"}` | 1352.330 |
+| [0.04571538846185774, 0.07317641347585718) | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 1373.250 |
+| [0.07317641347585718, 0.16121702931689816) | `xiaomi/mimo-v2.6-flash` | `{"enabled":true}` | 1615.210 |
+| [0.16121702931689816, 4.517006141396162) | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 1691.260 |
+| [4.517006141396162, 5.572226716663576) | `x-ai/grok-4.7` | `{"effort":"high"}` | 1716.550 |
+| [5.572226716663576, ∞) | `x-ai/grok-4.7` | `{"effort":"xhigh"}` | 1721.590 |
 
 ### Marginal upgrades
 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
-| `openai/gpt-6-luna / {"effort":"none"}` | 12.610000 | $0.004087 | 107.75% | $0.000324 | — |
-| `openai/gpt-6-luna / {"effort":"medium"}` | 218.050000 | $0.009056 | 114.91% | $0.000042 | 0.13× |
-| `openai/gpt-6-luna / {"effort":"high"}` | 80.310000 | $0.014966 | 88.36% | $0.000186 | 4.49× |
-| `openai/gpt-6-luna / {"effort":"xhigh"}` | 20.520000 | $0.013814 | 43.30% | $0.000673 | 3.61× |
-| `xiaomi/mimo-v2.6-flash / {"enabled":true}` | 245.260000 | $0.027461 | 60.07% | $0.000112 | 0.17× |
-| `xiaomi/mimo-v2.6-pro / {"enabled":true}` | 74.320000 | $0.088041 | 120.31% | $0.001185 | 10.58× |
-| `x-ai/grok-4.7 / {"effort":"high"}` | 24.000000 | $4.355789 | 2701.82% | $0.181491 | 153.21× |
-| `x-ai/grok-4.7 / {"effort":"xhigh"}` | 6.940000 | $1.055221 | 23.36% | $0.152049 | 0.84× |
+| `openai/gpt-6-luna / {"effort":"none"}` | 11.190000 | $0.004087 | 107.75% | $0.000365 | — |
+| `openai/gpt-6-luna / {"effort":"medium"}` | 218.860000 | $0.009056 | 114.91% | $0.000041 | 0.11× |
+| `openai/gpt-6-luna / {"effort":"high"}` | 81.380000 | $0.014966 | 88.36% | $0.000184 | 4.44× |
+| `openai/gpt-6-luna / {"effort":"xhigh"}` | 20.920000 | $0.013814 | 43.30% | $0.000660 | 3.59× |
+| `xiaomi/mimo-v2.6-flash / {"enabled":true}` | 241.960000 | $0.027461 | 60.07% | $0.000113 | 0.17× |
+| `xiaomi/mimo-v2.6-pro / {"enabled":true}` | 76.050000 | $0.088041 | 120.31% | $0.001158 | 10.20× |
+| `x-ai/grok-4.7 / {"effort":"high"}` | 25.290000 | $4.355789 | 2701.82% | $0.172234 | 148.78× |
+| `x-ai/grok-4.7 / {"effort":"xhigh"}` | 5.040000 | $1.055221 | 23.36% | $0.209369 | 1.22× |
 
-**Candidate floor:** The next step adds 80.31000000000017 score points for $0.014965585041998918 (88.36490253863813%); marginal cost rises 4.487103113187824x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate floor:** The next step adds 81.37999999999988 score points for $0.014965585041998918 (88.36490253863813%); marginal cost rises 4.4445550934221485x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-**Candidate ceiling:** The next step adds 74.31999999999994 score points for $0.08804061584104098 (120.31283259063781%); marginal cost rises 10.58004100680451x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate ceiling:** The next step adds 76.04999999999995 score points for $0.08804061584104098 (120.31283259063781%); marginal cost rises 10.200246931902083x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
 ### Explicit-opt-in free lane
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 618.720 `elo`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 75, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 155, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 69, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 154, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## long-context
 
@@ -237,7 +237,7 @@ Applies to supplied long text, not live retrieval, arbitrary context lengths or 
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 22; paid frontier: 7. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 28; paid frontier: 7. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -284,7 +284,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 69.667 `pass_at_1_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 69, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 154, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## document-reasoning
 
@@ -296,7 +296,7 @@ AA and Surge use different input preparation and judges. Cost excludes document 
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 22; paid frontier: 12. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 28; paid frontier: 13. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -309,9 +309,10 @@ Verified candidates: 22; paid frontier: 12. Incomplete routing matches are retai
 | (18.2, 18.6] | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 18.600 | $0.020664 |
 | (18.6, 19.2] | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 19.200 | $0.024022 |
 | (19.2, 22.8] | `openai/gpt-6-luna` | `{"effort":"max"}` | 22.800 | $0.028547 |
-| (22.8, 23.200000000000003] | `x-ai/grok-4.7` | `{"effort":"high"}` | 23.200 | $0.302160 |
-| (23.200000000000003, 27.0] | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 27.000 | $0.334140 |
-| (27.0, 30.0] | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 30.000 | $0.337478 |
+| (22.8, 25.6] | `openai/gpt-6.1-terra` | `{"effort":"low"}` | 25.600 | $0.164403 |
+| (25.6, 28.4] | `openai/gpt-6.1-terra` | `{"effort":"medium"}` | 28.400 | $0.166710 |
+| (28.4, 28.599999999999998] | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 28.600 | $0.235180 |
+| (28.599999999999998, 30.0] | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 30.000 | $0.337478 |
 | (30.0, 32.0] | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 32.000 | $0.349401 |
 | (32.0, 32.2] | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 32.200 | $1.912723 |
 
@@ -327,9 +328,10 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | [0.018825166, 0.020663617) | `openai/gpt-6-luna` | `{"effort":"high"}` | 18.200 |
 | [0.020663617, 0.02402207025) | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 18.600 |
 | [0.02402207025, 0.028547064) | `xiaomi/mimo-v2.6-pro` | `{"enabled":true}` | 19.200 |
-| [0.028547064, 0.30216013999999997) | `openai/gpt-6-luna` | `{"effort":"max"}` | 22.800 |
-| [0.30216013999999997, 0.33414024) | `x-ai/grok-4.7` | `{"effort":"high"}` | 23.200 |
-| [0.33414024, 0.33747823999999993) | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 27.000 |
+| [0.028547064, 0.16440301999999998) | `openai/gpt-6-luna` | `{"effort":"max"}` | 22.800 |
+| [0.16440301999999998, 0.16670952) | `openai/gpt-6.1-terra` | `{"effort":"low"}` | 25.600 |
+| [0.16670952, 0.23517992) | `openai/gpt-6.1-terra` | `{"effort":"medium"}` | 28.400 |
+| [0.23517992, 0.33747823999999993) | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 28.600 |
 | [0.33747823999999993, 0.34940143999999995) | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 30.000 |
 | [0.34940143999999995, 1.9127230999999998) | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 32.000 |
 | [1.9127230999999998, ∞) | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 32.200 |
@@ -344,13 +346,14 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | `openai/gpt-6-luna / {"effort":"xhigh"}` | 0.400000 | $0.001838 | 9.77% | $0.004596 | 14.51× |
 | `xiaomi/mimo-v2.6-pro / {"enabled":true}` | 0.600000 | $0.003358 | 16.25% | $0.005597 | 1.22× |
 | `openai/gpt-6-luna / {"effort":"max"}` | 3.600000 | $0.004525 | 18.84% | $0.001257 | 0.22× |
-| `x-ai/grok-4.7 / {"effort":"high"}` | 0.400000 | $0.273613 | 958.46% | $0.684033 | 544.20× |
-| `openai/gpt-6.1-sol / {"effort":"low"}` | 3.800000 | $0.031980 | 10.58% | $0.008416 | 0.01× |
-| `openai/gpt-6.1-sol / {"effort":"medium"}` | 3.000000 | $0.003338 | 1.00% | $0.001113 | 0.13× |
-| `openai/gpt-6.1-sol / {"effort":"high"}` | 2.000000 | $0.011923 | 3.53% | $0.005962 | 5.36× |
+| `openai/gpt-6.1-terra / {"effort":"low"}` | 2.800000 | $0.135856 | 475.90% | $0.048520 | 38.60× |
+| `openai/gpt-6.1-terra / {"effort":"medium"}` | 2.800000 | $0.002307 | 1.40% | $0.000824 | 0.02× |
+| `openai/gpt-6.1-terra / {"effort":"max"}` | 0.200000 | $0.068470 | 41.07% | $0.342352 | 415.60× |
+| `openai/gpt-6.1-sol / {"effort":"medium"}` | 1.400000 | $0.102298 | 43.50% | $0.073070 | 0.21× |
+| `openai/gpt-6.1-sol / {"effort":"high"}` | 2.000000 | $0.011923 | 3.53% | $0.005962 | 0.08× |
 | `openai/gpt-6-astra / {"effort":"xhigh"}` | 0.200000 | $1.563322 | 447.43% | $7.816608 | 1311.16× |
 
-**Candidate floor:** The next step adds 0.40000000000000213 score points for $0.27361307599999996 (958.4631049974174%); marginal cost rises 544.2035547562881x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate floor:** The next step adds 2.8000000000000007 score points for $0.13585595599999997 (475.9016759131516%); marginal cost rises 38.60158777646298x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
 **Candidate ceiling:** The next step adds 0.20000000000000284 score points for $1.5633216599999997 (447.42851088421384%); marginal cost rises 1311.159470611895x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
@@ -358,7 +361,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 6.000 `all_criteria_pass_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 69, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 154, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## academic-reasoning
 
@@ -370,7 +373,7 @@ Includes mathematics, science and humanities. It is not a direct measure of rese
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 22; paid frontier: 13. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 28; paid frontier: 14. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -378,10 +381,11 @@ Verified candidates: 22; paid frontier: 13. Incomplete routing matches are retai
 |---|---|---|---:|---:|
 | (−∞, 8.57275254865616] | `openai/gpt-6-luna` | `{"effort":"none"}` | 8.573 | $0.000150 |
 | (8.57275254865616, 20.2502316960148] | `openai/gpt-6-luna` | `{"effort":"low"}` | 20.250 | $0.000522 |
-| (20.2502316960148, 28.2669138090825] | `openai/gpt-6-luna` | `{"effort":"medium"}` | 28.267 | $0.001615 |
-| (28.2669138090825, 32.9471733086191] | `openai/gpt-6-luna` | `{"effort":"high"}` | 32.947 | $0.003039 |
-| (32.9471733086191, 34.3373493975904] | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 34.337 | $0.005092 |
-| (34.3373493975904, 47.3586654309546] | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 47.359 | $0.007308 |
+| (20.2502316960148, 21.1306765523633] | `openai/gpt-6.1-terra` | `{"effort":"none"}` | 21.131 | $0.001002 |
+| (21.1306765523633, 28.2669138090825] | `openai/gpt-6-luna` | `{"effort":"medium"}` | 28.267 | $0.001615 |
+| (28.2669138090825, 35.820203892493005] | `openai/gpt-6.1-terra` | `{"effort":"low"}` | 35.820 | $0.002952 |
+| (35.820203892493005, 40.2224281742354] | `openai/gpt-6.1-terra` | `{"effort":"medium"}` | 40.222 | $0.007151 |
+| (40.2224281742354, 47.3586654309546] | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 47.359 | $0.007308 |
 | (47.3586654309546, 49.8609823911029] | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 49.861 | $0.012619 |
 | (49.8609823911029, 51.390176088971295] | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 51.390 | $0.026634 |
 | (51.390176088971295, 52.6413345690454] | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 52.641 | $0.042817 |
@@ -397,10 +401,11 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Budget interval, USD | request.model | request.reasoning | Score |
 |---|---|---|---:|
 | [0.00014989606116774793, 0.0005215371640407784) | `openai/gpt-6-luna` | `{"effort":"none"}` | 8.573 |
-| [0.0005215371640407784, 0.0016150941612604265) | `openai/gpt-6-luna` | `{"effort":"low"}` | 20.250 |
-| [0.0016150941612604265, 0.0030390533827618165) | `openai/gpt-6-luna` | `{"effort":"medium"}` | 28.267 |
-| [0.0030390533827618165, 0.00509183609823911) | `openai/gpt-6-luna` | `{"effort":"high"}` | 32.947 |
-| [0.00509183609823911, 0.0073080926784059325) | `openai/gpt-6-luna` | `{"effort":"xhigh"}` | 34.337 |
+| [0.0005215371640407784, 0.0010019518072289157) | `openai/gpt-6-luna` | `{"effort":"low"}` | 20.250 |
+| [0.0010019518072289157, 0.0016150941612604265) | `openai/gpt-6.1-terra` | `{"effort":"none"}` | 21.131 |
+| [0.0016150941612604265, 0.0029517942539388324) | `openai/gpt-6-luna` | `{"effort":"medium"}` | 28.267 |
+| [0.0029517942539388324, 0.007150781742354031) | `openai/gpt-6.1-terra` | `{"effort":"low"}` | 35.820 |
+| [0.007150781742354031, 0.0073080926784059325) | `openai/gpt-6.1-terra` | `{"effort":"medium"}` | 40.222 |
 | [0.0073080926784059325, 0.01261928359592215) | `openai/gpt-6.1-sol` | `{"effort":"low"}` | 47.359 |
 | [0.01261928359592215, 0.02663372752548656) | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 49.861 |
 | [0.02663372752548656, 0.04281734198331789) | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 51.390 |
@@ -415,11 +420,12 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 | `openai/gpt-6-luna / {"effort":"low"}` | 11.677479 | $0.000372 | 247.93% | $0.000032 | — |
-| `openai/gpt-6-luna / {"effort":"medium"}` | 8.016682 | $0.001094 | 209.68% | $0.000136 | 4.29× |
-| `openai/gpt-6-luna / {"effort":"high"}` | 4.680259 | $0.001424 | 88.17% | $0.000304 | 2.23× |
-| `openai/gpt-6-luna / {"effort":"xhigh"}` | 1.390176 | $0.002053 | 67.55% | $0.001477 | 4.85× |
-| `openai/gpt-6.1-sol / {"effort":"low"}` | 13.021316 | $0.002216 | 43.53% | $0.000170 | 0.12× |
-| `openai/gpt-6.1-sol / {"effort":"medium"}` | 2.502317 | $0.005311 | 72.68% | $0.002123 | 12.47× |
+| `openai/gpt-6.1-terra / {"effort":"none"}` | 0.880445 | $0.000480 | 92.12% | $0.000546 | 17.15× |
+| `openai/gpt-6-luna / {"effort":"medium"}` | 7.136237 | $0.000613 | 61.19% | $0.000086 | 0.16× |
+| `openai/gpt-6.1-terra / {"effort":"low"}` | 7.553290 | $0.001337 | 82.76% | $0.000177 | 2.06× |
+| `openai/gpt-6.1-terra / {"effort":"medium"}` | 4.402224 | $0.004199 | 142.25% | $0.000954 | 5.39× |
+| `openai/gpt-6.1-sol / {"effort":"low"}` | 7.136237 | $0.000157 | 2.20% | $0.000022 | 0.02× |
+| `openai/gpt-6.1-sol / {"effort":"medium"}` | 2.502317 | $0.005311 | 72.68% | $0.002123 | 96.29× |
 | `openai/gpt-6.1-sol / {"effort":"high"}` | 1.529194 | $0.014014 | 111.06% | $0.009165 | 4.32× |
 | `openai/gpt-6.1-sol / {"effort":"xhigh"}` | 1.251158 | $0.016184 | 60.76% | $0.012935 | 1.41× |
 | `openai/gpt-6.1-sol / {"effort":"max"}` | 0.278035 | $0.034757 | 81.17% | $0.125008 | 9.66× |
@@ -427,15 +433,15 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | `openai/gpt-6-astra / {"effort":"xhigh"}` | 1.529194 | $0.091375 | 56.46% | $0.059754 | 0.10× |
 | `openai/gpt-6-astra / {"effort":"max"}` | 0.092678 | $0.124854 | 49.31% | $1.347178 | 22.55× |
 
-**Candidate floor:** The next step adds 8.016682113067699 score points for $0.001093556997219648 (209.67959190999167%); marginal cost rises 4.286196933474779x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate floor:** The next step adds 0.8804448563485003 score points for $0.00048041464318813727 (92.11513125276996%); marginal cost rises 17.14507684507814x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-**Candidate ceiling:** The next step adds 1.3901760889713017 score points for $0.0020527827154772937 (67.54678042581061%); marginal cost rises 4.853394000159556x. Conditional on this benchmark, workload and verified subset; not a universal default.
+**Candidate ceiling:** The next step adds 4.4022242817423916 score points for $0.004198987488415198 (142.2520381565256%); marginal cost rises 5.389824218773145x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
 ### Explicit-opt-in free lane
 
 - `google/gemma-4-31b-it:free / {"enabled":true}`: 23.633 `pass_at_1_percent`, $0.000000/task, first-party `google-ai-studio`. Rate limits and quota apply; use `--allow-limited-free` explicitly.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 76, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 153, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
+Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 69, original_configuration_eligibility_not_verified: 10, missing_comparable_score_or_evaluation_task_cost: 154, nonstandard_pricing_tier: 1, deprecated_or_estimated: 10.
 
 ## Exact API routing
 
@@ -444,11 +450,12 @@ Every actionable row pins one standard provider, uses `require_parameters:true` 
 | Callable model | Canonical revision | provider.only | API surface |
 |---|---|---|---|
 | `openai/gpt-6-luna` | `openai/gpt-6-luna-20260922` | `openai` | `https://openrouter.ai/api/v1/responses` |
+| `openai/gpt-6.1-terra` | `openai/gpt-6.1-terra-20261026` | `openai` | `https://openrouter.ai/api/v1/responses` |
 | `xiaomi/mimo-v2.6-flash` | `xiaomi/mimo-v2.6-flash-20260921` | `xiaomi/fp8` | `https://openrouter.ai/api/v1/chat/completions` |
 | `openai/gpt-6.1-sol` | `openai/gpt-6.1-sol-20260929` | `openai` | `https://openrouter.ai/api/v1/responses` |
-| `xiaomi/mimo-v2.6-pro` | `xiaomi/mimo-v2.6-pro-20260921` | `xiaomi/fp8` | `https://openrouter.ai/api/v1/chat/completions` |
 | `openai/gpt-6-astra` | `openai/gpt-6-astra-20260903` | `openai` | `https://openrouter.ai/api/v1/responses` |
 | `google/gemma-4-31b-it:free` | `google/gemma-4-31b-it-20260402` | `google-ai-studio` | `https://openrouter.ai/api/v1/chat/completions` |
+| `xiaomi/mimo-v2.6-pro` | `xiaomi/mimo-v2.6-pro-20260921` | `xiaomi/fp8` | `https://openrouter.ai/api/v1/chat/completions` |
 | `x-ai/grok-4.7` | `x-ai/grok-4.7-20260916` | `xai` | `https://openrouter.ai/api/v1/chat/completions` |
 
 ## Complete coding-agent systems
