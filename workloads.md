@@ -8,7 +8,7 @@ Screened **715 public AA configurations** and **463 OpenRouter entries**; acquir
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-10-27T14:11:23.565718+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-10-27T14:14:38.974439+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 
