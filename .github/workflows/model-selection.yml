@@ -43,4 +43,5 @@ jobs:
             run-artifacts/refresh-status.json
             run-artifacts/validation.json
             run-artifacts/publication.json
+            run-artifacts/workload-diagnostics.json
           if-no-files-found: ignore

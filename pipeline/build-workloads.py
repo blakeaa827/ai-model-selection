@@ -183,6 +183,14 @@ def main():
                                       'changed_profiles':changed_profiles},
             'source_checks':[{'url':r['url'],'verified_at':r['verified_at'],'status':r['status']} for r in acq['document_checks'] if r['status']=='opened_successfully'],
             'no_paid_generation_calls':True}
+    # Keep exclusion causes visible in CI without publishing raw source bodies
+    # or weakening any benchmark/route eligibility checks.
+    diagnostics={'checked_at':result['checked_at'],'methodology_version':general['benchmark']['version'],
+                 'document_checks':[{k:v for k,v in r.items() if k!='text'} for r in acq['document_checks']],
+                 'profiles':[{'id':p['id'],'status':p['status'],**p['coverage']} for p in profiles],
+                 'coding_agent_acquisition_error':coding.get('error')}
+    (R.parent/'workload-diagnostics.json').write_text(json.dumps(diagnostics,indent=2)+'\n')
+    print('Workload evidence diagnostics: '+json.dumps(diagnostics,separators=(',',':')),flush=True)
     save(O/'workloads.json',result)
     coverage=load(O/'coverage.json')
     coverage['workload_coverage']={'file':'workloads.json','AA_configuration_count':len(acq['configuration_index']),'active_exact_records_checked':len(acq['active_exact_records']),'configuration_index_verified_at':acq['configuration_index_verified_at'],'note':'All public configuration names screened; exact active records acquired. Each workload evaluates all verified mappings, including configurations dominated in the general chart. Unknown mappings remain pending.'}
