@@ -4,11 +4,11 @@ Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Origina
 
 Each profile has its own benchmark score, measured evaluation task cost, harness and Pareto frontier. Scores and budgets are meaningful only within that profile. The general Intelligence Index remains in [latest.md](latest.md).
 
-Screened **715 public AA configurations** and **464 OpenRouter entries**; acquired **272 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
+Screened **716 public AA configurations** and **456 OpenRouter entries**; acquired **273 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-10-28T15:01:52.358313+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-10-28T17:44:27.830784+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 
@@ -91,7 +91,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 **Candidate ceiling:** The next step adds 17.1717171717171 score points for $0.16905611302938647 (158.58776830103963%); marginal cost rises 3.5479955053663796x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 26, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 209, nonstandard_pricing_tier: 1, native_control_source_not_reverified: 2.
+Pending reasons: exact_revision_effort_provider_route_not_verified: 27, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 209, multi_model_or_fallback_configuration: 10, native_control_source_not_reverified: 2.
 
 ## business-automation
 
@@ -170,7 +170,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 **Candidate ceiling:** The next step adds 3.0801471959601727 score points for $0.04191863690947363 (115.16221539220494%); marginal cost rises 4.64687275081213x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 26, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 209, nonstandard_pricing_tier: 1, native_control_source_not_reverified: 2.
+Pending reasons: exact_revision_effort_provider_route_not_verified: 27, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 209, multi_model_or_fallback_configuration: 10, native_control_source_not_reverified: 2.
 
 ## professional-work
 
@@ -204,7 +204,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 
-Pending reasons: missing_comparable_score_or_evaluation_task_cost: 282.
+Pending reasons: missing_comparable_score_or_evaluation_task_cost: 283.
 
 ## long-context
 
@@ -238,7 +238,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 
-Pending reasons: missing_comparable_score_or_evaluation_task_cost: 282.
+Pending reasons: missing_comparable_score_or_evaluation_task_cost: 283.
 
 ## document-reasoning
 
@@ -308,7 +308,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 **Candidate ceiling:** The next step adds 0.20000000000000284 score points for $1.5633216599999997 (447.42851088421384%); marginal cost rises 1311.159470611895x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-Pending reasons: multi_model_or_fallback_configuration: 10, exact_revision_effort_provider_route_not_verified: 26, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 209, nonstandard_pricing_tier: 1, native_control_source_not_reverified: 2.
+Pending reasons: exact_revision_effort_provider_route_not_verified: 27, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 209, multi_model_or_fallback_configuration: 10, native_control_source_not_reverified: 2.
 
 ## academic-reasoning
 
@@ -342,7 +342,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 
-Pending reasons: missing_comparable_score_or_evaluation_task_cost: 282.
+Pending reasons: missing_comparable_score_or_evaluation_task_cost: 283.
 
 ## Exact API routing
 
@@ -367,7 +367,7 @@ These are separate model-plus-agent evaluations from the AA Coding Agent Index. 
 | Codex - DeepSeek V4.1 Flash (Max) | 47.300 | $0.386194 | 0 |
 | Codex - GPT-6.1 Terra (Xhigh) | 48.224 | $0.690844 | 0 |
 | Codex - GPT-6.1 Sol (Max) | 54.128 | $1.504639 | 0 |
-| Codex - GPT-6 Astra (Max) | 54.664 | $7.036158 | 0 |
+| GitHub Copilot - Copilot Fusion (Max) | 59.857 | $5.587385 | 0 |
 | Devin Fusion CLI - Claude Opus 5.5 Max + GPT-6 Luna High | 61.512 | $7.997688 | 0 |
 | Claude Code - Claude Opus 5.5 (Max, Default Fallback) | 61.653 | $11.422720 | 76 |
 
