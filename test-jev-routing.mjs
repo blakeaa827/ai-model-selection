@@ -44,7 +44,9 @@ for(const change of [r=>{r.model='typesafe/jev-latest';},r=>{r.provider='Other';
 }
 const tie=structuredClone(response);
 Object.keys(tie.answers.workload.probabilities).forEach(k=>{tie.answers.workload.probabilities[k]=0;});
-tie.answers.workload.probabilities.business_automation=0.5;tie.answers.workload.probabilities.professional_work=0.5;
+tie.answers.workload.probabilities.business_automation=0.5;
+const otherChoice=Object.keys(tie.answers.workload.probabilities).find(k=>k!=='business_automation');
+tie.answers.workload.probabilities[otherChoice]=0.5;
 assert.throws(()=>readWorkloadAnswer(tie,bundle,{minimum_choice_probability:0.1,minimum_probability_margin:0}),/does not meet/);
 for(const mutate of [c=>{c.data[0].canonical_slug='changed';},c=>{c.data[0].architecture.output_modalities=['text'];},c=>{c.data[0].expiration_date='2020-01-01';}]) {
   const broken=structuredClone(catalog);mutate(broken);assert.throws(()=>verifyDecisionRoute(broken,endpoints,now));

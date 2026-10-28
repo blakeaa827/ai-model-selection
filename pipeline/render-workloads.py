@@ -21,6 +21,7 @@ for p in d['profiles']:
  lines.append(f"| [{p['name']}](#{p['id'].replace('_','-')}) | {p['benchmark_name']} {p['benchmark_version']}; {p['score_unit']} | {pick('floor')} | {pick('ceiling')} |")
 for p in d['profiles']:
  lines+=['',f"## {p['id'].replace('_','-')}",'',f"**{p['name']}** — [{p['benchmark_name']}]({p['source_url']}), version `{p['benchmark_version']}`; score unit `{p['score_unit']}`; status `{p['status']}`.",'',f"Harness `{p['harness_id']}`: {p['harness']}.",'',p['limits'],'',p['cost_basis'],'',f"Verified candidates: {p['coverage']['eligible_configurations']}; paid frontier: {len(p['frontier'])}. Incomplete routing matches are retained as pending in workloads.json.",'','### Minimum cost for a minimum benchmark score','','| Minimum-score interval | request.model | request.reasoning | Score | USD / this benchmark task |','|---|---|---|---:|---:|']
+ if p.get('current_evidence_limitation'):lines+=['',p['current_evidence_limitation'],'']
  for r in p['frontier']:
   lo=r['minimum_score_exclusive'];ran=f"(−∞, {r['score']}]" if lo is None else f"({lo}, {r['score']}]"
   lines.append(f"| {ran} | `{r['request']['model']}` | `{control(r)}` | {r['score']:.3f} | {money(r['benchmark_task_cost_usd'])} |")

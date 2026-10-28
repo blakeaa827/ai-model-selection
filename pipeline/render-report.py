@@ -80,6 +80,9 @@ Discovery screens {c['openrouter_model_count']} live OpenRouter entries and {c['
 
 '''
 readme=readme[:start]+rec+readme[end:]
+readme=re.sub(r'Intelligence Index v[0-9.]+(?=\*\*)','Intelligence Index v'+d['benchmark']['version'],readme)
+if changes.get('benchmark_version_changed'):
+ readme+='\n## Methodology transition\n\n'+d['benchmark']['methodology_transition_note']+' See workloads.md for independently verified profiles and profiles pending renewed evaluation-specific cost evidence. No free route currently has a verified v5 score/cost pair; the opt-in selector remains supported but budget:0 currently fails. Professional work, long-context and legacy HLE profiles are pending renewed evaluation-specific cost evidence.\n'
 marker='## Scheduled pipeline'
 if marker in readme:readme=readme[:readme.index(marker)]
 readme+='''## Scheduled pipeline

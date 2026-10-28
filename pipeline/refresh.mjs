@@ -17,6 +17,7 @@ async function run(name,program,args){
  if(!stage.passed)throw Error(name+' failed; last published report preserved');
 }
 try{
+ await run('original_source_parser_regression','python3',['pipeline/test-acquire.py']);
  for(let attempt=0;attempt<3;attempt++){
   let parent=process.env.REPORT_PARENT_SHA;
   if(shouldPublish){const current=await head();parent=current.sha;await baseline(parent);process.env.REPORT_PARENT_SHA=parent;}

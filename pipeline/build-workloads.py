@@ -132,7 +132,9 @@ def main():
         profile['frontier']=frontier(paid);profile['limited_free_configurations']=frontier(free)
         if profile['frontier']:
             profile['recommendations'],profile['breakpoints']=recommendations(profile['frontier'])
-        elif profile['status']=='ready':profile['status']='pending_verified_pairs'
+        elif profile['status']=='ready':
+            profile['status']='pending_verified_pairs'
+            profile['current_evidence_limitation']='No exact score plus evaluation-specific costPerTask pair is published in the freshly acquired current model records. Legacy evaluation scores/token counts alone do not authorize retaining prior costs or borrowing the v5 weighted task cost.'
         profile['coverage']={'source_records_screened':len(metrics),'eligible_configurations':len(paid)+len(free),'paid_frontier_count':len(profile['frontier']),'pending_status_counts':dict(Counter(x['status'] for x in profile['pending_candidates']))}
         ids={r['configuration_id'] for r in profile['frontier']+profile['limited_free_configurations']}
         for r in profile['evaluated_configurations']:r['pareto_dominated']=r['configuration_id'] not in ids

@@ -310,5 +310,44 @@
       "paid_generation_tested": false
     },
     "api_call_tested": false
+  },
+  {
+    "configuration_id": "openai/gpt-6-astra@high",
+    "model_name": "GPT-6 Astra",
+    "openrouter_model_id": "openai/gpt-6-astra",
+    "openrouter_canonical_slug": "openai/gpt-6-astra-20260903",
+    "effort": "high",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "high"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/gpt-6-astra-high",
+    "request": {
+      "model": "openai/gpt-6-astra",
+      "reasoning": {
+        "effort": "high"
+      },
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/responses",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints",
+      "provider_tag": "openai",
+      "quantization": "unknown"
+    },
+    "configuration_settings": {
+      "sampling": "Provider defaults; omit temperature/top_p",
+      "tool_turns": "Preserve reasoning details across tool turns",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; standard maximum completion 128000",
+      "service_tier": "standard; no flex, fast or ultrafast substitution",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
   }
 ]

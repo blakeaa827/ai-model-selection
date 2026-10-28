@@ -80,7 +80,7 @@ def refresh_route(row):
  prior=row['endpoint_verification'].get('quantization')
  if prior is not None:assert ep.get('quantization')==prior
  assert float(m['pricing']['prompt'])==float(ep['pricing']['prompt']) and float(m['pricing']['completion'])==float(ep['pricing']['completion'])
- row.update(intelligence_score=a['intelligenceIndex'],benchmark_task_cost_usd=a['intelligenceIndexCostPerTask']['cost']['total'],benchmark_verified_at=a['verified_at'],openrouter_verified_at=ct)
+ row.update(intelligence_score=a['intelligenceIndex'],benchmark_task_cost_usd=a['intelligenceIndexCostPerTask']['cost']['total'],benchmark_verified_at=a['verified_at'],openrouter_verified_at=ct,benchmark_version=version)
  assert 'fallback' not in a['name'].lower(),'Single-model template cannot describe a fallback benchmark'
  if row['effort'] is not None:assert (a.get('effort') or {}).get('slug')==row['effort'] or (row['effort']=='none' and a.get('isReasoning') is False),'Exact benchmark effort mismatch'
  row['endpoint_verification'].update(verified_at=er['verified_at'],status=ep['status'],supported_parameters=ep['supported_parameters'],quantization=ep.get('quantization'),standard_pricing_matches_catalog=True)
@@ -97,7 +97,15 @@ for i,r in enumerate(front):
   r['marginal']={'previous_configuration_id':prev['configuration_id'],'score_gain':gain,'additional_cost_usd':added,'cost_increase_percent':100*added/prev['benchmark_task_cost_usd'],'additional_usd_per_index_point':rate,'versus_previous_marginal_multiple':rate/pm['additional_usd_per_index_point'] if pm else None}
   r.pop('minimum_score_inclusive',None)
  else:r['marginal']=None;r['minimum_score_inclusive']=0
-d['frontier']=front;d['limited_free_configurations']=[refresh_route(r) for r in d['limited_free_configurations']]
+d['frontier']=front
+free=[]
+for r in d['limited_free_configurations']:
+ a=aa.get(r['benchmark_source_url'])
+ if a and not a.get('intelligenceIndexIsEstimated') and not a.get('deprecated') and (a.get('intelligenceIndexCostPerTask') or {}).get('cost',{}).get('total')==0:
+  free.append(refresh_route(r))
+ else:
+  d['excluded_or_pending'].append({'model':r['model_name'],'configuration_id':r['configuration_id'],'reason':'Free route lacks a measured, non-estimated zero-cost pair on the current common index version. Prior-version result cannot be reused.'})
+d['limited_free_configurations']=free
 for r in d['evaluated_configurations']:
  if r.get('benchmark_mode')=='multi_model_fallback':
   pending={'configuration_id':r['configuration_id'],'model':r['AA_model_label'],'openrouter_model_id':r['openrouter_model_id'],'effort':r['effort'],'intelligence_score':r['intelligence_score'],'benchmark_task_cost_usd':r['benchmark_task_cost_usd'],'benchmark_mode':'multi_model_fallback','reason':r['exclusion_reasons'][0]}
@@ -136,6 +144,12 @@ d['software_license']={'spdx_id':'MIT','file':'LICENSE','scope':'Original projec
 d['benchmark_attribution']={'name':'Artificial Analysis','url':'https://artificialanalysis.ai/','independent_project_not_endorsed':True,'data_rights_review':'deferred_by_maintainer','source_redistribution_permission_verified':False}
 d['benchmark']['verified_at']=max(a['verified_at'] for a in metrics)
 d['benchmark']['version']=version
+if version!=old['benchmark']['version']:
+ d['benchmark']['previous_version']=old['benchmark']['version']
+ d['benchmark']['methodology_transition_note']='All compared current records reacquired. Scores and weighted task costs are not directly comparable across index versions; specialized profiles retain their own separately verified evaluation versions.'
+ d['benchmark'].pop('under_review_components',None)
+ d['caveats']=[s for s in d['caveats'] if not any(t in s for t in ('SciCode and CritPt under review','current v4.3.2 model page','Intelligence Index v4.3.2'))]
+ d['caveats'].append('Intelligence Index v5.0 replaces v4.3.2. This is a benchmark-basket change, not evidence that a model became more or less intelligent overnight. Historical snapshots preserve prior-version measurements; selectors must not combine them.')
 d['benchmark']['evaluation_run_date_note']=date+' is the source verification date; exact AA evaluation completion dates remain unpublished.'
 d['scope']['benchmark_frontier_rechecked_date']=date
 newids=sorted(set(cat)-{r['model_id'] for r in json.load(open(P/'coverage.json'))['catalog_models']})
@@ -147,6 +161,7 @@ newreleases=sorted({r['slug'] for r in json.load(open(R/'registry.json'))['relea
 frontier_changed=[(r['configuration_id'],r['intelligence_score'],r['benchmark_task_cost_usd']) for r in front]!=[(r['configuration_id'],r['intelligence_score'],r['benchmark_task_cost_usd']) for r in old['frontier']]
 revision=old['changes_since_previous'].get('revision',0)+1 if old['report_date']==date else 1
 summary=f"Refreshed {len(front)} paid configurations and {len(d['limited_free_configurations'])} opt-in free configurations. {len(changed)} numerical source revisions; {len(newids)} new and {len(removed)} absent gateway listings; {len(newreleases)} new AA releases since {old['report_date']}. New candidates require exact effort/revision correspondence before routing."
+if version!=old['benchmark']['version']:summary='Methodology transition from v'+old['benchmark']['version']+' to v'+version+': every compared configuration was rechecked. Cross-version score/cost deltas describe different benchmark baskets, not model changes. '+summary
 d['changes_since_previous']={'previous_report_date':old['report_date'],'previous_commit':os.environ.get('REPORT_PARENT_SHA') or None,'revision':revision,'benchmark_version_changed':version!=old['benchmark']['version'],'frontier_changed':frontier_changed,'frontier_membership_changed':{r['configuration_id'] for r in front}!={r['configuration_id'] for r in old['frontier']},'recommendations_changed':any(old['recommendations'][k]['configuration_id']!=d['recommendations'][k]['configuration_id'] for k in ('floor','ceiling')),'new_eligible_releases':[],'removed_actionable_configurations':[],'new_catalog_entries':newids,'removed_catalog_entries':removed,'new_AA_releases':newreleases,'revised_metrics':changed,'gateway_token_pricing_changes':pricing_changes,'summary':summary}
 d['changes_since_previous']['new_eligible_releases']=sorted({r['openrouter_model_id'] for r in d['evaluated_configurations'] if r.get('eligible_for_frontier') and r['configuration_id'] not in {x['configuration_id'] for x in old['evaluated_configurations']}})
 if old['report_date']==date:d['changes_since_previous']['same_day_revision_note']='Reverified same-day snapshot; previous version is preserved in Git history.'

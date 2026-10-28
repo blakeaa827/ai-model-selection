@@ -32,7 +32,10 @@ def exact(slug):
     try:
         raw,t=fetch(url)
         candidates=[o for o in embedded(raw) if o.get('slug')==slug and 'intelligenceIndexIsEstimated' in o]
-        versions=set(re.findall(r'Intelligence Index v([0-9.]+)', raw))
+        # AA's v5 update badge says "v5" while the methodology and structured
+        # evaluation name say "v5.0". Normalize these equivalent spellings;
+        # still reject genuinely different versions on the same page.
+        versions={v if '.' in v else v+'.0' for v in re.findall(r'Intelligence Index v([0-9.]+)', raw)}
         if not candidates or len(versions)!=1: raise ValueError('Exact record or common index version missing')
         a=candidates[0]
         return {**a,'source_url':url,'verified_at':t,'version':versions.pop()}

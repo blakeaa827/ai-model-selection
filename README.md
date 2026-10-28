@@ -17,13 +17,13 @@ A daily cost vs capability chart and machine-readable model selector across all 
 
 The Intelligence Index measures broad benchmark capability, not a request's probability of success. AA weighted task costs are not OpenRouter invoice estimates. Every listed model is inventoried; not every model has comparable measurements. See the [methodology and limits](latest.md) before using the recommendations.
 
-## October 27, 2026 recommendation
+## October 28, 2026 recommendation
 
-API floor: **MiMo-V2.6-Pro / thinking enabled**, score **46.3242065310383**, **$0.13322318937213493** per measured AA task. Optional ceiling: **GPT-6.1 Sol / xhigh**, score **51.0377679093761**, **$0.39286117158850653**. Both are workload-conditional heuristics.
+API floor: **GPT-6.1 Terra / low**, score **29.2169280792131**, **$0.07133756205169729** per measured AA task. Optional ceiling: **GPT-6.1 Terra / medium**, score **38.1152076677975**, **$0.16880458238389412**. Both are workload-conditional heuristics.
 
-Refreshed 16 paid configurations and 1 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-27. New candidates require exact effort/revision correspondence before routing.
+Methodology transition from v4.3.2 to v5.0: every compared configuration was rechecked. Cross-version score/cost deltas describe different benchmark baskets, not model changes. Refreshed 13 paid configurations and 0 opt-in free configurations. 59 numerical source revisions; 1 new and 0 absent gateway listings; 0 new AA releases since 2026-10-27. New candidates require exact effort/revision correspondence before routing.
 
-Discovery screens 463 live OpenRouter entries and 516 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
+Discovery screens 464 live OpenRouter entries and 516 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
 ## Files and cost basis
 
@@ -36,7 +36,7 @@ Discovery screens 463 live OpenRouter entries and 516 AA releases across all lab
 - [snapshots](snapshots): dated complete reports; same-day revisions remain in Git history.
 - [schema.json](schema.json), [select-model.mjs](select-model.mjs) and [test-selector.mjs](test-selector.mjs): format, selector and validation checks.
 
-The common comparison is **Artificial Analysis Intelligence Index v4.3.2** and **weighted USD per Intelligence Index task**. Broad capability is not percentage knowledge. AA cost is based on measured benchmark token usage and provider prices; it is not an OpenRouter invoice estimate, guaranteed prompt price or spending cap. Token rates are recorded separately. Underlying AA numerical precision drives dominance and selection; display values are rounded, and close score gaps may not be meaningful for your workload.
+The common comparison is **Artificial Analysis Intelligence Index v5.0** and **weighted USD per Intelligence Index task**. Broad capability is not percentage knowledge. AA cost is based on measured benchmark token usage and provider prices; it is not an OpenRouter invoice estimate, guaranteed prompt price or spending cap. Token rates are recorded separately. Underlying AA numerical precision drives dominance and selection; display values are rounded, and close score gaps may not be meaningful for your workload.
 
 Subscription allowance consumption is a separate cost basis. A monthly plan does not establish cost per successful task. UI Extended, Expert, Heavy, Deep Think and Ultra are not assumed to map to API efforts; app tools, parallel agents, limits and model rollouts can change outcomes.
 
