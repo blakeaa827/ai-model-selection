@@ -4,22 +4,22 @@
 
 ## Changes since the last published report
 
-Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 8 absent gateway listings; 1 new AA releases since 2026-10-28. New candidates require exact effort/revision correspondence before routing.
+Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-28. New candidates require exact effort/revision correspondence before routing.
 
 Previous report: 2026-10-28; common Intelligence Index v5.0. Frontier membership unchanged; floor and ceiling unchanged.
 
 Reverified same-day snapshot; previous version is preserved in Git history.
 
-9 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
+4 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
 
 Screened **456 live gateway listings**, **517 AA releases**, **80 exact model records**, and **16 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
-New gateway listings: none. Removed listings: `openai/gpt-4-turbo`, `openai/o1`, `openai/o1-pro`, `openai/o3-mini`, `openai/o3-mini-high`, `openai/o4-mini`, `openai/o4-mini-high`, `qwen/qwen3-next-80b-a3b-thinking`. Absence from a gateway is not proof of provider-wide retirement.
+New gateway listings: none. Removed listings: none. Absence from a gateway is not proof of provider-wide retirement.
 
-Newly observed AA release entries: gemini-4-carbon. These can include a newly identified revision of an older release.
+Newly observed AA release entries: none. These can include a newly identified revision of an older release.
 
 The Intelligence Index measures broad capability, not percentage knowledge or a request's probability of success. These costs are AA's weighted benchmark-task costs from observed token use and published prices, not guaranteed prompt prices, OpenRouter invoices or spending caps. Numerical precision is retained for lookup; close score differences are not proof of statistical significance.
 
@@ -203,7 +203,7 @@ Eligible Claude Max/Team users can claim first-party API credits; eligibility de
 
 ## Verification and freshness
 
-Checked 2026-10-28T17:44:27.375098+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-28T17:43:54.038860+00:00; registry checked 2026-10-28T17:43:54.190733+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-28T18:22:22.580419+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-28T18:21:44.000247+00:00; registry checked 2026-10-28T18:21:44.297026+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
