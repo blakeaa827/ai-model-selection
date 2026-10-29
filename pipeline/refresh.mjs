@@ -18,6 +18,7 @@ async function run(name,program,args){
 }
 try{
  await run('original_source_parser_regression','python3',['pipeline/test-acquire.py']);
+ await run('agent_metadata_regression','python3',['pipeline/test-workload-agent.py']);
  for(let attempt=0;attempt<3;attempt++){
   let parent=process.env.REPORT_PARENT_SHA;
   if(shouldPublish){const current=await head();parent=current.sha;await baseline(parent);process.env.REPORT_PARENT_SHA=parent;}

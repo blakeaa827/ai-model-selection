@@ -5,6 +5,12 @@ from pathlib import Path
 
 R=Path('run-artifacts/acquisition'); O=Path('run-artifacts/report')
 load=lambda p:json.loads(Path(p).read_text())
+def agent_model_metadata(record):
+    display=record.get('display')
+    model=display.get('model') if isinstance(display,dict) else None
+    if not isinstance(model,str) or not model.strip():
+        return None,['missing_tested_model_metadata']
+    return model,[]
 def save(p,x):
     # Keep the machine-readable inventories compact without rounding any values.
     compact='profiles' in x or 'catalog_models' in x
@@ -142,11 +148,11 @@ def main():
     coding=acq['coding_agents']; systems=[]
     for r in coding['variants']:
         score=r.get('indexScore');cost=r.get('mean',{}).get('costUsd')
-        reasons=[]
+        model_label,reasons=agent_model_metadata(r)
         if score is None or cost is None:reasons.append('missing_measured_score_or_cost')
         if r.get('hasTieredPricing'):reasons.append('tiered_cost_completeness_requires_verification')
         if r.get('isUnavailable'):reasons.append('unavailable')
-        systems.append({'configuration_id':'aa-coding-agent:'+r['id'],'label':r['displayLabel'],'agent':r['agentName'],'model_label':r['display']['model'],
+        systems.append({'configuration_id':'aa-coding-agent:'+r['id'],'label':r['displayLabel'],'agent':r['agentName'],'model_label':model_label,
                         'score':score*100 if score is not None else None,'source_raw_score':score,'benchmark_task_cost_usd':cost,
                         'harness_versions':r.get('versions'),'fallback_attempts':r.get('safety',{}).get('fallbackAttemptCount'),
                         'refusal_rate':r.get('safety',{}).get('rate'),'agent_wall_time_seconds':r.get('mean',{}).get('agentWallTimeSec'),
