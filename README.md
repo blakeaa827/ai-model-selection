@@ -21,15 +21,18 @@ The Intelligence Index measures broad benchmark capability, not a request's prob
 
 API floor: **GPT-6.1 Terra / low**, score **29.2169280792131**, **$0.07133756205169729** per measured AA task. Optional ceiling: **GPT-6.1 Terra / medium**, score **38.1152076677975**, **$0.16880458238389412**. Both are workload-conditional heuristics.
 
-Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-29. New candidates require exact effort/revision correspondence before routing.
+Refreshed 13 paid configurations and 0 opt-in free configurations. 1 numerical source revisions; 0 new and 1 absent gateway listings; 1 new AA releases since 2026-10-29. New candidates require exact effort/revision correspondence before routing.
 
-Discovery screens 457 live OpenRouter entries and 517 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
+Discovery screens 456 live OpenRouter entries and 518 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
+
+The callable frontier is a verified subset, not a global optimum. [All measured AA configurations](comparisons.md) include 274 active exact records and 80 score/cost pairs, including 4 non-callable AA-only frontier points with unverified routing, provisional costs or unavailable deployment. Their names are not executable revision pins.
 
 ## Files and cost basis
 
 **License:** Original project code and original documentation are licensed under [MIT](LICENSE). Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). MIT does not assert rights over third-party material; the source-data rights review remains deferred by the maintainer. See [DATA-SOURCES.md](DATA-SOURCES.md). The [workload-specific selector](docs/WORKLOADS.md) is included in the daily refresh.
 
 - [latest.json](latest.json): stable machine-readable schema 1.1.0 contract, paid frontier, limited free lane, subscription guidance and source checks.
+- [comparisons.md](comparisons.md) and [comparisons.json](comparisons.json): every active exact Artificial Analysis configuration, including measured pairs without a verified callable route. The AA-only measurement frontier is screening evidence, never an executable request.
 - [latest.md](latest.md): full dated report, exact score thresholds, budget examples, marginal costs and recommendations.
 - [coverage.json](coverage.json): catalog inventory and AA release screening bounds with explicit pending statuses.
 - [cost-curve.svg](cost-curve.svg): current paid cost-capability curve.

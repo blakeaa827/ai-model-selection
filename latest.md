@@ -4,22 +4,27 @@
 
 ## Changes since the last published report
 
-Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-29. New candidates require exact effort/revision correspondence before routing.
+Refreshed 13 paid configurations and 0 opt-in free configurations. 1 numerical source revisions; 0 new and 1 absent gateway listings; 1 new AA releases since 2026-10-29. New candidates require exact effort/revision correspondence before routing.
 
 Previous report: 2026-10-29; common Intelligence Index v5.0. Frontier membership unchanged; floor and ceiling unchanged.
 
 Reverified same-day snapshot; previous version is preserved in Git history.
 
+12 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
+
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
+- `mistralai/mistral-large-4-0@unverified-effort`: score 25.286451488165 → 26.0249946754784; AA task cost $5.53703213691669 → $2.061496607384404. Provisional: False.
 
-Screened **457 live gateway listings**, **517 AA releases**, **80 exact model records**, and **16 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
+Screened **456 live gateway listings**, **518 AA releases**, **81 pinned general-source records**, and **16 free listings**. Every listing is inventoried; this does not mean every model has comparable measurements.
 
-New gateway listings: none. Removed listings: none. Absence from a gateway is not proof of provider-wide retirement.
+New gateway listings: none. Removed listings: `upstage/solar-pro-3`. Absence from a gateway is not proof of provider-wide retirement.
 
-Newly observed AA release entries: none. These can include a newly identified revision of an older release.
+Newly observed AA release entries: mistral-large-4. These can include a newly identified revision of an older release.
 
 The Intelligence Index measures broad capability, not percentage knowledge or a request's probability of success. These costs are AA's weighted benchmark-task costs from observed token use and published prices, not guaranteed prompt prices, OpenRouter invoices or spending caps. Numerical precision is retained for lookup; close score differences are not proof of statistical significance.
+
+**Coverage limit:** These 13 rows are the verified callable subset. The [complete AA configuration comparison](comparisons.md) includes 274 active exact records and 80 measured score/cost pairs; 4 measured points are non-callable here because of unverified routing, provisional costs or availability. The default floor and these threshold selections are conditional on verified routes, not a proven global optimum.
 
 ## Minimum cost meeting a capability target
 
@@ -164,7 +169,7 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Ling 3.0 Tiny  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Ling 3.1 Flash 1019  | 29.470119369837 | $3.185145018337793 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | MiniMax-M3.1-Flash  | 28.9095214290458 | $0.49097067348453205 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
-| Mistral Large 4 Preview  | 25.286451488165 | $5.53703213691669 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
+| Mistral Large 4 Preview  | 25.286451488165 | $4.208903290646695 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Muse Spark Open (Xhigh)  | 24.6815868992913 | $2.0176680435839316 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Muse Wonder (Max)  | 43.3248225998431 | $6.9520364786062245 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Muse Wonder Full (Max)  | 49.7272123627021 | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
@@ -186,7 +191,7 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 | OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6.1 Terra; `{"ui_or_cli_effort":null,"note":"Exact subscription effort labels not verified; no API effort or benchmark correspondence assumed."}` | False |
 | Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
-| Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
+| Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | False |
 
 **OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate.
 Unverified this run: https://openai.com/index/introducing-gpt-6-1-terra/. Previous verification dates are retained.
@@ -197,12 +202,13 @@ Unverified this run: https://support.claude.com/en/articles/8664678-change-the-m
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
 **Gemini:** Models/thinking consume differing allowance. Generic Help still lists Gemini 3 families while September launch explicitly grants 3.8 Flash to Pro/Ultra; prefer launch for exact revision, Help for controls. Gemini 4 Argon is restricted Fairwind rollout, not assumed consumer subscription access. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted. Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.
+Unverified this run: https://support.google.com/gemini/answer/16275805. Previous verification dates are retained.
 
 Eligible Claude Max/Team users can claim first-party API credits; eligibility depends on exact plan, claim and linked Console organization. These credits do not pay OpenRouter invoices. No personal entitlement is assumed.
 
 ## Verification and freshness
 
-Checked 2026-10-29T14:15:33.266295+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-29T14:14:56.747152+00:00; registry checked 2026-10-29T14:14:56.674066+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-30T00:53:28.762439+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-30T00:48:19.202611+00:00; registry checked 2026-10-30T00:48:19.644350+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 

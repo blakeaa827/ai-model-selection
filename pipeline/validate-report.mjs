@@ -9,6 +9,20 @@ const read=async p=>JSON.parse(await readFile(p,'utf8'));
 const d=await read(root+'/latest.json');
 validateSnapshot(d);
 const [catalog,eps,metrics,coverage]=await Promise.all(['catalog','endpoints','metrics'].map(p=>read('run-artifacts/acquisition/'+p+'.json')).concat(read(root+'/coverage.json')));
+if(d.scope.measured_comparison_file){
+ const compared=await read(root+'/comparisons.json');
+ const all=await read('run-artifacts/acquisition/workloads.json');
+ assert.equal(compared.index_version,d.benchmark.version);
+ assert.equal(compared.rows.length,all.active_exact_records.length);
+ assert.deepEqual(new Set(compared.rows.map(x=>x.AA_slug)),new Set(all.active_exact_records.map(x=>x.slug)));
+ for(const row of compared.rows){
+  const exact=all.active_exact_records.find(x=>x.slug===row.AA_slug);
+  assert.equal(row.intelligence_score,exact.intelligenceIndex??null);
+  assert.equal(row.weighted_AA_task_cost_usd,exact.intelligenceIndexCostPerTask?.cost?.total??null);
+  if(row.request)assert(d.frontier.some(x=>x.configuration_id===row.verified_configuration_id));
+  else assert(!row.status.startsWith('verified_callable_frontier'));
+ }
+}
 for(const row of [...d.frontier,...d.limited_free_configurations]){
  verifyCatalog(row,catalog,['tools']);verifyEndpoint(row,eps[row.openrouter_model_id],['tools']);
  const a=metrics.find(x=>x.source_url===row.benchmark_source_url);

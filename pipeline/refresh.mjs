@@ -19,12 +19,14 @@ async function run(name,program,args){
 try{
  await run('original_source_parser_regression','python3',['pipeline/test-acquire.py']);
  await run('agent_metadata_regression','python3',['pipeline/test-workload-agent.py']);
+ await run('complete_comparison_regression','python3',['pipeline/test-comparisons.py']);
  for(let attempt=0;attempt<3;attempt++){
   let parent=process.env.REPORT_PARENT_SHA;
   if(shouldPublish){const current=await head();parent=current.sha;await baseline(parent);process.env.REPORT_PARENT_SHA=parent;}
   if(!reuse||attempt)await run('public_original_source_acquisition','python3',['pipeline/acquire.py']);
   if(workloadsEnabled&&(!reuse||attempt))await run('workload_original_source_acquisition','python3',['pipeline/acquire-workloads.py']);
   await run('assemble_verified_report','python3',['pipeline/build-report.py']);
+  if(workloadsEnabled)await run('assemble_complete_model_comparison','python3',['pipeline/build-comparisons.py']);
   if(workloadsEnabled)await run('assemble_workload_frontiers','python3',['pipeline/build-workloads.py']);
   await run('render_tables_and_curve','python3',['pipeline/render-report.py']);
   if(workloadsEnabled)await run('render_workload_tables_and_curves','python3',['pipeline/render-workloads.py']);
