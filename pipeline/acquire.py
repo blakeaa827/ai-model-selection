@@ -73,6 +73,13 @@ def main():
         raw,ct=fc.result();catalog={'verified_at':ct,**json.loads(raw)}
     if not reg or not catalog.get('data'): raise ValueError('Empty public discovery sources')
     save('registry',{'verified_at':rt,'releases':list(reg.values())});save('catalog',catalog)
+    # The default catalog is text-only. Inventory every output modality and
+    # decisions separately without treating these models as text benchmarks.
+    for label,query in [('all-output-catalog','all'),('decision-catalog','decisions')]:
+        url='https://openrouter.ai/api/v1/models?output_modalities='+query
+        try:
+            raw,verified=fetch(url);save(label,{'source_url':url,'verified_at':verified,**json.loads(raw)})
+        except Exception as error:save(label,{'source_url':url,'error':str(error)})
     slugs={r['benchmark_source_url'].split('/')[-1] for r in base['evaluated_configurations'] if r.get('benchmark_source_url')}
     slugs|={r['benchmark_source_url'].split('/')[-1] for r in base.get('limited_free_configurations',[])}
     slugs|={r['AA_model_slug'] for r in base.get('excluded_or_pending',[]) if r.get('AA_model_slug')}

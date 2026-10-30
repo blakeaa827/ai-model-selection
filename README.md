@@ -17,7 +17,7 @@ A daily cost vs capability chart and machine-readable model selector across all 
 
 The Intelligence Index measures broad benchmark capability, not a request's probability of success. AA weighted task costs are not OpenRouter invoice estimates. Every listed model is inventoried; not every model has comparable measurements. See the [methodology and limits](latest.md) before using the recommendations.
 
-## October 29, 2026 recommendation
+## October 30, 2026 recommendation
 
 API floor: **GPT-6.1 Terra / low**, score **29.2169280792131**, **$0.07133756205169729** per measured AA task. Optional ceiling: **GPT-6.1 Terra / medium**, score **38.1152076677975**, **$0.16880458238389412**. Both are workload-conditional heuristics.
 

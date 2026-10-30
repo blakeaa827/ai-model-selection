@@ -1,4 +1,4 @@
-# Workload-specific model selection — 2026-10-29
+# Workload-specific model selection — 2026-10-30
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred data-rights review.
 
@@ -8,7 +8,7 @@ Screened **718 public AA configurations** and **456 OpenRouter entries**; acquir
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-10-30T00:57:45.812036+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-10-30T14:16:59.182148+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 

@@ -31,6 +31,14 @@ for(const row of [...d.frontier,...d.limited_free_configurations]){
  assert.equal(row.intelligence_score,a.intelligenceIndex);assert.equal(row.benchmark_task_cost_usd,a.intelligenceIndexCostPerTask?.cost?.total);
 }
 const eligible=d.evaluated_configurations.filter(r=>r.eligible_for_frontier&&r.benchmark_task_cost_usd!==null);
+for(const [file,key] of [['all-output-catalog','all_output_catalog_inventory'],['decision-catalog','decision_catalog_inventory']]){
+ const acquired=await read('run-artifacts/acquisition/'+file+'.json');
+ if(acquired.data){
+  assert.equal(coverage[key].verified_at,acquired.verified_at);
+  assert.deepEqual(new Set(coverage[key].models.map(x=>x.model_id)),new Set(acquired.data.map(x=>x.id)));
+  assert.equal(coverage[key].count,acquired.data.length);
+ }else assert.equal(coverage[key].status,'retrieval_failed');
+}
 for(const row of d.frontier){
  assert(!eligible.some(x=>x.intelligence_score>=row.intelligence_score&&x.benchmark_task_cost_usd<=row.benchmark_task_cost_usd&&(x.intelligence_score>row.intelligence_score||x.benchmark_task_cost_usd<row.benchmark_task_cost_usd)),'Dominated retained configuration');
  assert.equal(selectConfiguration(d,row.intelligence_score).configuration_id,row.configuration_id);

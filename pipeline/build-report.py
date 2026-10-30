@@ -206,11 +206,31 @@ for r in releases:
  if r['slug']=='kimi-k3-1-pro':status='benchmark_effort_revision_correspondence_unverified'
  screen.append({'AA_release_slug':r['slug'],'name':r['name'],'creator':r['creator']['name'],'score_upper_bound':score,'task_cost_lower_bound_usd':cost,'status':status,'dominated_by':dom,'source_path':r['href']})
 cov.update(report_date=date,catalog_verified_at=ct,AA_registry_verified_at=rt,catalog_models=inventory,AA_release_screening=screen)
+for filename,key in [('all-output-catalog','all_output_catalog_inventory'),('decision-catalog','decision_catalog_inventory')]:
+ path=R/(filename+'.json')
+ if path.exists():
+  supplementary=json.loads(path.read_text())
+  if supplementary.get('data'):
+   cov[key]={'source_url':supplementary['source_url'],'verified_at':supplementary['verified_at'],'count':len(supplementary['data']),
+    'scope':'Complete catalog inventory for this output filter. Non-text and unmeasured modes do not inherit a text Intelligence Index score or task cost.',
+    'models':[{'model_id':m['id'],'canonical_slug':m.get('canonical_slug'),'name':m['name'],'output_modalities':m.get('architecture',{}).get('output_modalities'),
+     'pricing_per_token':m.get('pricing'),'reasoning_catalog':m.get('reasoning'),'status':'text_configuration_audited_in_catalog_models' if m['id'] in cat else 'pending_comparable_benchmark_and_exact_execution_mode'} for m in supplementary['data']]}
+  else:cov[key]={'source_url':supplementary['source_url'],'status':'retrieval_failed','error':supplementary.get('error'),'verified_at':None}
 cov['provenance']='All catalog identity/effort metadata inventoried at catalog_verified_at; all AA release bounds checked at AA_registry_verified_at. Exact routing and benchmark checks have separate row timestamps. Release maxima/minima are screening bounds, never measured pairs. Haiku cost bounds are explicitly provisional and excluded.'
 d['coverage_inventory'].update(openrouter_model_count=len(inventory),AA_release_count=len(screen),paid_frontier_configuration_count=len(front),catalog_verified_at=ct,AA_registry_verified_at=rt,status_counts=dict(Counter(r['status'] for r in inventory)),limited_free_configuration_count=len(d['limited_free_configurations']),exact_AA_records_checked=len(metrics))
 cov['removed_since_previous']=[{**oldcov[mid],'status':'unavailable_not_in_live_catalog','last_observed_catalog_date':old['report_date'],'absence_verified_at':ct} for mid in removed]
 d['coverage_inventory']['status_counts']=dict(Counter(r['status'] for r in inventory))
 d['coverage_inventory']['free_catalog_entries_audited']=sum(m['id'].endswith(':free') for m in catalog['data'])
+for key in ('all_output_catalog_inventory','decision_catalog_inventory'):
+ current=cov.get(key,{})
+ d['coverage_inventory'][key]={'count':current.get('count'),'verified_at':current.get('verified_at'),'source_url':current.get('source_url'),'status':current.get('status','opened_successfully')}
+prior_decisions={m['model_id'] for m in previous_coverage.get('decision_catalog_inventory',{}).get('models',[])}
+new_decisions=[m for m in cov.get('decision_catalog_inventory',{}).get('models',[]) if m['model_id'] not in prior_decisions]
+d['changes_since_previous']['new_decision_catalog_entries']=[m['model_id'] for m in new_decisions]
+for m in new_decisions:
+ d['excluded_or_pending'].append({'model':m['name'],'openrouter_model_id':m['model_id'],'openrouter_canonical_slug':m['canonical_slug'],
+  'reason':'New decision-output catalog listing. No matching common Intelligence Index score/task-cost pair or task-success calibration; exact execution API must be independently verified. Not a text-model substitute.',
+  'catalog_verified_at':cov['decision_catalog_inventory']['verified_at']})
 sub=d['subscription_recommendations'];sub['last_verification_attempt_at']=now
 terra_release='https://openai.com/index/introducing-gpt-6-1-terra/'
 if terra_release in checks:
@@ -241,6 +261,9 @@ if argon_ga and 'google/gemini-4-argon' in cat:
   if service['service']=='Gemini' and 'Gemini 4 Argon API is GA as of October 13' not in service['limits_note']:service['limits_note']+=' Gemini 4 Argon API is GA as of October 13; consumer-plan and exact UI access remain conditional. Do not use the older Fairwind launch announcement as proof that current API access is restricted.'
 
 d['source_checks']=list(checks.values())
+for key in ('all_output_catalog_inventory','decision_catalog_inventory'):
+ current=cov.get(key,{})
+ if current.get('verified_at'):d['source_checks'].append({'url':current['source_url'],'verified_at':current['verified_at'],'status':'opened_successfully','retrieval':'public OpenRouter catalog metadata'})
 d['source_checks']+=[{'url':a['source_url'],'verified_at':a['verified_at'],'status':'opened_successfully','retrieval':'public embedded exact numerical record'} for a in metrics]
 d['source_checks']+=[{'url':e['source_url'],'verified_at':e['verified_at'],'status':'opened_successfully'} for e in eps.values()]
 d['source_checks']+=[{'url':'https://openrouter.ai/api/v1/models','verified_at':ct,'status':'opened_successfully'},{'url':'https://artificialanalysis.ai/models/releases','verified_at':rt,'status':'opened_successfully'}]
