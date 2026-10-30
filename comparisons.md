@@ -1,6 +1,6 @@
 # All measured model configurations — 2026-10-30
 
-Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 274 active exact records; 80 measured score/cost pairs; 4 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
+Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 275 active exact records; 79 measured score/cost pairs; 4 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
 
 This is the complete observed AA comparison, including models without a verified OpenRouter request. **Only** [latest.md](latest.md) contains executable, revision-pinned selections. A name match in the OpenRouter catalog does not verify the benchmarked revision, provider, mode or effort. Multi-model fallback systems and provisional pricing are not single-call routes. The index measures broad capability, not request success probability; the task cost is not an OpenRouter invoice.
 
@@ -86,7 +86,6 @@ This is the complete observed AA comparison, including models without a verified
 | GPT-6 Luna (Non-reasoning) | none / unspecified | 9.39244373619813 | $0.07141741932294249 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning) |
 | Muse Glimmer (High) | high | 6.34128724913462 | $0.16096168039127723 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/muse-glimmer) |
 | Command A+ | enabled / unlabeled | 6.24120025576958 | $0 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/command-a-plus) |
-| Nemotron 3.5 Lightning | enabled / unlabeled | 5.5346663903388 | $0.28980699398265014 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/nemotron-3-5-lightning) |
 | Mistral Small 4 (Reasoning) | enabled / unlabeled | 4.29716249600478 | $0.03990856296103761 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/mistral-small-4) |
 | NVIDIA Nemotron 3 Nano 4B | enabled / unlabeled | 1.81584603785463 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-4b) |
 | A.X-K2 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/a-x-k2) |
@@ -100,6 +99,7 @@ This is the complete observed AA comparison, including models without a verified
 | Command A | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/command-a) |
 | DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deephermes-3-llama-3-1-8b-preview) |
 | DeepHermes 3 - Mistral 24B Preview (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deephermes-3-mistral-24b-preview) |
+| deepseek-v4-1-flash-1017-non-reasoning | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning) |
 | DeepSeek V4 Flash Vision (Max) | max | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-flash-vision) |
 | DeepSeek V4 Pro 0813 (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-pro-non-reasoning) |
 | DiffusionGemma 26B A4B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/diffusiongemma-26b-a4b) |
@@ -210,6 +210,7 @@ This is the complete observed AA comparison, including models without a verified
 | Nanbeige4.1-3B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nanbeige4-1-3b) |
 | Nemotron 3.5 Bolt 74B-A9B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b) |
 | Nemotron 3.5 Bolt E4B 4GB (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-3-5-bolt-e4b-4gb) |
+| nemotron-3-5-lightning | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/nemotron-3-5-lightning) |
 | Nemotron 3 Nano Omni 30B A3B Reasoning | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-3-nano-omni-30b-a3b) |
 | Nemotron Cascade 2 30B A3B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-cascade-2-30b-a3b) |
 | Nex-N2-Pro (Based on Qwen3.5-397B-A17B) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nex-n2-pro) |

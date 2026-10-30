@@ -25,7 +25,7 @@ Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical s
 
 Discovery screens 456 live OpenRouter entries and 518 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro is pending an explicit AA effort match; Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
-The callable frontier is a verified subset, not a global optimum. [All measured AA configurations](comparisons.md) include 274 active exact records and 80 score/cost pairs, including 4 non-callable AA-only frontier points with unverified routing, provisional costs or unavailable deployment. Their names are not executable revision pins.
+The callable frontier is a verified subset, not a global optimum. [All measured AA configurations](comparisons.md) include 275 active exact records and 79 score/cost pairs, including 4 non-callable AA-only frontier points with unverified routing, provisional costs or unavailable deployment. Their names are not executable revision pins.
 
 ## Files and cost basis
 

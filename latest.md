@@ -10,7 +10,9 @@ Previous report: 2026-10-30; common Intelligence Index v5.0. Frontier membership
 
 Reverified same-day snapshot; previous version is preserved in Git history.
 
-All-output discovery: **692 OpenRouter listings**, including **34 decision-output models**, are separately inventoried in [coverage.json](coverage.json). Non-text/decision modes without comparable AA score/task-cost pairs remain pending; catalog token rates are not benchmark task costs.
+All-output discovery: **691 OpenRouter listings**, including **33 decision-output models**, are separately inventoried in [coverage.json](coverage.json). Non-text/decision modes without comparable AA score/task-cost pairs remain pending; catalog token rates are not benchmark task costs.
+
+7 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
@@ -23,7 +25,7 @@ Newly observed AA release entries: none. These can include a newly identified re
 
 The Intelligence Index measures broad capability, not percentage knowledge or a request's probability of success. These costs are AA's weighted benchmark-task costs from observed token use and published prices, not guaranteed prompt prices, OpenRouter invoices or spending caps. Numerical precision is retained for lookup; close score differences are not proof of statistical significance.
 
-**Coverage limit:** These 13 rows are the verified callable subset. The [complete AA configuration comparison](comparisons.md) includes 274 active exact records and 80 measured score/cost pairs; 4 measured points are non-callable here because of unverified routing, provisional costs or availability. The default floor and these threshold selections are conditional on verified routes, not a proven global optimum.
+**Coverage limit:** These 13 rows are the verified callable subset. The [complete AA configuration comparison](comparisons.md) includes 275 active exact records and 79 measured score/cost pairs; 4 measured points are non-callable here because of unverified routing, provisional costs or availability. The default floor and these threshold selections are conditional on verified routes, not a proven global optimum.
 
 ## Minimum cost meeting a capability target
 
@@ -208,7 +210,7 @@ Eligible Claude Max/Team users can claim first-party API credits; eligibility de
 
 ## Verification and freshness
 
-Checked 2026-10-30T14:20:24.312470+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-30T14:19:55.166112+00:00; registry checked 2026-10-30T14:19:55.240313+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-10-30T18:03:16.486246+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-30T18:01:50.256723+00:00; registry checked 2026-10-30T18:01:50.330443+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
