@@ -236,7 +236,7 @@ This is the complete observed AA comparison, including models without a verified
 | NVIDIA Nemotron Nano 9B V2 (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nvidia-nemotron-nano-9b-v2-reasoning) |
 | o3 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/o3) |
 | Olmo 3.1 32B Instruct | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/olmo-3-1-32b-instruct) |
-| Olmo 3.1 32B Think | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/olmo-3-1-32b-think) |
+| olmo-3-1-32b-think | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/olmo-3-1-32b-think) |
 | Olmo 3 7B Instruct | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/olmo-3-7b-instruct) |
 | Olmo 3 7B Think | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/olmo-3-7b-think) |
 | Phi-4 | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/phi-4) |
@@ -277,7 +277,7 @@ This is the complete observed AA comparison, including models without a verified
 | Solar Open 100B (Reasoning) | high | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/solar-open-100b-reasoning) |
 | Solar Open2 250B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/solar-open2-250b) |
 | Solar Pro 4 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/solar-pro4) |
-| Step3 VL 10B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/step-3-vl-10b) |
+| step-3-vl-10b | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/step-3-vl-10b) |
 | Tiny Aya Global | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/tiny-aya-global) |
 | Tri-21B-Think | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/tri-21b-think-v0-5) |
 | Trinity Large Thinking | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/trinity-large-thinking) |
