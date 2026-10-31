@@ -1,6 +1,6 @@
-# All measured model configurations — 2026-10-30
+# All measured model configurations — 2026-10-31
 
-Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 275 active exact records; 79 measured score/cost pairs; 4 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
+Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 275 active exact records; 81 measured score/cost pairs; 4 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
 
 This is the complete observed AA comparison, including models without a verified OpenRouter request. **Only** [latest.md](latest.md) contains executable, revision-pinned selections. A name match in the OpenRouter catalog does not verify the benchmarked revision, provider, mode or effort. Multi-model fallback systems and provisional pricing are not single-call routes. The index measures broad capability, not request success probability; the task cost is not an OpenRouter invoice.
 
@@ -72,20 +72,24 @@ This is the complete observed AA comparison, including models without a verified
 | Qwen3.8 27B (Xhigh) | xhigh | 20.1068756031705 | $3.5295494751410654 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/qwen3-8-27b) |
 | MiniMax-M3 | enabled / unlabeled | 18.7289083859255 | $1.2850974407373852 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/minimax-m3) |
 | Claude Haiku 5.5 (Low) | low | 18.6180055310996 | $0.043757686381988486 | provisional_task_cost_not_actionable | yes | [AA](https://artificialanalysis.ai/models/claude-haiku-5-5-low) |
+| DeepSeek V4.1 Flash 1017 (Non-reasoning) | none / unspecified | 18.5131594039446 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning) |
 | GPT-6 Luna (Medium) | medium | 18.3042156192416 | $0.042201836106537785 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-luna-medium) |
 | K2 Horizon 375B A23B | high | 17.7702731734027 | $0 | measured_route_or_configuration_unverified | yes | [AA](https://artificialanalysis.ai/models/k2-horizon-375b-a23b) |
 | Beam 1.0 | enabled / unlabeled | 17.7307282547205 | $0.28440671352465285 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/reflection-beam) |
 | Qwen3.8 27B (Medium) | medium | 17.4831648632067 | $2.1600047179927624 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/qwen3-8-27b-medium) |
 | Qwen3.8 27B (Low) | low | 15.6850612405479 | $1.9059046111258202 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/qwen3-8-27b-low) |
-| Nemotron 3.5 Super VL | high | 13.6203422723141 | $0.5565160431921087 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/nemotron-3-5-super-vl) |
+| Nemotron 3.5 Super VL | high | 13.6203422723141 | $0.5382257339551116 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/nemotron-3-5-super-vl) |
 | Inkling Small | enabled / unlabeled | 12.9101620926084 | $0.20316116043899832 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/inkling-small) |
 | Inkling (Xhigh) | xhigh | 12.4781698715401 | $1.3519575079737436 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/inkling) |
 | Nemotron 3 Ultra 550B A55B (Reasoning) | enabled / unlabeled | 11.7592726308177 | $2.2257365504312134 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b) |
 | Gemini 3.5 Flash-Lite | high | 11.6563462044212 | $0.6929018557975878 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/gemini-3-5-flash-lite) |
+| Qwen3.8 27B (Non-reasoning) | none / unspecified | 10.0316676028892 | $3.7729435511821583 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/qwen3-8-27b-non-reasoning) |
 | GPT-6 Luna (Low) | low | 9.66610812336462 | $0.005115255188520391 | verified_callable_frontier | no | [AA](https://artificialanalysis.ai/models/gpt-6-luna-low) |
 | GPT-6 Luna (Non-reasoning) | none / unspecified | 9.39244373619813 | $0.07141741932294249 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-luna-non-reasoning) |
 | Muse Glimmer (High) | high | 6.34128724913462 | $0.16096168039127723 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/muse-glimmer) |
 | Command A+ | enabled / unlabeled | 6.24120025576958 | $0 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/command-a-plus) |
+| Nemotron 3.5 Lightning | enabled / unlabeled | 5.5346663903388 | $0.28980699398265014 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/nemotron-3-5-lightning) |
+| Granite 4.2 3B | enabled / unlabeled | 4.72268717901823 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-3b) |
 | Mistral Small 4 (Reasoning) | enabled / unlabeled | 4.29716249600478 | $0.03990856296103761 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/mistral-small-4) |
 | NVIDIA Nemotron 3 Nano 4B | enabled / unlabeled | 1.81584603785463 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-4b) |
 | A.X-K2 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/a-x-k2) |
@@ -99,7 +103,6 @@ This is the complete observed AA comparison, including models without a verified
 | Command A | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/command-a) |
 | DeepHermes 3 - Llama-3.1 8B Preview (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deephermes-3-llama-3-1-8b-preview) |
 | DeepHermes 3 - Mistral 24B Preview (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deephermes-3-mistral-24b-preview) |
-| deepseek-v4-1-flash-1017-non-reasoning | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning) |
 | DeepSeek V4 Flash Vision (Max) | max | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-flash-vision) |
 | DeepSeek V4 Pro 0813 (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-pro-non-reasoning) |
 | DiffusionGemma 26B A4B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/diffusiongemma-26b-a4b) |
@@ -142,7 +145,6 @@ This is the complete observed AA comparison, including models without a verified
 | Granite 4.0 H Small | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-0-h-small) |
 | Granite 4.0 Micro | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-0-micro) |
 | Granite 4.2 30B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-30b) |
-| Granite 4.2 3B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-3b) |
 | Granite 4.2 8B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-8b) |
 | Hermes 4 - Llama-3.1 405B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b) |
 | Hermes 4 - Llama-3.1 405B (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b-reasoning) |
@@ -210,7 +212,6 @@ This is the complete observed AA comparison, including models without a verified
 | Nanbeige4.1-3B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nanbeige4-1-3b) |
 | Nemotron 3.5 Bolt 74B-A9B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-3-5-bolt-74b-a9b) |
 | Nemotron 3.5 Bolt E4B 4GB (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-3-5-bolt-e4b-4gb) |
-| nemotron-3-5-lightning | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/nemotron-3-5-lightning) |
 | Nemotron 3 Nano Omni 30B A3B Reasoning | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-3-nano-omni-30b-a3b) |
 | Nemotron Cascade 2 30B A3B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nemotron-cascade-2-30b-a3b) |
 | Nex-N2-Pro (Based on Qwen3.5-397B-A17B) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nex-n2-pro) |
@@ -260,7 +261,6 @@ This is the complete observed AA comparison, including models without a verified
 | Qwen3.6 35B A3B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-6-35b-a3b-non-reasoning) |
 | Qwen3.7 Plus | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-7-plus) |
 | Qwen3.8 2.4T A95B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b) |
-| Qwen3.8 27B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-8-27b-non-reasoning) |
 | Qwen3.8-Flash-Next | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-8-flash-next) |
 | Qwen3 Coder Next | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-coder-next) |
 | Qwen3 Next 80B A3B Instruct | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/qwen3-next-80b-a3b-instruct) |

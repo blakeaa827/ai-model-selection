@@ -128,6 +128,19 @@ def main():
         raise ValueError('Incompatible index versions in comprehensive comparison')
     if comparison['counts']['active_AA_records'] != len(acquired['active_exact_records']):
         raise ValueError('Incomplete exact configuration comparison')
+    previous = load('comparisons.json') if Path('comparisons.json').exists() else {'rows':[]}
+    prior = {r['AA_slug']:r for r in previous['rows']}
+    updates = []
+    for row in comparison['rows']:
+        old = prior.get(row['AA_slug'])
+        if old and not row.get('retrieval_error') and any(row[k] != old.get(k) for k in ('intelligence_score','weighted_AA_task_cost_usd')):
+            updates.append({'AA_slug':row['AA_slug'],'label':row['AA_label'],'previous_score':old.get('intelligence_score'),
+                            'score':row['intelligence_score'],'previous_AA_task_cost_usd':old.get('weighted_AA_task_cost_usd'),
+                            'AA_task_cost_usd':row['weighted_AA_task_cost_usd'],'previous_retrieval_failed':bool(old.get('retrieval_error')),
+                            'source_url':row['source_url'],'source_verified_at':row['source_verified_at']})
+    comparison['changes_since_previous']={'previous_report_date':previous.get('report_date'),'measurement_updates':updates,
+        'note':'Includes newly recovered source records and previously missing values; not every change represents a new evaluation. No older value is presented as freshly verified.'}
+    report['changes_since_previous']['comparison_measurement_updates']=updates
     (OUT/'comparisons.json').write_text(json.dumps(comparison, ensure_ascii=False, separators=(',', ':'))+'\n')
     lines = [f"# All measured model configurations — {report['report_date']}", '',
              f"Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v{version}. {comparison['counts']['active_AA_records']} active exact records; {comparison['counts']['measured_pairs']} measured score/cost pairs; {comparison['counts']['non_callable_AA_measurement_frontier']} non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).", '',
