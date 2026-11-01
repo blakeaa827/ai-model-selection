@@ -55,7 +55,10 @@ def route(r,a,general,catalog,eps,checks):
     if r.get('benchmark_cost_status','complete_as_published')!='complete_as_published':raise ValueError('provisional_task_cost')
     policy=next((m for m in general['models'] if m['openrouter_model_id']==mid),None)
     if not policy or policy.get('provider_documentation_url') not in checks:raise ValueError('provider_control_documentation_not_reverified')
-    template=next((x for x in general['frontier']+general.get('limited_free_configurations',[]) if x['openrouter_model_id']==mid),None)
+    # A configuration dominated on the general index can win a workload or a
+    # constrained query. Use its reviewed exact template before family defaults.
+    template=next((x for x in load('pipeline/additional-request-templates.json') if x['configuration_id']==r['configuration_id']),None)
+    template=template or next((x for x in general['frontier']+general.get('limited_free_configurations',[]) if x['openrouter_model_id']==mid),None)
     tag=template['request']['provider']['only'][0] if template else {'openai':'openai','anthropic':'anthropic','google':'google-ai-studio','x-ai':'xai','xiaomi':'xiaomi/fp8'}.get(mid.split('/')[0])
     er=eps.get(mid,{})
     ep=next((e for e in er.get('data',{}).get('endpoints',[]) if e['tag']==tag),None)

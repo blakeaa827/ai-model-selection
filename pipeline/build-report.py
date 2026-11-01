@@ -165,6 +165,10 @@ if version!=old['benchmark']['version']:summary='Methodology transition from v'+
 d['changes_since_previous']={'previous_report_date':old['report_date'],'previous_commit':os.environ.get('REPORT_PARENT_SHA') or None,'revision':revision,'benchmark_version_changed':version!=old['benchmark']['version'],'frontier_changed':frontier_changed,'frontier_membership_changed':{r['configuration_id'] for r in front}!={r['configuration_id'] for r in old['frontier']},'recommendations_changed':any(old['recommendations'][k]['configuration_id']!=d['recommendations'][k]['configuration_id'] for k in ('floor','ceiling')),'new_eligible_releases':[],'removed_actionable_configurations':[],'new_catalog_entries':newids,'removed_catalog_entries':removed,'new_AA_releases':newreleases,'revised_metrics':changed,'gateway_token_pricing_changes':pricing_changes,'summary':summary}
 d['changes_since_previous']['new_eligible_releases']=sorted({r['openrouter_model_id'] for r in d['evaluated_configurations'] if r.get('eligible_for_frontier') and r['configuration_id'] not in {x['configuration_id'] for x in old['evaluated_configurations']}})
 if old['report_date']==date:d['changes_since_previous']['same_day_revision_note']='Reverified same-day snapshot; previous version is preserved in Git history.'
+# Remove a former pending explanation only after an exact reviewed template has
+# passed the live identity, effort, standard endpoint and source checks above.
+new_verified={r['benchmark_source_url'].split('/')[-1] for r in d['evaluated_configurations'] if r.get('eligible_for_frontier') and r['configuration_id'] not in {x['configuration_id'] for x in old['evaluated_configurations']}}
+d['excluded_or_pending']=[r for r in d['excluded_or_pending'] if r.get('AA_model_slug') not in new_verified]
 # Keep new measured models separately until original-source controls and routing match.
 new_listing_names={re.sub('[^a-z0-9]','',cat[mid]['name'].split(':',1)[-1].lower()) for mid in newids}
 for a in metrics:
@@ -173,7 +177,7 @@ for a in metrics:
   row={'model':a['name'],'AA_release_slug':a.get('release',{}).get('slug'),'AA_model_slug':a['slug'],'intelligence_score':a['intelligenceIndex'],'benchmark_task_cost_usd':cost,'benchmark_verified_at':a['verified_at'],'benchmark_version':a['version'],'source_url':a['source_url'],'reason':'Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented.'}
   row['benchmark_score_is_estimated']=a['intelligenceIndexIsEstimated']
   if a['intelligenceIndexIsEstimated'] or cost is None:row['reason']='AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping.'
-  if a['slug']=='kimi-k3-1-pro':row['reason']='AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available.'
+  if a['slug']=='kimi-k3-1-pro':row['reason']='AA embedded record reports effort '+str((a.get('effort') or {}).get('slug'))+'. Pending exact reviewed route admission; native defaults alone are not evidence. Gateway none conflicts with official always-on thinking. Use the current exact record and index version rather than historical launch-article costs. Weights announced for November 4 are not yet released.'
   d['excluded_or_pending']=[r for r in d['excluded_or_pending'] if r.get('AA_model_slug')!=a['slug']];d['excluded_or_pending'].append(row)
 # Complete inventory and optimistic release screening, with explicit special-case eligibility.
 step=cat.get('stepfun/step-5-preview',{'id':'stepfun/step-5-preview'})
@@ -252,7 +256,7 @@ google_changes=next((r.get('text','') for r in docs if r['url']=='https://ai.goo
 argon_ga='Gemini 4 Argon' in google_changes and 'October 13, 2026' in google_changes and 'generally available' in google_changes
 if argon_ga and 'google/gemini-4-argon' in cat:
  for r in d['excluded_or_pending']:
-  if 'Argon' in r.get('model','') or r.get('AA_release_slug')=='gemini-4-argon':r['reason']='API generally available October 13, 2026 and gateway revision 20261013 now listed. AA September 30 deployment-to-GA correspondence remains unverified; earlier AA high-effort score/cost is also dominated by Opus high. Do not claim the model is still restricted-only.'
+  if 'Argon' in r.get('model','') or r.get('AA_release_slug')=='gemini-4-argon':r['reason']='API generally available October 13, 2026 and gateway revision 20261013 now listed. AA September 30 deployment-to-GA correspondence remains unverified; current high-effort score/cost is dominated by verified Sol xhigh. Do not claim the model is still restricted-only.'
  for r in cov['AA_release_screening']:
   if r['AA_release_slug']=='gemini-4-argon':r['status']='GA_revision_correspondence_unverified';r['official_GA_date']='2026-10-13'
  d['caveats']=[r for r in d['caveats'] if not ('Argon' in r and ('no public' in r or 'restricted' in r))]

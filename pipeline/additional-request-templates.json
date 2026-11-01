@@ -349,5 +349,49 @@
       "paid_generation_tested": false
     },
     "api_call_tested": false
+  },
+  {
+    "configuration_id": "moonshotai/kimi-k3.1-pro@max",
+    "model_name": "Kimi K3.1 Pro",
+    "openrouter_model_id": "moonshotai/kimi-k3.1-pro",
+    "openrouter_canonical_slug": "moonshotai/kimi-k3.1-pro-20261023",
+    "effort": "max",
+    "reasoning_control": {
+      "type": "effort",
+      "value": "max",
+      "verified_native_setting": {
+        "reasoning_effort": "max"
+      },
+      "source": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart"
+    },
+    "benchmark_source_url": "https://artificialanalysis.ai/models/kimi-k3-1-pro",
+    "request": {
+      "model": "moonshotai/kimi-k3.1-pro",
+      "reasoning": {
+        "effort": "max"
+      },
+      "provider": {
+        "only": [
+          "moonshotai/mxfp4"
+        ],
+        "require_parameters": true,
+        "allow_fallbacks": false
+      }
+    },
+    "api_endpoint": "https://openrouter.ai/api/v1/chat/completions",
+    "endpoint_verification": {
+      "metadata_url": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3.1-pro/endpoints",
+      "provider_tag": "moonshotai/mxfp4",
+      "quantization": "mxfp4"
+    },
+    "configuration_settings": {
+      "sampling": "Provider fixed defaults: omit temperature, top_p, n, presence_penalty and frequency_penalty.",
+      "tool_turns": "Preserve the complete assistant message and reasoning details across tool turns.",
+      "output_budget": "Allow sufficient reasoning plus answer tokens; first-party default max_completion_tokens 131072. Respect verified gateway maximum.",
+      "service_tier": "standard first-party MXFP4 only; no Highspeed or third-party substitution",
+      "benchmark_route_correspondence": "AA names Kimi first-party API and release October 23; exact embedded record effort max. Public gateway canonical revision 20261023, standard price $2/$10 per MTok and MXFP4 endpoint. AA does not separately disclose managed first-party quantization.",
+      "paid_generation_tested": false
+    },
+    "api_call_tested": false
   }
 ]
