@@ -1,4 +1,4 @@
-# All measured model configurations — 2026-10-31
+# All measured model configurations — 2026-11-01
 
 Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 275 active exact records; 81 measured score/cost pairs; 4 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
 

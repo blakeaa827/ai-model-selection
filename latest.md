@@ -1,4 +1,4 @@
-# AI model selection — October 31, 2026
+# AI model selection — November 1, 2026
 
 **Default API floor:** GPT-6.1 Terra / low — **29.217**, **$0.071338 per AA task**. **Optional ceiling:** GPT-6.1 Terra / medium — **38.115**, **$0.168805**.
 
@@ -8,11 +8,9 @@ Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical s
 
 Previous report: 2026-10-31; common Intelligence Index v5.0. Frontier membership unchanged; floor and ceiling unchanged.
 
-Reverified same-day snapshot; previous version is preserved in Git history.
-
 All-output discovery: **687 OpenRouter listings**, including **33 decision-output models**, are separately inventoried in [coverage.json](coverage.json). Non-text/decision modes without comparable AA score/task-cost pairs remain pending; catalog token rates are not benchmark task costs.
 
-4 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
+11 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
@@ -114,11 +112,11 @@ Pay above the ceiling when difficult debugging, architecture, research, avoidabl
 
 ## Excluded or pending evidence
 
-Haiku 5.5 costs remain provisional because AA's article still omits tiered pricing above 100K input tokens. Its prerelease refusal issue and Sonnet's structured-output reruns are not confirmed complete. Their measured scores are retained without assigning actionable request costs. Kimi K3.1 Pro has a measured pair, but AA's current record does not identify the effort used; its native default alone is insufficient proof. Current exact model cost also differs from the launch article. No guessed mapping is admitted.
+Haiku 5.5 costs remain provisional because AA's article still omits tiered pricing above 100K input tokens. Its prerelease refusal issue and Sonnet's structured-output reruns are not confirmed complete. Their measured scores are retained without assigning actionable request costs. Kimi K3.1 Pro has a published max-effort record; reviewed route admission remains pending. Native defaults alone do not verify a benchmark setting. Historical launch costs use an older index and are not current task-cost comparisons.
 
 | Model or configuration | Measured score if available | Task cost if complete | Exclusion / uncertainty |
 |---|---:|---:|---|
-| Gemini 4 Argon  | — | — | API generally available October 13, 2026 and gateway revision 20261013 now listed. AA September 30 deployment-to-GA correspondence remains unverified; earlier AA high-effort score/cost is also dominated by Opus high. Do not claim the model is still restricted-only. |
+| Gemini 4 Argon  | — | — | API generally available October 13, 2026 and gateway revision 20261013 now listed. AA September 30 deployment-to-GA correspondence remains unverified; current high-effort score/cost is dominated by verified Sol xhigh. Do not claim the model is still restricted-only. |
 | Grok 4.7 medium | — | — | Supported by OpenRouter but no comparable published score/task-cost pair in current comparison. |
 | Gemini 3.8 Flash low | — | — | Published score but missing benchmark task cost. |
 | GPT-6.1 Sol Pro  | — | — | Listed by OpenRouter; standard Sol effort benchmarks do not establish Pro-mode score or task cost. |
@@ -168,7 +166,7 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Gemini 4 Carbon (High)  | 59.425738829526 | $7.755545745286556 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Gemma 4 31B (Reasoning)  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | K2 Horizon 375B A23B  | 17.7702731734027 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
-| Kimi K3.1 Pro  | 46.0026236744189 | $3.6812002895742055 | AA publishes an unlabeled reasoning configuration, with no explicit effort in its exact record. Native default is max, but this is not proof of the effort used by AA. Gateway additionally advertises none despite official always-on thinking. Standard first-party MXFP4 route exists; benchmark effort/deployment correspondence remains pending. Current model task cost $2.1145052918767275 differs from launch article $1.98; current exact record takes precedence. Weights promised by November 4 are not yet available. |
+| Kimi K3.1 Pro  | 46.0026236744189 | $3.6812002895742055 | AA embedded record reports effort max. Pending exact reviewed route admission; native defaults alone are not evidence. Gateway none conflicts with official always-on thinking. Use the current exact record and index version rather than historical launch-article costs. Weights announced for November 4 are not yet released. |
 | LFM2.5-2.6B  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Ling 3.0 Tiny  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Ling 3.1 Flash 1019  | 29.470119369837 | $3.185145018337793 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
@@ -184,7 +182,7 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Beam 1.0  | 17.7307282547205 | $0.28440671352465285 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Solar Pro 4  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 
-Gemini 4 Argon API became generally available October 13; the live gateway revision is now 20261013. The September 30 restricted-release benchmark is not silently attached to that GA revision. Its earlier high-effort pair is also dominated by Opus high. Introductory token prices expire November 30 according to Google's current guide; token rates are not substituted for measured task costs. The old Fairwind announcement is historical rollout context.
+Gemini 4 Argon API became generally available October 13; the live gateway revision is now 20261013. The September 30 restricted-release benchmark is not silently attached to that GA revision. Its current high-effort pair is dominated by verified Sol xhigh; this does not resolve deployment correspondence. Introductory token prices expire November 30 according to Google's current guide; token rates are not substituted for measured task costs. The old Fairwind announcement is historical rollout context.
 
 ## Build through subscription services
 
@@ -211,7 +209,7 @@ Eligible Claude Max/Ultra/Team users can claim first-party API credits; eligibil
 
 ## Verification and freshness
 
-Checked 2026-10-31T17:16:05.687239+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-10-31T17:15:36.432786+00:00; registry checked 2026-10-31T17:15:36.505717+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-11-01T15:35:40.278748+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-11-01T15:35:10.518194+00:00; registry checked 2026-11-01T15:35:10.659394+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
@@ -368,6 +366,7 @@ AA now labels Opus 5.5 measurements as **Default Fallback**. Those multi-model m
 - https://openrouter.ai/api/v1/models/google/gemini-3.8-flash/endpoints
 - https://openrouter.ai/api/v1/models/google/gemma-4-31b-it:free/endpoints
 - https://openrouter.ai/api/v1/models/mistralai/mistral-large-4-0/endpoints
+- https://openrouter.ai/api/v1/models/moonshotai/kimi-k3.1-pro/endpoints
 - https://openrouter.ai/api/v1/models/openai/gpt-6-astra/endpoints
 - https://openrouter.ai/api/v1/models/openai/gpt-6-luna/endpoints
 - https://openrouter.ai/api/v1/models/openai/gpt-6-sol/endpoints
