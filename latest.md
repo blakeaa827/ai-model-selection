@@ -12,7 +12,7 @@ Reverified same-day snapshot; previous version is preserved in Git history.
 
 All-output discovery: **687 OpenRouter listings**, including **33 decision-output models**, are separately inventoried in [coverage.json](coverage.json). Non-text/decision modes without comparable AA score/task-cost pairs remain pending; catalog token rates are not benchmark task costs.
 
-Newly verified eligible models: `moonshotai/kimi-k3.1-pro`. Exact measured effort configurations are included below.
+4 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
@@ -192,14 +192,16 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 
 | Service | Routine default | Escalation | Quota-saving choice | Source check complete |
 |---|---|---|---|---|
-| OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6.1 Terra; `{"ui_or_cli_effort":null,"note":"Official model selection and CLI version verified. Specific account/client effort availability and defaults remain conditional; no subscription benchmark correspondence is assumed.","cli_command":"codex -m gpt-6.1-terra","minimum_cli_version":"0.159.0","ui_selection":"Advanced > model list > GPT-6.1 Terra","effort_picker":"/model"}` | True |
-| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | True |
+| OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6.1 Terra; `{"ui_or_cli_effort":null,"note":"Official model selection and CLI version verified. Specific account/client effort availability and defaults remain conditional; no subscription benchmark correspondence is assumed.","cli_command":"codex -m gpt-6.1-terra","minimum_cli_version":"0.159.0","ui_selection":"Advanced > model list > GPT-6.1 Terra","effort_picker":"/model"}` | False |
+| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
 | Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
 
 **OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate. Official October 29 update increases Work/Codex allowance for Pro 100 and Pro 500 and restores the higher Pro 200 allowance. Exact personal plan, entitlement and remaining quota are unknown; consult the account meter. GPT-5.6 Sol promotional credit pricing is documented at least through November 21, 2026; credit rates do not determine included subscription usage and are not API benchmark task costs.
+Unverified this run: https://openai.com/index/introducing-gpt-6-1-terra/, https://help.openai.com/en/articles/6825453-chatgpt-release-notes. Previous verification dates are retained.
 
 **Claude:** Claude and Claude Code share plan limits; higher effort uses more quota. Pro/Max have five-hour and weekly limits; verified Ultra accounts have no five-hour session limit but retain weekly limits, including a separate Fable weekly limit. ANTHROPIC_API_KEY can cause API billing instead of subscription usage. Personal tier not known. Eligible Max/Ultra/Team can separately claim first-party monthly API credits; personal eligibility/claim status unknown.
+Unverified this run: https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings, https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code, https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan, https://www.anthropic.com/claude-haiku-5-5, https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans. Previous verification dates are retained.
 
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
@@ -209,7 +211,7 @@ Eligible Claude Max/Ultra/Team users can claim first-party API credits; eligibil
 
 ## Verification and freshness
 
-Checked 2026-11-01T15:41:51.164324+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-11-01T15:37:27.088335+00:00; registry checked 2026-11-01T15:37:26.626095+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-11-01T17:56:50.319615+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-11-01T17:56:19.595086+00:00; registry checked 2026-11-01T17:56:19.677095+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
