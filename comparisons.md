@@ -27,7 +27,7 @@ This is the complete observed AA comparison, including models without a verified
 | Claude Opus 5.5 (Medium, Default Fallback) | medium | 48.0581024960691 | $2.4510894376611723 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-opus-5-5-medium) |
 | Claude Fable 5.1 (High, Default Fallback) | high | 47.024988245604 | $7.539956160226559 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-fable-5-1-high) |
 | GPT-6.1 Sol (Medium) | medium | 46.1468797067114 | $0.3593898648025732 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-1-sol-medium) |
-| Kimi K3.1 Pro | max | 46.0026236744189 | $3.6812002895742055 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/kimi-k3-1-pro) |
+| Kimi K3.1 Pro | max | 46.0026236744189 | $3.6812002895742055 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/kimi-k3-1-pro) |
 | GPT-6.1 Terra (Xhigh) | xhigh | 44.950051789066 | $0.40068900166662513 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-1-terra-xhigh) |
 | Muse Wonder (Max) | max | 43.3248225998431 | $6.9520364786062245 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/muse-wonder) |
 | GPT-6 Astra (Low) | low | 43.0349823228524 | $1.4237229635663595 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-astra-low) |

@@ -4,13 +4,15 @@
 
 ## Changes since the last published report
 
-Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-31. New candidates require exact effort/revision correspondence before routing.
+Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-11-01. New candidates require exact effort/revision correspondence before routing.
 
-Previous report: 2026-10-31; common Intelligence Index v5.0. Frontier membership unchanged; floor and ceiling unchanged.
+Previous report: 2026-11-01; common Intelligence Index v5.0. Frontier membership unchanged; floor and ceiling unchanged.
+
+Reverified same-day snapshot; previous version is preserved in Git history.
 
 All-output discovery: **687 OpenRouter listings**, including **33 decision-output models**, are separately inventoried in [coverage.json](coverage.json). Non-text/decision modes without comparable AA score/task-cost pairs remain pending; catalog token rates are not benchmark task costs.
 
-11 gateway token-price changes are recorded in latest.json changes_since_previous.gateway_token_pricing_changes. These are separate from AA measured task costs; provider changes, promotions and time-of-day rates do not authorize repricing an AA configuration. Automatic/latest aliases are never actionable.
+Newly verified eligible models: `moonshotai/kimi-k3.1-pro`. Exact measured effort configurations are included below.
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred source-data rights review.
 
@@ -112,7 +114,7 @@ Pay above the ceiling when difficult debugging, architecture, research, avoidabl
 
 ## Excluded or pending evidence
 
-Haiku 5.5 costs remain provisional because AA's article still omits tiered pricing above 100K input tokens. Its prerelease refusal issue and Sonnet's structured-output reruns are not confirmed complete. Their measured scores are retained without assigning actionable request costs. Kimi K3.1 Pro has a published max-effort record; reviewed route admission remains pending. Native defaults alone do not verify a benchmark setting. Historical launch costs use an older index and are not current task-cost comparisons.
+Haiku 5.5 costs remain provisional because AA's article still omits tiered pricing above 100K input tokens. Its prerelease refusal issue and Sonnet's structured-output reruns are not confirmed complete. Their measured scores are retained without assigning actionable request costs. Kimi K3.1 Pro now has an exact max-effort, first-party standard MXFP4 mapping and is reconsidered in each workload; it is dominated on the general frontier. Historical launch costs use an older index and are not current task-cost comparisons.
 
 | Model or configuration | Measured score if available | Task cost if complete | Exclusion / uncertainty |
 |---|---:|---:|---|
@@ -150,6 +152,7 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Cloudflare: Clairic  | — | — | New decision-output catalog listing. No matching common Intelligence Index score/task-cost pair or task-success calibration; exact execution API must be independently verified. Not a text-model substitute. |
 | Baseten: Joey 1  | — | — | New decision-output catalog listing. No matching common Intelligence Index score/task-cost pair or task-success calibration; exact execution API must be independently verified. Not a text-model substitute. |
 | Kimi K2 series  | — | — | Official Kimi notice effective October 31, 2026: unavailable to newly registered users; existing users not affected. Provider plans retirement by end December 2026. No K2 configuration is an actionable default. |
+| GPT-6 Rosalind Research  | — | — | Approved Research organizations and users only; limited Work/Codex/API rollout, not Chat. No verified OpenRouter canonical revision or comparable AA v5 score/task-cost pair. Do not infer eligibility from Rosalind Discovery approval. |
 | Claude Opus 5.5 (Max, Default Fallback) max | 58.4060336078904 | $10.036409719512749 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
 | Claude Opus 5.5 (High, Default Fallback) high | 51.6859958227294 | $3.4646622820973185 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
 | Claude Opus 5.5 (Low, Default Fallback) low | 34.502785007759 | $0.9755293224458845 | AA labels this configuration Default Fallback. A pinned single-model OpenRouter request does not reproduce the measured fallback system. |
@@ -166,7 +169,6 @@ Haiku 5.5 costs remain provisional because AA's article still omits tiered prici
 | Gemini 4 Carbon (High)  | 59.425738829526 | $7.755545745286556 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
 | Gemma 4 31B (Reasoning)  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | K2 Horizon 375B A23B  | 17.7702731734027 | $0 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
-| Kimi K3.1 Pro  | 46.0026236744189 | $3.6812002895742055 | AA embedded record reports effort max. Pending exact reviewed route admission; native defaults alone are not evidence. Gateway none conflicts with official always-on thinking. Use the current exact record and index version rather than historical launch-article costs. Weights announced for November 4 are not yet released. |
 | LFM2.5-2.6B  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Ling 3.0 Tiny  | — | — | AA score is estimated or measured weighted task cost is missing; not a comparable measured score/cost pair. Pending benchmarks; no actionable request or effort mapping. |
 | Ling 3.1 Flash 1019  | 29.470119369837 | $3.185145018337793 | Measured original-source pair; exact benchmark reasoning control, revision and public provider-route correspondence not verified. No request or effort invented. |
@@ -190,16 +192,14 @@ Personal tiers and account menus are unknown. All subscription scores and task c
 
 | Service | Routine default | Escalation | Quota-saving choice | Source check complete |
 |---|---|---|---|---|
-| OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6.1 Terra; `{"ui_or_cli_effort":null,"note":"Exact subscription effort labels not verified; no API effort or benchmark correspondence assumed."}` | False |
-| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | False |
+| OpenAI | GPT-6.1 Sol; `{"reasoning_effort":"medium","ui_label":"Medium","speed":"Standard"}` | GPT-6.1 Sol; `{"reasoning_effort":"xhigh","ui_label":"Extra High","speed":"Standard"}` | GPT-6.1 Terra; `{"ui_or_cli_effort":null,"note":"Official model selection and CLI version verified. Specific account/client effort availability and defaults remain conditional; no subscription benchmark correspondence is assumed.","cli_command":"codex -m gpt-6.1-terra","minimum_cli_version":"0.159.0","ui_selection":"Advanced > model list > GPT-6.1 Terra","effort_picker":"/model"}` | True |
+| Claude | Claude Sonnet 5.5; `{"effort":"high","ui_label":"High","thinking":"always_on_in_Claude"}` | Claude Opus 5.5; `{"effort":"xhigh","ui_label":"Extra high","thinking":"always_on"}` | Claude Haiku 5.5; `{"effort":"low","ui_label":"Low","thinking":"always_on_in_Claude"}` | True |
 | Grok | Grok 4.7; `{"selection":"documented default model","effort":null,"ui_to_api_effort_mapping":"unverified","speed":"standard"}` | Grok account higher-reasoning mode; `{"selection":"only the higher-reasoning option actually exposed by the account","effort":null,"ui_to_api_effort_mapping":"unverified"}` | Grok 4.7 standard mode; `{"selection":"standard rather than Fast","effort":null,"ui_to_api_effort_mapping":"unverified"}` | True |
 | Gemini | Gemini 3.8 Flash; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | Gemini 3.8 Flash with Extended thinking; `{"ui_thinking":"Extended where exposed","api_effort_mapping":null}` | Gemini Flash-Lite; `{"ui_thinking":"Standard where exposed","api_effort_mapping":null}` | True |
 
-**OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate.
-Unverified this run: https://openai.com/index/introducing-gpt-6-1-terra/. Previous verification dates are retained.
+**OpenAI:** Work and Codex share allowances. Fast uses 2.5x included allowance relative to Standard. Included tasks vary by context, effort and tools; use account dashboard. API rates are separate. Official October 29 update increases Work/Codex allowance for Pro 100 and Pro 500 and restores the higher Pro 200 allowance. Exact personal plan, entitlement and remaining quota are unknown; consult the account meter. GPT-5.6 Sol promotional credit pricing is documented at least through November 21, 2026; credit rates do not determine included subscription usage and are not API benchmark task costs.
 
 **Claude:** Claude and Claude Code share plan limits; higher effort uses more quota. Pro/Max have five-hour and weekly limits; verified Ultra accounts have no five-hour session limit but retain weekly limits, including a separate Fable weekly limit. ANTHROPIC_API_KEY can cause API billing instead of subscription usage. Personal tier not known. Eligible Max/Ultra/Team can separately claim first-party monthly API credits; personal eligibility/claim status unknown.
-Unverified this run: https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings, https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code, https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan, https://www.anthropic.com/claude-haiku-5-5, https://support.claude.com/en/articles/17154008-monthly-api-credits-for-max-and-team-plans. Previous verification dates are retained.
 
 **Grok:** Consumer FAQ describes a shared weekly pool and paid extra usage. Bot launch docs describe its own usage pool, so keep Bot separate and check its dashboard; do not assume identical accounting. API credits are separate. Exact consumer reasoning control not verified.
 
@@ -209,7 +209,7 @@ Eligible Claude Max/Ultra/Team users can claim first-party API credits; eligibil
 
 ## Verification and freshness
 
-Checked 2026-11-01T15:35:40.278748+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-11-01T15:35:10.518194+00:00; registry checked 2026-11-01T15:35:10.659394+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
+Checked 2026-11-01T15:41:51.164324+00:00 (report date in America/Chicago). AA v5.0; exact evaluation completion dates remain unpublished. Catalog checked 2026-11-01T15:37:27.088335+00:00; registry checked 2026-11-01T15:37:26.626095+00:00. Each score, route and source has its own successful verification timestamp. Reports and actionable rows expire after 48 hours. Unsuccessful source checks are disclosed and not advanced.
 
 Source sites, original configuration data and endpoint metadata are required inputs. New releases with unverified benchmark controls remain pending and do not inherit another revision's results. Release maxima and cost minima are optimistic screening bounds, never a fabricated configuration pair. See coverage.json for the entire inventory and latest.json for exact intervals and eligibility.
 
@@ -349,6 +349,8 @@ AA now labels Opus 5.5 measurements as **Default Fallback**. Those multi-model m
 - https://docs.x.ai/developers/grok-4-7
 - https://docs.x.ai/developers/release-notes
 - https://docs.x.ai/grok/faq
+- https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+- https://help.openai.com/en/articles/9624314-model-release-notes
 - https://learn.chatgpt.com/docs/models
 - https://learn.chatgpt.com/docs/pricing
 - https://mimo.mi.com/docs/en-US/api/chat

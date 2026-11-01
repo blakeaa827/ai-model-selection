@@ -21,9 +21,9 @@ The Intelligence Index measures broad benchmark capability, not a request's prob
 
 API floor: **GPT-6.1 Terra / low**, score **29.2169280792131**, **$0.07133756205169729** per measured AA task. Optional ceiling: **GPT-6.1 Terra / medium**, score **38.1152076677975**, **$0.16880458238389412**. Both are workload-conditional heuristics.
 
-Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-10-31. New candidates require exact effort/revision correspondence before routing.
+Refreshed 13 paid configurations and 0 opt-in free configurations. 0 numerical source revisions; 0 new and 0 absent gateway listings; 0 new AA releases since 2026-11-01. New candidates require exact effort/revision correspondence before routing.
 
-Discovery screens 452 live OpenRouter entries and 518 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro has a published max-effort record; reviewed route admission remains pending. Native defaults alone do not verify a benchmark setting. Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
+Discovery screens 452 live OpenRouter entries and 518 AA releases across all labs. Only exact comparable benchmark/route pairs are actionable. See [latest.md](latest.md) for full threshold and budget tables, all marginal costs, source limitations and conditional subscription guidance. Kimi K3.1 Pro now has an exact max-effort, first-party standard MXFP4 mapping and is reconsidered in each workload; it is dominated on the general frontier. Haiku's complete tiered task costs and Sonnet's prerelease reruns remain pending. Gemini 4 Argon API is now GA, with revision correspondence handled separately.
 
 The callable frontier is a verified subset, not a global optimum. [All measured AA configurations](comparisons.md) include 275 active exact records and 81 score/cost pairs, including 4 non-callable AA-only frontier points with unverified routing, provisional costs or unavailable deployment. Their names are not executable revision pins.
 
