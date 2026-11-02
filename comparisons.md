@@ -1,6 +1,6 @@
-# All measured model configurations — 2026-11-01
+# All measured model configurations — 2026-11-02
 
-Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 275 active exact records; 81 measured score/cost pairs; 4 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
+Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 278 active exact records; 84 measured score/cost pairs; 5 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
 
 This is the complete observed AA comparison, including models without a verified OpenRouter request. **Only** [latest.md](latest.md) contains executable, revision-pinned selections. A name match in the OpenRouter catalog does not verify the benchmarked revision, provider, mode or effort. Multi-model fallback systems and provisional pricing are not single-call routes. The index measures broad capability, not request success probability; the task cost is not an OpenRouter invoice.
 
@@ -8,6 +8,7 @@ This is the complete observed AA comparison, including models without a verified
 |---|---|---:|---:|---|---|---|
 | Gemini 4 Carbon (High) | high | 59.425738829526 | $7.755545745286556 | measured_route_or_configuration_unverified | yes | [AA](https://artificialanalysis.ai/models/gemini-4-carbon) |
 | Claude Opus 5.5 (Max, Default Fallback) | max | 58.4060336078904 | $10.036409719512749 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-opus-5-5) |
+| Gemini 4 Carbon (Medium) | medium | 57.7087824022788 | $6.585776867225546 | measured_route_or_configuration_unverified | yes | [AA](https://artificialanalysis.ai/models/gemini-4-carbon-medium) |
 | Claude Opus 5.5 (Xhigh, Default Fallback) | xhigh | 56.9947060170507 | $6.047194490848774 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-opus-5-5-xhigh) |
 | GPT-6 Astra (Max) | max | 56.8538559596797 | $6.244666943602518 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-astra) |
 | GPT-6 Astra (Xhigh) | xhigh | 55.2557468569681 | $3.6589264906126227 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-astra-xhigh) |
@@ -55,6 +56,7 @@ This is the complete observed AA comparison, including models without a verified
 | Ling 3.1 Flash 1019 | enabled / unlabeled | 29.470119369837 | $3.185145018337793 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/ling-3-1-flash-1019) |
 | GPT-6.1 Terra (Low) | low | 29.2169280792131 | $0.07133756205169729 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-1-terra-low) |
 | MiniMax-M3.1-Flash | max | 28.9095214290458 | $0.49097067348453205 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/minimax-m3-1-flash) |
+| DeepSeek V4.1 Flash 1017 (High) | high | 28.5437391540402 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-high) |
 | Step 5 Preview | enabled / unlabeled | 28.5283090216016 | $2.3452525606205166 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/step-5) |
 | GPT-6 Luna (Max) | max | 27.7552004938153 | $0.15195575732105837 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-luna) |
 | GLM-5.3-Flash | max | 27.753889160883 | $0.5833103440014082 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/glm-5-3-flash) |
@@ -69,10 +71,11 @@ This is the complete observed AA comparison, including models without a verified
 | GLM-5.3 (Low) | low | 23.0579373025379 | $1.5749301149593384 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/glm-5-3-low) |
 | Gemini 3.8 Flash (Low) | low | 22.348302237854 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gemini-3-8-flash-low) |
 | GPT-6 Luna (High) | high | 21.3790170864582 | $0.07294776473194697 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-luna-high) |
+| Nanbeige4.3-33B | enabled / unlabeled | 20.4071119588083 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nanbeige4-3-33b) |
 | Qwen3.8 27B (Xhigh) | xhigh | 20.1068756031705 | $3.5295494751410654 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/qwen3-8-27b) |
 | MiniMax-M3 | enabled / unlabeled | 18.7289083859255 | $1.2850974407373852 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/minimax-m3) |
 | Claude Haiku 5.5 (Low) | low | 18.6180055310996 | $0.043757686381988486 | provisional_task_cost_not_actionable | yes | [AA](https://artificialanalysis.ai/models/claude-haiku-5-5-low) |
-| DeepSeek V4.1 Flash 1017 (Non-reasoning) | none / unspecified | 18.5131594039446 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning) |
+| DeepSeek V4.1 Flash 1017 (Non-reasoning) | none / unspecified | 18.5131594039446 | $0.4254202455035728 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017-non-reasoning) |
 | GPT-6 Luna (Medium) | medium | 18.3042156192416 | $0.042201836106537785 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-luna-medium) |
 | K2 Horizon 375B A23B | high | 17.7702731734027 | $0 | measured_route_or_configuration_unverified | yes | [AA](https://artificialanalysis.ai/models/k2-horizon-375b-a23b) |
 | Beam 1.0 | enabled / unlabeled | 17.7307282547205 | $0.28440671352465285 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/reflection-beam) |
@@ -89,6 +92,7 @@ This is the complete observed AA comparison, including models without a verified
 | Muse Glimmer (High) | high | 6.34128724913462 | $0.16096168039127723 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/muse-glimmer) |
 | Command A+ | enabled / unlabeled | 6.24120025576958 | $0 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/command-a-plus) |
 | Nemotron 3.5 Lightning | enabled / unlabeled | 5.5346663903388 | $0.28980699398265014 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/nemotron-3-5-lightning) |
+| Granite 4.2 8B | enabled / unlabeled | 5.09826495217051 | $0.0404628507686443 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/granite-4-2-8b) |
 | Granite 4.2 3B | enabled / unlabeled | 4.72268717901823 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-3b) |
 | Mistral Small 4 (Reasoning) | enabled / unlabeled | 4.29716249600478 | $0.03990856296103761 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/mistral-small-4) |
 | NVIDIA Nemotron 3 Nano 4B | enabled / unlabeled | 1.81584603785463 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-4b) |
@@ -145,7 +149,6 @@ This is the complete observed AA comparison, including models without a verified
 | Granite 4.0 H Small | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-0-h-small) |
 | Granite 4.0 Micro | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-0-micro) |
 | Granite 4.2 30B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-30b) |
-| Granite 4.2 8B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/granite-4-2-8b) |
 | Hermes 4 - Llama-3.1 405B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b) |
 | Hermes 4 - Llama-3.1 405B (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/hermes-4-llama-3-1-405b-reasoning) |
 | Hermes 4 - Llama-3.1 70B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/hermes-4-llama-3-1-70b) |

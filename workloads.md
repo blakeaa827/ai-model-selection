@@ -1,14 +1,14 @@
-# Workload-specific model selection — 2026-11-01
+# Workload-specific model selection — 2026-11-02
 
 Benchmark source: [Artificial Analysis](https://artificialanalysis.ai/). Original project code and documentation: [MIT](LICENSE). See [DATA-SOURCES.md](DATA-SOURCES.md) for attribution and the deferred data-rights review.
 
 Each profile has its own benchmark score, measured evaluation task cost, harness and Pareto frontier. Scores and budgets are meaningful only within that profile. The general Intelligence Index remains in [latest.md](latest.md).
 
-Screened **719 public AA configurations** and **452 OpenRouter entries**; acquired **275 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
+Screened **722 public AA configurations** and **451 OpenRouter entries**; acquired **278 active exact records**. Exact routing correspondence is incomplete. These are the best observed verified pairs, not proof of global optimality. All eligible configurations are reconsidered per workload, including those dominated in the general chart.
 
 **Floor and ceiling are candidate value knees, not validated deployment defaults.** A cheap model scoring poorly can have an early cost knee. Supply a workload quality target or use a score/budget query; no application success threshold or calibrated Jev predictor has been supplied. Close score gaps may reflect evaluation noise. Dollars per score point are descriptive, and Elo/benchmark intervals need not have equal practical value.
 
-Source checks completed at 2026-11-01T17:56:51.198819+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
+Source checks completed at 2026-11-02T15:46:57.370367+00:00. Routing evidence expires after 48 hours. Missing or mismatched configurations fail without a substitute.
 
 ![Workload cost versus capability curves](workloads/cost-curves.svg)
 
@@ -33,7 +33,7 @@ Terminal execution is not the same as repository implementation, code review or 
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 25; paid frontier: 12. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 26; paid frontier: 12. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -50,7 +50,7 @@ Verified candidates: 25; paid frontier: 12. Incomplete routing matches are retai
 | (51.5151515151515, 54.040404040404] | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 54.040 | $1.025949 |
 | (54.040404040404, 55.5555555555556] | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 55.556 | $1.485313 |
 | (55.5555555555556, 56.0606060606061] | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 56.061 | $1.822763 |
-| (56.0606060606061, 59.5959595959596] | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 59.596 | $5.855483 |
+| (56.0606060606061, 67.1717171717172] | `moonshotai/kimi-k3.1-pro` | `{"effort":"max"}` | 67.172 | $5.265564 |
 
 The first lower bound is unbounded for lookup only; it does not give score zero a practical meaning. No verified configuration satisfies a score above the last row.
 
@@ -68,8 +68,8 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | [0.8281767981765117, 1.0259491542428139) | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 51.515 |
 | [1.0259491542428139, 1.4853125323157166) | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 54.040 |
 | [1.4853125323157166, 1.8227634618325743) | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 55.556 |
-| [1.8227634618325743, 5.855482520522051) | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 56.061 |
-| [5.855482520522051, ∞) | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 59.596 |
+| [1.8227634618325743, 5.265564268428178) | `openai/gpt-6.1-sol` | `{"effort":"max"}` | 56.061 |
+| [5.265564268428178, ∞) | `moonshotai/kimi-k3.1-pro` | `{"effort":"max"}` | 67.172 |
 
 ### Marginal upgrades
 
@@ -85,13 +85,13 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | `openai/gpt-6.1-sol / {"effort":"xhigh"}` | 2.525253 | $0.197772 | 23.88% | $0.078318 | 1.29× |
 | `openai/gpt-6.1-terra / {"effort":"max"}` | 1.515152 | $0.459363 | 44.77% | $0.303180 | 3.87× |
 | `openai/gpt-6.1-sol / {"effort":"max"}` | 0.505051 | $0.337451 | 22.72% | $0.668153 | 2.20× |
-| `openai/gpt-6-astra / {"effort":"xhigh"}` | 3.535354 | $4.032719 | 221.24% | $1.140683 | 1.71× |
+| `moonshotai/kimi-k3.1-pro / {"effort":"max"}` | 11.111111 | $3.442801 | 188.88% | $0.309852 | 0.46× |
 
 **Candidate floor:** The next step adds 17.1717171717171 score points for $0.16905611302938647 (158.58776830103963%); marginal cost rises 3.5479955053663796x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
 **Candidate ceiling:** The next step adds 17.1717171717171 score points for $0.16905611302938647 (158.58776830103963%); marginal cost rises 3.5479955053663796x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-Pending reasons: exact_revision_effort_provider_route_not_verified: 34, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 204, multi_model_or_fallback_configuration: 10, provider_control_documentation_not_reverified: 1, native_control_source_not_reverified: 2.
+Pending reasons: exact_revision_effort_provider_route_not_verified: 37, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 204, multi_model_or_fallback_configuration: 10, native_control_source_not_reverified: 2.
 
 ## business-automation
 
@@ -103,7 +103,7 @@ The headline score measures objective completion, not the percentage of fully co
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 25; paid frontier: 15. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 26; paid frontier: 13. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -121,9 +121,7 @@ Verified candidates: 25; paid frontier: 15. Incomplete routing matches are retai
 | (60.167623272577266, 62.573509704356866] | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 62.574 | $0.196304 |
 | (62.573509704356866, 64.49523732184466] | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 64.495 | $0.225781 |
 | (64.49523732184466, 66.57372141364344] | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 66.574 | $0.250558 |
-| (66.57372141364344, 66.6122174975011] | `openai/gpt-6-astra` | `{"effort":"high"}` | 66.612 | $1.295185 |
-| (66.6122174975011, 67.17778020215393] | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 67.178 | $1.406389 |
-| (67.17778020215393, 68.49174806688876] | `openai/gpt-6-astra` | `{"effort":"max"}` | 68.492 | $1.595592 |
+| (66.57372141364344, 73.29771090921112] | `moonshotai/kimi-k3.1-pro` | `{"effort":"max"}` | 73.298 | $0.828755 |
 
 The first lower bound is unbounded for lookup only; it does not give score zero a practical meaning. No verified configuration satisfies a score above the last row.
 
@@ -142,10 +140,8 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | [0.18528505343384066, 0.19630359332471714) | `openai/gpt-6.1-terra` | `{"effort":"max"}` | 60.168 |
 | [0.19630359332471714, 0.22578054709230252) | `openai/gpt-6.1-sol` | `{"effort":"medium"}` | 62.574 |
 | [0.22578054709230252, 0.2505578926118788) | `openai/gpt-6.1-sol` | `{"effort":"high"}` | 64.495 |
-| [0.2505578926118788, 1.2951847697570744) | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 66.574 |
-| [1.2951847697570744, 1.406388714811355) | `openai/gpt-6-astra` | `{"effort":"high"}` | 66.612 |
-| [1.406388714811355, 1.5955923111377626) | `openai/gpt-6-astra` | `{"effort":"xhigh"}` | 67.178 |
-| [1.5955923111377626, ∞) | `openai/gpt-6-astra` | `{"effort":"max"}` | 68.492 |
+| [0.2505578926118788, 0.8287553527406801) | `openai/gpt-6.1-sol` | `{"effort":"xhigh"}` | 66.574 |
+| [0.8287553527406801, ∞) | `moonshotai/kimi-k3.1-pro` | `{"effort":"max"}` | 73.298 |
 
 ### Marginal upgrades
 
@@ -162,15 +158,13 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | `openai/gpt-6.1-sol / {"effort":"medium"}` | 2.405886 | $0.011019 | 5.95% | $0.004580 | 0.02× |
 | `openai/gpt-6.1-sol / {"effort":"high"}` | 1.921728 | $0.029477 | 15.02% | $0.015339 | 3.35× |
 | `openai/gpt-6.1-sol / {"effort":"xhigh"}` | 2.078484 | $0.024777 | 10.97% | $0.011921 | 0.78× |
-| `openai/gpt-6-astra / {"effort":"high"}` | 0.038496 | $1.044627 | 416.92% | $27.135926 | 2276.34× |
-| `openai/gpt-6-astra / {"effort":"xhigh"}` | 0.565563 | $0.111204 | 8.59% | $0.196625 | 0.01× |
-| `openai/gpt-6-astra / {"effort":"max"}` | 1.313968 | $0.189204 | 13.45% | $0.143994 | 0.73× |
+| `moonshotai/kimi-k3.1-pro / {"effort":"max"}` | 6.723989 | $0.578197 | 230.76% | $0.085990 | 7.21× |
 
 **Candidate floor:** The next step adds 5.343648945665599 score points for $0.015649945153303264 (75.42251553536074%); marginal cost rises 5.160756503913648x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
 **Candidate ceiling:** The next step adds 3.0801471959601727 score points for $0.04191863690947363 (115.16221539220494%); marginal cost rises 4.64687275081213x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-Pending reasons: exact_revision_effort_provider_route_not_verified: 34, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 204, multi_model_or_fallback_configuration: 10, provider_control_documentation_not_reverified: 1, native_control_source_not_reverified: 2.
+Pending reasons: exact_revision_effort_provider_route_not_verified: 37, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 204, multi_model_or_fallback_configuration: 10, native_control_source_not_reverified: 2.
 
 ## professional-work
 
@@ -204,7 +198,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 
-Pending reasons: missing_comparable_score_or_evaluation_task_cost: 286.
+Pending reasons: missing_comparable_score_or_evaluation_task_cost: 289.
 
 ## long-context
 
@@ -238,7 +232,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 
-Pending reasons: missing_comparable_score_or_evaluation_task_cost: 286.
+Pending reasons: missing_comparable_score_or_evaluation_task_cost: 289.
 
 ## document-reasoning
 
@@ -250,7 +244,7 @@ AA and Surge use different input preparation and judges. Cost excludes document 
 
 AA evaluation-specific costPerTask from observed contestant token use and published prices; excludes unreported tools, judges, infrastructure and supervision. Not Intelligence Index weighted cost or an OpenRouter invoice estimate.
 
-Verified candidates: 25; paid frontier: 12. Incomplete routing matches are retained as pending in workloads.json.
+Verified candidates: 26; paid frontier: 12. Incomplete routing matches are retained as pending in workloads.json.
 
 ### Minimum cost for a minimum benchmark score
 
@@ -308,7 +302,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 
 **Candidate ceiling:** The next step adds 0.20000000000000284 score points for $1.5633216599999997 (447.42851088421384%); marginal cost rises 1311.159470611895x. Conditional on this benchmark, workload and verified subset; not a universal default.
 
-Pending reasons: exact_revision_effort_provider_route_not_verified: 35, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 203, multi_model_or_fallback_configuration: 10, provider_control_documentation_not_reverified: 1, native_control_source_not_reverified: 2.
+Pending reasons: exact_revision_effort_provider_route_not_verified: 39, nonstandard_pricing_tier: 1, original_configuration_eligibility_not_verified: 9, missing_comparable_score_or_evaluation_task_cost: 202, multi_model_or_fallback_configuration: 10, native_control_source_not_reverified: 2.
 
 ## academic-reasoning
 
@@ -342,7 +336,7 @@ The first lower bound is unbounded for lookup only; it does not give score zero 
 | Upgrade to | Score gain | Added USD/task | Cost increase | USD / added score point | Marginal rate multiple |
 |---|---:|---:|---:|---:|---:|
 
-Pending reasons: missing_comparable_score_or_evaluation_task_cost: 286.
+Pending reasons: missing_comparable_score_or_evaluation_task_cost: 289.
 
 ## Exact API routing
 
@@ -353,6 +347,7 @@ Every actionable row pins one standard provider, uses `require_parameters:true` 
 | `openai/gpt-6-luna` | `openai/gpt-6-luna-20260922` | `openai` | `https://openrouter.ai/api/v1/responses` |
 | `openai/gpt-6.1-terra` | `openai/gpt-6.1-terra-20261026` | `openai` | `https://openrouter.ai/api/v1/responses` |
 | `openai/gpt-6.1-sol` | `openai/gpt-6.1-sol-20260929` | `openai` | `https://openrouter.ai/api/v1/responses` |
+| `moonshotai/kimi-k3.1-pro` | `moonshotai/kimi-k3.1-pro-20261023` | `moonshotai/mxfp4` | `https://openrouter.ai/api/v1/chat/completions` |
 | `openai/gpt-6-astra` | `openai/gpt-6-astra-20260903` | `openai` | `https://openrouter.ai/api/v1/responses` |
 
 ## Complete coding-agent systems
