@@ -135,7 +135,7 @@ This is the complete observed AA comparison, including models without a verified
 | Gemma 4 E2B (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gemma-4-e2b) |
 | Gemma 4 E2B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gemma-4-e2b-non-reasoning) |
 | Gemma 4 E4B (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gemma-4-e4b) |
-| Gemma 4 E4B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gemma-4-e4b-non-reasoning) |
+| gemma-4-e4b-non-reasoning | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/gemma-4-e4b-non-reasoning) |
 | GPT-5.3 Codex (Xhigh) | xhigh | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gpt-5-3-codex) |
 | GPT-5.5 Instant (June 2026) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gpt-5-5-instant-06-26) |
 | GPT-5.5 Pro (Xhigh) | xhigh | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gpt-5-5-pro) |
@@ -195,10 +195,10 @@ This is the complete observed AA comparison, including models without a verified
 | Llama 4 Maverick | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/llama-4-maverick) |
 | Llama 4 Scout | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/llama-4-scout) |
 | LongCat 2.0 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/longcat-2-0) |
-| LongCat Flash Lite | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/longcat-flash-lite) |
+| longcat-flash-lite | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/longcat-flash-lite) |
 | Magistral Medium 1.2 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/magistral-medium-2509) |
 | Magistral Small 1.2 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/magistral-small-2509) |
-| Mercury 2.5 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/mercury-2-5) |
+| mercury-2-5 | none / unspecified | — | — | exact_record_retrieval_failed | — | [AA](https://artificialanalysis.ai/models/mercury-2-5) |
 | Mi:dm K 2.5 Pro | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/mi-dm-k-2-5-pro-dec28) |
 | MiniCPM-V 4.6 1.3B | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/minicpm-v4-6-1-3b) |
 | MiniCPM5-1B (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/minicpm5-1b) |
