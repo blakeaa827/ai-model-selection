@@ -1,6 +1,6 @@
-# All measured model configurations — 2026-11-02
+# All measured model configurations — 2026-11-03
 
-Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 278 active exact records; 84 measured score/cost pairs; 5 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
+Source: [Artificial Analysis](https://artificialanalysis.ai/models), Intelligence Index v5.0. 279 active exact records; 84 measured score/cost pairs; 5 non-callable points on the AA-only measurement frontier (including provisional costs and unavailable routes).
 
 This is the complete observed AA comparison, including models without a verified OpenRouter request. **Only** [latest.md](latest.md) contains executable, revision-pinned selections. A name match in the OpenRouter catalog does not verify the benchmarked revision, provider, mode or effort. Multi-model fallback systems and provisional pricing are not single-call routes. The index measures broad capability, not request success probability; the task cost is not an OpenRouter invoice.
 
@@ -15,6 +15,7 @@ This is the complete observed AA comparison, including models without a verified
 | GPT-6 Astra (High) | high | 54.849838322506 | $3.2385719685518306 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-astra-high) |
 | GPT-6.1 Sol (Max) | max | 54.5087338138148 | $1.2720632679446995 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-1-sol) |
 | Claude Sonnet 5.5 (Max, Default Fallback) | max | 54.24133407109 | $10.020621343395753 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-sonnet-5-5) |
+| Gemini 4 Carbon (Low) | low | 53.7206114502924 | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/gemini-4-carbon-low) |
 | GPT-6.1 Sol (Xhigh) | xhigh | 52.308219253291 | $0.7639949356156494 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-1-sol-xhigh) |
 | Claude Opus 5.5 (High, Default Fallback) | high | 51.6859958227294 | $3.4646622820973185 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-opus-5-5-high) |
 | GPT-6 Astra (Medium) | medium | 51.4548393864113 | $2.732438933013427 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/gpt-6-astra-medium) |
@@ -38,11 +39,11 @@ This is the complete observed AA comparison, including models without a verified
 | Claude Fable 5.1 (Low, Default Fallback) | low | 38.483648810734 | $4.471135894646431 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-fable-5-1-low) |
 | GPT-6.1 Terra (Medium) | medium | 38.1152076677975 | $0.16880458238389412 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-1-terra-medium) |
 | Claude Haiku 5.5 (Max) | max | 36.2345435880142 | $0.41100741536816304 | provisional_task_cost_not_actionable | no | [AA](https://artificialanalysis.ai/models/claude-haiku-5-5) |
+| Grok 4.7 (Xhigh) | xhigh | 35.3350117067196 | $7.771539401587139 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/grok-4-7) |
 | Grok 4.7 (High) | high | 35.0122962959703 | $6.18359556537658 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/grok-4-7-high) |
 | GPT-6.1 Sol (Low) | low | 34.502924431456 | $0.16147357831822573 | verified_callable_frontier | yes | [AA](https://artificialanalysis.ai/models/gpt-6-1-sol-low) |
 | Claude Opus 5.5 (Low, Default Fallback) | low | 34.502785007759 | $0.9755293224458845 | measured_multi_model_or_fallback_not_single_call | — | [AA](https://artificialanalysis.ai/models/claude-opus-5-5-low) |
 | Claude Haiku 5.5 (Xhigh) | xhigh | 34.3387759486628 | $0.24836110126596478 | provisional_task_cost_not_actionable | no | [AA](https://artificialanalysis.ai/models/claude-haiku-5-5-xhigh) |
-| Grok 4.7 (Xhigh) | xhigh | 34.3350117067196 | $7.511769586408455 | recorded_mapping_dominated_route_not_reverified | no | [AA](https://artificialanalysis.ai/models/grok-4-7) |
 | Qwen3.8 Max (0902) | xhigh | 33.5545627367888 | $10.023891571541945 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/qwen3-8-max) |
 | DeepSeek V4.1 Flash 1017 (Max) | max | 32.4896393532027 | $0.60210514783598 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/deepseek-v4-1-flash-1017) |
 | GLM-5.3 (Max) | max | 31.653381843882 | $5.009264601719954 | measured_route_or_configuration_unverified | no | [AA](https://artificialanalysis.ai/models/glm-5-3) |
@@ -164,7 +165,7 @@ This is the complete observed AA comparison, including models without a verified
 | JT-4.1 Flash 236B A21B (Reasoning) | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b) |
 | JT-4.1 Flash 236B A21B (Non-reasoning) | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/jt-4-1-flash-236b-a21b-non-reasoning) |
 | JT-MINI | none / unspecified | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/jt-mini) |
-| K-EXAONE 2.0 0803 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/k-exaone-2-0-0803) |
+| K-EXAONE 2.0 | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/k-exaone-2-0-0803) |
 | K2 Horizon 0.9B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/k2-horizon-0-9b) |
 | K2 Horizon 3.7B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/k2-horizon-3-7b) |
 | K2 Horizon 7B | enabled / unlabeled | — | — | missing_common_score_or_measured_task_cost | — | [AA](https://artificialanalysis.ai/models/k2-horizon-7b) |

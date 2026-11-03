@@ -31,13 +31,35 @@ def exact(slug):
     url='https://artificialanalysis.ai/models/'+slug
     try:
         raw,t=fetch(url)
-        candidates=[o for o in embedded(raw) if o.get('slug')==slug and 'intelligenceIndexIsEstimated' in o]
+        candidates=[o for o in embedded(raw) if o.get('slug')==slug and (
+            'intelligenceIndexIsEstimated' in o or
+            all(k in o for k in ('id','release','isReasoning','intelligenceIndexEvaluations')))]
         # AA's v5 update badge says "v5" while the methodology and structured
         # evaluation name say "v5.0". Normalize these equivalent spellings;
         # still reject genuinely different versions on the same page.
         versions={v if '.' in v else v+'.0' for v in re.findall(r'Intelligence Index v([0-9.]+)', raw)}
         if not candidates or len(versions)!=1: raise ValueError('Exact record or common index version missing')
         a=candidates[0]
+        # AA removed its legacy estimation flag in November. Recognize the
+        # original model object structurally; never identify it by a name-only
+        # index row or interpret a missing flag alone as a measured result.
+        if 'intelligenceIndexIsEstimated' not in a:
+            required={'aa-briefcase','automationbench-aa','terminalbench-4-0',
+                'frontiercode-2-0','omniscience','gdp-pdf','hle-diamond',
+                'critpt-v2-hard','terminal-bench-science'}
+            evaluations={e.get('slug'):e for e in a['intelligenceIndexEvaluations']}
+            complete=required<=set(evaluations) and all(
+                isinstance(evaluations[s].get('score'),(int,float)) and
+                isinstance(evaluations[s].get('costPerTask'),(int,float)) and
+                isinstance(evaluations[s].get('outputTokensPerTask'),(int,float))
+                for s in required)
+            cost=(a.get('intelligenceIndexCostPerTask') or {}).get('cost',{}).get('total')
+            pair=isinstance(a.get('intelligenceIndex'),(int,float)) and isinstance(cost,(int,float))
+            if pair and (versions!={'5.0'} or not complete):
+                raise ValueError('Missing estimation flag and incomplete original evaluation evidence')
+            a={**a,'intelligenceIndexIsEstimated':False if pair and complete else None,
+                'estimation_status_provenance':{'source_flag_present':False,
+                    'basis':'complete_nine_original_evaluation_score_cost_token_records' if pair and complete else 'unknown_no_comparable_measured_pair'}}
         return {**a,'source_url':url,'verified_at':t,'version':versions.pop()}
     except Exception as e: return {'slug':slug,'source_url':url,'error':str(e)}
 

@@ -52,6 +52,7 @@ for r in d['evaluated_configurations']:
  prior=r.get('provisional_benchmark_task_cost_usd',r['benchmark_task_cost_usd'])
  if r['intelligence_score']!=a['intelligenceIndex'] or prior!=cost:changed.append({'configuration_id':r['configuration_id'],'previous_score':r['intelligence_score'],'score':a['intelligenceIndex'],'previous_task_cost_usd':prior,'task_cost_usd':cost,'cost_provisional':r.get('benchmark_cost_status','').startswith('provisional')})
  r.update(intelligence_score=a['intelligenceIndex'],benchmark_task_cost_usd=cost,benchmark_verified_at=a['verified_at'],benchmark_version=a['version'],benchmark_score_is_estimated=a['intelligenceIndexIsEstimated'],AA_model_label=a['name'])
+ if a.get('estimation_status_provenance'):r['benchmark_measurement_provenance']=a['estimation_status_provenance']
  m=cat.get(r['openrouter_model_id'])
  if m and m['canonical_slug']==r['openrouter_canonical_slug']:r['openrouter_verified_at']=ct
  else:r.update(eligible_for_frontier=False,exclusion_reasons=['Live catalog missing or revision mismatch'])

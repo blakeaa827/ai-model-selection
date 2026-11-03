@@ -73,6 +73,8 @@ def build(records, catalog, report):
             row['benchmark_cost_status'] = match.get('benchmark_cost_status')
             if match.get('benchmark_cost_status', '').startswith('provisional'):
                 row['status'] = 'provisional_task_cost_not_actionable'
+        if record.get('estimation_status_provenance'):
+            row['measurement_provenance'] = record['estimation_status_provenance']
         pending = next((x for x in report.get('excluded_or_pending', []) if x.get('AA_model_slug') == record['slug']), None)
         if pending:
             row['routing_or_benchmark_caveat'] = pending.get('reason')
