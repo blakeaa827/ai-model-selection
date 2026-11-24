@@ -3,6 +3,22 @@ import concurrent.futures, datetime, json, re, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 OUT=Path('run-artifacts/acquisition')
+REQUIRED_EVALUATIONS=('aa-briefcase','automationbench-aa','terminalbench-4-0',
+    'frontiercode-2-0','omniscience','gdp-pdf','hle-diamond',
+    'critpt-v2-hard','terminal-bench-science')
+# Constituent scores published on the v5.0.1 model object. These are the
+# original evaluation scores, not index weights and not task costs.
+V501_SCORE_PATHS={
+    'aa-briefcase':('briefcaseBreakdown','overall','elo'),
+    'automationbench-aa':('automationBenchPartialScore',),
+    'terminalbench-4-0':('terminalBench40',),
+    'frontiercode-2-0':('frontierCode20',),
+    'omniscience':('omniscience',),
+    'gdp-pdf':('gdpPdfAllPass',),
+    'hle-diamond':('hleDiamond',),
+    'critpt-v2-hard':('critptAgenticHard',),
+    'terminal-bench-science':('terminalBenchScience',),
+}
 
 def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
 def fetch(url):
@@ -27,41 +43,103 @@ def embedded(raw):
         except (ValueError,IndexError): pass
     return records
 
+def numeric(value):
+    return isinstance(value,(int,float)) and not isinstance(value,bool)
+def release_slug_of(row):
+    if isinstance(row.get('releaseSlug'), str) and row['releaseSlug']: return row['releaseSlug']
+    release=row.get('release')
+    if isinstance(release, dict) and isinstance(release.get('slug'), str) and release['slug']: return release['slug']
+    return None
+def data_manifests(records):
+    found={}
+    for record in records:
+        path,key=record.get('path'),record.get('key')
+        if not (isinstance(path,str) and isinstance(key,str) and re.fullmatch(r'/data/[0-9a-f]{16,}\.txt', path) and re.fullmatch(r'[0-9a-f]{64}', key)): continue
+        if path in found and found[path]!=key: raise ValueError('AA page data manifest is ambiguous')
+        found[path]=key
+    return [{'path':path,'key':key} for path,key in found.items()]
+def normalize_configuration_index(rows):
+    # A short, duplicated, or slug-less list is not the public configuration inventory.
+    if not isinstance(rows, list) or len(rows)<100: return None
+    slim=[]; seen=set()
+    for row in rows:
+        slug=row.get('slug') if isinstance(row, dict) else None
+        release=release_slug_of(row) if isinstance(row, dict) else None
+        if not isinstance(slug, str) or not release or slug in seen: return None
+        seen.add(slug)
+        slim.append({'slug':slug,'name':row.get('name'),'releaseSlug':release,'deprecated':row.get('deprecated')})
+    return slim
+def configuration_models(payload):
+    return normalize_configuration_index(payload.get('models')) if isinstance(payload, dict) else None
+def dig(obj, path):
+    for key in path:
+        if not isinstance(obj, dict) or key not in obj: return None
+        obj=obj[key]
+    return obj
+def index_versions(raw):
+    # "v5" and "v5.0" are equivalent display labels. "v5.0.1" is the CritPt v2
+    # regrade and stays its own version. A sentence period is not part of it.
+    # A page that announces more than one version fails closed.
+    return {v if '.' in v else v+'.0' for v in re.findall(r'Intelligence Index v([0-9]+(?:\.[0-9]+)*)', raw)}
+def original_model(record, slug):
+    if record.get('slug')!=slug: return False
+    if 'intelligenceIndexIsEstimated' in record: return True
+    # Name-only index rows carry slug and intelligenceIndex. They are not the
+    # original model object and cannot establish a measured result.
+    if not isinstance(record.get('release'), dict) or not {'id','isReasoning'}<=set(record): return False
+    return 'intelligenceIndexEvaluations' in record or isinstance(record.get('intelligenceIndexCostPerTask'), dict)
+def legacy_evaluation_complete(record):
+    rows=record.get('intelligenceIndexEvaluations')
+    if not isinstance(rows, list): return False
+    evaluations={row.get('slug'):row for row in rows if isinstance(row, dict)}
+    return set(REQUIRED_EVALUATIONS)<=set(evaluations) and all(
+        numeric(evaluations[slug].get('score')) and numeric(evaluations[slug].get('costPerTask')) and numeric(evaluations[slug].get('outputTokensPerTask'))
+        for slug in REQUIRED_EVALUATIONS)
+def v501_evaluation_complete(record):
+    cost=record.get('intelligenceIndexCostPerTask')
+    rows=cost.get('evaluations') if isinstance(cost, dict) else None
+    if not isinstance(rows, list): return False
+    evaluations={row.get('slug'):row for row in rows if isinstance(row, dict)}
+    tokens=record.get('intelligenceIndexOutputTokensPerTask')
+    return set(REQUIRED_EVALUATIONS)<=set(evaluations) and isinstance(tokens, dict) and numeric(tokens.get('output')) and all(
+        numeric(evaluations[slug].get('weightedCostPerTask')) and numeric(dig(record, V501_SCORE_PATHS[slug]))
+        for slug in REQUIRED_EVALUATIONS)
+# Missing intelligenceIndexIsEstimated may count as measured only for an
+# explicit methodology whose published evidence is complete. v5.0.1 is not
+# accepted by pretending it is v5.0. Any other version fails closed.
+MEASURED_WITHOUT_FLAG={
+    '5.0':legacy_evaluation_complete,
+    '5.0.1':lambda record: legacy_evaluation_complete(record) or v501_evaluation_complete(record),
+}
 def exact(slug):
     url='https://artificialanalysis.ai/models/'+slug
+    versions=set()
     try:
         raw,t=fetch(url)
-        candidates=[o for o in embedded(raw) if o.get('slug')==slug and (
-            'intelligenceIndexIsEstimated' in o or
-            all(k in o for k in ('id','release','isReasoning','intelligenceIndexEvaluations')))]
-        # AA's v5 update badge says "v5" while the methodology and structured
-        # evaluation name say "v5.0". Normalize these equivalent spellings;
-        # still reject genuinely different versions on the same page.
-        versions={v if '.' in v else v+'.0' for v in re.findall(r'Intelligence Index v([0-9.]+)', raw)}
-        if not candidates or len(versions)!=1: raise ValueError('Exact record or common index version missing')
+        versions=index_versions(raw)
+        candidates=[o for o in embedded(raw) if original_model(o, slug)]
+        if len(candidates)!=1 or len(versions)!=1: raise ValueError('Exact record or common index version missing')
         a=candidates[0]
-        # AA removed its legacy estimation flag in November. Recognize the
-        # original model object structurally; never identify it by a name-only
-        # index row or interpret a missing flag alone as a measured result.
+        version=next(iter(versions))
+        # AA removed its legacy estimation flag in November, then stopped
+        # embedding intelligenceIndexEvaluations when it published v5.0.1.
+        # A missing flag is never itself a measured result.
         if 'intelligenceIndexIsEstimated' not in a:
-            required={'aa-briefcase','automationbench-aa','terminalbench-4-0',
-                'frontiercode-2-0','omniscience','gdp-pdf','hle-diamond',
-                'critpt-v2-hard','terminal-bench-science'}
-            evaluations={e.get('slug'):e for e in a['intelligenceIndexEvaluations']}
-            complete=required<=set(evaluations) and all(
-                isinstance(evaluations[s].get('score'),(int,float)) and
-                isinstance(evaluations[s].get('costPerTask'),(int,float)) and
-                isinstance(evaluations[s].get('outputTokensPerTask'),(int,float))
-                for s in required)
-            cost=(a.get('intelligenceIndexCostPerTask') or {}).get('cost',{}).get('total')
-            pair=isinstance(a.get('intelligenceIndex'),(int,float)) and isinstance(cost,(int,float))
-            if pair and (versions!={'5.0'} or not complete):
+            cost_record=a.get('intelligenceIndexCostPerTask') if isinstance(a.get('intelligenceIndexCostPerTask'), dict) else {}
+            cost=(cost_record.get('cost') or {}).get('total') if isinstance(cost_record.get('cost'), dict) else None
+            pair=numeric(a.get('intelligenceIndex')) and numeric(cost)
+            checker=MEASURED_WITHOUT_FLAG.get(version)
+            complete=bool(checker and checker(a))
+            if pair and not complete:
+                if version not in MEASURED_WITHOUT_FLAG: raise ValueError('Missing estimation flag and unapproved index version')
                 raise ValueError('Missing estimation flag and incomplete original evaluation evidence')
+            if pair and complete and legacy_evaluation_complete(a): basis='complete_nine_original_evaluation_score_cost_token_records'
+            elif pair and complete: basis='complete_v5_0_1_constituent_scores_weighted_costs_and_index_output_tokens'
+            else: basis='unknown_no_comparable_measured_pair'
             a={**a,'intelligenceIndexIsEstimated':False if pair and complete else None,
-                'estimation_status_provenance':{'source_flag_present':False,
-                    'basis':'complete_nine_original_evaluation_score_cost_token_records' if pair and complete else 'unknown_no_comparable_measured_pair'}}
-        return {**a,'source_url':url,'verified_at':t,'version':versions.pop()}
-    except Exception as e: return {'slug':slug,'source_url':url,'error':str(e)}
+                'estimation_status_provenance':{'source_flag_present':False,'index_version':version,'basis':basis}}
+        return {**a,'source_url':url,'verified_at':t,'version':version}
+    except Exception as e: return {'slug':slug,'source_url':url,'error':str(e),'parsed_index_versions':sorted(versions)}
 
 def endpoint(mid):
     url='https://openrouter.ai/api/v1/models/'+mid+'/endpoints'
@@ -142,6 +220,12 @@ def main():
     save('metrics',metrics);save('endpoints',endpoints);save('doc-checks',docs)
     required={r['benchmark_source_url'] for r in base['evaluated_configurations'] if r.get('eligible_for_frontier')}
     failures=[a for a in metrics if a.get('error') and a['source_url'] in required]
-    if failures: raise ValueError('Required exact benchmark acquisition failed: '+str([a['slug'] for a in failures]))
+    failure_path=OUT/'required-failures.json'
+    if failures:
+        details=[{'slug':a['slug'],'source_url':a['source_url'],'error':a['error'],'parsed_index_versions':a.get('parsed_index_versions')} for a in failures]
+        failure_path.write_text(json.dumps(details,indent=2)+'\n')
+        kinds=sorted({(a['error'],tuple(a.get('parsed_index_versions') or ())) for a in failures})
+        raise ValueError('Required exact benchmark acquisition failed: '+str([a['slug'] for a in failures])+'; error_versions='+str(kinds))
+    elif failure_path.exists(): failure_path.unlink()
     print(f"Acquired {len(catalog['data'])} gateway entries, {len(reg)} releases, {len(metrics)} exact records; document failures remain explicitly unverified",flush=True)
 if __name__=='__main__': main()

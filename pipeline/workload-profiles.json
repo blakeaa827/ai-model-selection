@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "intelligence_methodology_version": "5.0",
+  "intelligence_methodology_version": "5.0.1",
   "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
   "profiles": [
     {
@@ -111,7 +111,7 @@
       "id": "physics_reasoning",
       "name": "Physics reasoning",
       "benchmark": "CritPt",
-      "reason": "The maintained general report flags CritPt as under review. Resolve the evaluation warning before enabling a dedicated routing frontier."
+      "reason": "Intelligence Index v5.0.1 regrades the CritPt v2 hard subset inside the general index. That constituent score is not a separate routing frontier. A dedicated profile still needs its own published score plus evaluation-specific costPerTask, which the current model record does not provide separately from the index weighted cost."
     },
     {
       "id": "research_search",
