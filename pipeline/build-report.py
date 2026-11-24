@@ -150,7 +150,10 @@ if version!=old['benchmark']['version']:
  d['benchmark']['methodology_transition_note']='All compared current records reacquired. Scores and weighted task costs are not directly comparable across index versions; specialized profiles retain their own separately verified evaluation versions.'
  d['benchmark'].pop('under_review_components',None)
  d['caveats']=[s for s in d['caveats'] if not any(t in s for t in ('SciCode and CritPt under review','current v4.3.2 model page','Intelligence Index v4.3.2'))]
- d['caveats'].append('Intelligence Index v5.0 replaces v4.3.2. This is a benchmark-basket change, not evidence that a model became more or less intelligent overnight. Historical snapshots preserve prior-version measurements; selectors must not combine them.')
+ if version=='5.0': transition='Intelligence Index v5.0 replaces v4.3.2. This is a benchmark-basket change, not evidence that a model became more or less intelligent overnight. Historical snapshots preserve prior-version measurements; selectors must not combine them.'
+ elif version=='5.0.1': transition='Intelligence Index v5.0.1 replaces v'+old['benchmark']['version']+'. AA describes v5.0.1 as a CritPt v2 regrade of the v5 basket. Scores can shift without a model change, so v5.0.1 is not interchangeable with v5.0. Historical snapshots preserve prior-version measurements; selectors must not combine them.'
+ else: transition='Intelligence Index v'+version+' replaces v'+old['benchmark']['version']+'. This methodology change is not evidence that a model became more or less intelligent overnight. Historical snapshots preserve prior-version measurements; selectors must not combine them.'
+ d['caveats'].append(transition)
 d['benchmark']['evaluation_run_date_note']=date+' is the source verification date; exact AA evaluation completion dates remain unpublished.'
 d['scope']['benchmark_frontier_rechecked_date']=date
 newids=sorted(set(cat)-{r['model_id'] for r in json.load(open(P/'coverage.json'))['catalog_models']})
@@ -209,7 +212,8 @@ for r in releases:
  if r['slug']=='gpt-6-sol-daybreak-blue':status='restricted_separate_harness_no_common_metrics'
  if r['slug']=='gemini-4-argon':status='restricted_unavailable_public_route'
  if r['slug']=='kimi-k3-1-pro':status='benchmark_effort_revision_correspondence_unverified'
- screen.append({'AA_release_slug':r['slug'],'name':r['name'],'creator':r['creator']['name'],'score_upper_bound':score,'task_cost_lower_bound_usd':cost,'status':status,'dominated_by':dom,'source_path':r['href']})
+ # The releases index no longer publishes href. Keep a real path when present and leave it null otherwise; do not invent /models versus /models/releases.
+ screen.append({'AA_release_slug':r['slug'],'name':r['name'],'creator':r['creator']['name'],'score_upper_bound':score,'task_cost_lower_bound_usd':cost,'status':status,'dominated_by':dom,'source_path':r.get('href')})
 cov.update(report_date=date,catalog_verified_at=ct,AA_registry_verified_at=rt,catalog_models=inventory,AA_release_screening=screen)
 for filename,key in [('all-output-catalog','all_output_catalog_inventory'),('decision-catalog','decision_catalog_inventory')]:
  path=R/(filename+'.json')

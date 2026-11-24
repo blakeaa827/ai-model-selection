@@ -42,6 +42,8 @@ try{
  }
  await writeFile('run-artifacts/refresh-status.json',JSON.stringify({stages,status:shouldPublish?'published_and_verified':'validated_candidate',publish_allowed:true},null,2)+'\n');
 }catch(error){
- await writeFile('run-artifacts/refresh-status.json',JSON.stringify({stages,status:'failed_preserving_last_published_report',publish_allowed:false,error:String(error)},null,2)+'\n');
+ const status={stages,status:'failed_preserving_last_published_report',publish_allowed:false,error:String(error)};
+ try{status.acquisition_failures=JSON.parse(await readFile('run-artifacts/acquisition/required-failures.json','utf8'));}catch{}
+ await writeFile('run-artifacts/refresh-status.json',JSON.stringify(status,null,2)+'\n');
  console.error(String(error));process.exitCode=1;
 }

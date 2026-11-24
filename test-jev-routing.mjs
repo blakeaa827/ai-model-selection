@@ -18,6 +18,13 @@ const fetcher=async(url,options)=>{
 };
 const options={fetcher,now};
 const task={task:'Reconcile CRM records using the approved business workflow.',acceptance_criteria:['Preserve IDs','Validate updates'],target:'score:60',constraints:{required_parameters:['tools']}};
+if(!data.profiles.some(p=>p.status==='ready')){
+  // Evaluation-specific costPerTask is unpublished, so every profile stays pending.
+  // Routing must fail closed instead of borrowing Intelligence Index weighted cost.
+  await assert.rejects(prepareRouting('.',source,task,options),/No ready workload profiles/);
+  console.log('PASS: no ready workload profiles; Jev routing fails closed without choosing a worker');
+  process.exit(0);
+}
 const bundle=await prepareRouting('.',source,task,options);
 assert.equal(bundle.request.model,CONTROL.model);
 assert.equal(bundle.request.reasoning,undefined);

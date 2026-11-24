@@ -103,7 +103,9 @@ def main():
         source='https://artificialanalysis.ai/evaluations/'+p['evaluation_slug'];doc=checks.get(source)
         version_ok=general['benchmark']['version']==cfg['intelligence_methodology_version']
         method=checks.get(cfg['methodology_url'],{})
-        verified_doc=bool(doc and p['page_signature'] in doc.get('text','') and ('Intelligence Index v'+cfg['intelligence_methodology_version']) in method.get('text',''))
+        # v5.0 must not match the v5.0.1 methodology page by prefix.
+        announced=re.search(r'Intelligence Index v'+re.escape(cfg['intelligence_methodology_version'])+r'(?![0-9.])', method.get('text',''))
+        verified_doc=bool(doc and p['page_signature'] in doc.get('text','') and announced)
         profile={**p,'status':'ready' if version_ok and verified_doc else 'pending_methodology_verification','source_url':source,
                  'methodology_version':general['benchmark']['version'],'methodology_url':cfg['methodology_url'],
                  'methodology_verified_at':checks.get(cfg['methodology_url'],{}).get('verified_at'),

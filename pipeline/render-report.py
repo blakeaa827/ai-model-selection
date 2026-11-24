@@ -92,7 +92,11 @@ if d['scope'].get('measured_comparison_file'):
  readme=readme.replace('## Files and cost basis',f"The callable frontier is a verified subset, not a global optimum. [All measured AA configurations](comparisons.md) include {c['active_AA_exact_records']} active exact records and {c['measured_score_task_cost_pairs']} score/cost pairs, including {c['AA_only_non_callable_frontier']} non-callable AA-only frontier points with unverified routing, provisional costs or unavailable deployment. Their names are not executable revision pins.\n\n## Files and cost basis")
 readme=re.sub(r'Intelligence Index v[0-9.]+(?=\*\*)','Intelligence Index v'+d['benchmark']['version'],readme)
 if changes.get('benchmark_version_changed'):
- readme+='\n## Methodology transition\n\n'+d['benchmark']['methodology_transition_note']+' See workloads.md for independently verified profiles and profiles pending renewed evaluation-specific cost evidence. No free route currently has a verified v5 score/cost pair; the opt-in selector remains supported but budget:0 currently fails. Professional work, long-context and legacy HLE profiles are pending renewed evaluation-specific cost evidence.\n'
+ if d['benchmark']['version']=='5.0':
+  extra=' See workloads.md for independently verified profiles and profiles pending renewed evaluation-specific cost evidence. No free route currently has a verified v5 score/cost pair; the opt-in selector remains supported but budget:0 currently fails. Professional work, long-context and legacy HLE profiles are pending renewed evaluation-specific cost evidence.'
+ else:
+  extra=' See workloads.md for profiles that still publish an evaluation-specific score and costPerTask. Profiles without that pair stay pending. Intelligence Index weighted cost is not reused as an evaluation task cost.'
+ readme+='\n## Methodology transition\n\n'+d['benchmark']['methodology_transition_note']+extra+'\n'
 marker='## Scheduled pipeline'
 if marker in readme:readme=readme[:readme.index(marker)]
 readme+='''## Scheduled pipeline
